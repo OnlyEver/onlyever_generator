@@ -8,153 +8,52 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GenerateArgs = exports.OnlyEverGenerator = void 0;
-const parse_source_content_1 = require("./class/parse/parse_source_content");
-const open_ai_service_1 = require("./class/services/open_ai_service");
+const express_1 = __importDefault(require("express"));
 const card_gen_prompt_1 = require("./constants/prompts/card_gen_prompt");
 const typology_prompt_1 = require("./constants/prompts/typology_prompt");
-// const app = express();
-// const port = 3000;
-// let openAiService = new OpenAiService(config.openAIKey);
-// let oeGen =  new OnlyEverGenerator(config.openAIKey, returnSourceData())
-// app.get('/', async (req, res)  => {
-//     let data = oeGen.returnParsedContent();
-//     // let parsedData = parseResponse()
-//     res.send(data);
-// });
-// app.get('/openAI', async (req,res)=> {
-//   // let prompt = returnPromt();
-//   let prompt = returnCardGenPrompt();
-//     let content = returnSourceData().toString()
-//     let headings = returnHeadings();
-//     // let aiRequest = await openAIRequest(prompt,content);
-//     let aiRequest = await oeGen.generateCard(prompt,content);
-//     res.send(aiRequest);
-// }); 
-// app.get('/typology', async(req,res)=>{
-//   { 
-//     let typologyPrompt = returnTypologyPrompt();
-//     let cardPrompt = returnCardGenPrompt();
-//     let args = new GenerateArgs(
-//       true,
-//       true,
-//       false,
-//        {
-//         typology_prompt: typologyPrompt,
-//         card_gen_prompt: cardPrompt,
-//         summary_prompt: "",
-//       }
-//     )
-//     let typologyRequest = await oeGen.generate(
-//       args,
-//     );
-//     res.send(typologyRequest);
-//   }
-// });
-// app.listen(port, () => {
-//   console.log(`Example app listening at http://localhost:${port}`);
-// });
-class OnlyEverGenerator {
-    constructor(apiKey, model, content) {
-        this.api_key = '';
-        this.parsedContent = '';
-        this.typologyResponse = {};
-        this.cardgenResponse = {};
-        this.summarizeResponse = {};
-        this.api_key = apiKey;
-        this.openAiService = new open_ai_service_1.OpenAiService(apiKey, model !== null && model !== void 0 ? model : 'gpt-3.5-turbo-1106');
-        this.parsedContent = new parse_source_content_1.ParseSourceContent(content).parse();
-    }
-    ;
-    generate() {
-        return __awaiter(this, arguments, void 0, function* (generate_card = false, generate_typology = false) {
-            var _a, _b, _c;
-            let typologyPrompt = (0, typology_prompt_1.returnTypologyPrompt)();
-            let cardPrompt = (0, card_gen_prompt_1.returnCardGenPrompt)();
-            let args = new GenerateArgs(generate_card, generate_typology, false, {
-                typology_prompt: typologyPrompt,
-                card_gen_prompt: cardPrompt,
-                summary_prompt: ''
-            });
-            const responseToReturn = [];
-            const whatNeedsToBeGenerated = args.getWhatNeedsToBeGenerated();
-            for (let elem of whatNeedsToBeGenerated)
-                if (elem == 'generate_tyopology') {
-                    this.typologyResponse = yield this.generateTypology((_a = args.prompts.typology_prompt) !== null && _a !== void 0 ? _a : '', this.parsedContent);
-                    responseToReturn.push(this.typologyResponse);
-                }
-                else if (elem == 'generate_card') {
-                    this.cardgenResponse = yield this.generateCard((_b = args.prompts.card_gen_prompt) !== null && _b !== void 0 ? _b : '', this.parsedContent + JSON.stringify(this.typologyResponse));
-                    responseToReturn.push(this.cardgenResponse);
-                }
-                else if (elem == 'generate_summary') {
-                    this.summarizeResponse = yield this.generateSummary((_c = args.prompts.summary_prompt) !== null && _c !== void 0 ? _c : '', this.parsedContent);
-                    responseToReturn.push(this.summarizeResponse);
-                }
-            return responseToReturn;
+const generate_args_1 = require("./utils/generate_args");
+const source_data_1 = require("./constants/source_data");
+const config_1 = __importDefault(require("./config"));
+const app = (0, express_1.default)();
+const port = 3000;
+const app_1 = require("./bootstrap/app");
+/// While Publishing the package , and using this code as a separate npm module
+/// uncomment the below line and comment all the others, expect the import of OnlyEverGenerator
+// export default OnlyEverGenerator;
+/// All the Codes Below uses express and are strictly for development purpose, while publishing the package, comment everything
+/// below this line
+let oeGen = new app_1.OnlyEverGenerator(config_1.default.openAIKey, "gpt-3.5-turbo-1106", (0, source_data_1.returnSourceData)());
+app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    let data = oeGen._returnParsedContent();
+    // let parsedData = parseResponse()
+    res.send(data);
+}));
+app.get('/openAI', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // let prompt = returnPromt();
+    let prompt = (0, card_gen_prompt_1.returnCardGenPrompt)();
+    let content = (0, source_data_1.returnSourceData)().toString();
+    let headings = (0, source_data_1.returnHeadings)();
+    // let aiRequest = await openAIRequest(prompt,content);
+    let aiRequest = yield oeGen.generateCard(prompt, content);
+    res.send(aiRequest);
+}));
+app.get('/typology', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    {
+        let typologyPrompt = (0, typology_prompt_1.returnTypologyPrompt)();
+        let cardPrompt = (0, card_gen_prompt_1.returnCardGenPrompt)();
+        let args = new generate_args_1.GenerateArgs(true, true, false, {
+            typology_prompt: typologyPrompt,
+            card_gen_prompt: cardPrompt,
+            summary_prompt: "",
         });
+        let typologyRequest = yield oeGen.generate(true, true);
+        res.send(typologyRequest);
     }
-    _returnParsedContent() {
-        return this.parsedContent;
-    }
-    generateCard(prompt, content) {
-        return __awaiter(this, void 0, void 0, function* () {
-            var _a;
-            let response = yield ((_a = this.openAiService) === null || _a === void 0 ? void 0 : _a.sendRequest(prompt, this.parsedContent));
-            response['type'] = 'card_gen';
-            return response;
-        });
-    }
-    generateTypology(prompt, content) {
-        return __awaiter(this, void 0, void 0, function* () {
-            var _a;
-            let response = yield ((_a = this.openAiService) === null || _a === void 0 ? void 0 : _a.sendRequest(prompt, this.parsedContent));
-            response['type'] = 'typology';
-            return response;
-        });
-    }
-    generateSummary(prompt, content) {
-        return __awaiter(this, void 0, void 0, function* () {
-            var _a;
-            let response = yield ((_a = this.openAiService) === null || _a === void 0 ? void 0 : _a.sendRequest(prompt, this.parsedContent));
-            response['type'] = 'summary';
-            return response;
-        });
-    }
-}
-exports.OnlyEverGenerator = OnlyEverGenerator;
-class GenerateArgs {
-    constructor(generate_card, generate_typology, generate_summary, prompts = {
-        typology_prompt: '',
-        card_gen_prompt: '',
-        summary_prompt: ''
-    }) {
-        this.generate_card = false;
-        this.generate_typology = false;
-        this.generate_summary = false;
-        this.prompts = {
-            typology_prompt: '',
-            card_gen_prompt: '',
-            summary_prompt: ''
-        };
-        this.generate_card = generate_card;
-        this.generate_typology = generate_typology;
-        this.generate_summary = generate_summary;
-        this.prompts = prompts;
-    }
-    getWhatNeedsToBeGenerated() {
-        let returnData = [];
-        if (this.generate_typology == true) {
-            returnData.push('generate_tyopology');
-        }
-        if (this.generate_summary == true) {
-            returnData.push('generate_summary');
-        }
-        if (this.generate_card == true) {
-            returnData.push('generate_card');
-        }
-        return returnData;
-    }
-}
-exports.GenerateArgs = GenerateArgs;
+}));
+app.listen(port, () => {
+    console.log(`Example app listening at http://localhost:${port}`);
+});
