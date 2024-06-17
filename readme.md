@@ -8,25 +8,16 @@ The class [OnlyEverGenerator] is the Entry point for the generation module it ha
 
 The [OnlyEverGenerator] currently exposes a main method, [generate] which handles all types of generation and takes a Param 
 ```
-GenerateArgs : 
+generate(generate_typology = false,generate_card = false) method takes two args, generate_typology and generate_cards, which are both boolean.
 For Eg: 
 let oeGenerator = new OnlyEverGenerator(
     api_key,
     model,
     [Block1,Block2,Block3], // oe content model
 );
-    let args = new GenerateArgs(
-       true,
-       true,
-       false,
-        {
-         typology_prompt: typologyPrompt, 
-         card_gen_prompt: cardPrompt,
-         summary_prompt: summary prompt,
-       }
-    )
+ 
 
-let responsesArray = await oeGenerator.generate(args);
+let responsesArray = await oeGenerator.generate(true,true);
 
 
 ```

@@ -1,6 +1,8 @@
 
 import { ParseSourceContent } from "./class/parse/parse_source_content";
 import { OpenAiService } from "./class/services/open_ai_service";
+import { returnCardGenPrompt } from "./constants/prompts/card_gen_prompt";
+import { returnTypologyPrompt } from "./constants/prompts/typology_prompt";
 // const app = express();
 // const port = 3000;
 // let openAiService = new OpenAiService(config.openAIKey);
@@ -77,8 +79,22 @@ export class OnlyEverGenerator{
     
 
     async generate( 
-        args: GenerateArgs
+       generate_card : boolean = false,
+       generate_typology: boolean =false,
     ): Promise<Array<any>> {
+      let typologyPrompt = returnTypologyPrompt();
+      let cardPrompt = returnCardGenPrompt();
+      let args = new GenerateArgs(
+        generate_card,
+        generate_typology,
+        false,
+        {
+          typology_prompt: typologyPrompt,
+          card_gen_prompt: cardPrompt,
+          summary_prompt: ''
+        },
+        
+      );
         const responseToReturn = [];
         const whatNeedsToBeGenerated = args.getWhatNeedsToBeGenerated();
         for(let elem of whatNeedsToBeGenerated)

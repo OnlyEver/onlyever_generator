@@ -1,6 +1,6 @@
 {
   "name": "only_ever_generator",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "scripts": {
     "start": "nodemon dist/index.js",

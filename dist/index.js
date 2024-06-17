@@ -12,6 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenerateArgs = exports.OnlyEverGenerator = void 0;
 const parse_source_content_1 = require("./class/parse/parse_source_content");
 const open_ai_service_1 = require("./class/services/open_ai_service");
+const card_gen_prompt_1 = require("./constants/prompts/card_gen_prompt");
+const typology_prompt_1 = require("./constants/prompts/typology_prompt");
 // const app = express();
 // const port = 3000;
 // let openAiService = new OpenAiService(config.openAIKey);
@@ -65,9 +67,16 @@ class OnlyEverGenerator {
         this.parsedContent = new parse_source_content_1.ParseSourceContent(content).parse();
     }
     ;
-    generate(args) {
-        return __awaiter(this, void 0, void 0, function* () {
+    generate() {
+        return __awaiter(this, arguments, void 0, function* (generate_card = false, generate_typology = false) {
             var _a, _b, _c;
+            let typologyPrompt = (0, typology_prompt_1.returnTypologyPrompt)();
+            let cardPrompt = (0, card_gen_prompt_1.returnCardGenPrompt)();
+            let args = new GenerateArgs(generate_card, generate_typology, false, {
+                typology_prompt: typologyPrompt,
+                card_gen_prompt: cardPrompt,
+                summary_prompt: ''
+            });
             const responseToReturn = [];
             const whatNeedsToBeGenerated = args.getWhatNeedsToBeGenerated();
             for (let elem of whatNeedsToBeGenerated)
