@@ -54,14 +54,14 @@ const open_ai_service_1 = require("./class/services/open_ai_service");
 //   console.log(`Example app listening at http://localhost:${port}`);
 // });
 class OnlyEverGenerator {
-    constructor(apiKey, content) {
+    constructor(apiKey, model, content) {
         this.api_key = '';
         this.parsedContent = '';
         this.typologyResponse = {};
         this.cardgenResponse = {};
         this.summarizeResponse = {};
         this.api_key = apiKey;
-        this.openAiService = new open_ai_service_1.OpenAiService(apiKey);
+        this.openAiService = new open_ai_service_1.OpenAiService(apiKey, model !== null && model !== void 0 ? model : 'gpt-3.5-turbo-1106');
         this.parsedContent = new parse_source_content_1.ParseSourceContent(content).parse();
     }
     ;
@@ -86,7 +86,7 @@ class OnlyEverGenerator {
             return responseToReturn;
         });
     }
-    returnParsedContent() {
+    _returnParsedContent() {
         return this.parsedContent;
     }
     generateCard(prompt, content) {

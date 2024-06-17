@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.openAIRequest = void 0;
 const axios_1 = __importDefault(require("axios"));
 const parse_openai_response_js_1 = require("../utils/parse_openai_response.js");
-function openAIRequest(content, prompt, token) {
+function openAIRequest(content, prompt, token, model) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             let message = [
@@ -29,7 +29,7 @@ function openAIRequest(content, prompt, token) {
             let response = yield axios_1.default.post(url, 
             //data
             {
-                "model": "gpt-3.5-turbo-1106",
+                "model": model,
                 "messages": message,
                 "response_format": { "type": "json_object" },
             }, 
