@@ -10,14 +10,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OnlyEverGenerator = void 0;
-const parse_source_content_1 = require("../class/parse/parse_source_content");
-const open_ai_service_1 = require("../class/services/open_ai_service");
+const parse_source_content_1 = require("../parse/parse_source_content");
+const open_ai_service_1 = require("../services/open_ai_service");
 const card_gen_prompt_1 = require("../constants/prompts/card_gen_prompt");
 const typology_prompt_1 = require("../constants/prompts/typology_prompt");
 const generate_typology_1 = require("../typology_gen/generate_typology");
 const generate_args_1 = require("../utils/generate_args");
+const source_data_1 = require("../constants/source_data");
+/// OnlyEverGenerator 
 class OnlyEverGenerator {
-    constructor(apiKey, model, content) {
+    constructor(apiKey, model, content, expected_fields) {
         this.api_key = '';
         this.parsedContent = '';
         this.typologyResponse = {};
@@ -26,10 +28,11 @@ class OnlyEverGenerator {
         this.api_key = apiKey;
         this.openAiService = new open_ai_service_1.OpenAiService(apiKey, model !== null && model !== void 0 ? model : 'gpt-3.5-turbo-1106');
         this.parsedContent = new parse_source_content_1.ParseSourceContent(content).parse();
+        this.expectedFields = (0, source_data_1.returnFields)();
     }
     ;
     generate() {
-        return __awaiter(this, arguments, void 0, function* (generate_card = false, generate_typology = false) {
+        return __awaiter(this, arguments, void 0, function* (generate_typology = false, generate_card = false) {
             var _a, _b;
             let typologyPrompt = (0, typology_prompt_1.returnTypologyPrompt)();
             let cardPrompt = (0, card_gen_prompt_1.returnCardGenPrompt)();
@@ -65,7 +68,7 @@ class OnlyEverGenerator {
     }
     generateTypology(prompt) {
         return __awaiter(this, void 0, void 0, function* () {
-            let response = yield new generate_typology_1.GenerateTypology(this.openAiService, prompt, this.parsedContent).generate();
+            let response = yield new generate_typology_1.GenerateTypology(this.openAiService, prompt, this.parsedContent, this.expectedFields).generate();
             return response;
         });
     }

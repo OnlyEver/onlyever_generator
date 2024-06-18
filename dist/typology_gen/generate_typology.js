@@ -11,12 +11,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenerateTypology = void 0;
 class GenerateTypology {
-    constructor(openAiService, prompt, content) {
+    constructor(openAiService, prompt, content, expected_fields) {
         this.prompt = '';
         this.content = '';
         this.openAiService = openAiService;
         this.prompt = prompt;
         this.content = content;
+        this.expectedFields = expected_fields.map((elem) => elem.toLowerCase());
     }
     generate() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -43,13 +44,20 @@ class GenerateTypology {
         return {
             status_code: 200,
             metadata: responseData.metadata,
-            field: generatedContent.field,
+            field: this.parseFields(generatedContent.field),
             concepts: generatedContent.concepts,
             facts: generatedContent.facts,
             generate_cards: generatedContent.generate_cards,
             summary_cards: generatedContent.summary_cards,
-            type: responseData.type,
+            type: responseData.type
         };
+    }
+    parseFields(fields) {
+        const fieldKeys = ['primary_field', 'secondary_field', 'tertiary_field'];
+        return fields.slice(0, 3).map((item, index) => ({
+            [fieldKeys[index]]: item,
+            "reconcile": !(this.expectedFields.includes(item.toLowerCase()))
+        }));
     }
     parseTypologyOnFailure(responseData) {
         return __awaiter(this, void 0, void 0, function* () {
