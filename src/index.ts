@@ -13,7 +13,7 @@ const port = 3000;
 
 /// While Publishing the package , and using this code as a separate npm module
 /// uncomment the below line and comment all the others, expect the import of OnlyEverGenerator
-// export default OnlyEverGenerator;
+// export {OnlyEverGenerator};
 
 
 

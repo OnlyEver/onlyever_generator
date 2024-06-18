@@ -72,7 +72,6 @@ export class OnlyEverGenerator{
             prompt,
             this.parsedContent
         ).generate();
-        response['type'] = 'typology';
         return response;
     }
     
