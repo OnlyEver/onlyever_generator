@@ -22,7 +22,7 @@ json
     "missing_facts": ["fact1", "fact2", "fact3", "..."],
     "test_cards": [
         {
-            "type": "flash" | "mcq" | "cloze" | "match",
+            "type":  "cloze" | "match",
             "card_content": { "front": "...", "back": "..." | "prompt": "...", "choices": [ ... ] | "prompt": "...", "options": [ ... ] | "right_choice 1": "...", "left_choice 1": "..." },
             "card_reference": "source_title#heading",
             "concepts": ["Concept1", "Concept2", "..."],
@@ -73,60 +73,23 @@ json
 
 Test cards must be one of the following types:
 
-1.	Flashcards: Have a front and back. 
 
-json
-{
-    "type": "flash",
-    "card_content": {
-        "front": "<content for the front>",
-        "back": "<content for the back>"
-    },
-    "card_reference": "source_title#heading",
-    "concepts": ["Concept1", "Concept2", "..."],
-    "facts": ["Fact1", "Fact2", "..."]
-}
-
-- Each side must not exceed 300 characters.
-2. Multiple Choice Questions (MCQ): Provide multiple choices to pick from. One or more should be correct.
-
-json
-{
-    "type": "mcq",
-    "card_content": {
-        "prompt": "<question text>",
-        "choices": [
-            {"choice": "choice 1", "is_correct": true or false},
-            {"choice": "choice 2", "is_correct": true or false},
-            "... up to 8 choices"
-        ]
-    },
-    "card_reference": "source_title#heading",
-    "concepts": ["Concept1", "Concept2", "..."],
-    "facts": ["Fact1", "Fact2", "..."]
-}
-
-•	Minimum choices required: 2
-•	Maximum choices allowed: 8
-•	Minimum correct choices required: 1
-•	Maximum character length for the prompt: 320
-•	Maximum character length for each choice: 42
-
-3.	Cloze: Fill-in-the-blank style test card. Use double curly braces {{}} to indicate a cloze.
+1.	Cloze: Fill-in-the-blank style test card. Use double curly braces {{}} to indicate a cloze.
 
 json
 {
     "type": "cloze",
-    "card_content": {
-        "prompt": "Accidentals in music denote {{c0:notes}} that do not belong to the {{c1:scale}} or {{c2:mode}} indicated by the key signature.",
-        "options": [
-            {"option": "notes", "cloze": "c0"},
-            {"option": "scale", "cloze": "c1"},
-            {"option": "mode", "cloze": "c2"},
-            {"option": "chords", "cloze": "null"},
-            "... up to 8 choices"
+    "card_content":{
+    "text": "<clozed_text>",
+    "options": [
+            {"option" : "<cloze_0>", "cloze" : "<position_0>"},
+            {"option" : "<cloze_1>", "cloze" : "<position_1>,
+            {"option" : "<cloze_2>", "cloze" : "<position_2>"},
+            ....
+            {"option" : "<cloze_6>", "cloze" : "<position_6>"},
         ]
-    },
+
+    }
     "card_reference": "source_title#heading",
     "concepts": ["Concept1", "Concept2", "..."],
     "facts": ["Fact1", "Fact2", "..."]
@@ -138,16 +101,18 @@ json
 •	Maximum character length for the prompt: 320
 •	Maximum character length for an individual cloze: 90
 
-4.	Match: Pairing items.
+2.	Match: Pairing items.
 
 json
 {
     "type": "match",
     "card_content": {
-        "right_choice 1": "left_choice 1",
-        "right_choice 2": "left_choice 2",
-        "... up to 8 total pairs"
-    },
+    "<left_text1>": "<right_text1>",
+    "<left_text2>": "<right_text2>",
+    "<left_text3>": "<right_text3>",
+    ...
+    "<left_text8>": "<right_text8>"
+}
     "card_reference": "source_title#heading",
     "concepts": ["Concept1", "Concept2", "..."],
     "facts": ["Fact1", "Fact2", "..."]
@@ -157,41 +122,6 @@ json
 
 
 The schema for each card type is below.
-
-A flashcard consists of two sides: a front and a back. Both the front and back text content must not exceed more than 300 characters in length.
-
-The content schema should be represented in this manner:
-json
-{
-    "front": "<content for the front of the flashcard>",
-    "back": "<content for the back of the flashcard>"
-}
-
-
-The schema for an mcq card is shown below.
-
-json
-{
-    "prompt": "<question text>",
-    "choices": 
-    [
-        {
-            choice: "choice 1",
-            is_correct: true or false
-        },
-        {
-            choice: "choice 2",
-            is_correct: true or false
-        }
-        "... up to 8 choices"
-    ]
-}
-
-Minimum choices required: 2
-Maximum choices allowed: 8
-Minimum correct choices required: 1
-Maximum character length for the prompt: 320
-Maximum character length for each choice: 42
 
 
 For questions of the "type": "cloze", which refers to a fill-in-the-blank style question, the format is outlined below. I have used the sample text here because it is easier to illustrate the schema with an example:
@@ -238,10 +168,11 @@ Maximum character length for an individual cloze: 90
 The schema for match type cards are as follows.
 json
 {
-    "right_choice 1": "left_choice 1",
-    "right_choice 2": "left_choice 2"
-    "right_choice 3": "left_choice 3"
-    "... up to 8 total pairs"
+    "<left_text1>": "<right_text1>",
+    "<left_text2>": "<right_text2>",
+    "<left_text3>": "<right_text3>",
+    ...
+    "<left_text8>": "<right_text8>"
 }
 
 Maximum character length for each item in a pair: 42
@@ -259,6 +190,7 @@ Once you are done generating the test cards, review the full list of concepts an
 	3.	Repeat this step until all concepts and facts are covered.
 
 Only stop generating test questions once you believe there is sufficient testing material for learners to fully understand the concepts and remember the facts. The same concept or fact can have multiple test cards, so continue creating test cards until you are confident that there are enough for learners to fully grasp the source material.
+
 `;
 
 

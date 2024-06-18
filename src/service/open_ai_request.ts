@@ -35,7 +35,6 @@ export async function openAIRequest(content:String,prompt:String,token:String,mo
     if(response.status == 200){
         console.log('success');
         return parseOpenAiSuccessResponse(response.data) as any
-        // return JSON.parse(response.data.choices[0].message.content);
 
     }else{
         console.log('failed');

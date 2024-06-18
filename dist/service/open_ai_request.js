@@ -43,7 +43,6 @@ function openAIRequest(content, prompt, token, model) {
             if (response.status == 200) {
                 console.log('success');
                 return (0, parse_openai_response_js_1.parseOpenAiSuccessResponse)(response.data);
-                // return JSON.parse(response.data.choices[0].message.content);
             }
             else {
                 console.log('failed');

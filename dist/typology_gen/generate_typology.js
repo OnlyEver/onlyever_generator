@@ -9,19 +9,29 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.generateTypology = void 0;
-// import { openAIRequest } from "../service/open_ai_request.js";
-function generateTypology(openAiService, prompt, message) {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            // let openAiService = new OpenAiService(config.openAIKey)
-            let response = yield openAiService.sendRequest(prompt, message);
-            // let response = returnTypologyData();
+exports.GenerateTypology = void 0;
+class GenerateTypology {
+    constructor(openAiService, prompt, content) {
+        this.prompt = '';
+        this.content = '';
+        this.openAiService = openAiService;
+        this.prompt = prompt;
+        this.content = content;
+    }
+    generate() {
+        return __awaiter(this, void 0, void 0, function* () {
+            var _a;
+            const response = yield ((_a = this.openAiService) === null || _a === void 0 ? void 0 : _a.sendRequest(this.prompt, this.content));
+            response['type'] = 'typology';
             return response;
-        }
-        catch (e) {
-            throw e;
-        }
-    });
+        });
+    }
+    parseTypologyOnSuccess() {
+        return __awaiter(this, void 0, void 0, function* () {
+        });
+    }
+    parseTypologyOnFailure() {
+        return __awaiter(this, void 0, void 0, function* () { });
+    }
 }
-exports.generateTypology = generateTypology;
+exports.GenerateTypology = GenerateTypology;
