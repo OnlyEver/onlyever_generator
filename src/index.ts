@@ -3,7 +3,7 @@ import express from "express";
 import { returnCardGenPrompt } from "./constants/prompts/card_gen_prompt";
 import { returnTypologyPrompt } from "./constants/prompts/typology_prompt";
 import { GenerateArgs } from "./utils/generate_args";
-import { returnHeadings, returnSourceData } from "./constants/source_data";
+import { returnFields, returnHeadings, returnSourceData } from "./constants/source_data";
 import { OnlyEverGenerator } from "./bootstrap/app";
 import config from "./config";
 const app = express();
@@ -13,14 +13,14 @@ const port = 3000;
 
 /// While Publishing the package , and using this code as a separate npm module
 /// uncomment the below line and comment all the others, expect the import of OnlyEverGenerator
-// export default OnlyEverGenerator;
+// export {OnlyEverGenerator};
 
 
 
 
 /// All the Codes Below uses express and are strictly for development purpose, while publishing the package, comment everything
 /// below this line
-let oeGen =  new OnlyEverGenerator(config.openAIKey,"gpt-3.5-turbo-1106" ,returnSourceData())
+let oeGen =  new OnlyEverGenerator(config.openAIKey,"gpt-3.5-turbo-1106" ,returnSourceData(),returnFields())
 app.get('/', async (req, res)  => {
     let data = oeGen._returnParsedContent();
     // let parsedData = parseResponse()
@@ -54,7 +54,7 @@ app.get('/typology', async(req,res)=>{
     )
     let typologyRequest = await oeGen.generate(
       true,
-      true
+      false
     );
     res.send(typologyRequest);
   

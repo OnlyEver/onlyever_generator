@@ -138,8 +138,8 @@ class GenerateCards {
         let matchCard = {
             type: cardData.type,
             heading: cardData.card_reference,
-            content: JSON.stringify(map),
-            // content: cardData.card_content,
+            // content: JSON.stringify(map),
+            content: cardData.card_content,
             displayTitle: displayTitle,
             concepts: data.concepts,
             facts: data.facts,

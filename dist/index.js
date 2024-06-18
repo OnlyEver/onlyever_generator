@@ -23,10 +23,10 @@ const app = (0, express_1.default)();
 const port = 3000;
 /// While Publishing the package , and using this code as a separate npm module
 /// uncomment the below line and comment all the others, expect the import of OnlyEverGenerator
-// export default OnlyEverGenerator;
+// export {OnlyEverGenerator};
 /// All the Codes Below uses express and are strictly for development purpose, while publishing the package, comment everything
 /// below this line
-let oeGen = new app_1.OnlyEverGenerator(config_1.default.openAIKey, "gpt-3.5-turbo-1106", (0, source_data_1.returnSourceData)());
+let oeGen = new app_1.OnlyEverGenerator(config_1.default.openAIKey, "gpt-3.5-turbo-1106", (0, source_data_1.returnSourceData)(), (0, source_data_1.returnFields)());
 app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     let data = oeGen._returnParsedContent();
     // let parsedData = parseResponse()
@@ -50,7 +50,7 @@ app.get('/typology', (req, res) => __awaiter(void 0, void 0, void 0, function* (
             card_gen_prompt: cardPrompt,
             summary_prompt: "",
         });
-        let typologyRequest = yield oeGen.generate(true, true);
+        let typologyRequest = yield oeGen.generate(true, false);
         res.send(typologyRequest);
     }
 }));

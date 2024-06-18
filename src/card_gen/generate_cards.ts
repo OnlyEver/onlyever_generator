@@ -1,4 +1,4 @@
-import { OpenAiService } from "../class/services/open_ai_service";
+import { OpenAiService } from "../services/open_ai_service";
 
 export class GenerateCards {
   openAiService: OpenAiService;
