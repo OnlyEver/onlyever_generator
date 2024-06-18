@@ -1,18 +1,24 @@
-import { ParseSourceContent } from "../class/parse/parse_source_content";
-import { OpenAiService } from "../class/services/open_ai_service";
+import { ParseSourceContent } from "../parse/parse_source_content";
+import { OpenAiService } from "../services/open_ai_service";
 import { returnCardGenPrompt } from "../constants/prompts/card_gen_prompt";
 import { returnTypologyPrompt } from "../constants/prompts/typology_prompt";
 import { GenerateTypology } from "../typology_gen/generate_typology";
 import { GenerateArgs } from "../utils/generate_args";
+import { returnFields } from "../constants/source_data";
+
+
+/// OnlyEverGenerator 
 
 export class OnlyEverGenerator{
     public api_key: string = '';
     public openAiService: OpenAiService;
     parsedContent: string = '';
-    constructor(apiKey:string, model: string, content: Array<any>){
+    expectedFields: Array<string>
+    constructor(apiKey:string, model: string, content: Array<any>, expected_fields: Array<string>){
         this.api_key = apiKey;
         this.openAiService = new OpenAiService(apiKey,model ?? 'gpt-3.5-turbo-1106');
         this.parsedContent = new ParseSourceContent(content).parse();
+        this.expectedFields = returnFields()
     };
 
     typologyResponse = {};
@@ -23,8 +29,8 @@ export class OnlyEverGenerator{
     
 
     async generate( 
-       generate_card : boolean = false,
        generate_typology: boolean =false,
+       generate_card : boolean = false,
     ): Promise<Array<any>> {
       let typologyPrompt = returnTypologyPrompt();
       let cardPrompt = returnCardGenPrompt();
@@ -70,7 +76,8 @@ export class OnlyEverGenerator{
         let response =  await new GenerateTypology(
             this.openAiService,
             prompt,
-            this.parsedContent
+            this.parsedContent,
+            this.expectedFields,
         ).generate();
         return response;
     }
