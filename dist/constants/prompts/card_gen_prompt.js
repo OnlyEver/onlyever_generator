@@ -39,6 +39,7 @@ json
 •	Each concept and fact must have at least one test card.
 
 Further instructions are provided below.
+
 Concepts are fundamental ideas that form the basis of knowledge in any discipline. They help organize and explain information, making it accessible and relatable.
 
 You are provided with a list of identified concepts. Review this list and the content to determine if any concepts are missing.
@@ -66,8 +67,7 @@ json
 {
     "missing_facts": ["fact1", "fact2", "fact3", "..."]
 }
-
-After you have the complete list of concepts and facts, including any missing ones you identified, proceed to generate test cards for each.
+    After you have the complete list of concepts and facts, including any missing ones you identified, proceed to generate test cards for each.
 
 	1.	Clarity: Ensure the test content is clear and unambiguous.
 	2.	Specificity: Be specific about what you are asking. Avoid vague or overly broad questions or prompts.
@@ -249,8 +249,6 @@ json
 
 Maximum character length for each item in a pair: 42
 Each test card needs a reference. A reference can either be the entire source or a specific heading in the source. Whenever possible, pick a main heading to direct the user to the most relevant part of the source material. The reference schema is as follows: source_title#main_heading, where #main_heading is optional.
-PART 6
-
 Once you are done generating the test cards. Go back and evaulate the full list of concepts and fact that include any of the missing concepts or facts along with the list that was provided as the input. 
 
 Are there any concept or fact that don't have a test card yet? If yes, go back and create one.

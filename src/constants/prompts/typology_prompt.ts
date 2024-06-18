@@ -13,7 +13,10 @@ json
     "field": ["primary_field", "secondary_field", "tertiary_field"],
     "concepts": ["concept1", "concept2", "concept3", "..."],
     "facts": ["fact1", "fact2", "fact3", "..."],
-    "generate_cards": true or false
+    "generate_cards": [
+        state: true or false,
+        false_reason: "reason for marking the source as false. Leave empty for true."
+    ],
     "summary_cards": ["summary_card1", "summary_card2", "summary_card3", "..."]
 }
 
@@ -49,7 +52,6 @@ json
 {
     "concepts": ["concept1", "concept2", "concept3", "..."]
 }
-
 After classifying the content and identifying key concepts, proceed to extract and list verifiable facts. Facts are objective statements that must be supported by empirical evidence or observation, such as specific data on events, people, numbers, dates, or well-established ideas.
 
 1. **Definition of a Fact**: Ensure each fact is a standalone piece of information that is concrete and can be independently verified.
@@ -60,19 +62,19 @@ json
 {
     "facts": ["fact1", "fact2", "fact3", "..."]
 }
-
-After analyzing the content, classifying its field, and identifying key concepts, and facts, assess whether the discovered elements warrant the creation of testing materials. Consider if these elements provide significant educational value to an average learner by enhancing understanding, offering practical applications, or supporting crucial educational goals.
+    After analyzing the content, classifying its field, and identifying key concepts, and facts, assess whether the discovered elements warrant the creation of testing materials. Consider if these elements provide significant educational value to an average learner by enhancing understanding, offering practical applications, or supporting crucial educational goals. If you decide that testing cards don't need to be generated then please provide a reason in less than 90 characters.
 
 1. **Value Assessment**: Determine if the concepts and facts are essential for understanding the broader topic, are likely to be used in practical scenarios, or help in achieving educational benchmarks.
 2. **Criteria for Material Generation**: Generate testing materials if the concepts and facts are central to the content, have broad applicability, and are likely to reinforce or expand the learner’s knowledge significantly.
 
 Make your decision using this criterion and reflect it in the JSON format as follows:
 json
-{
-    "generate_cards": true or false
-}
+"generate_cards": 
+    {   state: true or false,
+        false_reason: "reason for marking the source as false. Leave empty for true."
+    }
 
-After analyzing the content, identifying key concepts, and facts, summarize the material using a series of engaging and informative cards. These cards should capture the essence of the content while highlighting the critical concepts and facts that you previously identified.
+    After analyzing the content, identifying key concepts, and facts, summarize the material using a series of engaging and informative cards. These cards should capture the essence of the content while highlighting the critical concepts and facts that you previously identified.
 
 
 1. **Inclusion Criteria**: The generate_cards should be true. Return an empty array if the generate_cards is false.
