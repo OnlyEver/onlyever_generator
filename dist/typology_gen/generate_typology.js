@@ -9,19 +9,58 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.generateTypology = void 0;
-// import { openAIRequest } from "../service/open_ai_request.js";
-function generateTypology(openAiService, prompt, message) {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            // let openAiService = new OpenAiService(config.openAIKey)
-            let response = yield openAiService.sendRequest(prompt, message);
-            // let response = returnTypologyData();
-            return response;
-        }
-        catch (e) {
-            throw e;
-        }
-    });
+exports.GenerateTypology = void 0;
+class GenerateTypology {
+    constructor(openAiService, prompt, content) {
+        this.prompt = '';
+        this.content = '';
+        this.openAiService = openAiService;
+        this.prompt = prompt;
+        this.content = content;
+    }
+    generate() {
+        return __awaiter(this, void 0, void 0, function* () {
+            var _a;
+            const response = yield ((_a = this.openAiService) === null || _a === void 0 ? void 0 : _a.sendRequest(this.prompt, this.content));
+            response['type'] = 'typology';
+            response.metadata = {
+                "req_time": response.created_at,
+                "req_type": response.type,
+                "req_tokens": response.usage_data.prompt_tokens,
+                "res_tokens": response.usage_data.completion_tokens,
+            };
+            if (response.status_code == 200) {
+                return this.parseTypologyOnSuccess(response);
+            }
+            else {
+                return response;
+            }
+        });
+    }
+    parseTypologyOnSuccess(responseData) {
+        return __awaiter(this, void 0, void 0, function* () {
+            responseData.metadata.status = "completed";
+            const generatedContent = responseData.generated_content;
+            return {
+                status_code: 200,
+                metadata: responseData.metadata,
+                field: generatedContent.field,
+                concepts: generatedContent.concepts,
+                facts: generatedContent.facts,
+                generate_cards: generatedContent.generate_cards,
+                summary_cards: generatedContent.summary_cards,
+                type: responseData.type,
+            };
+        });
+    }
+    parseTypologyOnFailure(responseData) {
+        return __awaiter(this, void 0, void 0, function* () {
+            responseData.metadata.status = 'failed';
+            return {
+                status_code: responseData.status_code,
+                metadata: responseData.metadata,
+            };
+        });
+    }
 }
-exports.generateTypology = generateTypology;
+exports.GenerateTypology = GenerateTypology;

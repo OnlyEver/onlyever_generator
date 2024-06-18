@@ -13,14 +13,45 @@ export class GenerateTypology{
     async generate(){
       const response =  await this.openAiService?.sendRequest(this.prompt,this.content);
       response['type'] = 'typology';
-      return response;
+      response.metadata = {
+        "req_time": response.generated_at,
+        "req_type": response.type,
+        "req_tokens": response.usage_data.prompt_tokens,
+        "res_tokens": response.usage_data.completion_tokens,
+    };
+      if(response.status_code == 200){
+        return this.parseTypologyOnSuccess(response);
+      } else {
+        return response;
+      }
     }
 
 
-    async parseTypologyOnSuccess(){
+    async parseTypologyOnSuccess(responseData : any){
+        responseData.metadata.status = "completed";
+
+        const generatedContent = responseData.generated_content;
+        return {
+            status_code: 200,
+            metadata: responseData.metadata,
+            field: generatedContent.field,
+            concepts: generatedContent.concepts,
+            facts: generatedContent.facts,
+            generate_cards : generatedContent.generate_cards,
+            summary_cards: generatedContent.summary_cards,
+            type: responseData.type,
+        }
+
+        
 
     }
 
-    async parseTypologyOnFailure(){}
+    async parseTypologyOnFailure(responseData:any){
+        responseData.metadata.status = 'failed';
+        return {
+            status_code: responseData.status_code,
+            metadata: responseData.metadata,
+        }
+    }
 
 }
