@@ -1,3 +1,4 @@
+import { GenerateCards } from "../card_gen/generate_cards";
 import { ParseSourceContent } from "../class/parse/parse_source_content";
 import { OpenAiService } from "../class/services/open_ai_service";
 import { returnCardGenPrompt } from "../constants/prompts/card_gen_prompt";
@@ -46,8 +47,8 @@ export class OnlyEverGenerator{
             this.typologyResponse = await this.generateTypology(args.prompts.typology_prompt ?? '');
             responseToReturn.push(this.typologyResponse);
         }else if(elem == 'generate_card'){
-
-            this.cardgenResponse =  await this.generateCard(args.prompts.card_gen_prompt ?? '', this.parsedContent +  JSON.stringify(this.typologyResponse));
+            let generateCards = new GenerateCards(this.openAiService);
+            this.cardgenResponse =  await generateCards.generateCards(args.prompts.card_gen_prompt ?? '', this.parsedContent +  JSON.stringify(this.typologyResponse));
             responseToReturn.push(this.cardgenResponse);
         }
 
