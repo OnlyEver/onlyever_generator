@@ -54,8 +54,7 @@ export class OnlyEverGenerator{
             this.typologyResponse = await this.generateTypology(args.prompts.typology_prompt ?? '');
             responseToReturn.push(this.typologyResponse);
         }else if(elem == 'generate_card'){
-            let generateCards = new GenerateCards(this.openAiService);
-            this.cardgenResponse =  await generateCards.generateCards(args.prompts.card_gen_prompt ?? '', this.parsedContent +  JSON.stringify(this.typologyResponse));
+            this.cardgenResponse =  await this.generateCard(args.prompts.card_gen_prompt ?? '', this.parsedContent +  JSON.stringify(this.typologyResponse));
             responseToReturn.push(this.cardgenResponse);
         }
 
@@ -69,9 +68,8 @@ export class OnlyEverGenerator{
 
 
     async generateCard(prompt: string, content: string){
-        let typologyResponse = returnTypologyData();
         let generateCards = new GenerateCards(this.openAiService);
-        let cardgenResponse =  await generateCards.generateCards(prompt ?? '', this.parsedContent +  JSON.stringify(typologyResponse));
+        let cardgenResponse =  await generateCards.generateCards(prompt ?? '', content);
         // let response =  await this.openAiService?.sendRequest(prompt,this.parsedContent);
         // response['type'] = 'card_gen';
          return cardgenResponse;

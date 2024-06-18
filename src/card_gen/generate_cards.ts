@@ -10,18 +10,17 @@ export class GenerateCards {
     let response = await this.openAiService?.sendRequest(prompt, parsedContent);
     console.log("response to card generation ", response);
     response["type"] = "card_gen";
-    return response;
-    //    response.metadata = {
-    //     "req_time": response.generated_at,
-    //     "req_type": response.type,
-    //     "req_tokens": response.usage_data?.prompt_tokens,
-    //     "res_tokens": response.usage_data?.completion_tokens,
-    // };
-    //   if(response.status_code == 200){
-    //     return this.parse(response);
-    //   } else {
-    //     return response;
-    //   }
+       response.metadata = {
+        "req_time": response.generated_at,
+        "req_type": response.type,
+        "req_tokens": response.usage_data?.prompt_tokens,
+        "res_tokens": response.usage_data?.completion_tokens,
+    };
+      if(response.status_code == 200){
+        return this.parse(response);
+      } else {
+        return response;
+      }
   }
 
   parse(generatedData: any) {
