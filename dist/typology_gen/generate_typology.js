@@ -24,7 +24,7 @@ class GenerateTypology {
             const response = yield ((_a = this.openAiService) === null || _a === void 0 ? void 0 : _a.sendRequest(this.prompt, this.content));
             response['type'] = 'typology';
             response.metadata = {
-                "req_time": response.created_at,
+                "req_time": response.generated_at,
                 "req_type": response.type,
                 "req_tokens": response.usage_data.prompt_tokens,
                 "res_tokens": response.usage_data.completion_tokens,
@@ -38,20 +38,18 @@ class GenerateTypology {
         });
     }
     parseTypologyOnSuccess(responseData) {
-        return __awaiter(this, void 0, void 0, function* () {
-            responseData.metadata.status = "completed";
-            const generatedContent = responseData.generated_content;
-            return {
-                status_code: 200,
-                metadata: responseData.metadata,
-                field: generatedContent.field,
-                concepts: generatedContent.concepts,
-                facts: generatedContent.facts,
-                generate_cards: generatedContent.generate_cards,
-                summary_cards: generatedContent.summary_cards,
-                type: responseData.type,
-            };
-        });
+        responseData.metadata.status = "completed";
+        const generatedContent = responseData.generated_content;
+        return {
+            status_code: 200,
+            metadata: responseData.metadata,
+            field: generatedContent.field,
+            concepts: generatedContent.concepts,
+            facts: generatedContent.facts,
+            generate_cards: generatedContent.generate_cards,
+            summary_cards: generatedContent.summary_cards,
+            type: responseData.type,
+        };
     }
     parseTypologyOnFailure(responseData) {
         return __awaiter(this, void 0, void 0, function* () {

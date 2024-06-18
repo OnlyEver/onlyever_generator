@@ -27,9 +27,8 @@ export class GenerateTypology{
     }
 
 
-    async parseTypologyOnSuccess(responseData : any){
+    parseTypologyOnSuccess(responseData : any){
         responseData.metadata.status = "completed";
-
         const generatedContent = responseData.generated_content;
         return {
             status_code: 200,
@@ -41,9 +40,6 @@ export class GenerateTypology{
             summary_cards: generatedContent.summary_cards,
             type: responseData.type,
         }
-
-        
-
     }
 
     async parseTypologyOnFailure(responseData:any){
