@@ -10,15 +10,27 @@ export class GenerateCards {
     let response = await this.openAiService?.sendRequest(prompt, parsedContent);
     console.log("response to card generation ", response);
     response["type"] = "card_gen";
-   // return response;
-    let generateCardResponse = this.parse(response);
-    return generateCardResponse;
+    return response;
+    //    response.metadata = {
+    //     "req_time": response.generated_at,
+    //     "req_type": response.type,
+    //     "req_tokens": response.usage_data?.prompt_tokens,
+    //     "res_tokens": response.usage_data?.completion_tokens,
+    // };
+    //   if(response.status_code == 200){
+    //     return this.parse(response);
+    //   } else {
+    //     return response;
+    //   }
   }
 
   parse(generatedData: any) {
     const cardData = [];
-    const usage_data = generatedData.usage_data;
+    const usage_data = generatedData.metadata;
     const created_at = generatedData.created_at;
+    const status_code = generatedData.status_code;
+    const missing_concepts = generatedData.generated_content.missing_concepts;
+    const missing_facts = generatedData.generated_content.missing_facts;
     const unparsedTestCards = generatedData.generated_content.test_cards;
 
     for (let elem of unparsedTestCards) {
@@ -34,8 +46,12 @@ export class GenerateCards {
     }
     usage_data["created_at"] = created_at;
     usage_data["type"] = "card_gen";
+
     return {
-      usage_data: usage_data,
+      status_code: status_code,
+      metadata: usage_data,
+      missing_concepts: missing_concepts,
+      missing_facts: missing_facts,
       cards_data: cardData,
     };
   }
@@ -132,46 +148,46 @@ export class GenerateCards {
 
   parseMatchCard(cardData: any) {
     let data = cardData.card_content;
-    let map = new Map();
-  
-    let displayTitle = this.generateMatchCardDisplayTitle(data);
+    const transformedData: { [key: string]: string[] } = {};
+
     for (let key in data) {
-      if(data.hasOwnProperty(key)) {
-        let value = data[key].replace(/[\[\]]/g, '');
-        let items = value.split(',').map((item: string) => item.trim());
-        map.set(key, items);
+      if (data.hasOwnProperty(key)) {
+        transformedData[key] = [data[key]];
+        //     let value = data[key].replace(/[\[\]]/g, '');
+        //  let items = data[key].split(',').map((item: string) => item.trim());
+        //     map.set(key, items);
+        //   }
       }
+      let displayTitle = this.generateMatchCardDisplayTitle(transformedData);
+      let matchCard = {
+        type: cardData.type,
+        heading: cardData.card_reference,
+        content: transformedData,
+        //  content: cardData.card_content,
+        displayTitle: displayTitle,
+        concepts: cardData.concepts,
+        facts: cardData.facts,
+      };
+
+      return matchCard;
     }
-  
-    let matchCard = {
-      type: cardData.type,
-      heading: cardData.card_reference,
-     // content: JSON.stringify(map),
-       content: cardData.card_content,
-      displayTitle: displayTitle,
-      concepts: data.concepts,
-      facts: data.facts,
-    };
-  
-    return matchCard;
   }
 
-  
- generateMatchCardDisplayTitle(answers: any) {
+  generateMatchCardDisplayTitle(answers: any) {
     let titles: string[] = [];
     let counter = 65;
-     for(let key in answers) {
+    for (let key in answers) {
       if (answers.hasOwnProperty(key)) {
-        let value = answers[key].replace(/[\[\]]/g, '');
-        let items = value.split(',').map((item: string) => item.trim());
-        items.forEach((item: any) => {
-          let letter = String.fromCharCode(counter);
-          titles.push(`${letter}. ${key} -- ${item}`);
-          counter++;
-        });
+        let value = answers[key];
+        //     let items = value.split(',').map((item: string) => item.trim());
+        //     items.forEach((item: any) => {
+        let letter = String.fromCharCode(counter);
+        titles.push(`${letter}. ${key} -- ${value}`);
+        counter++;
+        //     });
       }
-     }
-     let displayTitle = titles.join(',');
-     return displayTitle;
+    }
+    let displayTitle = titles.join(",");
+    return displayTitle;
   }
 }

@@ -18,8 +18,8 @@ export class GenerateTypology{
       response.metadata = {
         "req_time": response.generated_at,
         "req_type": response.type,
-        "req_tokens": response.usage_data.prompt_tokens,
-        "res_tokens": response.usage_data.completion_tokens,
+        "req_tokens": response.usage_data?.prompt_tokens,
+        "res_tokens": response.usage_data?.completion_tokens,
     };
       if(response.status_code == 200){
         return this.parseTypologyOnSuccess(response);

@@ -21,14 +21,14 @@ class GenerateTypology {
     }
     generate() {
         return __awaiter(this, void 0, void 0, function* () {
-            var _a;
+            var _a, _b, _c;
             const response = yield ((_a = this.openAiService) === null || _a === void 0 ? void 0 : _a.sendRequest(this.prompt, this.content));
             response['type'] = 'typology';
             response.metadata = {
                 "req_time": response.generated_at,
                 "req_type": response.type,
-                "req_tokens": response.usage_data.prompt_tokens,
-                "res_tokens": response.usage_data.completion_tokens,
+                "req_tokens": (_b = response.usage_data) === null || _b === void 0 ? void 0 : _b.prompt_tokens,
+                "res_tokens": (_c = response.usage_data) === null || _c === void 0 ? void 0 : _c.completion_tokens,
             };
             if (response.status_code == 200) {
                 return this.parseTypologyOnSuccess(response);
