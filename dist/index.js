@@ -17,10 +17,10 @@ const card_gen_prompt_1 = require("./constants/prompts/card_gen_prompt");
 const typology_prompt_1 = require("./constants/prompts/typology_prompt");
 const generate_args_1 = require("./utils/generate_args");
 const source_data_1 = require("./constants/source_data");
+const app_1 = require("./bootstrap/app");
 const config_1 = __importDefault(require("./config"));
 const app = (0, express_1.default)();
 const port = 3000;
-const app_1 = require("./bootstrap/app");
 /// While Publishing the package , and using this code as a separate npm module
 /// uncomment the below line and comment all the others, expect the import of OnlyEverGenerator
 // export default OnlyEverGenerator;

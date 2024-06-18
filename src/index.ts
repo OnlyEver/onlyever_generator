@@ -1,16 +1,13 @@
 
 import express from "express";
-import { ParseSourceContent } from "./class/parse/parse_source_content";
-import { OpenAiService } from "./class/services/open_ai_service";
 import { returnCardGenPrompt } from "./constants/prompts/card_gen_prompt";
 import { returnTypologyPrompt } from "./constants/prompts/typology_prompt";
 import { GenerateArgs } from "./utils/generate_args";
-
 import { returnHeadings, returnSourceData } from "./constants/source_data";
+import { OnlyEverGenerator } from "./bootstrap/app";
 import config from "./config";
 const app = express();
 const port = 3000;
-import { OnlyEverGenerator } from "./bootstrap/app";
 
 
 
