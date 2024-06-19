@@ -6,10 +6,10 @@ export class GenerateCards {
     this.openAiService = openAiService;
   }
 
-  async generateCards(prompt: string, parsedContent: string) {
+  async generateCards(prompt: string, parsedContent: string, isGapFill: boolean) {
     let response = await this.openAiService?.sendRequest(prompt, parsedContent);
-    console.log("response to card generation ", response);
-    response["type"] = "card_gen";
+   // console.log("response to card generation ", response);
+    response["type"] = isGapFill ? "gap_fill":"card_gen";
        response.metadata = {
         "req_time": response.generated_at,
         "req_type": response.type,
@@ -31,25 +31,27 @@ export class GenerateCards {
     const missing_concepts = generatedData.generated_content.missing_concepts;
     const missing_facts = generatedData.generated_content.missing_facts;
     const unparsedTestCards = generatedData.generated_content.test_cards;
-
-    for (let elem of unparsedTestCards) {
-      if (elem.type == "flash") {
-        cardData.push(this.parseFlashCard(elem));
-      } else if (elem.type == "mcq") {
-        cardData.push(this.parseMcqCard(elem));
-      } else if (elem.type == "cloze") {
-        cardData.push(this.parseClozeCard(elem));
-      } else if (elem.type == "match") {
-        cardData.push(this.parseMatchCard(elem));
-      }
+    const type = generatedData.type;
+if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
+  for (let elem of unparsedTestCards) {
+    if (elem.type == "flash") {
+      cardData.push(this.parseFlashCard(elem));
+    } else if (elem.type == "mcq") {
+      cardData.push(this.parseMcqCard(elem));
+    } else if (elem.type == "cloze") {
+      cardData.push(this.parseClozeCard(elem));
+    } else if (elem.type == "match") {
+      cardData.push(this.parseMatchCard(elem));
     }
+  }
+}
+    
     usage_data["created_at"] = created_at;
-    usage_data["type"] = "card_gen";
 
     return {
       status_code: status_code,
       metadata: usage_data,
-      type: usage_data.type,
+      type: type,
       missing_concepts: missing_concepts,
       missing_facts: missing_facts,
       cards_data: cardData,

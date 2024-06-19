@@ -1,9 +1,9 @@
 {
   "name": "only_ever_generator",
-  "version": "0.1.0",
+  "version": "0.0.7",
   "main": "dist/index.js",
   "scripts": {
-    "start": "nodemon dist/index.js",
+    "start": "npm run build && nodemon dist/index.js",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +21,7 @@
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2"
+
   },
   "eslintConfig": {
     "parser": "typescript-eslint-parser",
