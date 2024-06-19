@@ -49,6 +49,7 @@ export class GenerateCards {
     return {
       status_code: status_code,
       metadata: usage_data,
+      type: usage_data.type,
       missing_concepts: missing_concepts,
       missing_facts: missing_facts,
       cards_data: cardData,
