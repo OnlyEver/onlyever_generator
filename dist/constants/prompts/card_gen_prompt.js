@@ -27,7 +27,7 @@ json
         {
             "type": "flash" | "mcq" | "cloze" | "match",
             "card_content": { "front": "...", "back": "..." | "prompt": "...", "choices": [ ... ] | "prompt": "...", "options": [ ... ] | "right_choice 1": "...", "left_choice 1": "..." },
-            "card_reference": "source_title#heading",
+            "card_reference": "heading",
             "concepts": ["Concept1", "Concept2", "..."],
             "facts": ["Fact1", "Fact2", "..."]
         }
@@ -39,7 +39,6 @@ json
 •	Each concept and fact must have at least one test card.
 
 Further instructions are provided below.
-
 Concepts are fundamental ideas that form the basis of knowledge in any discipline. They help organize and explain information, making it accessible and relatable.
 
 You are provided with a list of identified concepts. Review this list and the content to determine if any concepts are missing.
@@ -67,7 +66,7 @@ json
 {
     "missing_facts": ["fact1", "fact2", "fact3", "..."]
 }
-    After you have the complete list of concepts and facts, including any missing ones you identified, proceed to generate test cards for each.
+After you have the complete list of concepts and facts, including any missing ones you identified, proceed to generate test cards for each.
 
 	1.	Clarity: Ensure the test content is clear and unambiguous.
 	2.	Specificity: Be specific about what you are asking. Avoid vague or overly broad questions or prompts.
@@ -77,23 +76,29 @@ json
 Test cards must be one of the following types:
 
 1.	Flashcards: Have a front and back. 
+2.  A flashcard consists of two sides: a front and a back. Both the front and back text content must not exceed more than 300 characters in length.
 
-json
+json schema for Flash Cards:
 {
     "type": "flash",
     "card_content": {
-        "front": "<content for the front>",
-        "back": "<content for the back>"
+        "front": "<content for the front of the flashcard>",
+        "back": "<content for the back of the flashcard>"
     },
-    "card_reference": "source_title#heading",
+    "card_reference": "heading",
     "concepts": ["Concept1", "Concept2", "..."],
     "facts": ["Fact1", "Fact2", "..."]
 }
 
-- Each side must not exceed 300 characters.
-2. Multiple Choice Questions (MCQ): Provide multiple choices to pick from. One or more should be correct.
 
-json
+2. Multiple Choice Questions (MCQ): Provide multiple choices to pick from. One or more should be correct.
+•	Minimum choices required: 2
+•	Maximum choices allowed: 8
+•	Minimum correct choices required: 1
+•	Maximum character length for the prompt: 320
+•	Maximum character length for each choice: 42
+
+json schema for mcqs
 {
     "type": "mcq",
     "card_content": {
@@ -104,155 +109,55 @@ json
             "... up to 8 choices"
         ]
     },
-    "card_reference": "source_title#heading",
+    "card_reference": "heading",
     "concepts": ["Concept1", "Concept2", "..."],
     "facts": ["Fact1", "Fact2", "..."]
 }
 
-•	Minimum choices required: 2
-•	Maximum choices allowed: 8
-•	Minimum correct choices required: 1
-•	Maximum character length for the prompt: 320
-•	Maximum character length for each choice: 42
-
-3.	Cloze: Fill-in-the-blank style test card. Use double curly braces {{}} to indicate a cloze.
-
-json
-{
-    "type": "cloze",
-    "card_content":{
-    "text": "<clozed_text>",
-    "options": [
-            {"option" : "<cloze_0>", "cloze" : "<position_0>"},
-            {"option" : "<cloze_1>", "cloze" : "<position_1>,
-            {"option" : "<cloze_2>", "cloze" : "<position_2>"},
-            ....
-            {"option" : "<cloze_6>", "cloze" : "<position_6>"},
-        ]
-
-    }
-    "card_reference": "source_title#heading",
-    "concepts": ["Concept1", "Concept2", "..."],
-    "facts": ["Fact1", "Fact2", "..."]
-}
-
+3.	Cloze: 
+Fill-in-the-blank style test card. Use double curly braces {{}} to indicate a cloze this is absolute necessagr
 •	Minimum choices required: 2
 •	Maximum choices allowed: 8
 •	Minimum correct choices required: 1
 •	Maximum character length for the prompt: 320
 •	Maximum character length for an individual cloze: 90
 
-4.	Match: Pairing items.
-
-json
+json schema for cloze
 {
-    "type": "match",
+    "type": "cloze",
     "card_content": {
-    "<left_text1>": "<right_text1>",
-    "<left_text2>": "<right_text2>",
-    "<left_text3>": "<right_text3>",
-    ...
-    "<left_text8>": "<right_text8>"
-}
-    "card_reference": "source_title#heading",
+        "text": "Accidentals in music denote {{c0:notes}} that do not belong to the {{c1:scale}} or {{c2:mode}} indicated by the key signature.",
+        "options": [
+            {"option": "notes", "cloze": "c0"},
+            {"option": "scale", "cloze": "c1"},
+            {"option": "mode", "cloze": "c2"},
+            {"option": "chords", "cloze": null},
+            "... up to 8 choices"
+        ]
+    },
+    "card_reference": "heading",
     "concepts": ["Concept1", "Concept2", "..."],
     "facts": ["Fact1", "Fact2", "..."]
 }
 
+
+
+4.	Match: Pairing items.
 •	Maximum character length for each item in a pair: 42
 
-
-The schema for each card type is below.
-
-A flashcard consists of two sides: a front and a back. Both the front and back text content must not exceed more than 300 characters in length.
-
-The content schema should be represented in this manner:
-json
+json schema for match
 {
-    "front": "<content for the front of the flashcard>",
-    "back": "<content for the back of the flashcard>"
+    "type": "match",
+    "card_content": {
+        "right_choice 1": "left_choice 1",
+        "right_choice 2": "left_choice 2",
+        "... up to 8 total pairs"
+    },
+    "card_reference": "heading",
+    "concepts": ["Concept1", "Concept2", "..."],
+    "facts": ["Fact1", "Fact2", "..."]
 }
 
-
-The schema for an mcq card is shown below.
-
-json
-{
-    "prompt": "<question text>",
-    "choices": 
-    [
-        {
-            choice: "choice 1",
-            is_correct: true or false
-        },
-        {
-            choice: "choice 2",
-            is_correct: true or false
-        }
-        "... up to 8 choices"
-    ]
-}
-
-Minimum choices required: 2
-Maximum choices allowed: 8
-Minimum correct choices required: 1
-Maximum character length for the prompt: 320
-Maximum character length for each choice: 42
-
-
-For questions of the "type": "cloze", which refers to a fill-in-the-blank style question, the format is outlined below. I have used the sample text here because it is easier to illustrate the schema with an example:
-
-json
-{
-    "prompt": "Accidentals in music denote {{c0:notes}} that do not belong to the {{c1:scale}} or {{c2:mode}} indicated by the key signature."
-    "options": 
-    [
-        {
-            "option: "notes",
-            "cloze": "c0"
-        },
-        {
-            "option: "scale",
-            "cloze": "c1"
-        },
-        {
-            "option: "mode",
-            "cloze": "c2"
-        },
-        {
-            "option: "chords",
-            "cloze": "null"
-        },
-        {
-            "option: "tilda",
-            "cloze": "null"
-        },
-        {
-            "option: "score",
-            "cloze": "null"
-        },
-        "... up to a maximum of 8 choices total"
-    ]
-}
-
-Minimum choices required: 2
-Maximum choices allowed: 8
-Minimum correct choices required: 1
-Maximum character length for the prompt: 320
-Maximum character length for an individual cloze: 90
-
-The schema for match type cards are as follows.
-json
-{
-    "<left_text1>": "<right_text1>",
-    "<left_text2>": "<right_text2>",
-    "<left_text3>": "<right_text3>",
-    ...
-    "<left_text8>": "<right_text8>"
-}
-
-Maximum character length for each item in a pair: 42
-Each test card needs a reference. A reference can either be the entire source or a specific heading in the source. Whenever possible, pick a main heading to direct the user to the most relevant part of the source material. The reference schema is as follows: source_title#main_heading, where #main_heading is optional.
 Once you are done generating the test cards. Go back and evaulate the full list of concepts and fact that include any of the missing concepts or facts along with the list that was provided as the input. 
 
 Are there any concept or fact that don't have a test card yet? If yes, go back and create one.
@@ -266,7 +171,6 @@ Once you are done generating the test cards, review the full list of concepts an
 	3.	Repeat this step until all concepts and facts are covered.
 
 Only stop generating test questions once you believe there is sufficient testing material for learners to fully understand the concepts and remember the facts. The same concept or fact can have multiple test cards, so continue creating test cards until you are confident that there are enough for learners to fully grasp the source material.
-
 `;
 function returnCardGenPrompt() {
     return promptString;

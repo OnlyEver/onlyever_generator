@@ -18,7 +18,6 @@ const typology_prompt_1 = require("../constants/prompts/typology_prompt");
 const generate_typology_1 = require("../typology_gen/generate_typology");
 const generate_args_1 = require("../utils/generate_args");
 const source_data_1 = require("../constants/source_data");
-const response_format_typology_1 = require("../parse/response_format_typology");
 /// OnlyEverGenerator 
 class OnlyEverGenerator {
     constructor(apiKey, model, content, expected_fields) {
@@ -51,8 +50,7 @@ class OnlyEverGenerator {
                     responseToReturn.push(this.typologyResponse);
                 }
                 else if (elem == 'generate_card') {
-                    let generateCards = new generate_cards_1.GenerateCards(this.openAiService);
-                    this.cardgenResponse = yield generateCards.generateCards((_b = args.prompts.card_gen_prompt) !== null && _b !== void 0 ? _b : '', this.parsedContent + JSON.stringify(this.typologyResponse));
+                    this.cardgenResponse = yield this.generateCard((_b = args.prompts.card_gen_prompt) !== null && _b !== void 0 ? _b : '', this.parsedContent + JSON.stringify(this.typologyResponse));
                     responseToReturn.push(this.cardgenResponse);
                 }
             return responseToReturn;
@@ -63,9 +61,8 @@ class OnlyEverGenerator {
     }
     generateCard(prompt, content) {
         return __awaiter(this, void 0, void 0, function* () {
-            let typologyResponse = (0, response_format_typology_1.returnTypologyData)();
             let generateCards = new generate_cards_1.GenerateCards(this.openAiService);
-            let cardgenResponse = yield generateCards.generateCards(prompt !== null && prompt !== void 0 ? prompt : '', this.parsedContent + JSON.stringify(typologyResponse));
+            let cardgenResponse = yield generateCards.generateCards(prompt !== null && prompt !== void 0 ? prompt : '', content);
             // let response =  await this.openAiService?.sendRequest(prompt,this.parsedContent);
             // response['type'] = 'card_gen';
             return cardgenResponse;
