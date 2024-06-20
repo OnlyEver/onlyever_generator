@@ -17,8 +17,10 @@ export class GenerateCards {
         "res_tokens": response.usage_data?.completion_tokens,
     };
       if(response.status_code == 200){
+        response.metadata.status = "completed";
         return this.parse(response);
       } else {
+        response.metadata.status = "failed";
         return response;
       }
   }
