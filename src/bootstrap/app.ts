@@ -57,6 +57,12 @@ export class OnlyEverGenerator {
         );
         responseToReturn.push(this.typologyResponse);
       } else if (elem == "generate_card") {
+        if(this.typologyResponse.generate_cards){
+          if(this.typologyResponse.generate_cards.state == false){
+          console.log('Cards Generation Not Required');
+        }}
+
+        }else{
         this.cardgenResponse = await this.generateCard(
           args.prompts.card_gen_prompt ?? "",
           this.parsedContent + JSON.stringify(this.typologyResponse),
@@ -84,10 +90,7 @@ export class OnlyEverGenerator {
     }
 
     return responseToReturn;
-  }
-
-  _returnParsedContent() {
-    return this.parsedContent;
+  
   }
 
   async generateCard(prompt: string, content: string, isGapFill: boolean) {

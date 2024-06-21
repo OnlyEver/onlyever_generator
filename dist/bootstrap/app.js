@@ -18,9 +18,7 @@ const typology_prompt_1 = require("../constants/prompts/typology_prompt");
 const generate_typology_1 = require("../typology_gen/generate_typology");
 const generate_args_1 = require("../utils/generate_args");
 const source_data_1 = require("../constants/source_data");
-function isEmpty(obj) {
-    return Object.keys(obj).length === 0;
-}
+const calculate_gap_fill_1 = require("../gap_fill/calculate_gap_fill");
 /// OnlyEverGenerator
 class OnlyEverGenerator {
     constructor(apiKey, model, content, expected_fields) {
@@ -53,11 +51,18 @@ class OnlyEverGenerator {
                     responseToReturn.push(this.typologyResponse);
                 }
                 else if (elem == "generate_card") {
+                    if (this.typologyResponse.generate_cards) {
+                        if (this.typologyResponse.generate_cards.state == false) {
+                            console.log('Cards Generation Not Required');
+                        }
+                    }
+                }
+                else {
                     this.cardgenResponse = yield this.generateCard((_b = args.prompts.card_gen_prompt) !== null && _b !== void 0 ? _b : "", this.parsedContent + JSON.stringify(this.typologyResponse), false);
                     responseToReturn.push(this.cardgenResponse);
                 }
             if (this.cardgenResponse.status_code == 200) {
-                let gapFill = this.gapFilling();
+                let gapFill = (0, calculate_gap_fill_1.gapFilling)(this.typologyResponse, this.cardgenResponse);
                 if (gapFill.remainingConcepts.length !== 0 ||
                     gapFill.remainingFacts.length !== 0) {
                     this.gapFillResponse = yield this.generateCard((_c = args.prompts.card_gen_prompt) !== null && _c !== void 0 ? _c : "", this.parsedContent +
@@ -70,9 +75,6 @@ class OnlyEverGenerator {
             }
             return responseToReturn;
         });
-    }
-    _returnParsedContent() {
-        return this.parsedContent;
     }
     generateCard(prompt, content, isGapFill) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -88,41 +90,6 @@ class OnlyEverGenerator {
             let response = yield new generate_typology_1.GenerateTypology(this.openAiService, prompt, this.parsedContent, this.expectedFields).generate();
             return response;
         });
-    }
-    gapFilling() {
-        var _a, _b, _c, _d, _e;
-        let allConcepts = [];
-        let allFacts = [];
-        let generatedConceptsList = [];
-        let generatedFactsList = [];
-        if (!isEmpty(this.typologyResponse)) {
-            allConcepts.push(...((_a = this.typologyResponse.concepts) !== null && _a !== void 0 ? _a : []));
-            allFacts.push(...((_c = (_b = this.typologyResponse) === null || _b === void 0 ? void 0 : _b.facts) !== null && _c !== void 0 ? _c : []));
-        }
-        if (!isEmpty(this.cardgenResponse)) {
-            allConcepts.push(...((_d = this.cardgenResponse.missing_concepts) !== null && _d !== void 0 ? _d : []));
-            allFacts.push(...((_e = this.cardgenResponse.missing_facts) !== null && _e !== void 0 ? _e : []));
-        }
-        for (let card of this.cardgenResponse.cards_data) {
-            if (card.concepts.length != 0) {
-                generatedConceptsList.push(...card.concepts);
-            }
-            if (card.facts.length != 0) {
-                generatedFactsList.push(...card.facts);
-            }
-        }
-        let generatedConceptsSet = Array.from(new Set(generatedConceptsList));
-        let generatedFactsSet = Array.from(new Set(generatedFactsList));
-        let remainingConcepts = allConcepts.filter((item) => !generatedConceptsSet.includes(item));
-        let remainingFacts = allFacts.filter((item) => !generatedFactsSet.includes(item));
-        return {
-            //   allConcepts: allConcepts,
-            //   allFacts: allFacts,
-            //   generatedConcepts: generatedConceptsSet,
-            //   generatedFacts: generatedFactsSet,
-            remainingConcepts: remainingConcepts,
-            remainingFacts: remainingFacts,
-        };
     }
 }
 exports.OnlyEverGenerator = OnlyEverGenerator;
