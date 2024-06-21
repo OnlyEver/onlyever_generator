@@ -7,10 +7,9 @@ import { GenerateTypology } from "../typology_gen/generate_typology";
 import { GenerateArgs } from "../utils/generate_args";
 import { returnFields } from "../constants/source_data";
 import { returnTypologyData } from "../parse/response_format_typology";
+import { gapFilling } from "../gap_fill/calculate_gap_fill";
 
-function isEmpty(obj: object): boolean {
-  return Object.keys(obj).length === 0;
-}
+
 /// OnlyEverGenerator
 
 export class OnlyEverGenerator {
@@ -66,7 +65,7 @@ export class OnlyEverGenerator {
         responseToReturn.push(this.cardgenResponse);
       }
     if (this.cardgenResponse.status_code == 200) {
-      let gapFill = this.gapFilling();
+      let gapFill = gapFilling(this.typologyResponse, this.cardgenResponse);
       if (
         gapFill.remainingConcepts.length !== 0 ||
         gapFill.remainingFacts.length !== 0
@@ -113,47 +112,5 @@ export class OnlyEverGenerator {
     return response;
   }
 
-  gapFilling() {
-    let allConcepts: string[] = [];
-    let allFacts: string[] = [];
-    let generatedConceptsList: string[] = [];
-    let generatedFactsList: string[] = [];
-    if (!isEmpty(this.typologyResponse)) {
-      allConcepts.push(...(this.typologyResponse.concepts ?? []));
-      allFacts.push(...(this.typologyResponse?.facts ?? []));
-    }
-
-    if (!isEmpty(this.cardgenResponse)) {
-      allConcepts.push(...(this.cardgenResponse.missing_concepts ?? []));
-      allFacts.push(...(this.cardgenResponse.missing_facts ?? []));
-    }
-
-    for (let card of this.cardgenResponse.cards_data) {
-      if (card.concepts.length != 0) {
-        generatedConceptsList.push(...card.concepts);
-      }
-      if (card.facts.length != 0) {
-        generatedFactsList.push(...card.facts);
-      }
-    }
-
-    let generatedConceptsSet = Array.from(new Set(generatedConceptsList));
-    let generatedFactsSet = Array.from(new Set(generatedFactsList));
-
-    let remainingConcepts: string[] = allConcepts.filter(
-      (item) => !generatedConceptsSet.includes(item)
-    );
-    let remainingFacts: string[] = allFacts.filter(
-      (item) => !generatedFactsSet.includes(item)
-    );
-
-    return {
-      //   allConcepts: allConcepts,
-      //   allFacts: allFacts,
-      //   generatedConcepts: generatedConceptsSet,
-      //   generatedFacts: generatedFactsSet,
-      remainingConcepts: remainingConcepts,
-      remainingFacts: remainingFacts,
-    };
-  }
+ 
 }
