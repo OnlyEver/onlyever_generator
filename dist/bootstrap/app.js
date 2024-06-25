@@ -35,7 +35,7 @@ class OnlyEverGenerator {
     }
     generate() {
         return __awaiter(this, arguments, void 0, function* (generate_typology = false, generate_card = false) {
-            var _a, _b, _c;
+            var _a, _b, _c, _d;
             let typologyPrompt = (0, typology_prompt_1.returnTypologyPrompt)();
             let cardPrompt = (0, card_gen_prompt_1.returnCardGenPrompt)();
             let args = new generate_args_1.GenerateArgs(generate_card, generate_typology, false, {
@@ -55,17 +55,20 @@ class OnlyEverGenerator {
                         if (this.typologyResponse.generate_cards.state == false) {
                             console.log('Cards Generation Not Required');
                         }
+                        else {
+                            this.cardgenResponse = yield this.generateCard((_b = args.prompts.card_gen_prompt) !== null && _b !== void 0 ? _b : "", this.parsedContent + JSON.stringify(this.typologyResponse), false);
+                        }
                     }
-                }
-                else {
-                    this.cardgenResponse = yield this.generateCard((_b = args.prompts.card_gen_prompt) !== null && _b !== void 0 ? _b : "", this.parsedContent + JSON.stringify(this.typologyResponse), false);
+                    else {
+                        this.cardgenResponse = yield this.generateCard((_c = args.prompts.card_gen_prompt) !== null && _c !== void 0 ? _c : "", this.parsedContent, false);
+                    }
                     responseToReturn.push(this.cardgenResponse);
                 }
             if (this.cardgenResponse.status_code == 200) {
                 let gapFill = (0, calculate_gap_fill_1.gapFilling)(this.typologyResponse, this.cardgenResponse);
                 if (gapFill.remainingConcepts.length !== 0 ||
                     gapFill.remainingFacts.length !== 0) {
-                    this.gapFillResponse = yield this.generateCard((_c = args.prompts.card_gen_prompt) !== null && _c !== void 0 ? _c : "", this.parsedContent +
+                    this.gapFillResponse = yield this.generateCard((_d = args.prompts.card_gen_prompt) !== null && _d !== void 0 ? _d : "", this.parsedContent +
                         "Generate cards only suitable for the given remaining concepts and facts" +
                         JSON.stringify(gapFill) +
                         "Exclude generating these cards" +

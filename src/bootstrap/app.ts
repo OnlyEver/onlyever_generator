@@ -60,16 +60,25 @@ export class OnlyEverGenerator {
         if(this.typologyResponse.generate_cards){
           if(this.typologyResponse.generate_cards.state == false){
           console.log('Cards Generation Not Required');
-        }}
-
         }else{
+          this.cardgenResponse = await this.generateCard(
+            args.prompts.card_gen_prompt ?? "",
+            this.parsedContent + JSON.stringify(this.typologyResponse),
+            false
+          );
+        }
+      }
+
+        else{
         this.cardgenResponse = await this.generateCard(
           args.prompts.card_gen_prompt ?? "",
-          this.parsedContent + JSON.stringify(this.typologyResponse),
+          this.parsedContent,
           false
         );
-        responseToReturn.push(this.cardgenResponse);
+        
       }
+      responseToReturn.push(this.cardgenResponse);
+    }
     if (this.cardgenResponse.status_code == 200) {
       let gapFill = gapFilling(this.typologyResponse, this.cardgenResponse);
       if (
