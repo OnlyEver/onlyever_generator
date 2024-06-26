@@ -6,10 +6,20 @@ class ParseSourceContent {
         this.titles_to_remove = ['See also', 'References', 'Further reading', 'External links', 'Notes and references', 'Bibliography', 'Notes', 'Cited sources'];
         this.content = sourceContent;
     }
-    parse() {
-        let dataAfterRemovingUnWantedBlocks = this.removeSectionsByTitle(this.content);
-        let afterSanitized = this.sanitizeBlocks(dataAfterRemovingUnWantedBlocks);
-        return JSON.stringify(afterSanitized);
+    parseData() {
+        if (this.content.type == 'source') {
+            let dataAfterRemovingUnWantedBlocks = this.removeSectionsByTitle(this.content.content);
+            let afterSanitized = this.sanitizeBlocks(dataAfterRemovingUnWantedBlocks);
+            return JSON.stringify([
+                { 'title': this.content.title },
+                { 'headings': this.content.headings },
+                { 'content': afterSanitized }
+            ]);
+        }
+        else {
+            return '';
+        }
+        //  return JSON.stringify(afterSanitized);    
     }
     removeSectionsByTitle(data) {
         let dataAfterRemoving = [];

@@ -23,7 +23,7 @@ export class OnlyEverGenerator {
     apiKey: string,
     model: string,
     prompt: any,
-    content: Array<any>,
+    content: any,
     expected_fields: Array<string>
   ) {
     this.api_key = apiKey;
@@ -31,7 +31,8 @@ export class OnlyEverGenerator {
       apiKey,
       model ?? "gpt-3.5-turbo-1106"
     );
-    this.parsedContent = new ParseSourceContent(content).parse();
+    
+    this.parsedContent = new ParseSourceContent(content).parseData();
     this.expectedFields = returnFields();
     this.promptForTypology = returnTypologyPrompt(prompt.typology);
     this.promptForCardGen = returnCardGenPrompt(prompt.card_generation);
@@ -42,6 +43,7 @@ export class OnlyEverGenerator {
   summarizeResponse = {};
   gapFillResponse: any = {};
 
+ 
   async generate(
     generate_typology: boolean = false,
     generate_card: boolean = false
@@ -105,7 +107,7 @@ export class OnlyEverGenerator {
       }
       responseToReturn.push(this.gapFillResponse);
     }
-
+ 
     return responseToReturn;
    // return [typologyPrompt, cardPrompt];
   
@@ -133,5 +135,6 @@ export class OnlyEverGenerator {
     return response;
   }
 
- 
+  
+
 }

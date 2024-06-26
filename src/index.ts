@@ -8,8 +8,7 @@
 // const app = express();
 // const port = 3000;
 
-   import { OnlyEverGenerator } from "./bootstrap/app";
-// import { returnPromptData } from "./constants/prompt_data";
+    import { OnlyEverGenerator } from "./bootstrap/app";
 // import { returnPromptData } from "./constants/prompt_data";
 
 

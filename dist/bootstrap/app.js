@@ -32,7 +32,7 @@ class OnlyEverGenerator {
         this.gapFillResponse = {};
         this.api_key = apiKey;
         this.openAiService = new open_ai_service_1.OpenAiService(apiKey, model !== null && model !== void 0 ? model : "gpt-3.5-turbo-1106");
-        this.parsedContent = new parse_source_content_1.ParseSourceContent(content).parse();
+        this.parsedContent = new parse_source_content_1.ParseSourceContent(content).parseData();
         this.expectedFields = (0, source_data_1.returnFields)();
         this.promptForTypology = (0, typology_prompt_1.returnTypologyPrompt)(prompt.typology);
         this.promptForCardGen = (0, card_gen_prompt_1.returnCardGenPrompt)(prompt.card_generation);

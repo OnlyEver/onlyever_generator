@@ -12,8 +12,14 @@ const headings = [
     "See also",
     "References",
 ];
+const sourceContent = {
+    type: 'source',
+    title: 'Electrolysis',
+    headings: headings,
+    content: sourceString
+};
 function returnSourceData() {
-    return sourceString;
+    return sourceContent;
 }
 exports.returnSourceData = returnSourceData;
 function returnHeadings() {
