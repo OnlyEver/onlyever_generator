@@ -8,6 +8,8 @@ export function gapFilling(typologyResponse: any, cardgenResponse : any) {
     let allFacts: string[] = [];
     let generatedConceptsList: string[] = [];
     let generatedFactsList: string[] = [];
+    let remainingConcepts: string[] = [];
+    let remainingFacts: string[] = [];
     if (!isEmpty(typologyResponse)) {
       allConcepts.push(...(typologyResponse.concepts ?? []));
       allFacts.push(...(typologyResponse?.facts ?? []));
@@ -18,24 +20,27 @@ export function gapFilling(typologyResponse: any, cardgenResponse : any) {
       allFacts.push(...(cardgenResponse.missing_facts ?? []));
     }
 
-    for (let card of cardgenResponse.cards_data) {
-      if (card.concepts.length != 0) {
-        generatedConceptsList.push(...card.concepts);
+    if(cardgenResponse.cards_data !== undefined && cardgenResponse.cards_data.length != 0) {
+      for (let card of cardgenResponse.cards_data) {
+        if (card.concepts.length != 0) {
+          generatedConceptsList.push(...card.concepts);
+        }
+        if (card.facts.length != 0) {
+          generatedFactsList.push(...card.facts);
+        }
       }
-      if (card.facts.length != 0) {
-        generatedFactsList.push(...card.facts);
-      }
+  
+      let generatedConceptsSet = Array.from(new Set(generatedConceptsList));
+      let generatedFactsSet = Array.from(new Set(generatedFactsList));
+  
+      remainingConcepts = allConcepts.filter(
+        (item) => !generatedConceptsSet.includes(item)
+      );
+       remainingFacts = allFacts.filter(
+        (item) => !generatedFactsSet.includes(item)
+      );
     }
-
-    let generatedConceptsSet = Array.from(new Set(generatedConceptsList));
-    let generatedFactsSet = Array.from(new Set(generatedFactsList));
-
-    let remainingConcepts: string[] = allConcepts.filter(
-      (item) => !generatedConceptsSet.includes(item)
-    );
-    let remainingFacts: string[] = allFacts.filter(
-      (item) => !generatedFactsSet.includes(item)
-    );
+    
 
     return {
       //   allConcepts: allConcepts,

@@ -21,9 +21,11 @@ const source_data_1 = require("../constants/source_data");
 const calculate_gap_fill_1 = require("../gap_fill/calculate_gap_fill");
 /// OnlyEverGenerator
 class OnlyEverGenerator {
-    constructor(apiKey, model, content, expected_fields) {
+    constructor(apiKey, model, prompt, content, expected_fields) {
         this.api_key = "";
         this.parsedContent = "";
+        this.promptForTypology = "";
+        this.promptForCardGen = "";
         this.typologyResponse = {};
         this.cardgenResponse = {};
         this.summarizeResponse = {};
@@ -32,12 +34,16 @@ class OnlyEverGenerator {
         this.openAiService = new open_ai_service_1.OpenAiService(apiKey, model !== null && model !== void 0 ? model : "gpt-3.5-turbo-1106");
         this.parsedContent = new parse_source_content_1.ParseSourceContent(content).parse();
         this.expectedFields = (0, source_data_1.returnFields)();
+        this.promptForTypology = (0, typology_prompt_1.returnTypologyPrompt)(prompt.typology);
+        this.promptForCardGen = (0, card_gen_prompt_1.returnCardGenPrompt)(prompt.card_generation);
     }
     generate() {
         return __awaiter(this, arguments, void 0, function* (generate_typology = false, generate_card = false) {
             var _a, _b, _c, _d;
-            let typologyPrompt = (0, typology_prompt_1.returnTypologyPrompt)();
-            let cardPrompt = (0, card_gen_prompt_1.returnCardGenPrompt)();
+            //let typologyPrompt = returnTypologyPrompt();
+            let typologyPrompt = this.promptForTypology;
+            // let cardPrompt = returnCardGenPrompt();
+            let cardPrompt = this.promptForCardGen;
             let args = new generate_args_1.GenerateArgs(generate_card, generate_typology, false, {
                 typology_prompt: typologyPrompt,
                 card_gen_prompt: cardPrompt,
@@ -77,6 +83,7 @@ class OnlyEverGenerator {
                 responseToReturn.push(this.gapFillResponse);
             }
             return responseToReturn;
+            // return [typologyPrompt, cardPrompt];
         });
     }
     generateCard(prompt, content, isGapFill) {

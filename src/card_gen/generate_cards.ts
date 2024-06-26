@@ -15,20 +15,21 @@ export class GenerateCards {
         "req_type": response.type,
         "req_tokens": response.usage_data?.prompt_tokens,
         "res_tokens": response.usage_data?.completion_tokens,
+       // "created_at":response.created_at,
     };
       if(response.status_code == 200){
         response.metadata.status = "completed";
-        return this.parse(response);
+        //return response;
+       return this.parse(response, isGapFill);
       } else {
         response.metadata.status = "failed";
         return response;
       }
   }
 
-  parse(generatedData: any) {
+  parse(generatedData: any, isGapFill: boolean) {
     const cardData = [];
-    const usage_data = generatedData.metadata;
-    const created_at = generatedData.created_at;
+    let usage_data = generatedData.metadata;
     const status_code = generatedData.status_code;
     const missing_concepts = generatedData.generated_content.missing_concepts;
     const missing_facts = generatedData.generated_content.missing_facts;
@@ -46,9 +47,13 @@ if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
       cardData.push(this.parseMatchCard(elem));
     }
   }
+} else {
+  if(!isGapFill) {
+    usage_data.status = "failed";
+  }
 }
     
-    usage_data["created_at"] = created_at;
+   
 
     return {
       status_code: status_code,
@@ -66,7 +71,10 @@ if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
       data.card_content.back
     );
     let flashCardData = {
-      type: data.type,
+      type: {
+        category: 'learning',
+        sub_type: data.type,
+      },
       heading: data.card_reference,
       displayTitle: displayTitle,
       content: {
@@ -75,6 +83,7 @@ if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
       },
       concepts: data.concepts,
       facts: data.facts,
+      bloomLevel: data.bloom_level,
     };
 
     return flashCardData;
@@ -86,19 +95,25 @@ if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
 
   parseMcqCard(data: any) {
     let mcqAnswers = [];
-    for (let choice of data.card_content.choices) {
-      let answer = {
-        answer: choice.choice,
-        is_correct: choice.is_correct,
-      };
-      mcqAnswers.push(answer);
+    if(data.card_content.choices !== undefined && data.card_content.choices.length != 0) {
+      for (let choice of data.card_content.choices) {
+        let answer = {
+          answer: choice.choice,
+          is_correct: choice.is_correct,
+        };
+        mcqAnswers.push(answer);
+      }
     }
+  
     let displayTitle = this.generateMcqCardDisplayTitle(
       data.card_content.prompt,
       mcqAnswers
     );
     let mcqCard = {
-      type: data.type,
+       type: {
+        category: 'learning',
+        sub_type: data.type,
+      },
       heading: data.card_reference,
       displayTitle: displayTitle,
       content: {
@@ -107,20 +122,27 @@ if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
       },
       concepts: data.concepts,
       facts: data.facts,
+      bloomLevel: data.bloom_level,
+
     };
     return mcqCard;
   }
 
   generateMcqCardDisplayTitle(question: string, answers: any) {
     let answersString = [];
-    for (let option of answers) {
-      let currentIndex = answers.indexOf(option) + 1;
-      let temp = `${currentIndex} . ${option.answer} `;
-      answersString.push(temp);
+    if(answers.length != 0) {
+      for (let option of answers) {
+        let currentIndex = answers.indexOf(option) + 1;
+        let temp = `${currentIndex} . ${option.answer} `;
+        answersString.push(temp);
+      }
+      let resultString = answersString.join("");
+      let finalDisplayTitle = `${question} ---- ${resultString}`;
+      return finalDisplayTitle;
+    } else {
+return question;
     }
-    let resultString = answersString.join("");
-    let finalDisplayTitle = `${question} ---- ${resultString}`;
-    return finalDisplayTitle;
+   
   }
 
   parseClozeCard(data: any) {
@@ -129,7 +151,10 @@ if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
       data.card_content.options
     );
     let clozeCardData = {
-      type: data.type,
+      type: {
+        category: 'learning',
+        sub_type: data.type,
+      },
       heading: data.card_reference,
       displayTitle: displayTitle,
       content: {
@@ -138,15 +163,27 @@ if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
       },
       concepts: data.concepts,
       facts: data.facts,
+      bloomLevel: data.bloom_level,
+
     };
 
     return clozeCardData;
   }
 
-  generateClozeCardDisplayTitle(question: string, answers: any) {
-    let optionsString = answers
-      .map((item: { option: any }) => item.option)
+  generateClozeCardDisplayTitle(question: string, answers: Array<any>) {
+    let optionsString = '';
+    if(answers.length !== 0) {
+      optionsString = answers
+      .map((item: { option: any }) => {
+        if(item.option !== undefined) {
+          return item.option;
+        } else {
+          return '';
+        }
+      })
       .join(", ");
+    }
+    
     return `${question} ---- ${optionsString}`;
   }
 
@@ -164,13 +201,18 @@ if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
       }
       let displayTitle = this.generateMatchCardDisplayTitle(transformedData);
       let matchCard = {
-        type: cardData.type,
+        type: {
+          category: 'learning',
+          sub_type: data.type,
+        },
         heading: cardData.card_reference,
         content: transformedData,
         //  content: cardData.card_content,
         displayTitle: displayTitle,
         concepts: cardData.concepts,
         facts: cardData.facts,
+       bloomLevel: cardData.bloom_level,
+
       };
 
       return matchCard;

@@ -16,10 +16,13 @@ export class OnlyEverGenerator {
   public api_key: string = "";
   public openAiService: OpenAiService;
   parsedContent: string = "";
+  promptForTypology: string = "";
+  promptForCardGen: string = "";
   expectedFields: Array<string>;
   constructor(
     apiKey: string,
     model: string,
+    prompt: any,
     content: Array<any>,
     expected_fields: Array<string>
   ) {
@@ -30,6 +33,8 @@ export class OnlyEverGenerator {
     );
     this.parsedContent = new ParseSourceContent(content).parse();
     this.expectedFields = returnFields();
+    this.promptForTypology = returnTypologyPrompt(prompt.typology);
+    this.promptForCardGen = returnCardGenPrompt(prompt.card_generation);
   }
 
   typologyResponse: any = {};
@@ -41,8 +46,11 @@ export class OnlyEverGenerator {
     generate_typology: boolean = false,
     generate_card: boolean = false
   ): Promise<Array<any>> {
-    let typologyPrompt = returnTypologyPrompt();
-    let cardPrompt = returnCardGenPrompt();
+    //let typologyPrompt = returnTypologyPrompt();
+    let typologyPrompt = this.promptForTypology;
+
+   // let cardPrompt = returnCardGenPrompt();
+   let cardPrompt = this.promptForCardGen;
     let args = new GenerateArgs(generate_card, generate_typology, false, {
       typology_prompt: typologyPrompt,
       card_gen_prompt: cardPrompt,
@@ -99,6 +107,7 @@ export class OnlyEverGenerator {
     }
 
     return responseToReturn;
+   // return [typologyPrompt, cardPrompt];
   
   }
 
