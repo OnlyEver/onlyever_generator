@@ -20,13 +20,10 @@ const generate_args_1 = require("../utils/generate_args");
 const calculate_gap_fill_1 = require("../gap_fill/calculate_gap_fill");
 /// OnlyEverGenerator
 class OnlyEverGenerator {
-    constructor(apiKey, model, generationContent
-    // prompt: any,
-    // content: any,
-    // expected_fields: Array<string>
-    ) {
+    constructor(apiKey, model, generationContent) {
         this.api_key = "";
-        this.parsedContent = "";
+        /// these fields will be populated inside the constructor
+        this.parsedContent = {};
         this.promptForTypology = "";
         this.promptForCardGen = "";
         this.typologyResponse = {};
@@ -35,72 +32,78 @@ class OnlyEverGenerator {
         this.gapFillResponse = {};
         this.api_key = apiKey;
         this.openAiService = new open_ai_service_1.OpenAiService(apiKey, model !== null && model !== void 0 ? model : "gpt-3.5-turbo-1106");
-        this.parsedContent = new parse_source_content_1.ParseSourceContent(generationContent.content).parseData();
+        const parsedData = new parse_source_content_1.ParseSourceContent(generationContent.content).parseData();
+        this.parsedContent = {
+            title: parsedData.title,
+            headings: parsedData.headings,
+            content: parsedData.content,
+        },
+            // parsedData.type == 'cards' ? this.typologyResponse = parsedData.taxonomy :  this.typologyResponse = null;
+            this.typologyResponse = parsedData.taxonomy;
         this.expectedFields = generationContent.content.fields; //returnFields();
         this.promptForTypology = (0, typology_prompt_1.returnTypologyPrompt)(generationContent.prompt.typology);
         this.promptForCardGen = (0, card_gen_prompt_1.returnCardGenPrompt)(generationContent.prompt.card_generation);
     }
     generate() {
         return __awaiter(this, arguments, void 0, function* (generate_typology = false, generate_card = false) {
-            var _a, _b, _c, _d;
-            //let typologyPrompt = returnTypologyPrompt();
-            let typologyPrompt = this.promptForTypology;
-            // let cardPrompt = returnCardGenPrompt();
-            let cardPrompt = this.promptForCardGen;
-            let args = new generate_args_1.GenerateArgs(generate_card, generate_typology, false, {
-                typology_prompt: typologyPrompt,
-                card_gen_prompt: cardPrompt,
-                summary_prompt: "",
-            });
+            let args = new generate_args_1.GenerateArgs(generate_card, generate_typology, false);
             const responseToReturn = [];
             const whatNeedsToBeGenerated = args.getWhatNeedsToBeGenerated();
             for (let elem of whatNeedsToBeGenerated)
                 if (elem == "generate_tyopology") {
-                    this.typologyResponse = yield this.generateTypology((_a = args.prompts.typology_prompt) !== null && _a !== void 0 ? _a : "");
+                    this.typologyResponse = yield this.generateTypology(this.promptForTypology);
                     responseToReturn.push(this.typologyResponse);
                 }
                 else if (elem == "generate_card") {
-                    if (this.typologyResponse.generate_cards) {
-                        if (this.typologyResponse.generate_cards.state == false) {
-                            console.log('Cards Generation Not Required');
-                        }
-                        else {
-                            this.cardgenResponse = yield this.generateCard((_b = args.prompts.card_gen_prompt) !== null && _b !== void 0 ? _b : "", this.parsedContent + JSON.stringify(this.typologyResponse), false);
+                    /// for cards gen to occur, there must be presence of source taxonomy
+                    if (this.shouldTheCardBeGeneratedAfterTypologyResponse()) {
+                        this.cardgenResponse = yield this.generateCard(this.promptForCardGen, JSON.stringify(this.typologyResponse), false);
+                        responseToReturn.push(this.cardgenResponse);
+                        /// check if gap fill is required ie coverage determination 
+                        if (this.cardgenResponse.status_code == 200) {
+                            this.gapFillResponse = yield this.generationForGapFill(this.typologyResponse, this.cardgenResponse);
+                            responseToReturn.push(this.gapFillResponse);
                         }
                     }
-                    else {
-                        this.cardgenResponse = yield this.generateCard((_c = args.prompts.card_gen_prompt) !== null && _c !== void 0 ? _c : "", this.parsedContent, false);
-                    }
-                    responseToReturn.push(this.cardgenResponse);
                 }
-            if (this.cardgenResponse.status_code == 200) {
-                let gapFill = (0, calculate_gap_fill_1.gapFilling)(this.typologyResponse, this.cardgenResponse);
-                if (gapFill.remainingConcepts.length !== 0 ||
-                    gapFill.remainingFacts.length !== 0) {
-                    this.gapFillResponse = yield this.generateCard((_d = args.prompts.card_gen_prompt) !== null && _d !== void 0 ? _d : "", this.parsedContent +
-                        "Generate cards only suitable for the given remaining concepts and facts" +
-                        JSON.stringify(gapFill) +
-                        "Exclude generating these cards" +
-                        JSON.stringify(this.cardgenResponse.cards_data), true);
-                }
-                responseToReturn.push(this.gapFillResponse);
-            }
             return responseToReturn;
             // return [typologyPrompt, cardPrompt];
         });
     }
-    generateCard(prompt, content, isGapFill) {
+    shouldTheCardBeGeneratedAfterTypologyResponse() {
+        if (this.typologyResponse) {
+            return this.typologyResponse.generate_cards.state == true;
+        }
+        else {
+            return false;
+        }
+    }
+    generationForGapFill(typologyData, cardGenData) {
+        return __awaiter(this, void 0, void 0, function* () {
+            let gapFill = (0, calculate_gap_fill_1.gapFilling)(typologyData, cardGenData);
+            let response;
+            if (gapFill.remainingConcepts.length !== 0 ||
+                gapFill.remainingFacts.length !== 0) {
+                response = yield this.generateCard(this.promptForCardGen +
+                    "Generate cards only suitable for the given remaining concepts and facts" +
+                    JSON.stringify(gapFill) +
+                    "Exclude generating these cards", JSON.stringify(cardGenData.cards_data), true);
+            }
+            return response;
+        });
+    }
+    generateCard(prompt, additionalContent, isGapFill) {
         return __awaiter(this, void 0, void 0, function* () {
             let generateCards = new generate_cards_1.GenerateCards(this.openAiService);
-            let cardgenResponse = yield generateCards.generateCards(prompt !== null && prompt !== void 0 ? prompt : "", content, isGapFill);
+            this.cardgenResponse = yield generateCards.generateCards(prompt !== null && prompt !== void 0 ? prompt : "", this.parsedContent + additionalContent, isGapFill);
             // let response =  await this.openAiService?.sendRequest(prompt,this.parsedContent);
             // response['type'] = 'card_gen';
-            return cardgenResponse;
+            return this.cardgenResponse;
         });
     }
     generateTypology(prompt) {
         return __awaiter(this, void 0, void 0, function* () {
-            let response = yield new generate_typology_1.GenerateTypology(this.openAiService, prompt, this.parsedContent, this.expectedFields).generate();
+            let response = yield new generate_typology_1.GenerateTypology(this.openAiService, prompt, JSON.stringify(this.parsedContent), this.expectedFields).generate();
             return response;
         });
     }

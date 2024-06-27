@@ -100,8 +100,8 @@ class GenerateCards {
             heading: data.card_reference,
             displayTitle: displayTitle,
             content: {
-                front_content: data.sard_content.front,
-                back_content: data.sard_content.back,
+                front_content: data.card_content.front,
+                back_content: data.card_content.back,
             },
             concepts: data.concepts,
             facts: data.facts,

@@ -9,6 +9,7 @@ import { returnFields } from "../constants/source_data";
 import { returnTypologyData } from "../parse/response_format_typology";
 import { gapFilling } from "../gap_fill/calculate_gap_fill";
 import { title } from "process";
+import { ErrorLogger } from "../logger";
 
 
 /// OnlyEverGenerator
@@ -61,11 +62,6 @@ export class OnlyEverGenerator {
     generate_typology: boolean = false,
     generate_card: boolean = false
   ): Promise<Array<any>> {
-    //let typologyPrompt = returnTypologyPrompt();
-    let typologyPrompt = this.promptForTypology;
-
-   // let cardPrompt = returnCardGenPrompt();
-   let cardPrompt = this.promptForCardGen;
     let args = new GenerateArgs(generate_card, generate_typology, false, );
     const responseToReturn = [];
     const whatNeedsToBeGenerated = args.getWhatNeedsToBeGenerated();
@@ -86,27 +82,13 @@ export class OnlyEverGenerator {
           responseToReturn.push(this.cardgenResponse);
 
           /// check if gap fill is required ie coverage determination 
+          if(this.cardgenResponse.status_code == 200) {
+            this.gapFillResponse = await this.generationForGapFill(this.typologyResponse, this.cardgenResponse);
+            responseToReturn.push(this.gapFillResponse);
+          }
 
         }
     }
-    // if (this.cardgenResponse.status_code == 200) {
-    //   let gapFill = gapFilling(this.typologyResponse, this.cardgenResponse);
-    //   if (
-    //     gapFill.remainingConcepts.length !== 0 ||
-    //     gapFill.remainingFacts.length !== 0
-    //   ) {
-    //     this.gapFillResponse = await this.generateCard(
-    //      this.promptForCardGen,
-    //         "Generate cards only suitable for the given remaining concepts and facts" +
-    //         JSON.stringify(gapFill) +
-    //         "Exclude generating these cards" +
-    //         JSON.stringify(this.cardgenResponse.cards_data),
-    //       true
-    //     );
-    //   }
-    //   responseToReturn.push(this.gapFillResponse);
-    // }
- 
     return responseToReturn;
    // return [typologyPrompt, cardPrompt];
   
@@ -121,7 +103,25 @@ export class OnlyEverGenerator {
 
   }
 
-
+  async generationForGapFill(typologyData: any, cardGenData: any) {
+      let gapFill = gapFilling(typologyData, cardGenData);
+      let response :any ;
+      if (
+        gapFill.remainingConcepts.length !== 0 ||
+        gapFill.remainingFacts.length !== 0
+      ) {
+        response = await this.generateCard(
+         this.promptForCardGen +
+            "Generate cards only suitable for the given remaining concepts and facts" +
+            JSON.stringify(gapFill) +
+            "Exclude generating these cards",
+            JSON.stringify(cardGenData.cards_data),
+          true
+        );
+      }
+      return response;
+    
+  }
 
 
 
@@ -132,25 +132,7 @@ export class OnlyEverGenerator {
       this.parsedContent + additionalContent,
       isGapFill
     );
-    if (this.cardgenResponse.status_code == 200) {
-      let gapFill = gapFilling(JSON.parse(additionalContent), this.cardgenResponse);
-      if (
-        gapFill.remainingConcepts.length !== 0 ||
-        gapFill.remainingFacts.length !== 0
-      ) {
-        this.gapFillResponse = await this.generateCard(
-          prompt ?? "",
-            "Generate cards only suitable for the given remaining concepts and facts" +
-            JSON.stringify(gapFill) +
-            "Exclude generating these cards" +
-            JSON.stringify(this.cardgenResponse.cards_data),
-          true
-        );
-
-      }
-      return [this.cardgenResponse, this.gapFillResponse];
-    }
-
+  
     // let response =  await this.openAiService?.sendRequest(prompt,this.parsedContent);
     // response['type'] = 'card_gen';
     return this.cardgenResponse;
@@ -161,7 +143,7 @@ export class OnlyEverGenerator {
     let response = await new GenerateTypology(
       this.openAiService,
       prompt,
-      this.parsedContent,
+      JSON.stringify(this.parsedContent),
       this.expectedFields
     ).generate();
     return response;
