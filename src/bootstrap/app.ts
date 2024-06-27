@@ -22,9 +22,10 @@ export class OnlyEverGenerator {
   constructor(
     apiKey: string,
     model: string,
-    prompt: any,
-    content: any,
-    expected_fields: Array<string>
+    generationContent : any
+    // prompt: any,
+    // content: any,
+    // expected_fields: Array<string>
   ) {
     this.api_key = apiKey;
     this.openAiService = new OpenAiService(
@@ -32,10 +33,10 @@ export class OnlyEverGenerator {
       model ?? "gpt-3.5-turbo-1106"
     );
     
-    this.parsedContent = new ParseSourceContent(content).parseData();
-    this.expectedFields = returnFields();
-    this.promptForTypology = returnTypologyPrompt(prompt.typology);
-    this.promptForCardGen = returnCardGenPrompt(prompt.card_generation);
+    this.parsedContent = new ParseSourceContent(generationContent.content).parseData();
+    this.expectedFields =  generationContent.content.fields; //returnFields();
+    this.promptForTypology = returnTypologyPrompt(generationContent.prompt.typology);
+    this.promptForCardGen = returnCardGenPrompt(generationContent.prompt.card_generation);
   }
 
   typologyResponse: any = {};

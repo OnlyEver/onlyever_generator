@@ -17,11 +17,14 @@ const card_gen_prompt_1 = require("../constants/prompts/card_gen_prompt");
 const typology_prompt_1 = require("../constants/prompts/typology_prompt");
 const generate_typology_1 = require("../typology_gen/generate_typology");
 const generate_args_1 = require("../utils/generate_args");
-const source_data_1 = require("../constants/source_data");
 const calculate_gap_fill_1 = require("../gap_fill/calculate_gap_fill");
 /// OnlyEverGenerator
 class OnlyEverGenerator {
-    constructor(apiKey, model, prompt, content, expected_fields) {
+    constructor(apiKey, model, generationContent
+    // prompt: any,
+    // content: any,
+    // expected_fields: Array<string>
+    ) {
         this.api_key = "";
         this.parsedContent = "";
         this.promptForTypology = "";
@@ -32,10 +35,10 @@ class OnlyEverGenerator {
         this.gapFillResponse = {};
         this.api_key = apiKey;
         this.openAiService = new open_ai_service_1.OpenAiService(apiKey, model !== null && model !== void 0 ? model : "gpt-3.5-turbo-1106");
-        this.parsedContent = new parse_source_content_1.ParseSourceContent(content).parseData();
-        this.expectedFields = (0, source_data_1.returnFields)();
-        this.promptForTypology = (0, typology_prompt_1.returnTypologyPrompt)(prompt.typology);
-        this.promptForCardGen = (0, card_gen_prompt_1.returnCardGenPrompt)(prompt.card_generation);
+        this.parsedContent = new parse_source_content_1.ParseSourceContent(generationContent.content).parseData();
+        this.expectedFields = generationContent.content.fields; //returnFields();
+        this.promptForTypology = (0, typology_prompt_1.returnTypologyPrompt)(generationContent.prompt.typology);
+        this.promptForCardGen = (0, card_gen_prompt_1.returnCardGenPrompt)(generationContent.prompt.card_generation);
     }
     generate() {
         return __awaiter(this, arguments, void 0, function* (generate_typology = false, generate_card = false) {

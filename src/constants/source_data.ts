@@ -22,11 +22,16 @@ const headings = [
     "References",
 ];
 
+export function returnFields(){
+    return  ["Sciences", "Technology & Engineering", "Humanities & Cultural Studies", "Social Sciences & Global Studies", "Business & Management", "Health & Medicine", "Environmental Studies & Earth Sciences", "Education, Learning & Personal Development", "Creative & Performing Arts", "Law, Governance & Ethics", "Recreation, Lifestyle & Practical Skills", "Technology & Media Literacy", "Philosophy & Critical Thinking", "Space & Astronomical Sciences", "Agriculture & Food Sciences", "Trades & Craftsmanship", "Reference & Indexing", "Other"];
+}
+
 const sourceContent = {
     type:'source',
     title: 'Electrolysis',
     headings: headings,
-    content: sourceString
+    content: sourceString,
+    fields: returnFields(),
 
 }
 
@@ -38,7 +43,5 @@ export function returnHeadings(){
     return headings;
 }
 
-export function returnFields(){
-    return  ["Sciences", "Technology & Engineering", "Humanities & Cultural Studies", "Social Sciences & Global Studies", "Business & Management", "Health & Medicine", "Environmental Studies & Earth Sciences", "Education, Learning & Personal Development", "Creative & Performing Arts", "Law, Governance & Ethics", "Recreation, Lifestyle & Practical Skills", "Technology & Media Literacy", "Philosophy & Critical Thinking", "Space & Astronomical Sciences", "Agriculture & Food Sciences", "Trades & Craftsmanship", "Reference & Indexing", "Other"];
-}
+
 
