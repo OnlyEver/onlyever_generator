@@ -74,7 +74,7 @@ export class OnlyEverGenerator {
         }else{
           this.cardgenResponse = await this.generateCard(
             args.prompts.card_gen_prompt ?? "",
-            this.parsedContent + JSON.stringify(this.typologyResponse),
+            JSON.stringify(this.typologyResponse),
             false
           );
         }
@@ -83,7 +83,7 @@ export class OnlyEverGenerator {
         else{
         this.cardgenResponse = await this.generateCard(
           args.prompts.card_gen_prompt ?? "",
-          this.parsedContent,
+          '',
           false
         );
         
@@ -98,7 +98,6 @@ export class OnlyEverGenerator {
       ) {
         this.gapFillResponse = await this.generateCard(
           args.prompts.card_gen_prompt ?? "",
-          this.parsedContent +
             "Generate cards only suitable for the given remaining concepts and facts" +
             JSON.stringify(gapFill) +
             "Exclude generating these cards" +
@@ -114,16 +113,35 @@ export class OnlyEverGenerator {
   
   }
 
-  async generateCard(prompt: string, content: string, isGapFill: boolean) {
+  async generateCard(prompt: string, additionalContent: string, isGapFill: boolean) {
     let generateCards = new GenerateCards(this.openAiService);
-    let cardgenResponse = await generateCards.generateCards(
+    this.cardgenResponse = await generateCards.generateCards(
       prompt ?? "",
-      content,
+      this.parsedContent + additionalContent,
       isGapFill
     );
+    if (this.cardgenResponse.status_code == 200) {
+      let gapFill = gapFilling(JSON.parse(additionalContent), this.cardgenResponse);
+      if (
+        gapFill.remainingConcepts.length !== 0 ||
+        gapFill.remainingFacts.length !== 0
+      ) {
+        this.gapFillResponse = await this.generateCard(
+          prompt ?? "",
+            "Generate cards only suitable for the given remaining concepts and facts" +
+            JSON.stringify(gapFill) +
+            "Exclude generating these cards" +
+            JSON.stringify(this.cardgenResponse.cards_data),
+          true
+        );
+
+      }
+      return [this.cardgenResponse, this.gapFillResponse];
+    }
+
     // let response =  await this.openAiService?.sendRequest(prompt,this.parsedContent);
     // response['type'] = 'card_gen';
-    return cardgenResponse;
+    return this.cardgenResponse;
   }
 
   async generateTypology(prompt: string) {
