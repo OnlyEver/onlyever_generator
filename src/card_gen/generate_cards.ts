@@ -1,3 +1,4 @@
+import { ErrorLogger } from "../logger";
 import { OpenAiService } from "../services/open_ai_service";
 
 export class GenerateCards {
@@ -27,7 +28,8 @@ export class GenerateCards {
       }
   }
 
-  parse(generatedData: any, isGapFill: boolean) {
+  async parse(generatedData: any, isGapFill: boolean) {
+    try{
     const cardData = [];
     let usage_data = generatedData.metadata;
     const status_code = generatedData.status_code;
@@ -63,6 +65,16 @@ if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
       missing_facts: missing_facts,
       cards_data: cardData,
     };
+  }catch (e:any){
+    await new ErrorLogger({
+      "type": 'card_parsing',
+      "data": e.message,
+     }).log();
+     return {
+      status_code: 500,
+      
+     }
+  }
   }
 
   parseFlashCard(data: any) {
@@ -78,8 +90,8 @@ if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
       heading: data.card_reference,
       displayTitle: displayTitle,
       content: {
-        front_content: data.card_content.front,
-        back_content: data.card_content.back,
+        front_content: data.sard_content.front,
+        back_content: data.sard_content.back,
       },
       concepts: data.concepts,
       facts: data.facts,

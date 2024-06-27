@@ -1,5 +1,6 @@
 import { OpenAiService } from "../services/open_ai_service";
 import { returnTypologyData } from "../parse/response_format_typology";
+import { ErrorLogger } from "../logger";
 
 export class GenerateTypology{
     public openAiService: OpenAiService;
@@ -13,6 +14,7 @@ export class GenerateTypology{
         this.expectedFields = expected_fields.map((elem:string)=>elem.toLowerCase());
     }
     async generate(){
+      try{
       const response =  await this.openAiService?.sendRequest(this.prompt,this.content);
       response['type'] = 'typology';
       response.metadata = {
@@ -25,6 +27,11 @@ export class GenerateTypology{
         return this.parseTypologyOnSuccess(response);
       } else {
         return response;
+      }} catch (e: any){
+        await new ErrorLogger({
+          "type": 'typology_parsing',
+          "data": e.message
+         }).log();
       }
     }
 

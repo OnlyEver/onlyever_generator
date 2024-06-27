@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenerateCards = void 0;
+const logger_1 = require("../logger");
 class GenerateCards {
     constructor(openAiService) {
         this.openAiService = openAiService;
@@ -39,42 +40,55 @@ class GenerateCards {
         });
     }
     parse(generatedData, isGapFill) {
-        const cardData = [];
-        let usage_data = generatedData.metadata;
-        const status_code = generatedData.status_code;
-        const missing_concepts = generatedData.generated_content.missing_concepts;
-        const missing_facts = generatedData.generated_content.missing_facts;
-        const unparsedTestCards = generatedData.generated_content.test_cards;
-        const type = generatedData.type;
-        if (unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
-            for (let elem of unparsedTestCards) {
-                if (elem.type == "flash") {
-                    cardData.push(this.parseFlashCard(elem));
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const cardData = [];
+                let usage_data = generatedData.metadata;
+                const status_code = generatedData.status_code;
+                const missing_concepts = generatedData.generated_content.missing_concepts;
+                const missing_facts = generatedData.generated_content.missing_facts;
+                const unparsedTestCards = generatedData.generated_content.test_cards;
+                const type = generatedData.type;
+                if (unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
+                    for (let elem of unparsedTestCards) {
+                        if (elem.type == "flash") {
+                            cardData.push(this.parseFlashCard(elem));
+                        }
+                        else if (elem.type == "mcq") {
+                            cardData.push(this.parseMcqCard(elem));
+                        }
+                        else if (elem.type == "cloze") {
+                            cardData.push(this.parseClozeCard(elem));
+                        }
+                        else if (elem.type == "match") {
+                            cardData.push(this.parseMatchCard(elem));
+                        }
+                    }
                 }
-                else if (elem.type == "mcq") {
-                    cardData.push(this.parseMcqCard(elem));
+                else {
+                    if (!isGapFill) {
+                        usage_data.status = "failed";
+                    }
                 }
-                else if (elem.type == "cloze") {
-                    cardData.push(this.parseClozeCard(elem));
-                }
-                else if (elem.type == "match") {
-                    cardData.push(this.parseMatchCard(elem));
-                }
+                return {
+                    status_code: status_code,
+                    metadata: usage_data,
+                    type: type,
+                    missing_concepts: missing_concepts,
+                    missing_facts: missing_facts,
+                    cards_data: cardData,
+                };
             }
-        }
-        else {
-            if (!isGapFill) {
-                usage_data.status = "failed";
+            catch (e) {
+                yield new logger_1.ErrorLogger({
+                    "type": 'card_parsing',
+                    "data": e.message,
+                }).log();
+                return {
+                    status_code: 500,
+                };
             }
-        }
-        return {
-            status_code: status_code,
-            metadata: usage_data,
-            type: type,
-            missing_concepts: missing_concepts,
-            missing_facts: missing_facts,
-            cards_data: cardData,
-        };
+        });
     }
     parseFlashCard(data) {
         let displayTitle = this.generateFlashCardDisplayTitle(data.card_content.front, data.card_content.back);
@@ -86,8 +100,8 @@ class GenerateCards {
             heading: data.card_reference,
             displayTitle: displayTitle,
             content: {
-                front_content: data.card_content.front,
-                back_content: data.card_content.back,
+                front_content: data.sard_content.front,
+                back_content: data.sard_content.back,
             },
             concepts: data.concepts,
             facts: data.facts,

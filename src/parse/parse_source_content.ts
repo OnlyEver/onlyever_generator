@@ -8,18 +8,31 @@ export class ParseSourceContent{
     }
 
     parseData() {
-        if(this.content.type == 'source') {
+        // if(this.content.type == 'source') {
             let dataAfterRemovingUnWantedBlocks = this.removeSectionsByTitle(this.content.content);
             let afterSanitized = this.sanitizeBlocks(dataAfterRemovingUnWantedBlocks);
-            return JSON.stringify([
-                {'title': this.content.title},
-                {'headings': this.content.headings},
-                {'content': afterSanitized}
-    
-            ]);
-        } else {
-            return '';
-        }
+            let taxonomy;
+            if(this.content.taxonomy){
+                taxonomy = this.content.taxonomy
+            }else{
+                taxonomy = null;
+            }
+            return {
+                type: this.content.type,
+                title: this.content.title,
+                content: afterSanitized,
+                headings: this.content.headings,
+                taxonomy: this.content.taxonomy,
+            }
+        // } else if(this.content.type == 'cards'){
+        //     return {
+        //         type :'card',
+        //         title: this.content.title,
+        //         content: afterSanitized,
+        //         headings: this.content.headings
+        //         taxonomy: this.content.taxonomy,
+        //     };
+        // }
        
       //  return JSON.stringify(afterSanitized);    
     }
