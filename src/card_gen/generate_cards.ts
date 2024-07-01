@@ -72,7 +72,7 @@ if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
      }).log();
      return {
       status_code: 500,
-      
+      type: 'card_gen',
      }
   }
   }
