@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.returnPromptData = void 0;
+const card_gen_prompt_1 = require("./prompts/card_gen_prompt");
+const typology_prompt_1 = require("./prompts/typology_prompt");
 const promptData = {
     typology: {
         role: `
@@ -293,6 +295,9 @@ const promptData = {
     }
 };
 function returnPromptData() {
-    return promptData;
+    return {
+        "typology": (0, typology_prompt_1.returnTypologyPrompt)(),
+        "card_generation": (0, card_gen_prompt_1.returnCardGenPrompt)(''),
+    };
 }
 exports.returnPromptData = returnPromptData;

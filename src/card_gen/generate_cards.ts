@@ -7,7 +7,7 @@ export class GenerateCards {
     this.openAiService = openAiService;
   }
 
-  async generateCards(prompt: string, parsedContent: string, isGapFill: boolean) {
+  async generateCards(prompt: string, parsedContent: string,isGapFill: boolean,headings: Array<any>) {
     let response = await this.openAiService?.sendRequest(prompt, parsedContent);
    // console.log("response to card generation ", response);
     response["type"] = isGapFill ? "gap_fill":"card_gen";
@@ -21,14 +21,14 @@ export class GenerateCards {
       if(response.status_code == 200){
         response.metadata.status = "completed";
         //return response;
-       return this.parse(response, isGapFill);
+       return this.parse(response, isGapFill,headings);
       } else {
         response.metadata.status = "failed";
         return response;
       }
   }
 
-  async parse(generatedData: any, isGapFill: boolean) {
+  parse(generatedData: any, isGapFill: boolean, headings:Array<any>) {
     try{
     const cardData = [];
     let usage_data = generatedData.metadata;
@@ -39,6 +39,11 @@ export class GenerateCards {
     const type = generatedData.type;
 if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
   for (let elem of unparsedTestCards) {
+    if(headings.includes(elem.card_reference)){
+
+    }else{
+      elem.card_reference = '';
+    }
     if (elem.type == "flash") {
       cardData.push(this.parseFlashCard(elem));
     } else if (elem.type == "mcq") {
@@ -58,7 +63,7 @@ if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
    
 
     return {
-      status_code: status_code,
+      status_code: isGapFill? status_code : cardData.length> 0 ? status_code: 500,
       metadata: usage_data,
       type: type,
       missing_concepts: missing_concepts,
@@ -66,7 +71,7 @@ if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
       cards_data: cardData,
     };
   }catch (e:any){
-    await new ErrorLogger({
+    new ErrorLogger({
       "type": 'card_parsing',
       "data": e.message,
      }).log();
@@ -249,3 +254,5 @@ return question;
     return displayTitle;
   }
 }
+
+

@@ -1,3 +1,6 @@
+import { returnCardGenPrompt } from "./prompts/card_gen_prompt";
+import { returnTypologyPrompt } from "./prompts/typology_prompt";
+
 const promptData: any = {
     typology: {
         role: `
@@ -293,5 +296,8 @@ const promptData: any = {
 }
 
 export function returnPromptData(){
-    return promptData;
+    return {
+        "typology": returnTypologyPrompt(),
+        "card_generation": returnCardGenPrompt(''),
+    };
 }

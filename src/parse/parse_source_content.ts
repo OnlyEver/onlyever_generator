@@ -11,12 +11,6 @@ export class ParseSourceContent{
         // if(this.content.type == 'source') {
             let dataAfterRemovingUnWantedBlocks = this.removeSectionsByTitle(this.content.content);
             let afterSanitized = this.sanitizeBlocks(dataAfterRemovingUnWantedBlocks);
-            let taxonomy;
-            if(this.content.taxonomy){
-                taxonomy = this.content.taxonomy
-            }else{
-                taxonomy = null;
-            }
             return {
                 type: this.content.type,
                 title: this.content.title,

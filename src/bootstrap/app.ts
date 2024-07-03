@@ -1,15 +1,11 @@
 import { GenerateCards } from "../card_gen/generate_cards";
 import { ParseSourceContent } from "../parse/parse_source_content";
 import { OpenAiService } from "../services/open_ai_service";
-import { returnCardGenPrompt } from "../constants/prompts/card_gen_prompt";
-import { returnTypologyPrompt } from "../constants/prompts/typology_prompt";
+// import { returnCardGenPrompt } from "../constants/prompts/card_gen_prompt";
+// import { returnTypologyPrompt } from "../constants/prompts/typology_prompt";
 import { GenerateTypology } from "../typology_gen/generate_typology";
 import { GenerateArgs } from "../utils/generate_args";
-import { returnFields } from "../constants/source_data";
-import { returnTypologyData } from "../parse/response_format_typology";
 import { gapFilling } from "../gap_fill/calculate_gap_fill";
-import { title } from "process";
-import { ErrorLogger } from "../logger";
 
 
 /// OnlyEverGenerator
@@ -49,11 +45,11 @@ export class OnlyEverGenerator {
 
     },
     // parsedData.type == 'cards' ? this.typologyResponse = parsedData.taxonomy :  this.typologyResponse = null;
-    this.typologyResponse = parsedData.taxonomy
+    this.typologyResponse = generationContent.content.taxonomy
     
     this.expectedFields =  generationContent.content.fields; //returnFields();
-    this.promptForTypology = returnTypologyPrompt(generationContent.prompt.typology);
-    this.promptForCardGen = returnCardGenPrompt(generationContent.prompt.card_generation);
+    this.promptForTypology = generationContent.prompt.typology;
+    this.promptForCardGen =generationContent.prompt.card_generation;
   }
 
 
@@ -126,16 +122,16 @@ export class OnlyEverGenerator {
 
 
   async generateCard(prompt: string, additionalContent: string, isGapFill: boolean) {
-    let generateCards = new GenerateCards(this.openAiService);
-    this.cardgenResponse = await generateCards.generateCards(
+    let generateCardsResp = await new GenerateCards(this.openAiService).generateCards(
       prompt ?? "",
-      this.parsedContent + additionalContent,
-      isGapFill
+      JSON.stringify(this.parsedContent) + additionalContent,
+      isGapFill,
+      this.parsedContent.headings ?? [],
     );
   
     // let response =  await this.openAiService?.sendRequest(prompt,this.parsedContent);
     // response['type'] = 'card_gen';
-    return this.cardgenResponse;
+    return generateCardsResp;
   }
 
 

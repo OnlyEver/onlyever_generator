@@ -13,8 +13,8 @@ exports.OnlyEverGenerator = void 0;
 const generate_cards_1 = require("../card_gen/generate_cards");
 const parse_source_content_1 = require("../parse/parse_source_content");
 const open_ai_service_1 = require("../services/open_ai_service");
-const card_gen_prompt_1 = require("../constants/prompts/card_gen_prompt");
-const typology_prompt_1 = require("../constants/prompts/typology_prompt");
+// import { returnCardGenPrompt } from "../constants/prompts/card_gen_prompt";
+// import { returnTypologyPrompt } from "../constants/prompts/typology_prompt";
 const generate_typology_1 = require("../typology_gen/generate_typology");
 const generate_args_1 = require("../utils/generate_args");
 const calculate_gap_fill_1 = require("../gap_fill/calculate_gap_fill");
@@ -39,10 +39,10 @@ class OnlyEverGenerator {
             content: parsedData.content,
         },
             // parsedData.type == 'cards' ? this.typologyResponse = parsedData.taxonomy :  this.typologyResponse = null;
-            this.typologyResponse = parsedData.taxonomy;
+            this.typologyResponse = generationContent.content.taxonomy;
         this.expectedFields = generationContent.content.fields; //returnFields();
-        this.promptForTypology = (0, typology_prompt_1.returnTypologyPrompt)(generationContent.prompt.typology);
-        this.promptForCardGen = (0, card_gen_prompt_1.returnCardGenPrompt)(generationContent.prompt.card_generation);
+        this.promptForTypology = generationContent.prompt.typology;
+        this.promptForCardGen = generationContent.prompt.card_generation;
     }
     generate() {
         return __awaiter(this, arguments, void 0, function* (generate_typology = false, generate_card = false) {
@@ -94,11 +94,11 @@ class OnlyEverGenerator {
     }
     generateCard(prompt, additionalContent, isGapFill) {
         return __awaiter(this, void 0, void 0, function* () {
-            let generateCards = new generate_cards_1.GenerateCards(this.openAiService);
-            this.cardgenResponse = yield generateCards.generateCards(prompt !== null && prompt !== void 0 ? prompt : "", this.parsedContent + additionalContent, isGapFill);
+            var _a;
+            let generateCardsResp = yield new generate_cards_1.GenerateCards(this.openAiService).generateCards(prompt !== null && prompt !== void 0 ? prompt : "", JSON.stringify(this.parsedContent) + additionalContent, isGapFill, (_a = this.parsedContent.headings) !== null && _a !== void 0 ? _a : []);
             // let response =  await this.openAiService?.sendRequest(prompt,this.parsedContent);
             // response['type'] = 'card_gen';
-            return this.cardgenResponse;
+            return generateCardsResp;
         });
     }
     generateTypology(prompt) {
