@@ -9,7 +9,7 @@ function parseOpenAiSuccessResponse(responseData) {
         'status_code': 200,
         'usage_data': usuage,
         'generated_content': choices,
-        'generated_at': createdTime
+        'generated_at': new Date(createdTime * 1000)
     };
 }
 exports.parseOpenAiSuccessResponse = parseOpenAiSuccessResponse;

@@ -13,44 +13,51 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const card_gen_prompt_1 = require("./constants/prompts/card_gen_prompt");
-const typology_prompt_1 = require("./constants/prompts/typology_prompt");
-const generate_args_1 = require("./utils/generate_args");
 const source_data_1 = require("./constants/source_data");
-const app_1 = require("./bootstrap/app");
 const config_1 = __importDefault(require("./config"));
 const app = (0, express_1.default)();
 const port = 3000;
+const app_1 = require("./bootstrap/app");
+const prompt_data_1 = require("./constants/prompt_data");
 /// While Publishing the package , and using this code as a separate npm module
 /// uncomment the below line and comment all the others, expect the import of OnlyEverGenerator
 // export {OnlyEverGenerator};
-/// All the Codes Below uses express and are strictly for development purpose, while publishing the package, comment everything
-/// below this line
-let oeGen = new app_1.OnlyEverGenerator(config_1.default.openAIKey, "gpt-3.5-turbo-1106", (0, source_data_1.returnSourceData)(), (0, source_data_1.returnFields)());
-app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    let data = oeGen._returnParsedContent();
+//. All the Codes Below uses express and are strictly for development purpose, while publishing the package, comment everything
+//below this line
+let oeGen = new app_1.OnlyEverGenerator(config_1.default.openAIKey, "gpt-3.5-turbo-1106", {
+    prompt: (0, prompt_data_1.returnPromptData)(),
+    content: (0, source_data_1.returnSourceData)(),
+});
+app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    // let data = oeGen.returnParsedContent();
     // let parsedData = parseResponse()
-    res.send(data);
+    let cardPrompt = "";
+    res.send(cardPrompt);
 }));
-app.get('/openAI', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+app.get("/openAI", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     // let prompt = returnPromt();
-    let prompt = (0, card_gen_prompt_1.returnCardGenPrompt)();
-    let content = (0, source_data_1.returnSourceData)().toString();
-    let headings = (0, source_data_1.returnHeadings)();
-    // let aiRequest = await openAIRequest(prompt,content);
-    let aiRequest = yield oeGen.generateCard(prompt, content);
-    res.send(aiRequest);
+    // let prompt = returnCardGenPrompt();
+    //   let content = returnSourceData().toString()
+    //   let headings = returnHeadings();
+    //   // let aiRequest = await openAIRequest(prompt,content);
+    //   let aiRequest = await oeGen.generateCard(prompt,content, false);
+    //  res.send(aiRequest);
 }));
-app.get('/typology', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+app.get("/typology", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     {
-        let typologyPrompt = (0, typology_prompt_1.returnTypologyPrompt)();
-        let cardPrompt = (0, card_gen_prompt_1.returnCardGenPrompt)();
-        let args = new generate_args_1.GenerateArgs(true, true, false, {
-            typology_prompt: typologyPrompt,
-            card_gen_prompt: cardPrompt,
-            summary_prompt: "",
-        });
-        let typologyRequest = yield oeGen.generate(true, false);
+        // let typologyPrompt = returnTypologyPrompt();
+        // let cardPrompt = returnCardGenPrompt();
+        // let args = new GenerateArgs(
+        //   true,
+        //   true,
+        //   false,
+        //    {
+        //     typology_prompt: typologyPrompt,
+        //     card_gen_prompt: cardPrompt,
+        //     summary_prompt: "",
+        //   }
+        // )
+        let typologyRequest = yield oeGen.generate(false, true);
         res.send(typologyRequest);
     }
 }));

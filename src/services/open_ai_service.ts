@@ -1,6 +1,7 @@
 import axios from "axios";
 import { parseOpenAiFailureResponse, parseOpenAiSuccessResponse } from "../utils/parse_openai_response";
 import { openAiEndPoint } from "../constants/api_constants";
+import { ErrorLogger } from "../logger";
 
 
 export class OpenAiService{

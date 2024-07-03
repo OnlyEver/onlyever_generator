@@ -1,16 +1,34 @@
 export class ParseSourceContent{
-    public content: Array<any>;
+    public content: any;
 
     titles_to_remove = ['See also', 'References', 'Further reading', 'External links', 'Notes and references', 'Bibliography', 'Notes', 'Cited sources'];
 
-    constructor(sourceContent:Array<any>){
+    constructor(sourceContent:any){
         this.content = sourceContent;
     }
 
-    parse() {
-        let dataAfterRemovingUnWantedBlocks = this.removeSectionsByTitle(this.content);
-        let afterSanitized = this.sanitizeBlocks(dataAfterRemovingUnWantedBlocks);
-        return JSON.stringify(afterSanitized);    
+    parseData() {
+        // if(this.content.type == 'source') {
+            let dataAfterRemovingUnWantedBlocks = this.removeSectionsByTitle(this.content.content);
+            let afterSanitized = this.sanitizeBlocks(dataAfterRemovingUnWantedBlocks);
+            return {
+                type: this.content.type,
+                title: this.content.title,
+                content: afterSanitized,
+                headings: this.content.headings,
+                taxonomy: this.content.taxonomy,
+            }
+        // } else if(this.content.type == 'cards'){
+        //     return {
+        //         type :'card',
+        //         title: this.content.title,
+        //         content: afterSanitized,
+        //         headings: this.content.headings
+        //         taxonomy: this.content.taxonomy,
+        //     };
+        // }
+       
+      //  return JSON.stringify(afterSanitized);    
     }
 
     removeSectionsByTitle(data: Array<any>){

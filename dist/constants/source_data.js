@@ -1,26 +1,909 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.returnFields = exports.returnHeadings = exports.returnSourceData = void 0;
-const sourceString = [{ "block_type": "image", "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/Electrolysis_Apparatus.png", "img_caption": "Illustration of a Hofmann electrolysis apparatus used in a school laboratory" }, { "block_type": "paragraph", "content": "" }, { "block_type": "paragraph", "content": "In [[Chemistry|chemistry|0|wiki]] and [[Manufacturing|manufacturing|1|wiki]], **electrolysis** is a technique that uses [[Direct_current|direct electric current|2|wiki]] (DC) to drive an otherwise non-spontaneous [[Chemical_reaction|chemical reaction|3|wiki]]. Electrolysis is commercially important as a stage in the separation of [[Chemical_element|elements|4|wiki]] from naturally occurring sources such as [[Ores|ores|5|wiki]] using an [[Electrolytic_cell|electrolytic cell|6|wiki]]. The [[Voltage|voltage|7|wiki]] that is needed for electrolysis to occur is called the decomposition potential. The word \"lysis\" means to separate or break, so in terms, electrolysis would mean \"breakdown via electricity\"." }, { "block_type": "heading", "content": "Etymology", "heading_level": 1, "children": [{ "block_type": "paragraph", "content": "The word \"electrolysis\" was introduced by [[Michael_Faraday|Michael Faraday|8|wiki]] in 1834, using the [[Greek_language|Greek|9|wiki]] words ἤλεκτρον \"amber\", which since the 17th century was associated with [[Electrical_phenomena|electrical phenomena|10|wiki]], and λύσις  meaning \"dissolution\". Nevertheless, electrolysis, as a tool to study chemical reactions and obtain pure [[Chemical_element|elements|11|wiki]], precedes the coinage of the term and formal description by Faraday." }] }, { "block_type": "heading", "content": "History", "heading_level": 1, "children": [{ "block_type": "paragraph", "content": "In the early nineteenth century, [[William_Nicholson_(chemist)|William Nicholson|12|wiki]] and [[Anthony_Carlisle|Anthony Carlisle|13|wiki]] sought to further [[Alessandro_Volta|Volta's|14|wiki]] experiments. They attached two wires to either side of a [[Voltaic_pile|voltaic pile|15|wiki]] and placed the other ends in a tube filled with water. They noticed when the wires were brought together that each wire produced bubbles. One type was hydrogen, the other was oxygen." }, { "block_type": "paragraph", "content": "In 1785 a Dutch scientist named [[Martin_van_Marum|Martin van Marum|16|wiki]] created an electrostatic generator that he used to reduce tin, zinc and antimony from their salts using a process later known as electrolysis. Though he unknowingly produced electrolysis, it was not until 1800 when William Nicholson and Anthony Carlisle discovered how electrolysis works." }, { "block_type": "paragraph", "content": "In 1791 [[Luigi_Galvani|Luigi Galvani|17|wiki]] experimented with frog legs. He claimed that placing animal muscle between two dissimilar metal sheets resulted in electricity. Responding to these claims, [[Alessandro_Volta|Alessandro Volta|18|wiki]] conducted his own tests. This would give insight to [[Humphry_Davy|Humphry Davy|19|wiki]]'s ideas on electrolysis. During preliminary experiments, Humphry Davy hypothesized that when two elements combine to form a compound, electrical energy is released. Humphry Davy would go on to create Decomposition Tables from his preliminary experiments on Electrolysis. The Decomposition Tables would give insight on the energies needed to break apart certain compounds." }, { "block_type": "paragraph", "content": "In 1817 [[Johan_August_Arfwedson|Johan August Arfwedson|20|wiki]] determined there was another element, lithium, in some of his samples; however, he could not isolate the component. It was not until 1821 that [[William_Thomas_Brande|William Thomas Brande|21|wiki]] used electrolysis to single it out. Two years later, he streamlined the process using lithium chloride and potassium chloride with electrolysis to produce lithium and lithium hydroxide." }, { "block_type": "paragraph", "content": "During the later years of Humphry Davy's research, Michael Faraday became his assistant. While studying the process of electrolysis under Humphry Davy, Michael Faraday discovered two [[Laws_of_electrolysis|laws of electrolysis|22|wiki]]." }, { "block_type": "paragraph", "content": "During the time of Maxwell and Faraday, concerns came about for [[Electropositive|electropositive|23|wiki]] and [[Electronegative|electronegative|24|wiki]] activities." }, { "block_type": "paragraph", "content": "In November 1875, [[Paul_Émile_Lecoq_de_Boisbaudran|Paul Émile Lecoq de Boisbaudran|25|wiki]] discovered [[Gallium|gallium|26|wiki]] using electrolysis of gallium hydroxide, producing 3.4 mg of gallium. The following December, he presented his discovery of gallium to the [[Académie_des_sciences|Académie des sciences|27|wiki]] in Paris." }, { "block_type": "paragraph", "content": "On June 26, 1886, [[Ferdinand_Frederick_Henri_Moissan|Ferdinand Frederick Henri Moissan|28|wiki]] finally felt comfortable performing electrolysis on [[Anhydrous|anhydrous|29|wiki]] hydrogen fluoride to create a gaseous fluorine pure element. Before he used hydrogen fluoride, Henri Moissan used fluoride salts with electrolysis. Thus on June 28, 1886, he performed his experiment in front of the Académie des sciences to show his discovery of the new element fluorine. While trying to find elemental fluorine through electrolysis of fluoride salts, many chemists perished including Paulin Louyet and Jérôme Nicklès." }, { "block_type": "paragraph", "content": "In 1886 [[Charles_Martin_Hall|Charles Martin Hall|30|wiki]] from America and [[Paul_Héroult|Paul Héroult|31|wiki]] from France both filed for American patents for the electrolysis of aluminum, with Héroult submitting his in May, and Hall, in July. Hall was able to get his patent by proving through letters to his brother and family evidence that his method was discovered before the French patent was submitted. This became known as the [[Hall–Héroult_process|Hall–Héroult process|32|wiki]] which benefited many industries because aluminum's price then dropped from four dollars to thirty cents per pound." }, { "block_type": "heading", "content": "Timeline", "heading_level": 2, "children": [{ "block_type": "paragraph", "content": "" }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "1785 – [[Martinus_van_Marum|Martinus van Marum|33|wiki]]'s electrostatic generator was used to reduce [[Tin|tin|34|wiki]], [[Zinc|zinc|35|wiki]], and [[Antimony|antimony|36|wiki]] from their salts using electrolysis." }, { "block_type": "list_item", "content": "1800 – [[William_Nicholson_(chemist)|William Nicholson|37|wiki]] and [[Anthony_Carlisle|Anthony Carlisle|38|wiki]] (and also [[Johann_Ritter|Johann Ritter|39|wiki]]), decomposed [[Water|water|40|wiki]] into [[Hydrogen|hydrogen|41|wiki]] and [[Oxygen|oxygen|42|wiki]]." }, { "block_type": "list_item", "content": "1808 – [[Potassium|Potassium|43|wiki]] (1807), [[Sodium|sodium|44|wiki]] (1807), [[Barium|barium|45|wiki]], [[Calcium|calcium|46|wiki]] and [[Magnesium|magnesium|47|wiki]] were discovered by [[Sir_Humphry_Davy|Humphry Davy|48|wiki]] using electrolysis." }, { "block_type": "list_item", "content": "1821 – [[Lithium|Lithium|49|wiki]] was discovered by the English chemist [[William_Thomas_Brande|William Thomas Brande|50|wiki]], who obtained it by electrolysis of lithium oxide." }, { "block_type": "list_item", "content": "1834 – [[Michael_Faraday|Michael Faraday|51|wiki]] published his [[Faraday's_laws_of_electrolysis|two laws of electrolysis|52|wiki]], provided a mathematical explanation for them, and introduced terminology such as electrode, electrolyte, anode, cathode, anion, and cation." }, { "block_type": "list_item", "content": "1875 – [[Paul_Émile_Lecoq_de_Boisbaudran|Paul Émile Lecoq de Boisbaudran|53|wiki]] discovered [[Gallium|gallium|54|wiki]] using electrolysis." }, { "block_type": "list_item", "content": "1886 – [[Fluorine|Fluorine|55|wiki]] was discovered by [[Henri_Moissan|Henri Moissan|56|wiki]] using electrolysis." }, { "block_type": "list_item", "content": "1886 – [[Hall–Héroult_process|Hall–Héroult process|57|wiki]] developed for making [[Aluminium|aluminium|58|wiki]]." }, { "block_type": "list_item", "content": "1890 – [[Castner–Kellner_process|Castner–Kellner process|59|wiki]] developed for making [[Sodium_hydroxide|sodium hydroxide|60|wiki]]." }] }] }] }, { "block_type": "heading", "content": "Overview", "heading_level": 1, "children": [{ "block_type": "paragraph", "content": "Electrolysis is the passing of a [[Direct_current|direct electric current|61|wiki]] through an [[Electrolyte|electrolyte|62|wiki]] producing chemical reactions at the [[Electrode|electrodes|63|wiki]] and [[Chemical_decomposition|decomposition|64|wiki]] of the materials." }, { "block_type": "paragraph", "content": "The main components required to achieve electrolysis are an [[Electrolyte|electrolyte|65|wiki]], electrodes, and an external power source. A partition (e.g. an [[Ion-exchange_membrane|ion-exchange membrane|66|wiki]] or a [[Salt_bridge|salt bridge|67|wiki]]) is optional to keep the products from diffusing to the vicinity of the opposite electrode." }, { "block_type": "paragraph", "content": "The electrolyte is a [[Chemical_substance|chemical substance|68|wiki]] which contains [[Ion|free ions|69|wiki]] and carries [[Electric_current|electric current|70|wiki]] (e.g. an ion-conducting [[Polymer|polymer|71|wiki]], solution, or a [[Ionic_liquid|ionic liquid|72|wiki]] compound). If the ions are not mobile, as in most solid [[Salt_(chemistry)|salts|73|wiki]], then electrolysis cannot occur. A liquid electrolyte is produced by:" }, { "block_type": "paragraph", "content": "The electrodes are immersed separated by a distance such that a current flows between them through the [[Electrolyte|electrolyte|74|wiki]] and are connected to the power source which completes the [[Electrical_circuit|electrical circuit|75|wiki]]. A [[Direct_current|direct current|76|wiki]] supplied by the power source drives the reaction causing ions in the electrolyte to be attracted toward the respective oppositely charged electrode." }, { "block_type": "paragraph", "content": "Electrodes of [[Metal|metal|77|wiki]], [[Graphite|graphite|78|wiki]] and [[Semiconductor|semiconductor|79|wiki]] material are widely used. Choice of suitable [[Electrode|electrode|80|wiki]] depends on chemical reactivity between the electrode and electrolyte and manufacturing cost. Historically, when non-reactive anodes were desired for electrolysis, graphite (called plumbago in Faraday's time) or platinum were chosen. They were found to be some of the least reactive materials for anodes. Platinum erodes very slowly compared to other materials, and graphite crumbles and can produce carbon dioxide in aqueous solutions but otherwise does not participate in the reaction. Cathodes may be made of the same material, or they may be made from a more reactive one since anode wear is greater due to oxidation at the anode." }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "[[Solvation|Solvation|81|wiki]] or reaction of an [[Ionic_compound|ionic compound|82|wiki]] with a [[Solvent|solvent|83|wiki]] (such as water) to produce mobile ions" }, { "block_type": "list_item", "content": "An ionic compound melted by heating" }] }, { "block_type": "heading", "content": "Process of electrolysis", "heading_level": 2, "children": [{ "block_type": "paragraph", "content": "The key process of electrolysis is the interchange of atoms and ions by the removal or addition of electrons due to the applied current. The desired products of electrolysis are often in a different physical state from the electrolyte and can be removed by mechanical processes (e.g. by collecting gas above an electrode or precipitating a product out of the electrolyte)." }, { "block_type": "paragraph", "content": "The quantity of the products is proportional to the current, and when two or more electrolytic cells are connected in series to the same power source, the products produced in the cells are proportional to their [[Equivalent_weight|equivalent weight|84|wiki]]. These are known as [[Faraday's_laws_of_electrolysis|Faraday's laws of electrolysis|85|wiki]]." }, { "block_type": "paragraph", "content": "Each electrode attracts ions that are of the opposite [[Electric_charge|charge|86|wiki]]. Positively charged ions ([[Cation|cations|87|wiki]]) move towards the electron-providing (negative) cathode. Negatively charged ions ([[Anion|anions|88|wiki]]) move towards the electron-extracting (positive) anode. In this process [[Electron|electrons|89|wiki]] are effectively introduced at the cathode as a [[Reagent|reactant|90|wiki]] and removed at the anode as a [[Product_(chemistry)|product|91|wiki]]. In chemistry, the loss of electrons is called [[Oxidation|oxidation|92|wiki]], while electron gain is called [[Reduction_(chemistry)|reduction|93|wiki]]." }, { "block_type": "paragraph", "content": "When neutral atoms or molecules, such as those on the surface of an electrode, gain or lose electrons they become ions and may dissolve in the electrolyte and react with other ions." }, { "block_type": "paragraph", "content": "When ions gain or lose electrons and become neutral, they will form compounds that separate from the electrolyte. Positive metal ions like Cu2+ deposit onto the cathode in a layer. The terms for this are [[Electroplating|electroplating|94|wiki]], [[Electrowinning|electrowinning|95|wiki]], and [[Electrorefining|electrorefining|96|wiki]]." }, { "block_type": "paragraph", "content": "When an ion gains or loses electrons without becoming neutral, its electronic charge is altered in the process." }, { "block_type": "paragraph", "content": "For example, the [[Chloralkali_process|electrolysis of brine|97|wiki]] produces hydrogen and chlorine gases which bubble from the electrolyte and are collected. The initial overall reaction is thus:" }, { "block_type": "paragraph", "content": "" }, { "block_type": "paragraph", "content": "The reaction at the anode results in chlorine gas from chlorine ions:" }, { "block_type": "paragraph", "content": "The reaction at the cathode results in hydrogen gas and hydroxide ions:" }, { "block_type": "paragraph", "content": "Without a partition between the electrodes, the OH− ions produced at the cathode are free to diffuse throughout the electrolyte to the anode. As the electrolyte becomes more [[Base_(chemistry)|basic|98|wiki]] due to the production of OH−, less Cl2 emerges from the solution as it begins to react with the hydroxide producing [[Hypochlorite|hypochlorite|99|wiki]] (ClO−) at the anode:" }, { "block_type": "paragraph", "content": "" }, { "block_type": "paragraph", "content": "The more opportunity the Cl2 has to interact with NaOH in the solution, the less Cl2 emerges at the surface of the solution and the faster the production of hypochlorite progresses. This depends on factors such as solution temperature, the amount of time the Cl2 molecule is in contact with the solution, and concentration of NaOH." }, { "block_type": "paragraph", "content": "Likewise, as hypochlorite increases in concentration, chlorates are produced from them:" }, { "block_type": "paragraph", "content": "" }, { "block_type": "paragraph", "content": "Other reactions occur, such as the [[Self-ionization_of_water|self-ionization of water|100|wiki]] and the decomposition of hypochlorite at the cathode, the rate of the latter depends on factors such as [[Diffusion|diffusion|101|wiki]] and the surface area of the cathode in contact with the electrolyte." }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "2 NaCl + 2 H2O → 2 NaOH + H2 + Cl2" }] }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "2 Cl− → Cl2 + 2 e−" }] }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "2 H2O + 2 e− → H2 + 2 OH−" }] }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "Cl2 + 2 NaOH → NaCl + NaClO + H2O" }] }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "3 NaClO → NaClO3 + 2 NaCl" }] }] }, { "block_type": "heading", "content": "Decomposition potential", "heading_level": 2, "children": [{ "block_type": "paragraph", "content": "Decomposition potential or decomposition voltage refers to the minimum voltage (difference in [[Electrode_potential|electrode potential|102|wiki]]) between [[Anode|anode|103|wiki]] and [[Cathode|cathode|104|wiki]] of an electrolytic cell that is needed for electrolysis to occur." }, { "block_type": "paragraph", "content": "The voltage at which electrolysis is thermodynamically preferred is the difference of the electrode potentials as calculated using the [[Nernst_equation|Nernst equation|105|wiki]]. Applying additional voltage, referred to as [[Overpotential|overpotential|106|wiki]], can increase the rate of reaction and is often needed above the thermodynamic value. It is especially necessary for electrolysis reactions involving gases, such as [[Oxygen|oxygen|107|wiki]], [[Hydrogen|hydrogen|108|wiki]] or [[Chlorine|chlorine|109|wiki]]." }] }, { "block_type": "heading", "content": "Oxidation and reduction at the electrodes", "heading_level": 2, "children": [{ "block_type": "paragraph", "content": "[[Oxidation|Oxidation|110|wiki]] of ions or neutral molecules occurs at the [[Anode|anode|111|wiki]]. For example, it is possible to oxidize ferrous ions to ferric ions at the anode: [[Redox|Reduction|112|wiki]] of ions or neutral molecules occurs at the [[Cathode|cathode|113|wiki]]. It is possible to reduce [[Ferricyanide|ferricyanide|114|wiki]] ions to [[Ferrocyanide|ferrocyanide|115|wiki]] ions at the cathode:" }, { "block_type": "paragraph", "content": "Neutral molecules can also react at either of the electrodes. For example: *p*-benzoquinone can be reduced to hydroquinone at the cathode:" }, { "block_type": "paragraph", "content": "" }, { "block_type": "paragraph", "content": "In the last example, H+ ions (hydrogen ions) also take part in the reaction and are provided by the acid in the solution, or by the solvent itself (water, methanol, etc.). Electrolysis reactions involving H+ ions are fairly common in acidic solutions. In aqueous alkaline solutions, reactions involving OH− (hydroxide ions) are common." }, { "block_type": "paragraph", "content": "Sometimes the solvents themselves (usually water) are oxidized or reduced at the electrodes. It is even possible to have electrolysis involving gases, e.g. by using a [[Gas_diffusion_electrode|gas diffusion electrode|116|wiki]]." }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "Fe(aq) → Fe(aq) + e−" }] }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "Fe(CN) + e− → Fe(CN)" }] }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "[[Image:P-Benzochinon.svg|35px|117|wiki]] + 2 e− + 2 H+ → [[Image:Hydrochinon2.svg|90px|118|wiki]]" }] }] }, { "block_type": "heading", "content": "Energy changes during electrolysis", "heading_level": 2, "children": [{ "block_type": "paragraph", "content": "The amount of electrical energy that must be added equals the change in [[Gibbs_free_energy|Gibbs free energy|119|wiki]] of the reaction plus the losses in the system. The losses can (in theory) be arbitrarily close to zero, so the maximum [[Thermodynamics|thermodynamic|120|wiki]] efficiency equals the [[Enthalpy|enthalpy|121|wiki]] change divided by the free energy change of the reaction. In most cases, the electric input is larger than the enthalpy change of the reaction, so some energy is released in the form of heat. In some cases, for instance, in the electrolysis of [[Steam|steam|122|wiki]] into hydrogen and oxygen at high temperature, the opposite is true and heat energy is absorbed. This heat is absorbed from the surroundings, and the [[Heating_value|heating value|123|wiki]] of the produced hydrogen is higher than the electric input." }] }, { "block_type": "heading", "content": "Variations", "heading_level": 2, "children": [{ "block_type": "paragraph", "content": "[[Pulsed_DC|Pulsating current|124|wiki]] results in products different from DC. For example, pulsing increases the ratio of [[Ozone|ozone|125|wiki]] to oxygen produced at the anode in the electrolysis of an aqueous acidic solution such as dilute sulphuric acid. Electrolysis of ethanol with pulsed current evolves an aldehyde instead of primarily an acid." }] }, { "block_type": "heading", "content": "Related processes", "heading_level": 2, "children": [{ "block_type": "paragraph", "content": "[[Galvanic_cell|Galvanic cells|126|wiki]] and [[Electric_battery|batteries|127|wiki]] use spontaneous, energy-releasing [[Redox_reactions|redox reactions|128|wiki]] to generate an electrical potential that provides useful power. When a [[Electric_battery|secondary battery|129|wiki]] is charged, its redox reaction is run in reverse and the system can be considered as an [[Electrolytic_cell|electrolytic cell|130|wiki]]." }] }] }, { "block_type": "heading", "content": "Industrial uses", "heading_level": 1, "children": [{ "block_type": "image", "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/Hall-heroult-kk-2008-12-31.png", "img_caption": "Hall–Héroult process for producing aluminium" }, { "block_type": "paragraph", "content": "" }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "[[Electrometallurgy|Electrometallurgy|131|wiki]] of [[Aluminium|aluminium|132|wiki]], [[Lithium|lithium|133|wiki]], [[Sodium|sodium|134|wiki]], [[Potassium|potassium|135|wiki]], [[Magnesium|magnesium|136|wiki]], [[Calcium|calcium|137|wiki]], and in some cases [[Copper|copper|138|wiki]]." }, { "block_type": "list_item", "content": "[[Chlorine_production|Production of chlorine|139|wiki]] and [[Sodium_hydroxide|sodium hydroxide|140|wiki]], called the [[Chloralkali_process|Chloralkali process|141|wiki]]." }, { "block_type": "list_item", "content": "Production of [[Sodium_chlorate|sodium chlorate|142|wiki]] and [[Potassium_chlorate|potassium chlorate|143|wiki]]." }, { "block_type": "list_item", "content": "Production of perfluorinated organic compounds such as [[Trifluoroacetic_acid|trifluoroacetic acid|144|wiki]] by the process of [[Electrofluorination|electrofluorination|145|wiki]]." }, { "block_type": "list_item", "content": "[[Copper_extraction_techniques|Purifying copper|146|wiki]] from refined [[Copper|copper|147|wiki]]." }, { "block_type": "list_item", "content": "Production of fuels such as [[Hydrogen|hydrogen|148|wiki]] for [[Spacecraft|spacecraft|149|wiki]], [[Nuclear_submarines|nuclear submarines|150|wiki]] and [[FCEV|vehicles|151|wiki]]." }, { "block_type": "list_item", "content": "[[Rust|Rust removal|152|wiki]] and cleaning of old coins and other metallic objects." }] }, { "block_type": "heading", "content": "Manufacturing processes", "heading_level": 2, "children": [{ "block_type": "paragraph", "content": "In manufacturing, electrolysis can be used for:" }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "[[Electroplating|Electroplating|153|wiki]], where a thin film of metal is deposited over a substrate material. Electroplating is used in many industries for either functional or decorative purposes, as in-vehicle bodies and nickel coins." }, { "block_type": "list_item", "content": "[[Electrochemical_machining|Electrochemical machining|154|wiki]] (ECM), where an electrolytic cathode is used as a shaped tool for removing material by anodic oxidation from a workpiece. ECM is often used as a technique for [[Burr_(edge)|deburring|155|wiki]] or for etching metal surfaces like tools or knives with a permanent mark or logo." }] }] }] }, { "block_type": "heading", "content": "Competing half-reactions in solution electrolysis", "heading_level": 1, "children": [{ "block_type": "paragraph", "content": "Using a cell containing inert platinum electrodes, electrolysis of aqueous solutions of some salts leads to the reduction of the cations (such as metal deposition with, for example, zinc salts) and oxidation of the anions (such as the evolution of bromine with bromides). However, with salts of some metals (such as sodium) hydrogen is evolved at the cathode, and for salts containing some anions (such as sulfate ) oxygen is evolved at the anode. In both cases, this is due to water being reduced to form hydrogen or oxidized to form oxygen. In principle, the voltage required to electrolyze a salt solution can be derived from the [[Standard_electrode_potential|standard electrode potential|156|wiki]] for the reactions at the anode and cathode. The standard electrode potential is directly related to the [[Gibbs_free_energy|Gibbs free energy|157|wiki]], Δ*G*, for the reactions at each electrode and refers to an electrode with no current flowing. An extract from the [[Table_of_standard_electrode_potentials|table of standard electrode potentials|158|wiki]] is shown below." }, { "block_type": "paragraph", "content": "! [[Half-reaction|Half-reaction|159|wiki]] ! *E*° (V) ! Ref. In terms of electrolysis, this table should be interpreted as follows:" }, { "block_type": "paragraph", "content": "" }, { "block_type": "paragraph", "content": "Using the [[Nernst_equation|Nernst equation|160|wiki]] the [[Electrode_potential|electrode potential|161|wiki]] can be calculated for a specific concentration of ions, temperature and the number of electrons involved. For pure water ([[PH|pH|162|wiki]] 7): Comparable figures calculated in a similar way, for 1 M [[Zinc_bromide|zinc bromide|163|wiki]], ZnBr2, are −0.76 V for the reduction to Zn metal and +1.10 V for the oxidation producing bromine. The conclusion from these figures is that hydrogen should be produced at the cathode and oxygen at the anode from the electrolysis of water—which is at variance with the experimental observation that zinc metal is deposited and bromine is produced. The explanation is that these calculated potentials only indicate the thermodynamically preferred reaction. In practice, many other factors have to be taken into account such as the kinetics of some of the reaction steps involved. These factors together mean that a higher potential is required for the reduction and oxidation of water than predicted, and these are termed [[Overpotential|overpotentials|164|wiki]]. Experimentally it is known that overpotentials depend on the design of the cell and the nature of the electrodes." }, { "block_type": "paragraph", "content": "For the electrolysis of a neutral (pH 7) sodium chloride solution, the reduction of sodium ion is thermodynamically very difficult and water is reduced evolving hydrogen leaving hydroxide ions in solution. At the anode the oxidation of [[Chlorine|chlorine|165|wiki]] is observed rather than the oxidation of [[Water|water|166|wiki]] since the overpotential for the oxidation of [[Chloride|chloride|167|wiki]] to chlorine is lower than the overpotential for the oxidation of water to [[Oxygen|oxygen|168|wiki]]. The [[Hydroxide_ion|hydroxide ions|169|wiki]] and dissolved chlorine gas react further to form [[Hypochlorous_acid|hypochlorous acid|170|wiki]]. The aqueous solutions resulting from this process is called [[Electrolyzed_water|electrolyzed water|171|wiki]] and is used as a disinfectant and cleaning agent." }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "{| class=\"wikitable\"" }] }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "[[Sodium|Na|172|wiki]]+ + e− Na(s)" }, { "block_type": "list_item", "content": "−2.71 ||" }, { "block_type": "list_item", "content": "[[Zinc|Zn|173|wiki]]2+ + 2 e− Zn(s)" }, { "block_type": "list_item", "content": "−0.7618 ||" }, { "block_type": "list_item", "content": "**2 H+ + 2 e− H2(g)**" }, { "block_type": "list_item", "content": "**≡ 0**||" }, { "block_type": "list_item", "content": "Br2(aq) + 2 e− 2 Br−" }, { "block_type": "list_item", "content": "+1.0873 ||" }, { "block_type": "list_item", "content": "O2(g) + 4 H+ + 4 e− 2 H2O" }, { "block_type": "list_item", "content": "+1.23 ||" }, { "block_type": "list_item", "content": "Cl2(g) + 2 e− 2 Cl−" }, { "block_type": "list_item", "content": "+1.36 ||" }, { "block_type": "list_item", "content": "+ 2 e− 2" }, { "block_type": "list_item", "content": "+2.07 ||" }, { "block_type": "list_item", "content": "}" }] }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "Cl2(g) + 2 e− 2 Cl−" }, { "block_type": "list_item", "content": "+1.36 ||" }, { "block_type": "list_item", "content": "+ 2 e− 2" }, { "block_type": "list_item", "content": "+2.07 ||" }, { "block_type": "list_item", "content": "}" }] }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "+2.07 ||" }, { "block_type": "list_item", "content": "}" }] }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "Moving *down* the table, *E*° becomes more positive, and species on the *left* are more likely to be *reduced*: for example, zinc ions are more likely to be reduced to zinc metal than sodium ions are to be reduced to sodium metal." }, { "block_type": "list_item", "content": "Moving *up* the table, *E*° becomes more negative, and species on the *right* are more likely to be *oxidized*: for example, sodium metal is more likely to be oxidized to sodium ions than zinc metal is to be oxidized to zinc ions." }] }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "the electrode potential for the reduction producing hydrogen is −0.41 V," }, { "block_type": "list_item", "content": "the electrode potential for the oxidation producing oxygen is +0.82 V." }] }] }, { "block_type": "heading", "content": "Research trends", "heading_level": 1, "children": [{ "block_type": "heading", "content": "Electrolysis of carbon dioxide", "heading_level": 2, "children": [{ "block_type": "paragraph", "content": "The electrochemical reduction or electrocatalytic conversion of [[Carbon_dioxide|CO2|174|wiki]] can produce value-added chemicals such [[Methane|methane|175|wiki]], [[Ethylene|ethylene|176|wiki]], [[Ethanol|ethanol|177|wiki]], etc. The electrolysis of carbon dioxide gives formate or carbon monoxide, but sometimes more elaborate organic compounds such as [[Ethylene|ethylene|178|wiki]]. This technology is under research as a carbon-neutral route to organic compounds." }] }, { "block_type": "heading", "content": "Electrolysis of acidified water", "heading_level": 2, "children": [{ "block_type": "paragraph", "content": "Electrolysis of water produces [[Hydrogen|hydrogen|179|wiki]] and oxygen in a ratio of 2 to 1 respectively." }, { "block_type": "paragraph", "content": "The [[Energy_conversion_efficiency|energy efficiency|180|wiki]] of water electrolysis varies widely. The efficiency of an electrolyzer is a measure of the enthalpy contained in the hydrogen (to undergo combustion with oxygen or some other later reaction), compared with the input electrical energy. Heat/enthalpy values for hydrogen are well published in science and engineering texts, as 144 MJ/kg. Note that fuel cells (not electrolyzers) cannot use this full amount of heat/enthalpy, which has led to some confusion when calculating efficiency values for both types of technology. In the reaction, some energy is lost as heat. Some reports quote efficiencies between 50% and 70% for alkaline electrolyzers; however, much higher practical efficiencies are available with the use of [[Polymer_electrolyte_membrane_electrolysis|polymer electrolyte membrane electrolysis|181|wiki]] and catalytic technology, such as 95% efficiency." }, { "block_type": "paragraph", "content": "The [[National_Renewable_Energy_Laboratory|National Renewable Energy Laboratory|182|wiki]] estimated in 2006 that 1 kg of hydrogen (roughly equivalent to 3 kg, or 4 liters, of petroleum in energy terms) could be produced by wind powered electrolysis for between US$5.55 in the near term and US$2.27 in the longer term." }, { "block_type": "paragraph", "content": "About 4% of hydrogen gas produced worldwide is generated by electrolysis, and normally used onsite. Hydrogen is used for the creation of ammonia for fertilizer via the [[Haber_process|Haber process|183|wiki]], and converting heavy petroleum sources to lighter fractions via [[Hydrocracking|hydrocracking|184|wiki]]. Recently, onsite electrolysis has been utilized to capture hydrogen for hydrogen fuel-cells in [[Hydrogen_vehicles|hydrogen vehicles|185|wiki]]." }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "2 H2O(l) → 2 H2(g) + O2(g) *E*° = +1.229 V" }] }] }, { "block_type": "heading", "content": "Carbon/hydrocarbon assisted water electrolysis", "heading_level": 2, "children": [{ "block_type": "paragraph", "content": "Recently, to reduce the energy input, the utilization of carbon ([[Coal|coal|186|wiki]]), [[Alcohol_(chemistry)|alcohols|187|wiki]] (hydrocarbon solution), and organic solution ([[Glycerol|glycerol|188|wiki]], formic acid, [[Ethylene_glycol|ethylene glycol|189|wiki]], etc.) with co-electrolysis of water has been proposed as a viable option. The carbon/hydrocarbon assisted water electrolysis (so-called CAWE) process for hydrogen generation would perform this operation in a single [[Electrochemical|electrochemical|190|wiki]] reactor. This system energy balance can be required only around 40% electric input with 60% coming from the chemical energy of carbon or hydrocarbon. This process utilizes solid coal/carbon particles or powder as fuels dispersed in acid/alkaline electrolyte in the form of slurry and the carbon contained source co-assist in the electrolysis process as following theoretical overall reactions:" }, { "block_type": "paragraph", "content": "" }, { "block_type": "paragraph", "content": "or" }, { "block_type": "paragraph", "content": "" }, { "block_type": "paragraph", "content": "Thus, this CAWE approach is that the actual cell overpotential can be significantly reduced to below 1.0 V as compared to 1.5 V for conventional water electrolysis." }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "Carbon/Coal slurry (C + 2H2O) → CO2 + 2H2 *E*′ = 0.21 V (reversible voltage) / *E*′ = 0.46 V (thermo-neutral voltage)" }] }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "Carbon/Coal slurry (C + H2O) → CO + H2 *E*′ = 0.52 V (reversible voltage) / *E*′ = 0.91 V (thermo-neutral voltage)" }] }] }, { "block_type": "heading", "content": "Electrocrystallization", "heading_level": 2, "children": [{ "block_type": "paragraph", "content": "A specialized application of electrolysis involves the growth of conductive crystals on one of the electrodes from oxidized or reduced species that are generated in situ. The technique has been used to obtain single crystals of low-dimensional electrical conductors, such as [[Charge-transfer_salt|charge-transfer salts|191|wiki]] and [[Linear_chain_compound|linear chain compounds|192|wiki]]." }] }, { "block_type": "heading", "content": "Electrolysis of Iron Ore", "heading_level": 2, "children": [{ "block_type": "paragraph", "content": "The current method of producing steel from [[Iron_ore|iron ore|193|wiki]] is very carbon intensive, in part to the direct release of CO2 in the blast furnace. A study of steel making in Germany found that producing 1 ton of steel emitted 2.1 tons of [[Global_warming_potential|CO2e|194|wiki]] with 22% of that being direct emissions from the blast furnace. As of 2022, steel production contributes 7–9% of global emissions. Electrolysis of iron can eliminate direct emissions and further reduce emissions if the electricity is created from green energy." }, { "block_type": "paragraph", "content": "The small-scale electrolysis of iron has been successfully reported by dissolving it in molten [[Oxide|oxide|195|wiki]] salts and using a platinum anode. Oxygen anions form oxygen gas and electrons at the anode. Iron cations consume electrons and form iron metal at the cathode. This method was performed a temperature of 1550 °C which presents a significant challenge to maintaining the reaction. Particularly, anode [[Corrosion|corrosion|196|wiki]] is a concern at these temperatures." }, { "block_type": "paragraph", "content": "Additionally, the low temperature reduction of iron oxide by dissolving it in alkaline water has been reported. The temperature is much lower than traditional iron production at 114 °C. The low temperatures also tend to correlate with higher current efficiencies, with an efficiency of 95% being reported. While these methods are promising, they struggle to be cost competitive because of the large economies of scale keeping the price of blast furnace iron low." }] }, { "block_type": "heading", "content": "Electrolysis of seawater", "heading_level": 2, "children": [{ "block_type": "paragraph", "content": "A 2020 study investigated direct electrolysis of seawater, alkaline electrolysis, [[Proton-exchange_membrane|proton-exchange membrane electrolysis|197|wiki]], and [[Solid_oxide_electrolyzer_cell|solid oxide electrolysis|198|wiki]]. Direct electrolysis of seawater follows known processes, forming an electrolysis cell in which the seawater acts as the electrolyte to allow for the reaction at the [[Anode|anode|199|wiki]], and the reaction at the [[Cathode|cathode|200|wiki]],. The inclusion of [[Magnesium|magnesium|201|wiki]] and [[Calcium|calcium|202|wiki]] [[Ion|ions|203|wiki]] in the seawater makes the production of alkali [[Hydroxide|hydroxides|204|wiki]] possible that could form scales in the electrolyser cell, cutting down on lifespan and increasing the need for maintenance. The alkaline electrolyzers operate with the following reactions at the anode, and cathode,, and use high base solutions as electrolytes, operating at 60-90 C and need additional separators to ensure the gas phase hydrogen and oxygen remain separate. The electrolyte can easily get contaminated, but the alkaline electrolyser can operate under pressure to improve energy consumption. The electrodes can be made of inexpensive materials and there's no requirement for an expensive catalyst in the design. Proton-exchange membrane electrolyzers operate with the reactions at the anode, and cathode,, at temperatures of 60-80 C, using a solid polymer electrolyte and requiring higher costs of processing to allow the solid electrolyte to touch uniformly to the electrodes. Similar to the alkaline electrolyzer, the proton exchange membrane electrolyser can operate at higher pressures, reducing the energy costs required to compress the hydrogen gas afterward, but the proton exchange membrane  electrolyser also benefits from rapid response times to changes in power requirements or demands and not needing maintenance, at the cost of having a faster inherent degradation rate and being the most vulnerable to impurities in the water. Solid oxide electrolyzers run the reactions at the anode and at the cathode.The solid oxide electrolyzers require high temperatures (700-1000 C) to operate, generating superheated steam. They suffer from degradation when turned off, making it a more inflexible hydrogen generation technology. In a selected series of [[Multiple-criteria_decision_analysis|multiple-criteria decision-analysis|205|wiki]] comparisons in which the highest priority was placed on economic operation costs followed equally by environmental and social criteria, it was found that the proton exchange membrane electrolyser offered the most suitable combination of values (e.g., investment cost, maintenance, and operation cost, resistance to impurities, specific energy for hydrogen production at sea, risk of environmental impact, etc.), followed by the alkaline electrolyzer, with the alkaline  electrolyser being the most economically feasible, but more hazardous in terms of safety and environmental concerns due to the need for basic electrolyte solutions as opposed to the solid polymers used in proton-exchange membranes. Due to the methods conducted in multiple-criteria decision analysis, non-objective weights are applied to the various factors, and so multiple methods of decision analysis were performed simultaneously to examine the electrolyzers in a way that minimizes the effects of bias on the performance conclusions." }] }] }, { "block_type": "heading", "content": "See also", "heading_level": 1, "children": [{ "block_type": "paragraph", "content": "" }, { "block_type": "list", "list_type": "ordered", "content": [{ "block_type": "list_item", "content": "[[Alkaline_water_electrolysis|Alkaline water electrolysis|206|wiki]]" }, { "block_type": "list_item", "content": "[[Castner–Kellner_process|Castner–Kellner process|207|wiki]]" }, { "block_type": "list_item", "content": "[[Electrolytic_cell|Electrolytic cell|208|wiki]]" }, { "block_type": "list_item", "content": "[[Electrochemical_engineering|Electrochemical engineering|209|wiki]]" }, { "block_type": "list_item", "content": "[[Faraday's_law_of_electrolysis|Faraday's law of electrolysis|210|wiki]]" }, { "block_type": "list_item", "content": "[[Faraday_constant|Faraday constant|211|wiki]]" }, { "block_type": "list_item", "content": "[[Faraday_efficiency|Faraday efficiency|212|wiki]]" }, { "block_type": "list_item", "content": "[[Galvanic_corrosion|Galvanic corrosion|213|wiki]]" }, { "block_type": "list_item", "content": "[[Galvanoluminescence|Galvanoluminescence|214|wiki]]" }, { "block_type": "list_item", "content": "[[Gas_cracker|Gas cracker|215|wiki]]" }, { "block_type": "list_item", "content": "[[Hall–Héroult_process|Hall–Héroult process|216|wiki]]" }, { "block_type": "list_item", "content": "[[High-pressure_electrolysis|High-pressure electrolysis|217|wiki]]" }, { "block_type": "list_item", "content": "[[Overpotential|Overpotential|218|wiki]]" }, { "block_type": "list_item", "content": "[[Patterson_Power_Cell|Patterson Power Cell|219|wiki]]" }, { "block_type": "list_item", "content": "[[Thermochemical_cycle|Thermochemical cycle|220|wiki]]" }, { "block_type": "list_item", "content": "[[Timeline_of_hydrogen_technologies|Timeline of hydrogen technologies|221|wiki]]" }, { "block_type": "list_item", "content": "[[PEM_electrolysis|PEM electrolysis|222|wiki]]" }] }] }, { "block_type": "heading", "content": "References", "heading_level": 1, "children": [] }];
-const headings = [
-    "Etymology",
-    "History",
-    "Overview",
-    "Industrial",
-    "Competing half-reactions in solution electrolysis",
-    "Research trends",
-    "See also",
-    "References",
+exports.returnHeadings = exports.returnSourceData = exports.returnFields = void 0;
+const sourceString = [
+    {
+        "block_type": "paragraph",
+        "content": "**V**, or **v**, is the twenty-second [[Letter_(alphabet)|letter|0|wiki]] in the [[Latin_alphabet|Latin alphabet|1|wiki]], used in the [[English_alphabet|modern English alphabet|2|wiki]], the alphabets of other western European languages and others worldwide. Its name in English is *vee* (pronounced ), plural *vees*."
+    },
+    {
+        "block_type": "heading",
+        "content": "History",
+        "heading_level": 1,
+        "children": [
+            {
+                "block_type": "image",
+                "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/Newes_ABC_Buchlein_MET_DP855605.jpg",
+                "img_caption": "Late Renaissance or early Baroque design of a V, from 1627"
+            },
+            {
+                "block_type": "image",
+                "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/Corinthian_Vase_depicting_Perseus%2C_Andromeda_and_Ketos.jpg",
+                "img_caption": "Ancient Corinthian vase depicting Perseus, Andromeda and Ketos. The inscriptions denoting the depicted persons are written in an archaic form of the Greek alphabet. Perseus (Greek: ΠΕΡϺΕΥϺ) is inscribed as ϺVΕϺΡΕΠ (from right to left), using V to represent the vowel [u]. San (\"Ϻ\") is used instead of Sigma (\"Σ\")."
+            },
+            {
+                "block_type": "paragraph",
+                "content": ""
+            },
+            {
+                "block_type": "paragraph",
+                "content": "The letter V ultimately comes from the [[Phoenician_alphabet|Phoenician|3|wiki]] letter *[[Waw_(letter)|waw|4|wiki]]* by way of [[U|U|5|wiki]]."
+            },
+            {
+                "block_type": "paragraph",
+                "content": "During the [[Late_Middle_Ages|Late Middle Ages|6|wiki]], two [[Wikt:Special:Search/minuscule|minuscule|7|wiki]] glyphs of U developed which were both used for sounds including and modern. The pointed form \"v\" was written at the beginning of a word, while a rounded form \"u\" was used in the middle or end, regardless of sound. So whereas \"valour\" and \"excuse\" appeared as in modern printing, \"have\" and \"upon\" were printed as \"haue\" and \"vpon\". The first distinction between the letters \"u\" and \"v\" is recorded in a [[Blackletter|Gothic script|8|wiki]] from 1386, where \"v\" preceded \"u\". By the mid-16th century, the \"v\" form was used to represent the consonant and \"u\" the vowel sound, giving us the modern letter V. [[U|U|9|wiki]] and V were not accepted as distinct letters until many years later. The rounded variant became the modern-day version of [[U|U|10|wiki]], and the letter's former pointed form became V."
+            }
+        ]
+    },
+    {
+        "block_type": "heading",
+        "content": "Letter",
+        "heading_level": 1,
+        "children": [
+            {
+                "block_type": "paragraph",
+                "content": "In the [[Help:IPA|International Phonetic Alphabet|11|wiki]], represents the [[Voiced_labiodental_fricative|voiced labiodental fricative|12|wiki]]. See [[Help:IPA|Help:IPA|13|wiki]]."
+            },
+            {
+                "block_type": "paragraph",
+                "content": "In English, special rules of orthography normally apply to the letter V:"
+            },
+            {
+                "block_type": "paragraph",
+                "content": ""
+            },
+            {
+                "block_type": "paragraph",
+                "content": "Like [[J|J|14|wiki]], [[K|K|15|wiki]], [[Q|Q|16|wiki]], [[X|X|17|wiki]], and [[Z|Z|18|wiki]]; V is not used very frequently in English. It is the [[Letter_frequency|sixth least frequently used letter|19|wiki]] in the English language, with a frequency of about 1% in words. V is the only letter that cannot be used to form an English two-letter word in the British and Australian versions of the game of [[Scrabble|Scrabble|20|wiki]]. It is one of only two letters (the other is C) that cannot be used this way in the American version. V is also the only letter in the English language that is never silent."
+            },
+            {
+                "block_type": "paragraph",
+                "content": "The letter appears frequently in the [[Romance_languages|Romance languages|21|wiki]], where it is the first letter of the second person plural pronoun and (in Italian and Catalan) the stem of the [[Imperfect|imperfect|22|wiki]] form of most verbs."
+            },
+            {
+                "block_type": "list",
+                "content": [
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "1.",
+                        "content": "Traditionally, V is not doubled to indicate a [[Short_vowel|short vowel|23|wiki]], the way, for example, P is doubled to indicate the difference between \"super\" and \"supper\". However, that is changing with newly coined words, such as, \"divvy up\" and \"skivvies\"."
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "2.",
+                        "content": "Words that ends in a [v] sound (except *of*) normally spell that sound *-ve*, regardless of the pronunciation of the vowel before it. This rule does not apply to transliterations of Slavic and Hebrew words, such as *[[Kyiv|Kyiv|24|wiki]]* (*Kiev*), or to words that started out as abbreviations, such as *sov* for *sovereign*."
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "3.",
+                        "content": "The short *u* sound is spelled *o*, not u, before the letter v. This originated with a mediaeval scribal practice designed to increase legibility by avoiding too many vertical strokes ([[Minim_(palaeography)|minims|25|wiki]]) in a row."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "block_type": "heading",
+        "content": "Name in other languages",
+        "heading_level": 1,
+        "children": [
+            {
+                "block_type": "paragraph",
+                "content": ""
+            },
+            {
+                "block_type": "paragraph",
+                "content": "In [[Japanese_language|Japanese|26|wiki]], V is called a variety of names originating in English, most commonly ブイ or, but less nativized variants, violating to an extent the [[Phonotactics|phonotactics|27|wiki]] of Japanese, of ヴィー , ヴイ  or , and ヴィ  are also used. The phoneme in Japanese is used properly only in loanwords, where the preference for either  or  depends on many factors; in general, words that are perceived to be in common use tend toward."
+            },
+            {
+                "block_type": "list",
+                "content": [
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "1.",
+                        "content": "ve, pronounced ; in dialects that lack contrast between and, the letter is called *ve baixa*  \"low B/V\"."
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "2.",
+                        "content": "vé"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "3.",
+                        "content": "vé"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "4.",
+                        "content": "Vau"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "5.",
+                        "content": "vi or *vu*"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "6.",
+                        "content": "fał"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "7.",
+                        "content": "vê"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "8.",
+                        "content": "uve is recommended, but *ve*  is traditional. If V is pronounced in the second way, it would have the same pronunciation as the letter B in Spanish (i.e.  after pause or nasal sound, otherwise ); thus further terms are needed to distinguish *ve* from *be*. In some countries it is called *ve corta*, *ve baja*, *ve pequeña*, *ve chica* or *ve [[Labiodental|labiodental|28|wiki]]*."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "block_type": "heading",
+        "content": "Pronunciation and use",
+        "heading_level": 1,
+        "children": [
+            {
+                "block_type": "paragraph",
+                "content": "In most languages which use the Latin alphabet, v has a [[Voiced|voiced|29|wiki]] [[Bilabial|bilabial|30|wiki]] or [[Labiodental|labiodental|31|wiki]] sound. In English, it is a [[Voiced_labiodental_fricative|voiced labiodental fricative|32|wiki]]. In most dialects of Spanish, it is pronounced the same as b, that is, or. In [[Corsican_language|Corsican|33|wiki]], it is pronounced, , or , depending on the position in the word and the sentence. In contemporary [[German_language|German|34|wiki]], it is pronounced in most loan-words while in native German words, it is always pronounced. In standard [[Dutch_language|Dutch|35|wiki]] it is traditionally pronounced as but in many regions it is pronounced as  in some or all positions."
+            },
+            {
+                "block_type": "paragraph",
+                "content": "In [[Native_American_languages|Native American languages|36|wiki]] of North America (mainly [[Muskhogean|Muskhogean|37|wiki]] and [[Iroquoian|Iroquoian|38|wiki]]), v represents a nasalized central vowel, /ə̃/."
+            },
+            {
+                "block_type": "paragraph",
+                "content": "In [[Chinese_language|Chinese|39|wiki]] [[Pinyin|Pinyin|40|wiki]], while v is not used, the letter v is used by most input methods to enter letter ü, which most keyboards lack ([[Romanization|Romanised|41|wiki]] Chinese is a popular method to enter Chinese text). Informal [[Romanization_of_Chinese|romanizations|42|wiki]] of [[Standard_Mandarin|Mandarin|43|wiki]] [[Chinese_language|Chinese|44|wiki]] use V as a substitute for the [[Close_front_rounded_vowel|close front rounded vowel|45|wiki]] [[Help:IPA/Mandarin|/y/|46|wiki]], properly written ü in [[Pinyin|pinyin|47|wiki]] and [[Wade–Giles|Wade–Giles|48|wiki]]."
+            },
+            {
+                "block_type": "paragraph",
+                "content": "In [[Irish_language|Irish|49|wiki]], the letter v is mostly used in loanwords, such as *veidhlín* from English *violin*. However the sound appears naturally in Irish when /b/ (or /m/) is [[Lenition|lenited|50|wiki]] or \"softened\", represented in the [[Irish_orthography|orthography|51|wiki]] by bh (or \"mh\"), so that *bhí* is pronounced, *an bhean* (the woman) is pronounced , etc. For more information, see [[Irish_phonology|Irish phonology|52|wiki]]."
+            },
+            {
+                "block_type": "paragraph",
+                "content": "This letter is not used in the Polish alphabet, [[W|w|53|wiki]]here is spelled with the letter W|w instead, following the convention of [[German_language|German|54|wiki]]."
+            },
+            {
+                "block_type": "table",
+                "rows": [
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Language",
+                            "Dialect(s)",
+                            "Pronunciation (IPA)",
+                            "Environment",
+                            "Notes"
+                        ],
+                        "is_heading": true
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Alabama",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Catalan",
+                            "Central",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Catalan",
+                            "Most dialects",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Cayuga",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Cherokee",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Chikasaw",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Choctaw",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Dutch",
+                            "Some dialects",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Dutch",
+                            "Standard",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "English",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Esperanto",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Galician",
+                            "",
+                            "",
+                            "Usually",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Galician",
+                            "",
+                            "After vowels, l, or r",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "German",
+                            "Standard",
+                            "",
+                            "Typically in Germanic words",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "German",
+                            "Standard",
+                            "",
+                            "Typically in loanwords",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Indonesian",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Italian",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Irish",
+                            "",
+                            "",
+                            "After i, or before e or i",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Irish",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Koasati",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Malay",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Mandarin",
+                            "Standard",
+                            "",
+                            "",
+                            "Pinyin latinization; informal replacement for <ü>"
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Mikasuki",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Mohawk",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Muscogee",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Old Norse",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Oneida",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Onondaga",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Seneca",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Spanish",
+                            "",
+                            "",
+                            "Usually",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Spanish",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    },
+                    {
+                        "block_type": "row",
+                        "values": [
+                            "Tuscarora",
+                            "",
+                            "",
+                            "",
+                            ""
+                        ],
+                        "is_heading": false
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "block_type": "heading",
+        "content": "Related characters",
+        "heading_level": 1,
+        "children": [
+            {
+                "block_type": "heading",
+                "content": "Descendants and related letters in the Latin alphabet",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": ""
+                    },
+                    {
+                        "block_type": "list",
+                        "content": [
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "1.",
+                                "content": "[[U|U|55|wiki]] u : Latin letter U, originally the same letter as V"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "2.",
+                                "content": "[[W|W|56|wiki]] w : Latin letter W, descended from U"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "3.",
+                                "content": "Ỽ ỽ : Ỽ|[[Ỽ|Middle Welsh V|57|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "4.",
+                                "content": "V with [[Diacritic|diacritics|58|wiki]]: [[Tilde|Ṽ ṽ|59|wiki]] [[Dot_(diacritic)|Ṿ ṿ|60|wiki]] Ʋ|[[Ʋ|Ʋ ʋ|61|wiki]] [[ᶌ|ᶌ|62|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "5.",
+                                "content": "[[International_Phonetic_Alphabet|IPA|63|wiki]]-specific symbols related to V:"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "6.",
+                                "content": "ᶹ : Modifier letter small v with hook is used in phonetic transcription"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "7.",
+                                "content": "𐞰 : Modifier letter small v with right hook is a [[International_Phonetic_Alphabet|superscript IPA letter|64|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "8.",
+                                "content": "Ʌ ʌ ᶺ: [[Turned_v|Turned v|65|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "9.",
+                                "content": "ⱴ : [[V_with_curl|V with curl|66|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "10.",
+                                "content": "[[Uralic_Phonetic_Alphabet|Uralic Phonetic Alphabet|67|wiki]]-specific symbols related to V:"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "block_type": "heading",
+                "content": "Ancestors and siblings in other alphabets",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": ""
+                    },
+                    {
+                        "block_type": "list",
+                        "content": [
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "1.",
+                                "content": "𐤅: [[Phoenician_alphabet|Semitic|68|wiki]] letter [[Waw_(letter)|Waw|69|wiki]], from which the following symbols originally derive"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "2.",
+                                "content": "Υ υ : [[Greek_alphabet|Greek|70|wiki]] letter [[Upsilon|Upsilon|71|wiki]], from which V derives"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "3.",
+                                "content": "[[Y|Y|72|wiki]] y : Latin letter Y, which, like V, also derives from Upsilon (but was taken into the alphabet at a later date)"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "4.",
+                                "content": "Ѵ ѵ : Cyrillic letter [[Izhitsa|izhitsa|73|wiki]], also descended from Upsilon"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "5.",
+                                "content": "У у : [[Cyrillic|Cyrillic|74|wiki]] letter [[U_(Cyrillic)|u|75|wiki]], also descended from Upsilon via the digraph of omicron and upsilon"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "6.",
+                                "content": "[[Ue_(Cyrillic)|Ү|76|wiki]] ү : [[Cyrillic|Cyrillic|77|wiki]] letter Ү, descended from У and izhitsa and used in the scripts for languages in the former Soviet Union and currently the Russian Federation, as well as in [[Mongolian_Cyrillic_alphabet|Mongolian|78|wiki]]. Most commonly it represents /y/ or /ʏ/."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "block_type": "heading",
+                "content": "Ligatures and abbreviations",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": ""
+                    },
+                    {
+                        "block_type": "list",
+                        "content": [
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "1.",
+                                "content": "℣ : [[Versicle|Versicle|79|wiki]] sign"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "2.",
+                                "content": "Ꝟ ꝟ : Forms of V were used for medieval [[Scribal_abbreviation|scribal abbreviations|80|wiki]]"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "block_type": "heading",
+        "content": "Computing codes",
+        "heading_level": 1,
+        "children": [
+            {
+                "block_type": "paragraph",
+                "content": ""
+            },
+            {
+                "block_type": "list",
+                "content": [
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "1.",
+                        "content": "1 Also for encodings based on ASCII, including the DOS, Windows, ISO-8859 and Macintosh families of encodings."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "block_type": "heading",
+        "content": "Other representations",
+        "heading_level": 1,
+        "children": [
+            {
+                "block_type": "paragraph",
+                "content": "V is the symbol for [[Vanadium|vanadium|81|wiki]]. It is number 23 on the periodic table. [[Emerald|Emerald|82|wiki]] derives its green coloring from either [[Vanadium|vanadium|83|wiki]] or [[Chromium|chromium|84|wiki]]."
+            },
+            {
+                "block_type": "paragraph",
+                "content": "v, v., and vs can also be used as an abbreviation for the word versus when between two or more competing items (Ex: [[Brown_v._Board_of_Education|Brown v. Board of Education|85|wiki]])."
+            }
+        ]
+    },
+    {
+        "block_type": "heading",
+        "content": "See also",
+        "heading_level": 1,
+        "children": [
+            {
+                "block_type": "paragraph",
+                "content": ""
+            },
+            {
+                "block_type": "list",
+                "content": [
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "1.",
+                        "content": "V to mean the number [[5|5|86|wiki]], in [[Roman_numerals|Roman numerals|87|wiki]]"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "2.",
+                        "content": ", in music theory"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "3.",
+                        "content": "[[VEE_(disambiguation)|VEE (disambiguation)|88|wiki]]"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "4.",
+                        "content": "(✌ or 🖔)"
+                    }
+                ]
+            },
+            {
+                "block_type": "list",
+                "content": [
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "1.",
+                        "content": "(✌ or 🖔)"
+                    }
+                ]
+            },
+            {
+                "block_type": "list",
+                "content": [
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "1.",
+                        "content": "(✌ or 🖔)"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "block_type": "heading",
+        "content": "Notes",
+        "heading_level": 1,
+        "children": []
+    },
+    {
+        "block_type": "heading",
+        "content": "References",
+        "heading_level": 1,
+        "children": []
+    },
+    {
+        "block_type": "heading",
+        "content": "External links",
+        "heading_level": 1,
+        "children": [
+            {
+                "block_type": "paragraph",
+                "content": ""
+            }
+        ]
+    }
 ];
+const headings = [
+    "History",
+    "Letter",
+    "Name in other languages",
+    "Pronunciation and use",
+    "Related characters",
+    "Computing codes",
+    "Other representations",
+    "See also",
+    "Notes",
+    "References",
+    "External links"
+];
+function returnFields() {
+    return ["Sciences", "Technology & Engineering", "Humanities & Cultural Studies", "Social Sciences & Global Studies", "Business & Management", "Health & Medicine", "Environmental Studies & Earth Sciences", "Education, Learning & Personal Development", "Creative & Performing Arts", "Law, Governance & Ethics", "Recreation, Lifestyle & Practical Skills", "Technology & Media Literacy", "Philosophy & Critical Thinking", "Space & Astronomical Sciences", "Agriculture & Food Sciences", "Trades & Craftsmanship", "Reference & Indexing", "Other"];
+}
+exports.returnFields = returnFields;
+const sourceContent = {
+    type: 'source',
+    title: 'V',
+    headings: headings,
+    content: sourceString,
+    fields: returnFields(),
+    "taxonomy": {
+        "fields": [
+            {
+                "primary_field": "Reference & Indexing",
+                "reconcile": false
+            },
+            {
+                "secondary_field": "History",
+                "reconcile": true
+            },
+            {
+                "tertiary_field": "Technology & Media Literacy",
+                "reconcile": false
+            }
+        ],
+        "concepts": [
+            "Latin alphabet",
+            "Phonetic alphabet",
+            "International Phonetic Alphabet",
+            "Voiced labiodental fricative",
+            "Orthography",
+            "Frequency in English language",
+            "Scrabble letter frequency",
+            "Pronunciation in different languages",
+            "Latin alphabet evolution",
+            "Ligatures and abbreviations in Latin",
+            "Periodic table element symbolism"
+        ],
+        "facts": [
+            "V is the twenty-second letter in the Latin alphabet.",
+            "It is used in the modern English alphabet and the alphabets of other western European languages.",
+            "V comes from the Phoenician letter *waw* by way of U.",
+            "During the Late Middle Ages, the pointed form \"v\" was used at the beginning of a word, while a rounded form \"u\" was used in the middle or end, regardless of sound.",
+            "V is the sixth least frequently used letter in the English language, with a frequency of about 1% in words.",
+            "V is not used to form an English two-letter word in the British and Australian versions of Scrabble.",
+            "The letter V represents the voiced labiodental fricative in the International Phonetic Alphabet.",
+            "V is also used as a symbol for the chemical element vanadium on the periodic table.",
+            "Ligatures and abbreviations such as ℣ and Ꝟ were used for medieval scribal abbreviations."
+        ],
+        "generate_cards": {
+            "state": true,
+            "false_reason": ""
+        }
+    },
+};
 function returnSourceData() {
-    return sourceString;
+    return sourceContent;
 }
 exports.returnSourceData = returnSourceData;
 function returnHeadings() {
     return headings;
 }
 exports.returnHeadings = returnHeadings;
-function returnFields() {
-    return ["Sciences", "Technology & Engineering", "Humanities & Cultural Studies", "Social Sciences & Global Studies", "Business & Management", "Health & Medicine", "Environmental Studies & Earth Sciences", "Education, Learning & Personal Development", "Creative & Performing Arts", "Law, Governance & Ethics", "Recreation, Lifestyle & Practical Skills", "Technology & Media Literacy", "Philosophy & Critical Thinking", "Space & Astronomical Sciences", "Agriculture & Food Sciences", "Trades & Craftsmanship", "Reference & Indexing", "Other"];
-}
-exports.returnFields = returnFields;
