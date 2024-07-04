@@ -57,6 +57,7 @@ class ParseSourceContent {
     }
     sanitizeBlocks(blocks) {
         let sanitizedBlocks = [];
+        blocks = blocks.filter((item) => item.block_type != 'table');
         blocks.forEach(block => {
             let sanitizedBlock = {};
             for (let key in block) {

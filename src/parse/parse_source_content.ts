@@ -2,7 +2,7 @@ export class ParseSourceContent{
     public content: any;
 
     titles_to_remove = ['See also', 'References', 'Further reading', 'External links', 'Notes and references', 'Bibliography', 'Notes', 'Cited sources'];
-
+    block_types_toremove = ['table','empty_line'];
     constructor(sourceContent:any){
         this.content = sourceContent;
     }
@@ -17,18 +17,7 @@ export class ParseSourceContent{
                 content: afterSanitized,
                 headings: this.content.headings,
                 taxonomy: this.content.taxonomy,
-            }
-        // } else if(this.content.type == 'cards'){
-        //     return {
-        //         type :'card',
-        //         title: this.content.title,
-        //         content: afterSanitized,
-        //         headings: this.content.headings
-        //         taxonomy: this.content.taxonomy,
-        //     };
-        // }
-       
-      //  return JSON.stringify(afterSanitized);    
+            }    
     }
 
     removeSectionsByTitle(data: Array<any>){
@@ -37,8 +26,13 @@ export class ParseSourceContent{
             if(elem.block_type == 'heading' &&   this.titles_to_remove.includes(elem.content)){
                 continue;
             }
+            /// remove unwanted blcok types , for now `table` and `empty_line`
+            if(this.block_types_toremove.includes(elem.block_type)){
+                continue;
+            }
             if(elem.children){
                 elem.children = this.removeSectionsByTitle(elem.children)
+                
             }
             dataAfterRemoving.push(elem)
             
@@ -46,8 +40,7 @@ export class ParseSourceContent{
         return dataAfterRemoving;
     }
     
-
-     sanitizeWikiContent(content: String) {
+    sanitizeWikiContent(content: String) {
         // Remove newline characters
         content = content.replace(/\\n/g, ' ');
     
@@ -68,7 +61,9 @@ export class ParseSourceContent{
 
     sanitizeBlocks(blocks: Array<any>) {
         let sanitizedBlocks = <any>[] ;
+        blocks = blocks.filter((item)=> item.block_type != 'table');
         blocks.forEach(block => {
+
             let sanitizedBlock: any = {};
             for (let key in block) {
                 let value = block[key];

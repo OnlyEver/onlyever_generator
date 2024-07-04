@@ -26,8 +26,8 @@ class OnlyEverGenerator {
         this.parsedContent = {};
         this.promptForTypology = "";
         this.promptForCardGen = "";
-        this.typologyResponse = {};
-        this.cardgenResponse = {};
+        this.typologyResponse = undefined;
+        this.cardgenResponse = undefined;
         this.summarizeResponse = {};
         this.gapFillResponse = {};
         this.api_key = apiKey;
@@ -87,7 +87,7 @@ class OnlyEverGenerator {
                 response = yield this.generateCard(this.promptForCardGen +
                     "Generate cards only suitable for the given remaining concepts and facts" +
                     JSON.stringify(gapFill) +
-                    "Exclude generating these cards", JSON.stringify(cardGenData.cards_data), true);
+                    "Exclude generating  cards with content in the following", JSON.stringify(cardGenData.cards_data), true);
             }
             return response;
         });
