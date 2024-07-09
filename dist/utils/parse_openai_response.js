@@ -14,10 +14,12 @@ function parseOpenAiSuccessResponse(responseData) {
 }
 exports.parseOpenAiSuccessResponse = parseOpenAiSuccessResponse;
 function parseOpenAiFailureResponse(errorResponse) {
+    var _a, _b;
     let usuage = errorResponse.usuage;
     // let statusCode = 
     return {
         'status_code': errorResponse.status,
+        'message': (_b = (_a = errorResponse.data) === null || _a === void 0 ? void 0 : _a.error) === null || _b === void 0 ? void 0 : _b.code
     };
 }
 exports.parseOpenAiFailureResponse = parseOpenAiFailureResponse;

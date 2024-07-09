@@ -5,7 +5,7 @@ function isEmpty(obj) {
     return Object.keys(obj).length === 0;
 }
 function gapFilling(typologyResponse, cardgenResponse) {
-    var _a, _b, _c, _d;
+    var _a, _b, _c, _d, _e;
     let allConcepts = [];
     let allFacts = [];
     let generatedConceptsList = [];
@@ -20,7 +20,7 @@ function gapFilling(typologyResponse, cardgenResponse) {
         allConcepts.push(...((_c = cardgenResponse.missing_concepts) !== null && _c !== void 0 ? _c : []));
         allFacts.push(...((_d = cardgenResponse.missing_facts) !== null && _d !== void 0 ? _d : []));
     }
-    if (cardgenResponse.cards_data !== undefined && cardgenResponse.cards_data.length != 0) {
+    if (cardgenResponse.cards_data !== undefined && ((_e = cardgenResponse.cards_data) === null || _e === void 0 ? void 0 : _e.length) != 0) {
         for (let card of cardgenResponse.cards_data) {
             if (card.concepts.length != 0) {
                 generatedConceptsList.push(...card.concepts);

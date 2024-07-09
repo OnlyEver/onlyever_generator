@@ -21,8 +21,8 @@ export class OnlyEverGenerator {
   expectedFields: Array<string>;
 
 
-  typologyResponse: any = {};
-  cardgenResponse: any = {};
+  typologyResponse: any = undefined;
+  cardgenResponse: any = undefined;
   summarizeResponse = {};
   gapFillResponse: any = {};
 
@@ -92,7 +92,7 @@ export class OnlyEverGenerator {
 
   shouldTheCardBeGeneratedAfterTypologyResponse(){
     if(this.typologyResponse){
-      return this.typologyResponse.generate_cards.state == true;
+      return this.typologyResponse?.generate_cards?.state == true;
     }else{
       return false;
     }
@@ -110,7 +110,7 @@ export class OnlyEverGenerator {
          this.promptForCardGen +
             "Generate cards only suitable for the given remaining concepts and facts" +
             JSON.stringify(gapFill) +
-            "Exclude generating these cards",
+            "Exclude generating  cards with content in the following",
             JSON.stringify(cardGenData.cards_data),
           true
         );

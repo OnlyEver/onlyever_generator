@@ -26,8 +26,8 @@ class OnlyEverGenerator {
         this.parsedContent = {};
         this.promptForTypology = "";
         this.promptForCardGen = "";
-        this.typologyResponse = {};
-        this.cardgenResponse = {};
+        this.typologyResponse = undefined;
+        this.cardgenResponse = undefined;
         this.summarizeResponse = {};
         this.gapFillResponse = {};
         this.api_key = apiKey;
@@ -71,8 +71,9 @@ class OnlyEverGenerator {
         });
     }
     shouldTheCardBeGeneratedAfterTypologyResponse() {
+        var _a, _b;
         if (this.typologyResponse) {
-            return this.typologyResponse.generate_cards.state == true;
+            return ((_b = (_a = this.typologyResponse) === null || _a === void 0 ? void 0 : _a.generate_cards) === null || _b === void 0 ? void 0 : _b.state) == true;
         }
         else {
             return false;
@@ -87,7 +88,7 @@ class OnlyEverGenerator {
                 response = yield this.generateCard(this.promptForCardGen +
                     "Generate cards only suitable for the given remaining concepts and facts" +
                     JSON.stringify(gapFill) +
-                    "Exclude generating these cards", JSON.stringify(cardGenData.cards_data), true);
+                    "Exclude generating  cards with content in the following", JSON.stringify(cardGenData.cards_data), true);
             }
             return response;
         });

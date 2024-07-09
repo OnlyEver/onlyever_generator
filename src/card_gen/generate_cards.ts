@@ -24,6 +24,7 @@ export class GenerateCards {
        return this.parse(response, isGapFill,headings);
       } else {
         response.metadata.status = "failed";
+        response.metadata.err_message = response.message;
         return response;
       }
   }
@@ -205,35 +206,32 @@ return question;
   }
 
   parseMatchCard(cardData: any) {
-    let data = cardData.card_content;
+    let content = cardData.card_content;
     const transformedData: { [key: string]: string[] } = {};
 
-    for (let key in data) {
-      if (data.hasOwnProperty(key)) {
-        transformedData[key] = [data[key]];
-        //     let value = data[key].replace(/[\[\]]/g, '');
-        //  let items = data[key].split(',').map((item: string) => item.trim());
-        //     map.set(key, items);
-        //   }
+    for (let key in content) {
+      if (content.hasOwnProperty(key)) {
+        transformedData[key] = [content[key]];
       }
-      let displayTitle = this.generateMatchCardDisplayTitle(transformedData);
-      let matchCard = {
-        type: {
-          category: 'learning',
-          sub_type: data.type,
-        },
-        heading: cardData.card_reference,
-        content: transformedData,
-        //  content: cardData.card_content,
-        displayTitle: displayTitle,
-        concepts: cardData.concepts,
-        facts: cardData.facts,
-       bloomLevel: cardData.bloom_level,
-
-      };
-
-      return matchCard;
     }
+    let displayTitle = this.generateMatchCardDisplayTitle(transformedData);
+    let matchCard = {
+      type: {
+        category: 'learning',
+        sub_type: cardData.type,
+      },
+      heading: cardData.card_reference,
+      content: transformedData,
+      //  content: cardData.card_content,
+      displayTitle: displayTitle,
+      concepts: cardData.concepts,
+      facts: cardData.facts,
+      bloomLevel: cardData.bloom_level,
+
+    };
+
+    return matchCard;
+    
   }
 
   generateMatchCardDisplayTitle(answers: any) {
