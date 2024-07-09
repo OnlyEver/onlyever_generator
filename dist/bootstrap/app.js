@@ -71,8 +71,9 @@ class OnlyEverGenerator {
         });
     }
     shouldTheCardBeGeneratedAfterTypologyResponse() {
+        var _a, _b;
         if (this.typologyResponse) {
-            return this.typologyResponse.generate_cards.state == true;
+            return ((_b = (_a = this.typologyResponse) === null || _a === void 0 ? void 0 : _a.generate_cards) === null || _b === void 0 ? void 0 : _b.state) == true;
         }
         else {
             return false;

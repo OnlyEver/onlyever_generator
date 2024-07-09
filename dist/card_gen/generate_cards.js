@@ -35,6 +35,7 @@ class GenerateCards {
             }
             else {
                 response.metadata.status = "failed";
+                response.metadata.err_message = response.message;
                 return response;
             }
         });

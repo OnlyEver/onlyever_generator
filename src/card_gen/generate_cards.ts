@@ -24,6 +24,7 @@ export class GenerateCards {
        return this.parse(response, isGapFill,headings);
       } else {
         response.metadata.status = "failed";
+        response.metadata.err_message = response.message;
         return response;
       }
   }

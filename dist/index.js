@@ -57,7 +57,7 @@ app.get("/typology", (req, res) => __awaiter(void 0, void 0, void 0, function* (
         //     summary_prompt: "",
         //   }
         // )
-        let typologyRequest = yield oeGen.generate(false, true);
+        let typologyRequest = yield oeGen.generate(true, true);
         res.send(typologyRequest);
     }
 }));

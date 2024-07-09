@@ -26,6 +26,7 @@ export class GenerateTypology{
       if(response.status_code == 200){
         return this.parseTypologyOnSuccess(response);
       } else {
+        response.metadata.err_message = response.message;
         return response;
       }} catch (e: any){
         await new ErrorLogger({
@@ -63,6 +64,7 @@ export class GenerateTypology{
 
     async parseTypologyOnFailure(responseData:any){
         responseData.metadata.status = 'failed';
+
         return {
             status_code: responseData.status_code,
             metadata: responseData.metadata,

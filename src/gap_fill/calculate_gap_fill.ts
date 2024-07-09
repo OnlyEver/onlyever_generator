@@ -20,7 +20,7 @@ export function gapFilling(typologyResponse: any, cardgenResponse : any) {
       allFacts.push(...(cardgenResponse.missing_facts ?? []));
     }
 
-    if(cardgenResponse.cards_data !== undefined && cardgenResponse.cards_data.length != 0) {
+    if(cardgenResponse.cards_data !== undefined && cardgenResponse.cards_data?.length != 0) {
       for (let card of cardgenResponse.cards_data) {
         if (card.concepts.length != 0) {
           generatedConceptsList.push(...card.concepts);

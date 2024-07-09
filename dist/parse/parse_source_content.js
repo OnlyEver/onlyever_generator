@@ -4,6 +4,7 @@ exports.ParseSourceContent = void 0;
 class ParseSourceContent {
     constructor(sourceContent) {
         this.titles_to_remove = ['See also', 'References', 'Further reading', 'External links', 'Notes and references', 'Bibliography', 'Notes', 'Cited sources'];
+        this.block_types_toremove = ['table', 'empty_line'];
         this.content = sourceContent;
     }
     parseData() {
@@ -17,21 +18,15 @@ class ParseSourceContent {
             headings: this.content.headings,
             taxonomy: this.content.taxonomy,
         };
-        // } else if(this.content.type == 'cards'){
-        //     return {
-        //         type :'card',
-        //         title: this.content.title,
-        //         content: afterSanitized,
-        //         headings: this.content.headings
-        //         taxonomy: this.content.taxonomy,
-        //     };
-        // }
-        //  return JSON.stringify(afterSanitized);    
     }
     removeSectionsByTitle(data) {
         let dataAfterRemoving = [];
         for (let elem of data) {
             if (elem.block_type == 'heading' && this.titles_to_remove.includes(elem.content)) {
+                continue;
+            }
+            /// remove unwanted blcok types , for now `table` and `empty_line`
+            if (this.block_types_toremove.includes(elem.block_type)) {
                 continue;
             }
             if (elem.children) {

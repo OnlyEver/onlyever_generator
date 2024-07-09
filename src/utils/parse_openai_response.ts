@@ -15,6 +15,7 @@ export function parseOpenAiFailureResponse(errorResponse: any){
     // let statusCode = 
     return {
         'status_code': errorResponse.status,
+        'message': errorResponse.data?.error?.code
 
 
     }

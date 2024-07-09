@@ -92,7 +92,7 @@ export class OnlyEverGenerator {
 
   shouldTheCardBeGeneratedAfterTypologyResponse(){
     if(this.typologyResponse){
-      return this.typologyResponse.generate_cards.state == true;
+      return this.typologyResponse?.generate_cards?.state == true;
     }else{
       return false;
     }

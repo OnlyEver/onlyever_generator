@@ -36,6 +36,7 @@ class GenerateTypology {
                     return this.parseTypologyOnSuccess(response);
                 }
                 else {
+                    response.metadata.err_message = response.message;
                     return response;
                 }
             }

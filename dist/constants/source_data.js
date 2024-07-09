@@ -3,475 +3,84 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.returnHeadings = exports.returnSourceData = exports.returnFields = void 0;
 const sourceString = [
     {
-        "block_type": "image",
-        "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/World_Time_Zones_Map.png",
-        "img_caption": "Time zones of the world"
+        "block_type": "paragraph",
+        "content": "**Sunni [[Islam|Islam|0|wiki]]** is the largest [[Islamic_schools_and_branches|branch|1|wiki]] of Islam, followed by 85–90% of the world's [[Muslims|Muslims|2|wiki]]. Its name comes from the word *[[Sunnah|Sunnah|3|wiki]]*, referring to the tradition of [[Muhammad|Muhammad|4|wiki]]. The differences between Sunni and [[Shia_Islam|Shia Muslims|5|wiki]] arose from a disagreement over the [[Succession_to_Muhammad|succession to Muhammad|6|wiki]] and subsequently acquired broader political significance, as well as [[Schools_of_Islamic_theology|theological|7|wiki]] and [[Fiqh|juridical|8|wiki]] dimensions. According to Sunni traditions, Muhammad left no successor and the participants of the [[Saqifah|Saqifah event|9|wiki]] appointed [[Abu_Bakr|Abu Bakr|10|wiki]] as the next-in-line (the first [[Caliph|caliph|11|wiki]]). This contrasts with the [[Shia_Islam|Shia view|12|wiki]], which holds that Muhammad appointed his son-in-law and cousin [[Ali|Ali ibn Abi Talib|13|wiki]] as his successor."
     },
     {
         "block_type": "paragraph",
-        "content": ""
+        "content": "The adherents of Sunni Islam are referred to in [[Arabic|Arabic|14|wiki]] as ' (\"the people of the Sunnah and the community\") or ' for short. In English, its doctrines and practices are sometimes called ***Sunnism***, while adherents are known as **Sunni Muslims**, **Sunnis**, **Sunnites** and **Ahlus Sunnah**. Sunni Islam is sometimes referred to as \"***orthodox Islam***\",  though some scholars view this translation as inappropriate."
     },
     {
         "block_type": "paragraph",
-        "content": "A **time zone** is an area which observes a uniform [[Standard_time|standard time|0|wiki]] for [[Legal|legal|1|wiki]], [[Commerce|commercial|2|wiki]] and [[Social|social|3|wiki]] purposes. Time zones tend to follow the boundaries between [[Country|countries|4|wiki]] and their [[Administrative_division|subdivisions|5|wiki]] instead of strictly following [[Longitude|longitude|6|wiki]], because it is convenient for areas in frequent communication to keep the same time."
-    },
-    {
-        "block_type": "paragraph",
-        "content": "All time zones are defined as offsets from [[Coordinated_Universal_Time|Coordinated Universal Time|7|wiki]] (UTC), ranging from [[UTC−12:00|UTC−12:00|8|wiki]] to [[UTC+14:00|UTC+14:00|9|wiki]]. The [[UTC_offset|offsets|10|wiki]] are usually a whole number of hours, but a few zones are offset by an additional 30 or 45 minutes, such as in [[Indian_Standard_Time|India|11|wiki]], [[Time_in_Australia|South Australia|12|wiki]] and [[Nepal_Time|Nepal|13|wiki]]."
-    },
-    {
-        "block_type": "paragraph",
-        "content": "Some areas of higher [[Latitude|latitude|14|wiki]] use [[Daylight_saving_time|daylight saving time|15|wiki]] for about half of the year, typically by adding one hour to local time during [[Spring_(season)|spring|16|wiki]] and [[Summer|summer|17|wiki]]."
+        "content": "The [[Quran|Quran|15|wiki]], together with [[Hadith|hadith|16|wiki]] (especially those collected in [[Kutub_al-Sittah|Kutub al-Sittah|17|wiki]]) and [[Ijma|binding juristic consensus|18|wiki]], form the basis of all [[Fiqh|traditional jurisprudence|19|wiki]] within Sunni Islam. [[Sharia|Sharia|20|wiki]] rulings are derived from these basic sources, in conjunction with [[Qiyas|analogical reasoning|21|wiki]], [[Istislah|consideration|22|wiki]] of [[Maslaha|public welfare|23|wiki]] and [[Istihsan|juristic discretion|24|wiki]], using the [[Principles_of_Islamic_jurisprudence|principles of jurisprudence|25|wiki]] developed by the traditional [[Madhhab|legal schools|26|wiki]]. In matters of [[Aqidah|creed|27|wiki]], the Sunni tradition upholds the six pillars of *[[Iman_(concept)|imān|28|wiki]]* (faith) and comprises the [[Ash'ari|Ash'ari|29|wiki]] and [[Maturidi|Maturidi|30|wiki]] schools of [[Kalam|Kalam|31|wiki]] (theology) as well as the textualist school known as [[Traditionalist_Theology_(Islam)|traditionalist theology|32|wiki]]."
     },
     {
         "block_type": "heading",
-        "content": "List of UTC offsets",
+        "content": "Terminology",
         "heading_level": 1,
         "children": [
             {
-                "block_type": "image",
-                "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/World_time_zones.svg",
-                "img_caption": "Time zones of the world"
+                "block_type": "heading",
+                "content": "Sunna",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": "The Arabic term *Sunna*, according to which Sunnis are named, is old and roots in pre-Islamic language. It was used for traditions which a majority of people followed. The term got greater political significance after the murder of the third [[Sunni_Caliph|Sunni Caliph|33|wiki]] [[ʿUthmān_ibn_ʿAffān|ʿUthmān ibn ʿAffān|34|wiki]]. It is said [[Malik_al-Ashtar|Mālik al-Aschtar|35|wiki]], a famous follower of [[Ali|ʿAlī ibn Abī Tālib|36|wiki]], encouraged during the [[Battle_of_Siffin|battle of Siffin|37|wiki]] with the expression, Ali's enemy [[Muawiyah_I|Muʿāwiya ibn Abī Sufyān|38|wiki]] kills the *Sunna*. After the battle, it was agreed that \"the righteous *[[Sunnah|Sunnah|39|wiki]]*, the unifying, not the divisive\" (\"*as-sunna al-ʿādila al-ǧāmiʿa ġair al-mufarriqa*\") should be consulted to resolve the conflict. The time when the term *sunna* became the short form for \"[[Sunnah|sunnah|40|wiki]] of the [[Muhammad_in_Islam|prophet|41|wiki]]\" (*sunnat an-nabī*) is still unknown. During the [[Umayyad_Caliphate|Umayyad Caliphate|42|wiki]], several political movements, amongst them the [[Shia|Shia|43|wiki]] and the [[Kharijites|Kharijites|44|wiki]] who rebelled against the formation of the state; led their battles in the name of \"the book of God (*[[Quran|Qur'an|45|wiki]]*) and the *Sunnah* of his Prophet\". During the [[Second_Fitna|second Civil War|46|wiki]] (680–92) the Sunna-term received connotations critical of [[Shia_Islam|Shi'i|47|wiki]] doctrines (*Tashayyu*'). It is recorded by Masrūq ibn al-Adschdaʿ (d. 683), who was a *[[Mufti|Mufti|48|wiki]]* in [[Kufa|Kufa|49|wiki]], a need to love the first two caliphs [[Abū_Bakr|Abū Bakr|50|wiki]] and [[ʿUmar_ibn_al-Khaṭṭāb|ʿUmar ibn al-Khaṭṭāb|51|wiki]] and acknowledge their priority (Fadā'il). A disciple of Masrūq, the scholar ash-Shaʿbī (d. between 721 und 729), who first sided with the Shia in Kufa during Civil War, but turned away in disgust by their fanaticism and finally decided to join the umayyad Caliph [[Abd_al-Malik_ibn_Marwan|ʿAbd al-Malik|52|wiki]], popularized the concept of *sunnah*. It is also passed down by asch-Shaʿbī, that he took offensive at the hatred on [[Aisha|ʿĀʾiša bint Abī Bakr|53|wiki]] and considered it a violation of the *[[Sunnah|sunnah|54|wiki]]*."
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "The term *Sunna* instead of the longer expression *ahl as-sunna* or *ahl as-sunna wa-l-ǧamāʿa* as a group-name for Sunnis is a relatively young phenomenon. It was probably [[Ibn_Taymiyyah|Ibn Taymiyyah|55|wiki]], who used the short-term for the first time. It was later popularized by [[Pan-Islamism|pan-Islamic|56|wiki]] scholars such as [[Rashid_Rida|Muhammad Rashid Rida|57|wiki]] in his treatise *as-Sunna wa-š-šiʿa au al-Wahhābīya wa-r-Rāfiḍa: Ḥaqāʾiq dīnīya taʾrīḫīya iǧtimaʿīya iṣlaḥīya* (\"The Sunna and the Shia, Or [[Wahhabism|Wahhabism|58|wiki]] and *[[Rafida|Rāfidism|59|wiki]]*: religious history, sociological und reformoriented facts\") published in 1928–29. The term \"*sunna*\" is usually used in Arabic discourse as designation for Sunni Muslims, when they are intended to be contrasted with Shias. The word pair \"Sunnah-Shia\" is also used on Western research literature to denote the Sunni-Shia contrast."
+                    }
+                ]
             },
             {
-                "block_type": "paragraph",
-                "content": ""
+                "block_type": "heading",
+                "content": "Ahl as-Sunna",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": "One of the earliest supporting documents for *ahl as-sunna* derives from the Basric scholar Muhammad Ibn Siri (d. 728). His is mentioned in the *Sahih* of [[Muslim_ibn_al-Hajjaj|Muslim ibn al-Hajjaj|60|wiki]] quoted with: \"Formerly one did not aksed about the [[Isnad|Isnad|61|wiki]]. But when the *[[Fitna_(word)|fitna|62|wiki]]* started, one said: 'Name us your informants'. One would then respond to them: if they were Sunnah people, you accept their hadith. But if they are people of the [[Bidʻah|Innovations|63|wiki]], the hadith was rejected.\" G.H.A. Juynboll assumed, the term *fitna* in this statement is not related to the first Civil War (665–661) after murder of [[ʿUthmān_ibn_ʿAffān|ʿUthmān ibn ʿAffān|64|wiki]], but the second Civil War (680–692) in which the Islamic community was split into four parties ([[Abd_Allah_ibn_al-Zubayr|Abd Allah ibn al-Zubayr|65|wiki]], the [[Umayyad_dynasty|Umayyads|66|wiki]], the Shia under [[Mukhtar_al-Thaqafi|al-Mukhtār ibn Abī ʿUbaid|67|wiki]] and the Kharijites). The term *ahl sunna* designated in this situation whose, who stayed away from heretic teachings of the different warring parties."
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "The term *ahl as-sunna* was always a laudatory designation. [[Abu_Hanifa|Abu Hanifa|68|wiki]] (d. 769), who sympathized with [[Murdshia|Murdshia|69|wiki]], insisted that this were \"righteous people and people of the Sunnah\" (*ahl al-ʿadl wa-ahl as-sunna*). According to [[Josef_van_Ess|Josef van Ess|70|wiki]] this term did not mean more than \"honorable and righteous believing people\". Among Hanafits the designation *ahl as-sunna* and *ahl al-ʿadl* (people of the righteous) remained interchangeable for a long time. Thus the Hanafite Abū l-Qāsim as-Samarqandī (d. 953), who composed a catechism for the [[Samanides|Samanides|71|wiki]], used sometimes one expression and sometimes another for his own group."
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "Singular to *ahl as-sunna* was *ṣāḥib sunna* (adherent to the sunnah). This expression was used for example by [[Ibn_al-Mubarak|ʿAbdallāh ibn al-Mubārak|72|wiki]] (d. 797) for a person, who distances himself from the teachings of shia, kharijites, qadarites and murdajites. In addition, the [[Arabic_nouns_and_adjectives|Nisba|73|wiki]] adjective *sunnī* was also used for the individual person. Thus it has been recorded, the Kufic scholar of the Quran Abu Bakr ibn'auyash (d. 809) was asked, how he was a \"sunni\". He responded the following: \"The one who, when the heresies are mentioned, doesn't get excited about any of them.\" The andalisian scholar [[Ibn_Hazm|ibn Hazm|74|wiki]] (d. 1064) taught later, that whose who confess to Islam can be divided into four groups: *ahl as-sunna*, [[Mutazilites|Mutazilites|75|wiki]], Murdschiiten, Schiiten und Charidschiten. The Muʿtazilites replaced the Qadarites here."
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "In the 9th century, one started to extent the term *ahl as-sunna* with further positive additions. Abu l-Hasan al-Ashari used for his own group expressions like *ahl as-sunna wa-l-istiqāma* (\"people of Sunna and Straightness\"), *ahl as-sunna wa-l-ḥadīṯ* (\"people of Sunnah and of the Hadith\") or *ahl al-ḥaqq wa-s-sunna* (\"people of truth and of the Sunnah\")."
+                    }
+                ]
             },
             {
-                "block_type": "paragraph",
-                "content": "In the table below, the locations that use daylight saving time (DST) are listed in their UTC offset when DST is *not* in effect. When DST is in effect, approximately during spring and summer, their UTC offset is increased by one hour (except for [[Lord_Howe_Island|Lord Howe Island|18|wiki]], where it is increased by 30 minutes). For example, during the DST period [[California|California|19|wiki]] observes [[UTC−07:00|UTC−07:00|20|wiki]] and the [[United_Kingdom|United Kingdom|21|wiki]] observes [[UTC+01:00|UTC+01:00|22|wiki]]."
-            },
-            {
-                "block_type": "table",
-                "rows": [
+                "block_type": "heading",
+                "content": "Ahl as-Sunna wa-l-jama",
+                "heading_level": 2,
+                "children": [
                     {
-                        "block_type": "row",
-                        "values": [
-                            "UTC offset",
-                            "Locations that do not use DST",
-                            "col3",
-                            "Locations that use DST",
-                            "col5"
-                        ],
-                        "is_heading": true
+                        "block_type": "paragraph",
+                        "content": "When the expression 'ahl as-sunna wal-jama' appeared for the first time, is not entirely clear. The Abbasite Caliph [[Al-Ma'mūn|Al-Ma'mūn|76|wiki]] (reigned 813–33) criticized in his Miha-edict a group of people, who related themselves to the sunnah (*nasabū anfusa-hum ilā s-sunna*) and claimed, they are the \"people of truth, religion and community\" (*ahl al-ḥaqq wa-d-dīn wa-l-ǧamāʿa*). *Sunna* and *jama* are already connected here. As a pair, these terms already appear in the 9th century. It is recorded that the disciple of [[Ahmad_ibn_Hanbal|Ahmad ibn Hanbal|77|wiki]] [[Harb_ibn_Ismail|Harb ibn Ismail|78|wiki]] as Sirjdshani (d. 893) created a writing with the title *as-Sunna wa-l-ǧamāʿa*, to which the Mutazilite [[Abu_l-Qasim_al-Balchi|Abu l-Qasim al-Balchi|79|wiki]] wrote a refutation later. [[Al-Jubba'i|Al-Jubba'i|80|wiki]] (d. 916) tells in his *Kitāb al-Maqālāt*, that Ahmad ibn Hanbal attributed to his students the predicate *sunnī jama* (\"Jammatic Sunnite\"). This indicates that the Hanbalis were the first to use the phrase *ahl as-sunna wal-ǧamāʿa* as a self-designation."
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−12:00",
-                            "",
-                            "Baker Island Howland Island",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
+                        "block_type": "paragraph",
+                        "content": "But also the [[Karramiyya|Karramiyya|81|wiki]] founded by Muhammad ibn Karram (d. 859) referred to the sunnah and community. They passed down for praise of their schoolfounder a hadith, according to which the prophet Muhammad predicted that at the end of times a man named Muhammad ibn Karram will appear, who will restore the sunna and the community (*as-sunna wal-ǧamāʿa*) and take Hidraj from Chorasan to Jerusalem, just how Muhammad himself took a Hidraj from Mecca to Medina. According to the testimony of the transoxanian scholar Abu l-Yusr al-Bazdawi (d. 1099) the Kullabites (followers of the Basrian scholar ibn Kullab (d. 855)) dayed about themselves, that they are among the *ahl as-sunna wal-jama* too."
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−11:00",
-                            "",
-                            "Jarvis Island Kingman Reef Midway Atoll   Palmyra Atoll",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
+                        "block_type": "paragraph",
+                        "content": "Abu l-Hasan al-Ashari used the expression *ahl as-sunna wal-jama* rarely, and preferred another combination. Later Asharites like al-Isfaranini (d. 1027) nad Abd al-Qahir al-Baghdadi (d. 1078) used the expression *ahl as-sunna wal-jama* too and used them in their works to designate the teachings of their own school. According to al-Bazdawi all Asharites in his time said they belong to the *ahl as-sunna wal-jama*. During this time, the term has been used as a self-designation by the hanafite Maturidites in Transoxiania, used frequently by [[Abu_al-Layth_al-Samarqandi|Abu al-Layth al-Samarqandi|82|wiki]] (d. 983), Abu Schakur as Salimi (d. 1086) and al-Bazdawi himself. They used the term as a contrast from their enemies among them Hanafites in the West, who have been followers of the Mutazilites. Al-Bazdawī also contrasted the *ahl as-sunna wal-jama*' with *ahl-al-ḥadīṯ*, \"because they would adhere to teachings contrary to the Quran\"."
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−10:00",
-                            "",
-                            "Johnston Atoll : Hawaii",
-                            "",
-                            ": Andreanof Islands, Islands of Four Mountains, Near Islands, Rat Islands (Aleutian Islands, Alaska)"
-                        ],
-                        "is_heading": false
+                        "block_type": "paragraph",
+                        "content": "According to [[Al-Muqaddasī|Schams ad-Dīn al-Maqdisī|83|wiki]] (end of the 10th century) was the expression *ahl as-sunna wal-jama* a laudatory term during his time, similar to *ahl al-ʿadl wa-t-tauḥīd* (\"people of righteousness and Divine Unity\"), which was used for Mutazilites or generally designations like [[Mu'min|Mu'min|84|wiki]]ūn (\"Believer\") oraṣḥāb al-hudā (\"people of guidance\") for Muslims, who has been seen as rightoues believers. Since the expression *ahl as-sunna wa-l-jama* was used with a demand on rightoues belief, it was used in academic researches translated as \"orthodox\"."
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−09:30",
-                            "",
-                            "🇵🇫 French Polynesia: Marquesas Islands",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−09:00",
-                            "",
-                            "🇵🇫 French Polynesia: Gambier Islands",
-                            "",
-                            ": Alaska (most)"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−08:00",
-                            "",
-                            "Clipperton Island Pitcairn Islands",
-                            "",
-                            ": British Columbia (most) : Baja California : California, Idaho (north), Nevada (most), Oregon (most), Washington"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−07:00",
-                            "",
-                            ": British Columbia (northeast), Yukon : Baja California Sur, Nayarit (most), Sinaloa, Sonora : Arizona (most)",
-                            "",
-                            ": Alberta, British Columbia (southeast), Northwest Territories, Nunavut (west) : Chihuahua (northwest border) : Arizona (Navajo Nation), Colorado, Idaho (most), Kansas (west), Montana, Nebraska (west), New Mexico, Nevada (northeast border), North Dakota (southwest), Oregon (east), South Dakota (west), Texas (west), Utah, Wyoming"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−06:00",
-                            "",
-                            "🇧🇿 Belize : Saskatchewan (most) 🇸🇻 El Salvador 🇬🇹 Guatemala 🇭🇳 Honduras (most) 🇳🇮 Nicaragua",
-                            "",
-                            ": Manitoba, Nunavut (central), Ontario (west) : Easter Island (northeast border)"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−05:00",
-                            "",
-                            ": Acre, Amazonas (southwest) : Atikokan, Mishkeegogamang, Southampton Island 🇰🇾 Cayman Islands (most)  : Quintana Roo  Navassa Island 🇵🇦 Panama",
-                            "",
-                            "🇧🇸 Bahamas : Nunavut (east), Ontario (most), Quebec (most) 🇨🇺 Cuba 🇭🇹 Haiti 🇹🇨 Turks and Caicos Islands"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−04:00",
-                            "",
-                            "🇦🇮 Anguilla 🇦🇼 Aruba 🇧🇧 Barbados 🇧🇴 Bolivia : Amazonas (most), Mato Grosso, Mato Grosso do Sul, Rondônia, Roraima British Virgin Islands : Quebec (east)  Caribbean Netherlands 🇨🇼 Curaçao 🇩🇲 Dominica 🇬🇩 Grenada 🇬🇵 Guadeloupe 🇬🇾 Guyana 🇲🇶 Martinique 🇲🇸 Montserrat  🇧🇱 Saint Barthélemy 🇰🇳 Saint Kitts and Nevis 🇱🇨 Saint Lucia  Saint Martin 🇻🇨 Saint Vincent and the Grenadines  Sint Maarten",
-                            "",
-                            "🇧🇲 Bermuda : Labrador (most), New Brunswick, Nova Scotia, Prince Edward Island (most) : Pituffik Space Base"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−03:30",
-                            "",
-                            "",
-                            "",
-                            ": Newfoundland, Labrador (southeast)"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−03:00",
-                            "",
-                            "(most) : Magallanes Region 🇬🇫 French Guiana 🇸🇷 Suriname",
-                            "",
-                            "🇵🇲 Saint Pierre and Miquelon"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−02:00",
-                            "",
-                            ": Fernando de Noronha (most) South Georgia and the South Sandwich Islands",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−01:00",
-                            "",
-                            "",
-                            "",
-                            ": Ittoqqortoormiit : Azores"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+00:00",
-                            "",
-                            "🇧🇫 Burkina Faso 🇬🇲 Gambia 🇬🇭 Ghana : National Park (east coast) 🇬🇳 Guinea 🇬🇼 Guinea-Bissau 🇮🇸 Iceland Ivory Coast 🇱🇷 Liberia 🇲🇱 Mali 🇲🇷 Mauritania 🇸🇭 Saint Helena, Ascension and Tristan da Cunha 🇸🇳 Senegal 🇸🇱 Sierra Leone São Tomé and Príncipe 🇹🇬 Togo",
-                            "",
-                            "Bailiwick of Guernsey 🇮🇲 Isle of Man 🇯🇪 Jersey (most) : Canary Islands"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+01:00",
-                            "",
-                            "🇧🇯 Benin 🇨🇲 Cameroon 🇨🇫 Central African Republic 🇹🇩 Chad 🇨🇩 Congo 🇬🇶 Equatorial Guinea 🇬🇦 Gabon 🇳🇪 Niger 🇳🇬 Nigeria 🇪🇭 Western Sahara",
-                            "",
-                            "🇦🇱 Albania 🇦🇩 Andorra 🇦🇹 Austria 🇭🇷 Croatia    (metropolitan)      Kosovo 🇱🇮 Liechtenstein 🇱🇺 Luxembourg  🇲🇨 Monaco 🇲🇪 Montenegro  (European)  North Macedonia  🇵🇱 Poland 🇸🇲 San Marino 🇷🇸 Serbia  🇸🇮 Slovenia  (most) 🇸🇪 Sweden  🇻🇦 Vatican City"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+02:00",
-                            "",
-                            "🇧🇼 Botswana 🇧🇮 Burundi (most) Eswatini 🇱🇸 Lesotho 🇱🇾 Libya 🇲🇼 Malawi 🇲🇿 Mozambique  : Kaliningrad 🇷🇼 Rwanda  (most) 🇸🇸 South Sudan 🇸🇩 Sudan 🇿🇲 Zambia 🇿🇼  Zimbabwe",
-                            "",
-                            "Akrotiri and Dhekelia 🇧🇬 Bulgaria   🇬🇷 Greece  🇱🇻 Latvia   🇲🇩 Moldova  Northern Cyprus  🇷🇴 Romania  Transnistria  (most)"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+03:00",
-                            "",
-                            "Abkhazia 🇰🇲 Comoros 🇩🇯 Djibouti 🇪🇷 Eritrea   French Southern and Antarctic Lands: Scattered Islands     🇲🇬 Madagascar 🇾🇹 Mayotte   (most of European part)  🇸🇴 Somalia  Somaliland : Prince Edward Islands   🇹🇿 Tanzania  🇺🇬 Uganda 🇺🇦 Ukraine: occupied territories",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+03:30",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+04:00",
-                            "",
-                            "Artsakh French Southern and Antarctic Lands: Crozet Islands    : Astrakhan, Samara, Saratov, Udmurtia, Ulyanovsk 🇷🇪 Réunion 🇸🇨 Seychelles",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+04:30",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+05:00",
-                            "",
-                            "French Southern and Antarctic Lands: Kerguelen Islands, Saint Paul Island, Amsterdam Island 🇭🇲 Heard Island and McDonald Islands : Aktobe, Atyrau, Baikonur, Kyzylorda, Mangystau, West Kazakhstan : Bashkortostan, Chelyabinsk, Khanty-Mansi, Kurgan, Orenburg, Perm, Sverdlovsk, Tyumen, Yamalia",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+05:30",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+05:45",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+06:00",
-                            "",
-                            "🇮🇴 British Indian Ocean Territory (most) : Omsk",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+06:30",
-                            "",
-                            "Cocos Islands",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+07:00",
-                            "",
-                            "🇨🇽 Christmas Island : Sumatra, Java, West Kalimantan, Central Kalimantan : Altai Krai, Altai Republic, Kemerovo, Khakassia, Krasnoyarsk, Novosibirsk, Tomsk, Tuva",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+08:00",
-                            "",
-                            ": Western Australia (most)     (most)  : Buryatia, Irkutsk",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+08:45",
-                            "",
-                            ": Eucla",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+09:00",
-                            "",
-                            ": Maluku Islands, Western New Guinea 🇵🇼 Palau : Amur, Sakha (most), Zabaykalsky",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+09:30",
-                            "",
-                            ": Northern Territory",
-                            "",
-                            ": South Australia"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+10:00",
-                            "",
-                            ": Queensland 🇫🇲 Micronesia: Chuuk, Yap : Jewish, Khabarovsk, Primorsky, Sakha (central-east)",
-                            "",
-                            ": Australian Capital Territory, Jervis Bay Territory, New South Wales (most), Tasmania, Victoria"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+10:30",
-                            "",
-                            "",
-                            "",
-                            ": Lord Howe Island"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+11:00",
-                            "",
-                            "🇫🇲 Micronesia: Kosrae, Pohnpei 🇳🇨 New Caledonia : Magadan, Sakha (east), Sakhalin 🇸🇧 Solomon Islands",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+12:00",
-                            "",
-                            "🇰🇮 Kiribati: Gilbert Islands 🇲🇭 Marshall Islands 🇳🇷 Nauru Wake Island 🇼🇫 Wallis and Futuna",
-                            "",
-                            "(most)"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+12:45",
-                            "",
-                            "",
-                            "",
-                            ": Chatham Islands"
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+13:00",
-                            "",
-                            "🇰🇮 Kiribati: Phoenix Islands",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+14:00",
-                            "",
-                            "🇰🇮 Kiribati: Line Islands",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
+                        "block_type": "paragraph",
+                        "content": "There are different opinions regarding what the term *jama* in the phrase *ahl as-sunna wal-jama* actually means, among Muslim scholars. In the Sunni Creed by [[At-Tahawi|at-Tahawi|85|wiki]] (d. 933), the term *jama* contrasts several times the Arabic term *furqa* (\"Division, sectarianism\"). Thus at-Tahāwī explains that *jama* is considered as true or right (*ḥaqq wa-ṣawāb*) and *furqa* as aberration and punishment (*zaiġ wa-ʿaḏāb*). Ibn Taymiyyah argues, that *jama* as opposite term to *furqa* inherents the meaning of *iǧtimāʿ* (\"Coming together, being together, agreement\"). Furthermore he connects it with the principle of [[Ijma|Ijma|86|wiki]], a third juridical source after the Book (= Quran), and the Sunnah. The Ottoman scholar Muslih ad Din al-Qastallani (d. 1495) held the opinnion that *jama* means \"Path of the [[Sahaba|Sahaba|87|wiki]]\" (*ṭarīqat aṣ-ṣaḥāba*). The modern Indonesian theologican [[Nurcholish_Madjid|Nurcholish Madjid|88|wiki]] (d. 2005) interpreted *jama* as an [[Inclusivism|inclusivistic|89|wiki]] concept: It means a society open for [[Value_pluralism|pluralism|90|wiki]] and dialogue but does not emphasize that much."
                     }
                 ]
             }
@@ -483,96 +92,61 @@ const sourceString = [
         "heading_level": 1,
         "children": [
             {
-                "block_type": "paragraph",
-                "content": "The apparent position of the [[Sun|Sun|23|wiki]] in the sky, and thus [[Solar_time|solar time|24|wiki]], varies by location due to the [[Spherical|spherical|25|wiki]] shape of the [[Earth|Earth|26|wiki]]. This variation corresponds to four [[Minute|minutes|27|wiki]] of time for every [[Degree_(angle)|degree|28|wiki]] of [[Longitude|longitude|29|wiki]], so for example when it is solar noon in [[London|London|30|wiki]], it is about 10 minutes before solar noon in [[Bristol|Bristol|31|wiki]], which is about 2.5 degrees to the west."
+                "block_type": "image",
+                "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/Kaaba_daylight.png",
+                "img_caption": "The Kaaba mosque in Mecca is the largest and most important mosque in the world."
             },
             {
                 "block_type": "paragraph",
-                "content": "The [[Royal_Observatory,_Greenwich|Royal Observatory, Greenwich|32|wiki]], founded in 1675, established [[Greenwich_Mean_Time|Greenwich Mean Time|33|wiki]] (GMT), the mean solar time at that location, as an aid to mariners to determine longitude at sea, providing a standard reference time while each location in [[England|England|34|wiki]] kept a different time."
+                "content": "One common mistake is to assume that Sunni Islam represents a normative Islam that emerged during the period after Muhammad's death, and that [[Sufism|Sufism|91|wiki]] and [[Shi'ism|Shi'ism|92|wiki]] developed out of Sunni Islam. This perception is partly due to the reliance on highly ideological sources that have been accepted as reliable historical works, and also because the vast majority of the population is Sunni. Both Sunnism and Shiaism are the end products of several centuries of competition between ideologies. Both sects used each other to further cement their own identities and doctrines."
+            },
+            {
+                "block_type": "paragraph",
+                "content": "The first four caliphs are known among Sunnis as the [[Rashidun|Rāshidun|93|wiki]] or \"Rightly-Guided Ones\". Sunni recognition includes the aforementioned [[Abu_Bakr|Abu Bakr|94|wiki]] as the first, [[Umar|Umar|95|wiki]] as the second, [[Uthman|Uthman|96|wiki]] as the third, and [[Ali|Ali|97|wiki]] as the fourth. Sunnis recognised different rulers as the [[Caliph|caliph|98|wiki]], though they did not include anyone in the list of the rightly guided ones or *Rāshidun* after the murder of Ali, until the caliphate was constitutionally abolished in [[Turkey|Turkey|99|wiki]] on 3 March 1924."
             },
             {
                 "block_type": "heading",
-                "content": "Railway time",
+                "content": "Transition of caliphate into dynastic monarchy of Banu Umayya",
                 "heading_level": 2,
                 "children": [
                     {
-                        "block_type": "image",
-                        "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/Time_zone_chicago.jpg",
-                        "img_caption": "Plaque commemorating the Railway General Time Convention of 1883 in North America"
-                    },
-                    {
-                        "block_type": "image",
-                        "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/Coventry_Time_Zone_Clock.jpg",
-                        "img_caption": "The control panel of the Time Zone Clock in front of Coventry Transport Museum"
-                    },
-                    {
-                        "block_type": "image",
-                        "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/Time_zone_map_of_the_United_States_1913_(colorized).png",
-                        "img_caption": "1913 time zone map of the United States, showing boundaries very different from today"
-                    },
-                    {
                         "block_type": "paragraph",
-                        "content": ""
-                    },
-                    {
-                        "block_type": "paragraph",
-                        "content": "In the 19th century, as transportation and telecommunications improved, it became increasingly inconvenient for each location to observe its own solar time. In November 1840, the [[Great_Western_Railway|Great Western Railway|35|wiki]] started using GMT kept by portable [[Marine_chronometer|chronometers|36|wiki]]. This practice was soon followed by other [[History_of_rail_transport_in_Great_Britain|railway companies in Great Britain|37|wiki]] and became known as [[Railway_time|Railway Time|38|wiki]]."
-                    },
-                    {
-                        "block_type": "paragraph",
-                        "content": "Around August 23, 1852, time signals were first transmitted by [[Telegraph|telegraph|39|wiki]] from the Royal Observatory. By 1855, 98% of Great Britain's public clocks were using GMT, but it was not made the island's legal time until August 2, 1880. Some British clocks from this period have two minute hands, one for the local time and one for GMT."
-                    },
-                    {
-                        "block_type": "paragraph",
-                        "content": "On November 2, 1868, the then British [[Colony_of_New_Zealand|Colony of New Zealand|40|wiki]] officially adopted a standard time to be observed throughout the colony. It was based on longitude 172°30′ east of [[Greenwich|Greenwich|41|wiki]], that is 11 hours 30 minutes ahead of GMT. This standard was known as [[Time_in_New_Zealand|New Zealand Mean Time|42|wiki]]."
-                    },
-                    {
-                        "block_type": "paragraph",
-                        "content": "Timekeeping on [[North_America|North American|43|wiki]] railroads in the 19th century was complex. Each railroad used its own standard time, usually based on the local time of its headquarters or most important terminus, and the railroad's train schedules were published using its own time. Some junctions served by several railroads had a clock for each railroad, each showing a different time."
-                    },
-                    {
-                        "block_type": "paragraph",
-                        "content": ""
-                    },
-                    {
-                        "block_type": "paragraph",
-                        "content": "[[Charles_F._Dowd|Charles F. Dowd|44|wiki]] proposed a system of hourly standard time zones for North American railroads around 1863, although he published nothing on the matter at that time and did not consult railroad officials until 1869. In 1870 he proposed four ideal time zones having north–south borders, the first centered on [[Washington,_D.C.|Washington, D.C.|45|wiki]], but by 1872 the first was centered on meridian [[75th_meridian_west|75° west of Greenwich|46|wiki]], with natural borders such as sections of the [[Appalachian_Mountains|Appalachian Mountains|47|wiki]]. Dowd's system was never accepted by North American railroads. Instead, U.S. and Canadian railroads implemented a version proposed by William F. Allen, the editor of the *Traveler's Official Railway Guide*. The borders of its time zones ran through railroad stations, often in major cities. For example, the border between its Eastern and Central time zones ran through [[Detroit|Detroit|48|wiki]], [[Buffalo,_New_York|Buffalo|49|wiki]], [[Pittsburgh|Pittsburgh|50|wiki]], [[Atlanta|Atlanta|51|wiki]], and [[Charleston,_South_Carolina|Charleston|52|wiki]]. It was inaugurated on Sunday, November 18, 1883, also called \"The Day of Two Noons\", when each railroad station clock was reset as standard-time noon was reached within each time zone."
-                    },
-                    {
-                        "block_type": "paragraph",
-                        "content": "The North American zones were named Intercolonial, Eastern, Central, Mountain, and Pacific. Within a year 85% of all cities with populations over 10,000 (about 200 cities) were using standard time. A notable exception was Detroit (located about halfway between the meridians of Eastern and Central time), which kept local time until 1900, then tried Central Standard Time, [[Local_mean_time|local mean time|53|wiki]], and [[Eastern_Time_Zone|Eastern Standard Time|54|wiki]] (EST) before a May 1915 ordinance settled on EST and was ratified by popular vote in August 1916. The confusion of times came to an end when standard time zones were formally adopted by the [[United_States_Congress|U.S. Congress|55|wiki]] in the [[Standard_Time_Act|Standard Time Act|56|wiki]] of March 19, 1918."
+                        "content": "The seeds of metamorphosis of caliphate into kingship were sown, as the second caliph Umar had feared, as early as the regime of the third caliph Uthman, who appointed many of his kinsmen from his clan [[Banu_Umayya|Banu Umayya|100|wiki]], including [[Marwan_I|Marwān|101|wiki]] and [[Al-Walid_ibn_Uqba|Walid bin Uqba|102|wiki]] on important government positions, becoming the main cause of turmoil resulting in his murder and the ensuing infighting during Ali's time and rebellion by [[Muawiyah_I|Muāwiya|103|wiki]], another of Uthman's kinsman. This ultimately resulted in the establishment of firm dynastic rule of [[Banu_Umayya|Banu Umayya|104|wiki]] after [[Husayn_ibn_Ali|Husain|105|wiki]], the younger son of Ali from [[Fatima_bint_Muhammad|Fātima|106|wiki]], was killed at the [[Battle_of_Karbala|Battle of Karbalā|107|wiki]]. The rise to power of Banu Umayya, the Meccan tribe of elites who had vehemently opposed Muhammad under the leadership of [[Abu_Sufyan_ibn_Harb|Abu Sufyān|108|wiki]], Muāwiya's father, right up to the [[Conquest_of_Mecca|conquest of Mecca|109|wiki]] by Muhammad, as his successors with the accession of Uthman to caliphate, replaced the egalitarian society formed as a result of Muhammad's revolution to a society stratified between haves and have-nots as a result of [[Nepotism|nepotism|110|wiki]], and in the words of El-Hibri through \"the use of religious charity revenues (*[[Zakat|zakāt|111|wiki]]*) to subsidise family interests, which Uthman justified as *'al-sila* ' (pious filial support)\". Ali, during his rather brief regime after Uthman maintained austere life style and tried hard to bring back the egalitarian system and supremacy of law over the ruler idealised in Muhammad's message, but faced continued opposition, and wars one after another by [[Aisha|Aisha|112|wiki]]-[[Talhah|Talhah|113|wiki]]-[[Zubayr_ibn_al-Awwam|Zubair|114|wiki]], by Muāwiya and finally by the [[Kharjites|Khārjites|115|wiki]]. After he was murdered his followers immediately elected [[Hasan_ibn_Ali|Hasan ibn Ali|116|wiki]] his elder son from Fātima to succeed him. Hasan shortly afterward signed a treaty with [[Muāwiya|Muāwiya|117|wiki]] relinquishing power in favour of the latter, with a condition inter alia, that one of the two who will outlive the other will be the caliph, and that this caliph will not appoint a successor but will leave the matter of selection of the caliph to the public. Subsequently, Hasan was poisoned to death and Muawiya enjoyed unchallenged power. Dishonouring his treaty with Hasan, he nominated his son [[Yazid_I|Yazid|118|wiki]] to succeed him. Upon Muāwiya's death, [[Yazid|Yazid|119|wiki]] asked Husain, the younger brother of Hasan, Ali's son and Muhammad's grandson, to give his allegiance to Yazid, which he plainly refused. His caravan was cordoned by Yazid's army at Karbalā and he was killed with all his male companions – total 72 people, in a day long [[Battle_of_Karbala|battle|120|wiki]] after which Yazid established himself as a sovereign, though strong public uprising erupted after his death against his dynasty to avenge the massacre of Karbalā, but [[Banu_Umayya|Banu Umayya|121|wiki]] were able to quickly suppress them all and ruled the Muslim world, till they were finally overthrown by [[Banu_Abbas|Banu Abbās|122|wiki]]."
                     }
                 ]
             },
             {
                 "block_type": "heading",
-                "content": "Worldwide time zones",
+                "content": "Caliphate and the dynastic monarchy of Banu Abbās",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": "The rule of and \"caliphate\" of Banu Umayya came to an end at the hands of Banu Abbās a branch of Banu Hāshim, the tribe of Muhammad, only to usher another dynastic monarchy styled as caliphate from 750 CE. This period is seen formative in Sunni Islam as the founders of the four schools viz, [[Abu_Hanifa|Abu Hanifa|123|wiki]], [[Malik_ibn_Anas|Malik ibn Anas|124|wiki]], [[Shafi'i|Shāfi'i|125|wiki]] and [[Ahmad_ibn_Hanbal|Ahmad bin Hanbal|126|wiki]] all practised during this time, so also did [[Jafar_al_Sadiq|Jafar al Sādiq|127|wiki]] who elaborated the doctrine of [[Imamate|imāmate|128|wiki]], the basis for the Shi'a religious thought. There was no clearly accepted formula for determining succession in the Abbasid caliphate. Two or three sons or other relatives of the dying caliph emerged as candidates to the throne, each supported by his own party of supporters. A trial of strength ensued and the most powerful party won and expected favours of the caliph they supported once he ascended the throne. The caliphate of this dynasty ended with the death of the Caliph al-Ma'mun in 833 CE, when the period of Turkish domination began."
+                    }
+                ]
+            },
+            {
+                "block_type": "heading",
+                "content": "Sunni Islam in the contemporary era",
                 "heading_level": 2,
                 "children": [
                     {
                         "block_type": "image",
-                        "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/World_Time_Zone_Chart_1942.jpg",
-                        "img_caption": "World map of time zones in 1928"
+                        "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/SA_Blue_Mosque.jpg",
+                        "img_caption": "Sultan Salahuddin Abdul Aziz Mosque in Shah Alam, Selangor, Malaysia."
                     },
                     {
                         "block_type": "paragraph",
-                        "content": "[[Italy|Italian|57|wiki]] mathematician [[Quirico_Filopanti|Quirico Filopanti|58|wiki]] introduced the idea of a worldwide system of time zones in his book *Miranda!*, published in 1858. He proposed 24 hourly time zones, which he called \"longitudinal days\", the first centred on the meridian of [[Rome|Rome|59|wiki]]. He also proposed a universal time to be used in astronomy and telegraphy. However, his book attracted no attention until long after his death."
+                        "content": "The fall, at the end of [[World_War_I|World War I|129|wiki]] of the [[Ottoman_Empire|Ottoman Empire|130|wiki]], the biggest Sunni empire for six centuries, brought the caliphate to an end. This resulted in Sunni protests in far off places including the [[Khilafat_Movement|Khilafat Movement|131|wiki]] in [[India|India|132|wiki]], which was later on upon gaining independence from Britain divided into Sunni dominated [[Pakistan|Pakistan|133|wiki]] and secular India. Pakistan, the most populous Sunni state at its dawn, was later [[Bangladesh_Independence_War|partitioned|134|wiki]] into Pakistan and [[Bangladesh|Bangladesh|135|wiki]]. The [[Abolition_of_the_Caliphate|demise of Ottoman caliphate|136|wiki]] also resulted in the emergence of [[Saudi_Arabia|Saudi Arabia|137|wiki]], a dynastic absolute monarchy that championed the reformist doctrines of [[Muhammad_ibn_Abd_al-Wahhab|Muhammad ibn Abd al-Wahhab|138|wiki]]; the eponym of the [[Wahhabism|Wahhabi movement|139|wiki]]. This was followed by a considerable rise in the influence of the [[Wahhabism|Wahhabi|140|wiki]], *[[Salafi_movement|Salafiyya|141|wiki]]*, [[Islamism|Islamist|142|wiki]] and [[Jihadism|Jihadist|143|wiki]] movements that revived the doctrines of the Hanbali theologian [[Ibn_Taymiyyah|Taqi Al-Din Ibn Taymiyyah|144|wiki]] (1263–1328 C.E/ 661–728 A.H), a fervent advocate of the traditions of the Sunni Imam [[Ahmad_ibn_Hanbal|Ahmad ibn Hanbal|145|wiki]]. The expediencies of [[Cold_war|cold war|146|wiki]] resulted in the radicalisation of Afghan refugees in Pakistan who fought the [[Communist|communist|147|wiki]] regime backed by [[USSR|USSR|148|wiki]] forces in Afghanistan giving birth to the [[Taliban|Taliban movement|149|wiki]]. After the fall of communist regime in [[Afghanistan|Afghanistan|150|wiki]] and the ensuing [[Afghan_Civil_War_(1992–1996)|civil war|151|wiki]], Taliban wrestled power from the various [[Afghan_mujahideen|Mujahidin factions|152|wiki]] in Afghanistan and formed a government under the leadership of [[Mullah_Omar|Mohammed Omar|153|wiki]], who was addressed as the [[Emir|Emir|154|wiki]] of the faithful, an honorific way of addressing the caliph. The Taliban regime was recognised by Pakistan and Saudi Arabia till after [[9/11|9/11|155|wiki]], perpetrated by [[Osama_bin_Laden|Osama bin Laden|156|wiki]] – a Saudi national by birth and harboured by the Taliban – took place, resulting in a [[War_on_terror|war on terror|157|wiki]] launched against the Taliban."
                     },
                     {
                         "block_type": "paragraph",
-                        "content": "[[Scotland|Scottish|60|wiki]]-born [[Canada|Canadian|61|wiki]] Sir [[Sandford_Fleming|Sandford Fleming|62|wiki]] proposed a worldwide system of time zones in 1876 - see. The proposal divided the world into twenty-four time zones labeled A-Y (skipping J), each one covering 15 degrees of longitude. All clocks within each zone would be set to the same time as the others, but differed by one hour from those in the neighboring zones. He advocated his system at several international conferences, including the [[International_Meridian_Conference|International Meridian Conference|63|wiki]], where it received some consideration. The system has not been directly adopted, but some maps divide the world into 24 time zones and assign letters to them, similarly to Fleming's system."
+                        "content": "The sequence of events of the 20th century has led to resentment in some quarters of the Sunni community due to the loss of pre-eminence in several previously Sunni-dominated regions such as the [[Levant|Levant|158|wiki]], [[Mesopotamia|Mesopotamia|159|wiki]], the [[Balkans|Balkans|160|wiki]], the [[North_Caucasus|North Caucasus|161|wiki]] and the [[Indian_sub_continent|Indian sub continent|162|wiki]]. The latest attempt by a radical wing of [[Salafi_jihadism|Salafi-Jihadists|163|wiki]] to re-establish a Sunni caliphate was seen in the emergence of the militant group [[Islamic_State_of_Iraq_and_the_Levant|ISIL|164|wiki]], whose leader [[Abu_Bakr_al-Baghdadi|Abu Bakr al-Baghdadi|165|wiki]] is known among his followers as caliph and *Amir-al-mu'mineen*, \"The Commander of the Faithful\". Jihadism is opposed from within the Muslim community (known as the *[[Ummah|ummah|166|wiki]]* in Arabic) in all quarters of the world as evidenced by turnout of almost 2% of the Muslim population in London protesting against ISIL."
                     },
                     {
                         "block_type": "paragraph",
-                        "content": ""
-                    },
-                    {
-                        "block_type": "paragraph",
-                        "content": "By about 1900, almost all inhabited places on Earth had adopted a standard time zone, but only some of them used an hourly offset from GMT. Many applied the time at a local astronomical observatory to an entire country, without any reference to GMT. It took many decades before all time zones were based on some standard offset from GMT or [[Coordinated_Universal_Time|Coordinated Universal Time|64|wiki]] (UTC). By 1929, the majority of countries had adopted hourly time zones, though some countries such as [[Iran|Iran|65|wiki]], [[India|India|66|wiki]], [[Myanmar|Myanmar|67|wiki]] and parts of [[Australia|Australia|68|wiki]] had time zones with a 30-minute offset. [[Nepal|Nepal|69|wiki]] was the last country to adopt a standard offset, shifting slightly to UTC+05:45 in 1986."
-                    },
-                    {
-                        "block_type": "paragraph",
-                        "content": "All nations currently use standard time zones for secular purposes, but not all of them apply the concept as originally conceived. Several countries and subdivisions use half-hour or quarter-hour deviations from standard time. Some countries, such as [[China|China|70|wiki]] and [[India|India|71|wiki]], use a single time zone even though the extent of their territory far exceeds the ideal 15° of longitude for one hour; other countries, such as [[Spain|Spain|72|wiki]] and [[Argentina|Argentina|73|wiki]], use standard hour-based offsets, but not necessarily those that would be determined by their geographical location. The consequences, in some areas, can affect the lives of local citizens, and in extreme cases contribute to larger political issues, such as in the western reaches of China. In [[Russia|Russia|74|wiki]], [[Time_in_Russia|which has 11 time zones|75|wiki]], two time zones were removed in 2010 and reinstated in 2014."
+                        "content": "Following the puritan approach of [[Ibn_Kathir|Ibn Kathir|167|wiki]], [[Muhammad_Rashid_Rida|Muhammad Rashid Rida|168|wiki]], etc. many contemporary *[[Tafsir|Tafsir|169|wiki]]* (exegetic treatises) downplay the earlier significance of [[Isra'iliyyat|Biblical material|170|wiki]] (*Isrā'iliyyāt*). Half of the Arab commentaries reject *Isrā'iliyyāt* in general, while Turkish tafsir usually partly allow referring to Biblical material. Nevertheless, most non-Arabic commentators regard them as useless or not applicable. A direct reference to the [[Israeli–Palestinian_conflict|Israeli–Palestinian conflict|171|wiki]] could not be found. It remains unclear whether the refusal of *Isrā'iliyyāt* is motivated by political discourse or by traditionalist thought alone. The usage of *tafsir'ilmi* is another notable characteristic of modern Sunni tafsir. *Tafsir'ilmi* stands for alleged scientific miracles found in the Qur'an. In short, the idea is that the Qur'an contains knowledge about subjects an author of the 7th century could not possibly have. Such interpretations are popular among many commentators. Some scholars, such as the Commentators of [[Al-Azhar_University|Al-Azhar University|172|wiki]], reject this approach, arguing the Qur'an is a text for religious guidance, not for science and scientific theories that may be disproved later; thus *tafsir'ilmi* might lead to interpreting Qur'anic passages as falsehoods. Modern trends of Islamic interpretation are usually seen as adjusting to a modern audience and purifying Islam from alleged alterings, some of which are believed to be intentional corruptions brought into Islam to undermine and corrupt its message."
                     }
                 ]
             }
@@ -580,49 +154,13 @@ const sourceString = [
     },
     {
         "block_type": "heading",
-        "content": "Notation",
+        "content": "Adherents",
         "heading_level": 1,
         "children": [
             {
-                "block_type": "heading",
-                "content": "ISO 8601",
-                "heading_level": 2,
-                "children": [
-                    {
-                        "block_type": "paragraph",
-                        "content": "ISO 8601 is a standard established by the [[International_Organization_for_Standardization|International Organization for Standardization|76|wiki]] defining methods of representing dates and times in textual form, including specifications for representing time zones."
-                    },
-                    {
-                        "block_type": "paragraph",
-                        "content": "If a time is in [[Coordinated_Universal_Time|Coordinated Universal Time|77|wiki]] (UTC), a \"Z\" is added directly after the time without a separating space. \"Z\" is the zone designator for the zero UTC offset. \"09:30 UTC\" is therefore represented as \"09:30Z\" or \"0930Z\". Likewise, \"14:45:15 UTC\" is written as \"14:45:15Z\" or \"144515Z\". UTC time is also known as \"Zulu\" time, since \"Zulu\" is a [[ICAO_spelling_alphabet|phonetic alphabet|78|wiki]] code word for the letter \"Z\"."
-                    },
-                    {
-                        "block_type": "paragraph",
-                        "content": "[[UTC_offset|Offsets from UTC|79|wiki]] are written in the format ±hh:mm, ±hhmm, or ±hh (either hours ahead or behind UTC). For example, if the time being described is one hour ahead of UTC (such as the time in [[Germany|Germany|80|wiki]] during the winter), the zone designator would be \"[[UTC+01:00|+01:00|81|wiki]]\", \"+0100\", or simply \"+01\". This numeric representation of time zones is appended to local times in the same way that alphabetic time zone abbreviations (or \"Z\", as above) are appended. The offset from UTC changes with [[Daylight_saving_time|daylight saving time|82|wiki]], e.g. a time offset in [[Chicago|Chicago|83|wiki]], which is in the [[Central_Time_Zone_(North_America)|North American Central Time Zone|84|wiki]], is \"[[UTC−06:00|−06:00|85|wiki]]\" for the winter (Central Standard Time) and \"[[UTC−05:00|−05:00|86|wiki]]\" for the summer (Central Daylight Time)."
-                    }
-                ]
-            },
-            {
-                "block_type": "heading",
-                "content": "Abbreviations",
-                "heading_level": 2,
-                "children": [
-                    {
-                        "block_type": "paragraph",
-                        "content": "Time zones are often represented by alphabetic abbreviations such as \"EST\", \"WST\", and \"CST\", but these are not part of the international time and date standard [[ISO_8601|ISO 8601|87|wiki]]. Such designations can be ambiguous; for example, \"CST\" can mean (North American) [[Central_Standard_Time|Central Standard Time|88|wiki]] (UTC−06:00), [[Cuba_Standard_Time|Cuba Standard Time|89|wiki]] (UTC−05:00) and [[China_Standard_Time|China Standard Time|90|wiki]] (UTC+08:00), and it is also a widely used variant of ACST ([[Australian_Central_Standard_Time|Australian Central Standard Time|91|wiki]], UTC+09:30)."
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "block_type": "heading",
-        "content": "Conversions",
-        "heading_level": 1,
-        "children": [
-            {
-                "block_type": "paragraph",
-                "content": "Conversion between time zones obeys the relationship"
+                "block_type": "image",
+                "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/Islam_by_country.png",
+                "img_caption": "Countries with more than 95% Muslim population. \n{{legend|#4a6600|Sunni}}\n{{legend|#66004a|Shias}}\n{{legend|#04161b|Ibadi}}"
             },
             {
                 "block_type": "paragraph",
@@ -630,35 +168,15 @@ const sourceString = [
             },
             {
                 "block_type": "paragraph",
-                "content": "in which each side of the equation is equivalent to UTC."
+                "content": "Sunnis believe the [[Sahabah|companions|173|wiki]] of [[Muhammad|Muhammad|174|wiki]] to be reliable transmitters of Islam, since God and Muhammad accepted their integrity. Medieval sources even prohibit cursing or vilifying them. This belief is based upon prophetic traditions such as one narrated by [[Abdullah,_son_of_Masud|Abdullah, son of Masud|175|wiki]], in which Muhammad said: \"The best of the people are my generation, then those who come after them, then those who come after them.\" Support for this view is also found in the [[Quran|Qur'an|176|wiki]], according to Sunnis. Therefore, [[Hadith|narratives|177|wiki]] of companions are also reliably taken into account for knowledge of the Islamic faith. Sunnis also believe that the companions were [[Mu'min|true believers|178|wiki]] since it was the companions who were given the task of [[History_of_the_Quran|compiling the Qur'an|179|wiki]]."
             },
             {
                 "block_type": "paragraph",
-                "content": "The conversion equation can be rearranged to"
+                "content": "Sunni Islam does not have a formal hierarchy. Leaders are informal, and gain influence through study to become a scholar of Islamic law (*[[Sharia|sharia|180|wiki]]*) or Islamic theology (*[[Kalam|Kalām|181|wiki]]*). Both religious and political leadership are in principle open to all Muslims. According to the Islamic Center of [[Columbia,_South_Carolina|Columbia|182|wiki]], [[South_Carolina|South Carolina|183|wiki]], anyone with the intelligence and the will can become an Islamic scholar. During Midday Mosque services on Fridays, the congregation will choose a well-educated person to lead the service, known as a Khateeb (one who speaks)."
             },
             {
                 "block_type": "paragraph",
-                "content": ""
-            },
-            {
-                "block_type": "paragraph",
-                "content": "For example, the [[New_York_Stock_Exchange|New York Stock Exchange|92|wiki]] opens at 09:30 ([[Eastern_time_zone|EST|93|wiki]], UTC offset= −05:00). In [[California|California|94|wiki]] ([[Pacific_time_zone|PST|95|wiki]], UTC offset= −08:00) and [[India|India|96|wiki]] ([[Indian_standard_time|IST|97|wiki]], UTC offset= +05:30), the New York Stock Exchange opens at"
-            },
-            {
-                "block_type": "paragraph",
-                "content": ""
-            },
-            {
-                "block_type": "paragraph",
-                "content": "These calculations become more complicated near the time switch to or from daylight saving time, as the UTC offset for the area becomes a function of UTC time."
-            },
-            {
-                "block_type": "paragraph",
-                "content": "The time differences may also result in different dates. For example, when it is 22:00 on Monday in [[Egypt|Egypt|98|wiki]] (UTC+02:00), it is 01:00 on Tuesday in [[Pakistan|Pakistan|99|wiki]] (UTC+05:00)."
-            },
-            {
-                "block_type": "paragraph",
-                "content": "The table \"Time of day by zone\" gives an overview on the time relations between different zones."
+                "content": "A study conducted by the *[[Pew_Research_Center|Pew Research Center|184|wiki]]* in 2010 and released January 2011 found that there are 1.62 billion Muslims around the world, and it is estimated over 85–90% are Sunni.<ref name=\"Sunni\">See:"
             },
             {
                 "block_type": "list",
@@ -667,1341 +185,226 @@ const sourceString = [
                         "block_type": "list_item",
                         "list_type": "ordered",
                         "marker": "1.",
-                        "content": "\"time in zone A\" − \"UTC offset for zone A\" = \"time in zone B\" − \"UTC offset for zone B\","
-                    }
-                ]
-            },
-            {
-                "block_type": "list",
-                "content": [
-                    {
-                        "block_type": "list_item",
-                        "list_type": "ordered",
-                        "marker": "1.",
-                        "content": "\"time in zone B\" = \"time in zone A\" − \"UTC offset for zone A\" + \"UTC offset for zone B\"."
-                    }
-                ]
-            },
-            {
-                "block_type": "list",
-                "content": [
-                    {
-                        "block_type": "list_item",
-                        "list_type": "ordered",
-                        "marker": "1.",
-                        "content": "time in California = 09:30 − (−05:00) + (−08:00) = 06:30;"
+                        "content": "[Eastern Europe Russia and Central Asia](https://books.google.com/books?id=NI1G_9j1AhcC&pg=PA51) \"some 80% of the worlds Muslims are Sunni\""
                     },
                     {
                         "block_type": "list_item",
                         "list_type": "ordered",
                         "marker": "2.",
-                        "content": "time in India = 09:30 − (−05:00) + (+05:30) = 20:00."
+                        "content": "[Sue Hellett;U.S. should focus on sanctions against Iran](https://web.archive.org/web/20120317195234/http://www.galesburg.com/newsnow/x917961022/Sue-Hulett-U-S-should-focus-on-sanctions-against-Iran) \"Sunnis make up over 75 percent of the world's Muslim population\""
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "3.",
+                        "content": "[Iran, Israel and the United States](https://books.google.com/books?id=nVcmKRyID2EC&pg=PA15) \"Sunni, accounts for over 75% of the Islamic population\""
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "4.",
+                        "content": "[A dictionary of modern politics](https://books.google.com/books?id=qHXbGOUuF9YC&pg=PA252) \"probably 80% of the worlds Muslims are Sunni\""
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "5.",
+                        "content": "[Sunni Islam: Oxford Bibliographies Online Research Guide](https://books.google.com/books?id=D5_N97bAiJ0C&pg=PA3) \"Sunni Islam is the dominant division of the global Muslim community, and throughout history it has made up a substantial majority (85 to 90 percent) of that community.\""
                     }
                 ]
             },
             {
-                "block_type": "table",
-                "rows": [
+                "block_type": "list",
+                "content": [
                     {
-                        "block_type": "row",
-                        "values": [
-                            "col1",
-                            "col2",
-                            "col3",
-                            "col4",
-                            "col5",
-                            "col6",
-                            "col7",
-                            "col8",
-                            "col9",
-                            "col10",
-                            "col11",
-                            "col12",
-                            "col13",
-                            "col14",
-                            "col15",
-                            "col16",
-                            "col17",
-                            "col18",
-                            "col19",
-                            "col20",
-                            "col21",
-                            "col22",
-                            "col23",
-                            "col24",
-                            "col25"
-                        ],
-                        "is_heading": true
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "1.",
+                        "content": "[Sunni Islam: Oxford Bibliographies Online Research Guide](https://books.google.com/books?id=D5_N97bAiJ0C&pg=PA3) \"Sunni Islam is the dominant division of the global Muslim community, and throughout history it has made up a substantial majority (85 to 90 percent) of that community.\""
+                    }
+                ]
+            },
+            {
+                "block_type": "list",
+                "content": [
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "1.",
+                        "content": "[Sunni Islam: Oxford Bibliographies Online Research Guide](https://books.google.com/books?id=D5_N97bAiJ0C&pg=PA3) \"Sunni Islam is the dominant division of the global Muslim community, and throughout history it has made up a substantial majority (85 to 90 percent) of that community.\""
+                    }
+                ]
+            },
+            {
+                "block_type": "list",
+                "content": [
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "1.",
+                        "content": "[Sunni Islam: Oxford Bibliographies Online Research Guide](https://books.google.com/books?id=D5_N97bAiJ0C&pg=PA3) \"Sunni Islam is the dominant division of the global Muslim community, and throughout history it has made up a substantial majority (85 to 90 percent) of that community.\""
+                    }
+                ]
+            },
+            {
+                "block_type": "list",
+                "content": [
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "1.",
+                        "content": "[Sunni Islam: Oxford Bibliographies Online Research Guide](https://books.google.com/books?id=D5_N97bAiJ0C&pg=PA3) \"Sunni Islam is the dominant division of the global Muslim community, and throughout history it has made up a substantial majority (85 to 90 percent) of that community.\""
+                    }
+                ]
+            },
+            {
+                "block_type": "heading",
+                "content": "Three group doctrines",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": "Regarding the question which dogmatic tendencies are to be assigned to Sunnism, there is no agreement among Muslim scholars. Since the early modern period, is the idea that a total of three groups belong to the Sunnis: 1. those named after [[Al-Ash'ari|Abu l-Hasan al-Aschʿari|185|wiki]] (d. 935) [[Ash'ari|Ashʿarites|186|wiki]], 2. those named after [[Abu_Mansur_al-Maturidi|Abu Mansur al-Maturidi|187|wiki]] (d. 941) named [[Maturidi|Maturidites|188|wiki]] and 3. a differently named third group, which is traditionalistic-oriented and rejects the rational discourse of [[Kalām|Kalām|189|wiki]] advocated by the Maturidites and Ashʿarites. The Syrian scholar ʿAbd al-Baqi Ibn Faqih Fussa (d. 1661) calls this third traditionalist group the Hanbalites. The late Ottoman thinker İsmail Hakkı İzmirli (d. 1946), who agreed to dividing Sunnis into these three groups, called the traditionalist group [[Salafism|Salafiyya|190|wiki]], but also used *Athariyya* as an alternative term. For the Maturidiyya he gives *Nasafīyya* as a possible alternative name. Another used for the traditionalist-oriented group is \"people of [[Hadith|Hadith|191|wiki]]\" (*ahl al-ḥadīṯ*). It is used, for example, in the final document of the [[2016_international_conference_on_Sunni_Islam_in_Grozny|Grozny Conference|192|wiki]]. Only those \"people of the Hadith\" are assigned to Sunnism who practice *[[Tafwid|tafwīḍ|193|wiki]]*, i.e. who refrain from interpreting the ambiguous statements of the Quran."
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−12:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
+                        "block_type": "heading",
+                        "content": "Ash'ari",
+                        "heading_level": 3,
+                        "children": [
+                            {
+                                "block_type": "paragraph",
+                                "content": "Founded by [[Abu_al-Hasan_al-Ash'ari|Abu al-Hasan al-Ash'ari|194|wiki]] (873–935). This [[Theological_school|theological school|195|wiki]] of Aqeedah was embraced by many [[Muslim_scholars|Muslim scholars|196|wiki]] and developed in parts of the Islamic world throughout history; [[Al-Ghazali|al-Ghazali|197|wiki]] wrote on the creed discussing it and agreeing upon some of its principles."
+                            },
+                            {
+                                "block_type": "paragraph",
+                                "content": "Ash'ari theology stresses [[Divine_revelation|divine revelation|198|wiki]] over human reason. Contrary to the Mu'tazilites, they say that [[Ethics|ethics|199|wiki]] cannot be derived from human reason, but that God's commands, as revealed in the *Quran* and the *Sunnah* (the practices of Muhammad and his companions as recorded in the traditions, or [[Hadith|hadith|200|wiki]]), are the sole source of all morality and ethics."
+                            },
+                            {
+                                "block_type": "paragraph",
+                                "content": "Regarding the [[Nature_of_God|nature of God|201|wiki]] and the divine attributes, the Ash'ari rejected the [[Mu'tazili|Mu'tazili|202|wiki]] position that all Quranic references to God as having real attributes were metaphorical. The Ash'aris insisted that these attributes were as they \"best befit His Majesty\". The Arabic language is a wide language in which one word can have 15 different meanings, so the Ash'aris endeavor to find the meaning that best befits God and is not contradicted by the Quran. Therefore, when God states in the Quran, \"He who does not resemble any of His creation\", this clearly means that God cannot be attributed with body parts because He created body parts. Ash'aris tend to stress divine [[Omnipotence|omnipotence|203|wiki]] over human free will and they believe that the Quran is eternal and uncreated."
+                            }
+                        ]
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−11:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
+                        "block_type": "heading",
+                        "content": "Maturidi",
+                        "heading_level": 3,
+                        "children": [
+                            {
+                                "block_type": "paragraph",
+                                "content": "Founded by [[Abu_Mansur_al-Maturidi|Abu Mansur al-Maturidi|204|wiki]] (d. 944), the Maturidiyyah was the major tradition in [[Central_Asia|Central Asia|205|wiki]] based on [[Hanafi|Hanafi|206|wiki]]-law. It is more influenced by Persian interpretations of Islam and less on the traditions established within Arabian culture. In contrast to the traditionalistic approach, Maturidism allows to reject [[Hadith|hadiths|207|wiki]] based on reason alone. Nevertheless, revelation remains important to inform humans about that is beyond their intellectual limits, such as the concept of an afterlife. [[Ethics|Ethics|208|wiki]] on the other hand, do not need prophecy or revelation, but can be understood by reason alone. One of the tribes, the [[Seljuk_Turks|Seljuk Turks|209|wiki]], migrated to [[Turkey|Turkey|210|wiki]], where later the [[Ottoman_Empire|Ottoman Empire|211|wiki]] was established. Their preferred school of law achieved a new prominence throughout their whole empire although it continued to be followed almost exclusively by followers of the [[Hanafi|Hanafi|212|wiki]] school while followers of the [[Shafi|Shafi|213|wiki]] and [[Maliki|Maliki|214|wiki]] schools within the empire followed the Ash'ari and Athari schools of thought. Thus, wherever can be found [[Hanafi|Hanafi|215|wiki]] followers, there can be found the [[Maturidi|Maturidi|216|wiki]] creed."
+                            }
+                        ]
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−10:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
+                        "block_type": "heading",
+                        "content": "Athari",
+                        "heading_level": 3,
+                        "children": [
+                            {
+                                "block_type": "paragraph",
+                                "content": "Traditionalist or Athari theology is a movement of [[Islam|Islamic|217|wiki]] scholars who reject rationalistic Islamic theology (*[[Kalam|kalam|218|wiki]]*) in favor of strict textualism in interpreting the *[[Quran|Qur'an|219|wiki]]* and *[[Sunnah|sunnah|220|wiki]]*. The name derives from \"tradition\" in its technical sense as translation of the Arabic word *[[Hadith|hadith|221|wiki]]*. It is also sometimes referred to as *athari* as by [[Traditionalist_Theology_(Islam)|several other names|222|wiki]]."
+                            },
+                            {
+                                "block_type": "paragraph",
+                                "content": "Adherents of traditionalist theology believe that the *[[Zahir_(Islam)|zahir|223|wiki]]* (literal, apparent) meaning of the *Qur'an* and the [[Hadith|hadith|224|wiki]] have sole authority in matters of belief and law; and that the use of rational disputation is forbidden even if it verifies the truth. They engage in a literal reading of the *Qur'an*, as opposed to one engaged in *[[Ta'wil|ta'wil|225|wiki]]* (metaphorical interpretation). They do not attempt to conceptualize the meanings of the *Qur'an* rationally, and believe that their realities should be consigned to God alone (*[[Tafwid|tafwid|226|wiki]]*). In essence, the text of the Qur'an and Hadith is accepted without asking \"how\" or \"[[Bi-la_kaifa|Bi-la kaifa|227|wiki]]\"."
+                            },
+                            {
+                                "block_type": "paragraph",
+                                "content": "Traditionalist theology emerged among scholars of hadith who eventually coalesced into a movement called *[[Ahl_al-Hadith|ahl al-hadith|228|wiki]]* under the leadership of [[Ahmad_ibn_Hanbal|Ahmad ibn Hanbal|229|wiki]]. In matters of faith, they were pitted against [[Mu'tazilites|Mu'tazilites|230|wiki]] and other theological currents, condemning many points of their doctrine as well as the rationalistic methods they used in defending them. In the 10th century AD [[Al-Ash'ari|al-Ash'ari|231|wiki]] and [[Al-Maturidi|al-Maturidi|232|wiki]] found a middle ground between Mu'tazilite rationalism and [[Hanbalite|Hanbalite|233|wiki]] literalism, using the rationalistic methods championed by Mu'tazilites to defend most tenets of the traditionalist doctrine. Although the mainly Hanbali scholars who rejected this synthesis were in the minority, their emotive, narrative-based approach to faith remained influential among the urban masses in some areas, particularly in [[Abbasid_Caliphate|Abbasid|234|wiki]] [[Baghdad|Baghdad|235|wiki]]."
+                            },
+                            {
+                                "block_type": "paragraph",
+                                "content": "While [[Ash'arism|Ash'arism|236|wiki]] and [[Maturidism|Maturidism|237|wiki]] are often called the Sunni \"orthodoxy\", traditionalist theology has thrived alongside it, laying rival claims to be the orthodox Sunni faith. In the modern era, it has had a disproportionate impact on Islamic theology, having been appropriated by [[Wahhabi|Wahhabi|238|wiki]] and other traditionalist [[Salafi|Salafi|239|wiki]] currents and have spread well beyond the confines of the [[Hanbali|Hanbali|240|wiki]] school of law."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "block_type": "heading",
+                "content": "Narrow definition",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": "There were also Muslim scholars who wanted to limit the Sunni term to the *[[Ash'ari|Ash'arites|241|wiki]]* and *[[Maturidi|Māturīdites|242|wiki]]* alone. For example, Murtadā az-Zabīdī (d. 1790) wrote in his commentary on [[Al-Ghazali|al-Ghazalis|243|wiki]] \"Iḥyāʾ ʿulūm ad-dīn\": \"When (sc. The term)\" *ahl as-sunna wal jamaʿa* is used, the Ashʿarites and Māturīdites are meant. This position was also taken over by the Egyptian Fatwa Office in July 2013. In [[Ottoman_Empire|Ottoman|244|wiki]] times, many efforts were made to establish a good harmony between the teachings of the Ashʿarīya and the Māturīdīya. Finally, there were also scholars who regarded the Ashʿarites alone as Sunnis. For example, the Moroccan Sufi Ahmad ibn ʿAdschiba (d. 1809) stated in his commentary on [[Al-Fatiha|Fatiha|245|wiki]]: \"As far as the Sunnis are concerned, it is the Ashʿarites and those who follow in their correct belief.\""
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−09:30",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
+                        "block_type": "paragraph",
+                        "content": "Conversely, there were also scholars who excluded the Ashʿarites from Sunnism. The Andalusian scholar [[Ibn_Hazm|Ibn Hazm|246|wiki]] (d. 1064) said that Abu l-Hasan al-Ashʿarī belonged to the [[Murji'a|Murji'a|247|wiki]], namely those who were particularly far removed from the Sunnis in terms of faith. Twentieth-century [[Syrians|Syrian|248|wiki]]-[[Albanians|Albanian|249|wiki]] Athari [[Salafi_movement|Salafi|250|wiki]] theologian [[Muhammad_Nasiruddin_al-Albani|Muhammad Nasir al-Din al-Albani|251|wiki]] rejected extremism in excluding [[Ash'ari|Ash'aris|252|wiki]] from Sunni Islam. He believed that despite that their fundamental differences from Atharis, not every Ash'ari is to be excluded from *Ahl al-Sunna wal Jama'ah*, unless they openly disapprove of the doctrines of the *[[Salaf|Salaf|253|wiki]]* (*mad'hab as-Salaf*). According to Albani:\"'I do not share [the view of] some of the noble scholars of the past and present that we say about a group from the [many] Islamic groups that it is not from Ahlus-Sunnah due to its deviation in one issue or another... as for whether the Ash’aris or the Maaturidis are from Ahlus-Sunnah wal-Jamaa’ah, I say that they are from Ahlus-Sunnah wal-Jamaa’ah in many things related to aqidah but in other aqidah issues they have deviated away from Ahlus-Sunnah wal-Jamaa’ah.. I don't hold that we should say that they are not from Ahlus-Sunnah wal-Jamaa’ah whatsoever'\""
+                    }
+                ]
+            },
+            {
+                "block_type": "heading",
+                "content": "Sunnism in general and in a specific sense",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": "The [[Hanbalism|Hanbali|254|wiki]] scholar [[Ibn_Taymiyyah|Ibn Taymiyyah|255|wiki]] (d. 1328) distinguished in his work *Minhāj as-sunna* between Sunnis in the general sense (*ahl as-unna al-ʿāmma*) and Sunnis in the special sense (*ahl as-sunna al-ḫāṣṣa*). Sunnis in the general sense are all Muslims who recognize the caliphate of the three caliphs ([[Abū_Bakr|Abū Bakr|256|wiki]], [[ʿUmar_ibn_al-Khaṭṭāb|ʿUmar ibn al-Khaṭṭāb|257|wiki]] and [[ʿUthmān_ibn_ʿAffān|ʿUthmān ibn ʿAffān|258|wiki]]). In his opinion, this includes all Islamic groups except the Shiite [[Rafida|Rafidites|259|wiki]]. Sunnis in the special sense are only the \"people of the hadith\" (*ahl al-ḥadīṯ*)."
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−09:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
+                        "block_type": "paragraph",
+                        "content": "İsmail Hakkı İzmirli, who took over the distinction between a broader and narrower circle of Sunnis from Ibn Taimiya, said that [[Ibn_Kullab|Kullabiyya|260|wiki]] and the Ashʿarīyya are Sunnis in the general sense, while the [[Salafism|Salafiyya|261|wiki]] represent Sunnis in the specific sense. About the Maturidiyya he only says that they are closer to the Salafiyya than the Ashʿariyya because they excel more in [[Fiqh|Fiqh|262|wiki]] than in [[Kalām|Kalām|263|wiki]]. The [[Saudi_Arabia|Saudi scholar|264|wiki]] [[Muhammad_ibn_al-Uthaymeen|Muhammad Ibn al-ʿUthaimin|265|wiki]] (d. 2001), who like Ibn Taimiya differentiated between Sunnis in general and special senses, also excluded the Asharites from the circle of Sunnis in the special sense and took the view that only the pious ancestors (*as-salaf aṣ-ṣāliḥ*) who have agreed on the Sunnah belonged to this circle."
+                    }
+                ]
+            },
+            {
+                "block_type": "heading",
+                "content": "Classification of the Muʿtazila",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": "The [[Muʿtazila|Muʿtazilites|266|wiki]] are usually not regarded as Sunnis. [[Ibn_Hazm|Ibn Hazm|267|wiki]], for example, contrasted them with the Sunnis as a separate group in his heresiographic work *al-Faṣl fi-l-milal wa-l-ahwāʾ wa-n-niḥal*. In many medieval texts from the Islamic East, the *Ahl as-Sunna* are also differentiated to the Muʿtazilites. In 2010 the Jordanian *[[Fatwa|fatwa|268|wiki]]* office ruled out in a [[Fatwa|fatwa|269|wiki]] that the Muʿtazilites, like the Kharijites, represent a doctrine that is contrary to Sunnism. Ibn Taymiyya argued that the Muʿtazilites belong to the Sunnis in the general sense because they recognize the caliphate of the first three caliphs."
+                    }
+                ]
+            },
+            {
+                "block_type": "heading",
+                "content": "Mysticism",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": "There is broad agreement that the [[Sufism|Sufis|270|wiki]] are also part of Sunnism. This view can already be found in the [[Shafiʽi_school|Shafi'ite|271|wiki]] scholar [[Abu_Mansur_al-Baghdadi|Abu Mansur al-Baghdadi|272|wiki]] (d. 1037). In his [[Heresiography|heresiographical|273|wiki]] work  al-Farq baina l-firaq  he divided the Sunnis into eight different categories (*aṣnāf*) of people: 1. the theologians and [[Kalam|Kalam|274|wiki]] Scholars, 2. the [[Fiqh|Fiqh|275|wiki]] scholars, 3. the traditional and [[Hadith|Hadith|276|wiki]] scholars, 4. the [[Adab_(Islam)|Adab|277|wiki]] and language scholars, 5. the [[Koran|Koran|278|wiki]] – Scholars, 6. the [[Sufism|Sufi|279|wiki]] ascetics (*az-zuhhād aṣ-ṣūfīya*), 7. those who perform the *[[Ribat|ribat|280|wiki]]* and *[[Jihad|jihad|281|wiki]]* against the enemies of Islam, 8. the general crowd. According to this classification, the Sufis are one of a total of eight groups within Sunnism, defined according to their religious specialization."
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−08:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
+                        "block_type": "paragraph",
+                        "content": "The [[Tunisia|Tunisian|282|wiki]] scholar Muhammad ibn al-Qāsim al-Bakkī (d. 1510) also included the Sufis in Sunnism. He divided the Sunnis into the following three groups according to their knowledge (*istiqrāʾ*): Similarly, [[Murtada_al-Zabidi|Murtadā az-Zabīdī|283|wiki]] stated elsewhere in his commentary on [[Al-Ghazali|Ghazzali's|284|wiki]] *[[The_Revival_of_the_Religious_Sciences|Iḥyāʾ ʿulūm ad-dīn|285|wiki]]* *that the Sunnis consisted of four groups (firaq*), namely the [[Hadith_scholar|hadith scholars|286|wiki]] (''muḥaddiṯhūn), the Sufis, the Ashʿarites and the Māturīdites. ''"
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−07:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
+                        "block_type": "paragraph",
+                        "content": "Some *[[Ulama|ulema|287|wiki]]* wanted to exclude the Sufis from Sunnism. The Yemeni scholar ʿAbbās ibn Mansūr as-Saksakī (d. 1284) explained in his doxographic work  al-Burhān fī maʿrifat ʿaqāʾid ahl al-adyān  (\"The evidence of knowledge of the beliefs of followers of different religions\") about the Sufis: \"They associate themselves with the Sunnis, but they do not belong to them, because they contradict them in their beliefs, actions and teachings.\" That is what distinguishes the Sufis from Sunnis according to as-Saksakī their orientation to the hidden inner meaning of the *Qur'an* and the *Sunnah*. In this, he said, they resemble the [[Batiniyya|Bātinites|288|wiki]]. According to the final document of the Grozny Conference, only those Sufis are to be regarded as Sunnis who are \"people of pure Sufism\" (*ahl at-taṣauwuf aṣ-ṣāfī*) in the knowledge, ethics and purification of the interior, according to [[Tariqa|Method|289|wiki]] as practiced by [[Junayd_of_Baghdad|al-Junaid Al- Baghdadi|290|wiki]] and the \"Imams of Guidance\" (*aʾimma al-hudā*) who followed his path."
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−06:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
+                        "block_type": "paragraph",
+                        "content": "In the 11th century, Sufism, which had previously been a less \"codified\" trend in Islamic piety, began to be \"ordered and crystallized\" into *[[Tariqa|Tariqahs|291|wiki]]* (orders) which have continued until the present day. All these orders were founded by a major Sunni Islamic [[Saint_(Islamic)|saint|292|wiki]], and some of the largest and most widespread included the [[Qadiriyya|Qadiriyya|293|wiki]] (after [[Abdul-Qadir_Gilani|Abdul-Qadir Gilani|294|wiki]] [d. 1166]), the [[Rifa'i|Rifa'iyya|295|wiki]] (after [[Ahmed_al-Rifa'i|Ahmed al-Rifa'i|296|wiki]] [d. 1182]), the [[Chishti_Order|Chishtiyya|297|wiki]] (after [[Moinuddin_Chishti|Moinuddin Chishti|298|wiki]] [d. 1236]), the [[Shadiliyya|Shadiliyya|299|wiki]] (after [[Abul_Hasan_ash-Shadhili|Abul Hasan ash-Shadhili|300|wiki]] [d. 1258]), and the [[Naqshbandi|Naqshbandiyya|301|wiki]] (after [[Baha-ud-Din_Naqshband_Bukhari|Baha-ud-Din Naqshband Bukhari|302|wiki]] [d. 1389]). Contrary to popular [[Orientalism|Orientalist|303|wiki]] depictions, neither the founders of these orders nor their followers considered themselves to be anything other than orthodox Sunni Muslims, Many of the most eminent defenders of Islamic orthodoxy, such as [[Abdul_Qadir_Gilani|'Abd al-Qadir Jilani|304|wiki]], [[Al-Ghazali|Al-Ghazali|305|wiki]], Sultan Ṣalāḥ ad-Dīn Al-Ayyubi ([[Saladin|Saladin|306|wiki]]) were connected with Sufism.\" The [[Salafi|Salafi|307|wiki]] and [[Wahhabi|Wahhabi|308|wiki]] strands of Sunnism do not accept many mystical practices associated with the contemporary Sufi orders."
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−05:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−04:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−03:30",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−03:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−02:30",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−02:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC−01:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+00:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+01:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+02:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+03:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+03:30",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+04:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+04:30",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+05:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+05:30",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+05:45",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+06:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+06:30",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+07:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+08:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+08:45",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+09:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+09:30",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+10:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+10:30",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+11:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+12:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+12:45",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+13:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+13:45",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC+14:00",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
-                    },
-                    {
-                        "block_type": "row",
-                        "values": [
-                            "UTC offset",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            "",
-                            ""
-                        ],
-                        "is_heading": false
+                        "block_type": "list",
+                        "content": [
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "1.",
+                                "content": "1) the people of [[Hadith|Hadith|309|wiki]] (*[[Ahl_al-Hadith|ahl al-ḥadīṯh|310|wiki]]*): Their principles are based on the hearing-based evidence, namely [[Quran|the Book|311|wiki]] (*Qur'an*), the *[[Sunnah|Sunnah|312|wiki]]* and the *[[Ijma|Ijmāʿ|313|wiki]]* (consensus)."
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "2.",
+                                "content": "2) The people of theory and the intellectual trade (*ahl an-naẓar wa-ṣ-ṣināʿa al-fikrīya*): They include the [[Ash'ari|Ashʿarites|314|wiki]] and the [[Hanafi|Hanafis|315|wiki]], the latter of whom consider [[Abu_Mansur_al-Maturidi|Abū Mansūr al-Māturīdī|316|wiki]] as their master. They agree in the rational principles on all questions where there is no hearing-based evidence, in the hearing-based principles in everything that reason conceives as possible, and in the rational as well as the hearing-based principles in all other questions. They also agree on all dogmatic questions, except for the question of creation (*takwīn*) and the question of *[[Taqlid|Taqlīd|317|wiki]]*."
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "3.",
+                                "content": "3) the people of feeling and revelation (*ahl al-wiǧdān wa-l-kašf*): These are the [[Sufism|Sufis|318|wiki]]. Its principles correspond in the initial stage to the principles of the other two groups, but in the final stage they rely on revelation (*kašf*) and inspiration (*ilhām*)."
+                            }
+                        ]
                     }
                 ]
             }
@@ -2009,173 +412,177 @@ const sourceString = [
     },
     {
         "block_type": "heading",
-        "content": "Nautical time zones",
+        "content": "Jurisprudence",
         "heading_level": 1,
         "children": [
             {
                 "block_type": "paragraph",
-                "content": "Since the 1920s, a [[Nautical_time|nautical standard time|100|wiki]] system has been in operation for ships on the [[International_waters|high seas|101|wiki]]. As an ideal form of the terrestrial time zone system, nautical time zones consist of [[Gore_(segment)|gores|102|wiki]] of 15° offset from GMT by a whole number of hours. A nautical date line follows the 180th meridian, bisecting one 15° gore into two 7.5° gores that differ from GMT by ±12 hours."
+                "content": "Interpreting Islamic law by deriving specific rulings – such as how to pray – is commonly known as [[Fiqh|Islamic jurisprudence|319|wiki]]. The schools of law all have their own particular tradition of interpreting this jurisprudence. As these schools represent clearly spelled out methodologies for interpreting Islamic law, there has been little change in the methodology with regard to each school. While conflict between the schools was often violent in the past, the four Sunni schools recognize each other's validity and they have interacted in legal debate over the centuries."
             },
             {
-                "block_type": "paragraph",
-                "content": "However, in practice each ship may choose what time to observe at each location. Ships may decide to adjust their clocks at a convenient time, usually at night, not exactly when they cross a certain longitude. Some ships simply remain on the time of the departing port during the whole trip."
+                "block_type": "heading",
+                "content": "Schools",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "image",
+                        "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/Great_Mosque_of_Kairouan_Panorama_-_Grande_Mosqu%C3%A9e_de_Kairouan_Panorama.jpg",
+                        "img_caption": "The Great Mosque of Kairouan (also known as the Mosque of Uqba) in the city of Kairouan, Tunisia, was, particularly from the 9th to 11th century, an important center of Islamic learning with an emphasis on the Maliki Madh'hab."
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "There are many intellectual traditions within the field of *[[Sharia|Shari'ah|320|wiki]]* ([[Islamic_law|Islamic law|321|wiki]]), often referred to as *[[Madhhab|Madh'habs|322|wiki]]* (legal schools). These varied traditions reflect differing viewpoints on some laws and obligations within Islamic law. While one school may see a certain act as a religious obligation, another may see the same act as optional. These schools aren't regarded as sects; rather, they represent differing viewpoints on issues that are not considered the core of [[Islamic_belief|Islamic belief|323|wiki]]. Historians have differed regarding the exact delineation of the schools based on the underlying principles they follow."
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "Many traditional scholars saw Sunni Islam in two groups: *[[Ahl_al-Ra'y|Ahl al-Ra'y|324|wiki]]*, or \"people of reason\", due to their emphasis on scholarly judgment and discourse; and *[[Ahl_al-Hadith|Ahl al-Hadith|325|wiki]]*, or \"people of traditions\", due to their emphasis on restricting juristic thought to only what is found in scripture. [[Ibn_Khaldun|Ibn Khaldun|326|wiki]] defined the Sunni schools as three: the [[Hanafi|Hanafi|327|wiki]] school representing reason, the [[Ẓāhirī|Ẓāhirīte|328|wiki]] school representing tradition, and a broader, middle school encompassing the [[Shafi'i|Shafi'ite|329|wiki]], [[Maliki|Malikite|330|wiki]] and [[Hanbali|Hanbalite|331|wiki]] schools."
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "During the [[Middle_Ages|Middle Ages|332|wiki]], the Mamluk Sultanate ([[Cairo)|Mamluk Sultanate|333|wiki]] in Egypt delineated the acceptable Sunni schools as only [[Hanafi|Hanafi|334|wiki]], [[Maliki|Maliki|335|wiki]], [[Shafi'i|Shafi'i|336|wiki]] and [[Hanbali|Hanbali|337|wiki]], excluding the Ẓāhirī school. The [[Ottoman_Empire|Ottoman Empire|338|wiki]] later reaffirmed the official status of four schools as a reaction to the [[Shia_Islam|Shiite|339|wiki]] character of their ideological and political archrival, the [[Safavid_dynasty|Persian Safavids|340|wiki]]. In the contemporary era, former [[List_of_heads_of_government_of_Sudan|Prime Minister of Sudan|341|wiki]] [[Al-Sadiq_al-Mahdi|Al-Sadiq al-Mahdi|342|wiki]], as well as the [[Amman_Message|Amman Message|343|wiki]] issued by King [[Abdullah_II_of_Jordan|Abdullah II of Jordan|344|wiki]], recognize the Ẓāhirīs and keep the number of Sunni schools at five."
+                    }
+                ]
             }
         ]
     },
     {
         "block_type": "heading",
-        "content": "Skewing of time zones",
+        "content": "Pillars of iman",
         "heading_level": 1,
         "children": [
             {
-                "block_type": "image",
-                "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/Tzdiff-Europe-summer.png",
-                "img_caption": "Difference between sun time and clock time during daylight saving time:"
+                "block_type": "paragraph",
+                "content": "The doctrines of the Sunnis are recorded in various [[Aqida|creeds|345|wiki]], which summarize the most important points in the form of a list in the manner of a [[Catechism|Catechism|346|wiki]]. The individual teaching points differ depending on the author's affiliation to a certain teaching tradition. The most important creeds that explicitly claim to represent the teachings of the Sunnis (*ahl as-sunna wal-jama* or similar) include:"
             },
             {
-                "block_type": "image",
-                "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/DaylightSaving-World-Subdivisions.png",
-                "img_caption": "{{legend|#1b80e6|DST observed}} {{legend|#ef690a|DST formerly observed}}\n{{legend|#c00000|DST never observed|undefined"
+                "block_type": "paragraph",
+                "content": "Most of the mentioned branches testify to six principal articles of faith known as the six pillars of *imān* (Arabic for \"faith\"), which are believed to be essential. These six articles are common that present-day Sunnis agree on, from those who adhere to traditional Sunnism to those who adhere to latter-day movements. Additionally, classical Sunni Islam also outlined numerous other cardinal doctrines since the 8th century, such as the [[Al-Aqidah_al-Tahawiyyah|Creed of Tahāwi|347|wiki]]. Traditionally, these Sunni articles of faith have included the following:"
             },
             {
                 "block_type": "paragraph",
                 "content": ""
             },
             {
-                "block_type": "paragraph",
-                "content": "Ideal time zones, such as nautical time zones, are based on the mean solar time of a particular meridian located in the middle of that zone with boundaries located 7.5 degrees east and west of the meridian. In practice, however, many time zone boundaries are drawn much farther to the west, and some countries are located entirely outside their ideal time zones."
-            },
-            {
-                "block_type": "paragraph",
-                "content": "For example, even though the Prime Meridian (0°) passes through [[Spain|Spain|103|wiki]] and [[France|France|104|wiki]], they use the mean solar time of 15 degrees east ([[Central_European_Time|Central European Time|105|wiki]]) rather than 0 degrees (Greenwich Mean Time). France previously used GMT, but was switched to CET (Central European Time) during the [[German_occupation_of_France_during_World_War_II|German occupation|106|wiki]] of the country during World War II and did not switch back after the war. Similarly, prior to World War II, the Netherlands observed \"Amsterdam Time\", which was twenty minutes ahead of Greenwich Mean Time. They were obliged to follow German time during the war, and kept it thereafter. In the mid-1970s the Netherlands, as other European states, began observing daylight saving (summer) time."
-            },
-            {
-                "block_type": "paragraph",
-                "content": "One reason to draw time zone boundaries far to the west of their ideal meridians is to allow the more efficient use of afternoon sunlight. Some of these locations also use [[Daylight_saving_time|daylight saving time|107|wiki]] (DST), further increasing the difference to local solar time. As a result, in summer, solar noon in the Spanish city of [[Vigo|Vigo|108|wiki]] occurs at 14:41 clock time. This westernmost area of continental Spain never experiences sunset before 18:00 clock time, even in winter, despite lying 42 degrees north of the equator. Near the summer [[Solstice|solstice|109|wiki]], Vigo has sunset times after 22:00, similar to those of [[Stockholm|Stockholm|110|wiki]], which is in the same time zone and 17 degrees farther north. Stockholm has much earlier sunrises, though."
-            },
-            {
-                "block_type": "paragraph",
-                "content": "A more extreme example is [[Nome,_Alaska|Nome, Alaska|111|wiki]], which is at 165°24′W longitude – just west of center of the idealized [[Samoa_Time_Zone|Samoa Time Zone|112|wiki]] ([[165th_meridian_west|165°W|113|wiki]]). Nevertheless, Nome observes [[Alaska_Time_Zone|Alaska Time|114|wiki]] ([[135th_meridian_west|135°W|115|wiki]]) with DST so it is slightly more than two hours ahead of the sun in winter and over three in summer. [[Kotzebue,_Alaska|Kotzebue, Alaska|116|wiki]], also near the same meridian but north of the Arctic Circle, has *two* sunsets on the same day in early August, one shortly after midnight at the start of the day, and the other shortly before midnight at the end of the day."
-            },
-            {
-                "block_type": "paragraph",
-                "content": "[[China|China|117|wiki]] [[List_of_extreme_points_of_China|extends as far west as 73°E|118|wiki]], but all parts of it use [[UTC+08:00|UTC+08:00|119|wiki]] ([[120th_meridian_east|120°E|120|wiki]]), so solar \"noon\" can occur as late as 15:00 in western portions of China such as [[Xinjiang|Xinjiang|121|wiki]]. The [[Afghanistan-China_border|Afghanistan-China border|122|wiki]] marks the greatest terrestrial time zone difference on Earth, with a 3.5 hour difference between Afghanistan's UTC+4:30 and China's [[Time_in_China|UTC+08:00|123|wiki]]."
-            },
-            {
-                "block_type": "table",
-                "rows": [
+                "block_type": "list",
+                "content": [
                     {
-                        "block_type": "row",
-                        "values": [
-                            "col1",
-                            "col2"
-                        ],
-                        "is_heading": true
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "1.",
+                        "content": "The text traced back to [[Ahmad_ibn_Hanbal|Ahmad ibn Hanbal|348|wiki]], in which he defined \"the characteristics of the believer of the Sunnis\" (*sifat al-Mu'min min ahl as-Sunna wa-l-jama*). The text is handed down in two works in the work *Ṭabaqāt al-Ḥanābila* of the Hanbali Qadi Ibn Abi Yaʿla]] (d. 1131). The first version comes from a treatise on the Sunnah by Ahmad ibn Hanbal's disciple Muhammad ibn Habib al-Andarani, the second is based on Ahmad's disciple Muhammad ibn Yunus al-Sarachhi."
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "",
-                            "1h ± 30 min behind"
-                        ],
-                        "is_heading": false
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "2.",
+                        "content": "The two creeds of Abu l-Hasan al-Ashʿarī in his works *Maqālāt al-islāmīyīn* and *Kitāb al-Ibāna ʿan uṣūl ad-diyāna*. The former is called the teaching of *ahl al-ḥadīṯ wa-s-sunna*, the latter as the teachings of the *ahl al-ḥaqq wa-s-sunna*."
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "",
-                            "0h ± 30m"
-                        ],
-                        "is_heading": false
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "3.",
+                        "content": "The confession of the Egyptian Hanafi at-Tahāwī (d. 933), also known under the title  Bayān as-sunna wa-l-ǧamāʿa  (\"Presentation of Sunna and Community\"). It has received frequent comments from the 13th century onward."
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "",
-                            "1h ± 30 m ahead"
-                        ],
-                        "is_heading": false
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "4.",
+                        "content": "The \"Qadiritic Creed\" (*al-iʿtiqād [[Al-Qādir|al-Qādir|349|wiki]]ī*) mentioned in the world chronicle *al-Muntaẓam* by [[Ibn_al-Jschauzī|Ibn al-Jschauzī|350|wiki]] and referring to the Abbasid caliph al-Qādir (d. 1031) is returned. The caliph [[Al-Qa'im_(Abbasids)|al-Qā'im|351|wiki]] is supposed to have read this text, which is shown at the end as the \"Doctrine of the Sunnis\" (*qaul ahl as-sunna wal-jama*), in the year 433 [[Hijri_year|Hijra|352|wiki]] (= 1041/42 AD) which was read in front of a meeting of ascetics and scholars in the caliph's palace."
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "",
-                            "2h ± 30 m ahead"
-                        ],
-                        "is_heading": false
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "5.",
+                        "content": "The creed of [[Al-Ghazālī|al-Ghazālī|353|wiki]] (d. 1111) in his second book of his religious encyclopedia *Iḥyāʾ ʿulūm ad-dīn*. It is headed \"The Sunni Creed in the Two Phrases of the [[Shahāda|Shahāda|354|wiki]]\" (*ʿAqīdat ahl as-sunna fī kalimatai aš-šahāda*) and deals first with the doctrine of God and then the other doctrinal points."
                     },
                     {
-                        "block_type": "row",
-                        "values": [
-                            "",
-                            "3h ± 30 m ahead"
-                        ],
-                        "is_heading": false
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "6.",
+                        "content": "The confession *al-ʿAqīda al-Wāsiṭīya* by Ibn Taimīya (1263–1328), which later received importance especially among the Wahhabis and the Ahl-i Hadīth. It was translated into French by [[Henri_Laoust|Henri Laoust|355|wiki]], by Merlin Swartz into English and by Clemens Wein into German."
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "block_type": "heading",
-        "content": "Daylight saving time",
-        "heading_level": 1,
-        "children": [
-            {
-                "block_type": "paragraph",
-                "content": "Many countries, and sometimes just certain regions of countries, adopt daylight saving time (DST), also known as summer time, during part of the year. This typically involves advancing [[Clock|clocks|124|wiki]] by an [[Hour|hour|125|wiki]] near the start of [[Spring_(season)|spring|126|wiki]] and adjusting back in [[Autumn|autumn|127|wiki]] (\"spring forward\", \"fall back\"). Modern DST was first proposed in 1907 and was in widespread use in 1916 as a [[World_War_I|wartime|128|wiki]] measure aimed at [[Energy_conservation|conserving coal|129|wiki]]. Despite [[Daylight_saving_time|controversy|130|wiki]], many countries have used it off and on since then; [[Daylight_saving_time_by_country|details vary by location|131|wiki]] and change occasionally. Countries around the equator usually do not observe daylight saving time, since the seasonal difference in sunlight there is minimal."
-            }
-        ]
-    },
-    {
-        "block_type": "heading",
-        "content": "Computer systems",
-        "heading_level": 1,
-        "children": [
-            {
-                "block_type": "paragraph",
-                "content": "Many computer [[Operating_system|operating systems|132|wiki]] include the necessary support for working with all (or almost all) possible local times based on the various time zones. Internally, operating systems typically use [[Coordinated_Universal_Time|UTC|133|wiki]] as their basic [[System_time|time-keeping standard|134|wiki]], while providing services for converting local times to and from UTC, and also the ability to automatically change local time conversions at the start and end of daylight saving time in the various time zones. (See the article on [[Daylight_saving_time|daylight saving time|135|wiki]] for more details on this aspect)."
             },
             {
-                "block_type": "paragraph",
-                "content": "Web servers presenting web pages primarily for an audience in a single time zone or a limited range of time zones typically show times as a local time, perhaps with UTC time in brackets. More internationally oriented websites may show times in UTC only or using an arbitrary time zone. For example, the international English-language version of CNN includes GMT and Hong Kong Time, whereas the US version shows [[Eastern_Time_Zone|Eastern Time|136|wiki]]. US Eastern Time and [[Pacific_Time_Zone|Pacific Time|137|wiki]] are also used fairly commonly on many US-based English-language websites with global readership. The format is typically based in the [[World_Wide_Web_Consortium|W3C|138|wiki]] Note \"datetime\"."
-            },
-            {
-                "block_type": "paragraph",
-                "content": "[[Email|Email|139|wiki]] systems and other messaging systems ([[Internet_Relay_Chat|IRC chat|140|wiki]], etc.) time-stamp messages using UTC, or else include the sender's time zone as part of the message, allowing the receiving program to display the message's date and time of sending in the recipient's local time."
-            },
-            {
-                "block_type": "paragraph",
-                "content": "[[Database|Database|141|wiki]] records that include a time stamp typically use UTC, especially when the database is part of a system that spans multiple time zones. The use of local time for time-stamping records is not recommended for time zones that implement daylight saving time because once a year there is a one-hour period when local times are ambiguous."
-            },
-            {
-                "block_type": "paragraph",
-                "content": "[[Calendaring_software|Calendar systems|142|wiki]] nowadays usually tie their time stamps to UTC, and show them differently on computers that are in different time zones. That works when having telephone or internet meetings. It works less well when travelling, because the calendar events are assumed to take place in the time zone the computer or smartphone was on when creating the event. The event can be shown at the wrong time. For example, if a New Yorker plans to meet someone in Los Angeles at 9 AM, and makes a calendar entry at 9 AM (which the computer assumes is New York time), the calendar entry will be at 6 AM if taking the computer's time zone. There is also an option in newer versions of [[Microsoft_Outlook|Microsoft Outlook|143|wiki]] to enter the time zone in which an event will happen, but often not in other calendar systems. Calendaring software must also deal with [[Daylight_saving_time|daylight saving time|144|wiki]] (DST). If, for political reasons, the begin and end dates of daylight saving time are changed, calendar entries should stay the same in local time, even though they may shift in UTC time. In Microsoft Outlook, time stamps are therefore stored and communicated without DST offsets. Hence, an appointment in London at noon in the summer will be represented as 12:00 (UTC+00:00) even though the event will actually take place at 13:00 UTC. In [[Google_Calendar|Google Calendar|145|wiki]], calendar events are stored in UTC (although shown in local time) and might be changed by a time-zone changes, although normal daylight saving start and end are compensated for (similar to much other calendar software)."
+                "block_type": "list",
+                "content": [
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "1.",
+                        "content": "1) Belief in the [[Oneness_of_God|Oneness of God|356|wiki]]"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "2.",
+                        "content": "2) Belief in the [[Angels_in_Islam|Angels of God|357|wiki]]"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "3.",
+                        "content": "3) Belief in Holy Books"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "4.",
+                        "content": "4) Belief in the [[Prophets_in_Islam|Prophets of God|358|wiki]]"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "5.",
+                        "content": "5) Belief in Resurrection after Death and the [[Day_of_Judgment|Day of Judgment|359|wiki]]"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "6.",
+                        "content": "6) Belief in Preordainment (*[[Qadar|Qadar|360|wiki]]*)"
+                    }
+                ]
             },
             {
                 "block_type": "heading",
-                "content": "Operating systems",
+                "content": "God",
                 "heading_level": 2,
                 "children": [
                     {
                         "block_type": "heading",
-                        "content": "Unix",
+                        "content": "Unity",
                         "heading_level": 3,
                         "children": [
                             {
                                 "block_type": "paragraph",
-                                "content": "Most [[Unix-like|Unix-like|146|wiki]] systems, including [[Linux|Linux|147|wiki]] and [[Mac_OS_X|Mac OS X|148|wiki]], keep system time in time_t format, representing the number of seconds (excluding [[Leap_second|leap seconds|149|wiki]]) that have elapsed since 00:00:00 [[Coordinated_Universal_Time|Coordinated Universal Time|150|wiki]] (UTC) on Thursday, January 1, 1970. By default the external representation is as UTC (Coordinated Universal Time), though individual processes can specify time zones using the *TZ* [[Environment_variable|environment variable|151|wiki]]. This allows users in multiple time zones to use the same computer, with their respective local times displayed correctly to each user. Time zone information most commonly comes from the [[IANA_time_zone_database|IANA time zone database|152|wiki]]. In fact, many systems, including anything using the [[GNU_C_Library|GNU C Library|153|wiki]], can make use of this database."
+                                "content": "At the center of the Sunni creed is [[Tawhid|Tawhid|361|wiki]], the belief in the oneness of God. God is a single (*fard*) God, besides whom there is no other deity. He is single (*[[Munfarid|munfarid|362|wiki]]*), has no partner (*šarīk*), no opposite (*nidd*), no counterpart (*maṯīl*) and no adversary (*ḍidd*). He has neither taken a companion nor children, neither conceived nor is he conceived."
+                            },
+                            {
+                                "block_type": "paragraph",
+                                "content": "God created everything, the years and times, day and night, light and darkness, the heavens and the earth, all kinds of creatures that are on it, the land and the sea, and everything living, dead and solid. Before he created all of this, he was completely alone, with nothing with him. In contrast to his creation, God has a timeless nature. He is beginningless (*azalī*) because he has existed for all eternity and nothing precedes him, and he is endless (*abadī*) because he continues to exist without interruption for all eternity. He is the first and the last, as it says in the Quran (Sura 57: 3). God brought forth creation not because he needed it, but to demonstrate his power and as the implement his previous will and his primordial speech. God is creator, but has no needs. He does not need food, does not feel lonely and does not keep company with anyone."
                             }
                         ]
                     },
                     {
                         "block_type": "heading",
-                        "content": "Microsoft Windows",
+                        "content": "Transcendence",
                         "heading_level": 3,
                         "children": [
                             {
                                 "block_type": "paragraph",
-                                "content": "[[Microsoft_Windows|Windows|154|wiki]]-based computer systems prior to [[Windows_2000|Windows 2000|155|wiki]] used local time, but Windows 2000 and later can use UTC as the basic system time. The [[Windows_Registry|system registry|156|wiki]] contains time zone information that includes the offset from UTC and rules that indicate the start and end dates for daylight saving in each zone. Interaction with the user normally uses local time, and application software is able to calculate the time in various zones. [[Remote_Desktop_Services|Terminal Servers|157|wiki]] allow remote computers to redirect their time zone settings to the Terminal Server so that users see the correct time for their time zone in their desktop/application sessions. Terminal Services uses the server base time on the Terminal Server and the client time zone information to calculate the time in the session."
+                                "content": "To absolve God of all anthropomorphism, the Qur'anic statements that \"God sat on the throne\" (istawā ʿalā l-ʿarš; Surah 7:54; 20: 5) receive a lot of the Sunni creeds attention. The creed of al-Qādir emphasizes that God did not set himself up on the throne (ʿarš) \"in the manner of the rest of the creatures\" and that he created this throne, although he did not need it. Al-Ghazali's knowledge of the faith states that the \"sitting down\" is free from contact (*mumāssa*) with the throne. It is not the throne that carries God, but the throne and its bearers are carried through the grace of his power. According to al-Ashʿari, the Sunnis confess that God is on his throne, but without asking how. Even if God does not need the throne and what is below, because he spatially occupies everything, including what is above him, the throne and stool (*kursī*) are a reality."
+                            }
+                        ]
+                    },
+                    {
+                        "block_type": "heading",
+                        "content": "Names and attributes",
+                        "heading_level": 3,
+                        "children": [
+                            {
+                                "block_type": "paragraph",
+                                "content": "The Sunnis confess that the names of God cannot be said to be anything other than God, as Muʿtazilites and Kharijites claim. Rather, they teach that there are correlating attributes (*ṣifāt*) which exist in each of the names of God mentioned in the Quran: God is alive through life (*[[Ḥayāh|ḥayāh|363|wiki]]*), knowing through knowledge (*ʿilm*), mighty through power (*ʿqudra*), wanting through will (*[[Irāda|irāda|364|wiki]]*), hearing through hearing (*samʿ*), seeing through sight (*[[Baṣar|baṣar|365|wiki]]*) and speaking through Speech (*[[Kalām|kalām|366|wiki]]*). The attributes are not identical to God, nor are they anything different from him. Only those attributes are ascribed to God which he ascribed to himself (in the [[Quran|Quran|367|wiki]]) or which his prophet ascribed to him. And every attribute that he or his [[Prophet|prophet|368|wiki]] has ascribed to him is a real attribute, not an attribute [[Majaz|figuratively|369|wiki]]."
                             }
                         ]
                     }
@@ -2183,88 +590,207 @@ const sourceString = [
             },
             {
                 "block_type": "heading",
-                "content": "Programming languages",
+                "content": "Angels and other spirits",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "image",
+                        "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/Siyer-i_Nebi_298a.jpg",
+                        "img_caption": "Muhammed accompanied by the archangels Gabriel, Michael, Israfil und Azrael. Turkish Siyer-i-Nebi-work, 1595"
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "Sunnis believe in [[Angels_in_Islam|angels|370|wiki]]. God hid the [[Angels|angels|371|wiki]] from the vision of humans, thus they can usually not see them. Just in some special occusations God unveils them for individual humans. Like when the archangel [[Gabriel|Gabriel|372|wiki]] appeared to the prophet [[Muhammad|Muhammad|373|wiki]] one time in his true form with 600 wings, filling the entire horizon and another time when he was among the circles of the Sahaba, in the form of a white clothed traveller."
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "[[Angels|Angels|374|wiki]] fulfil duties assigned by God. The [[Angel|angel|375|wiki]] [[Gabriel|Gabriel|376|wiki]] has the mission to transmit God's revelations to chosen Prophets. The [[Angel_Michael|angel Michael|377|wiki]] is assigned over rain and plants. The [[Angel|angel|378|wiki]] [[Israfil|Israfil|379|wiki]] must blow into the trumpet during thunder and the day of resurrection. Furthermore to the angels belong the recording angels, who supervise humans and the angel of death, who takes the [[Ruh|souls|380|wiki]] (lit. spirits) of the inhabitants of the world."
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "Unlike the Mutazilites and the Jahmites, the Sunnis believe that [[Iblis|Satan|381|wiki]] whispers doubts to humans and hits them, as the Quran states. But humans, [[Jinn|jinn|382|wiki]], [[Angels|angels|383|wiki]] and [[Shaitan|devils|384|wiki]] are all created by the power of God and bound to his will. Even if humans, jinn, angels and devils aligned to move or stop one atom, they could not succeed without God's will."
+                    }
+                ]
+            },
+            {
+                "block_type": "heading",
+                "content": "Books of God",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "image",
+                        "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/Historic_Quran_texts_in_Old_Dhaka.jpg",
+                        "img_caption": "Historic Quran of Old Dhaka, Bangladesh"
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "The Sunnis further believe in the books of God, sent to the envoys of God. To them belong the Quran, the Torah, the Gospel and the Psalms"
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "The [[Quran|Quran|385|wiki]] is according to Sunni views the speech of God. Who listens to it and regards it as human speech is according to Sunni Creed by at-Tahāwī an [[Kafir|infidel|386|wiki]]. The [[Quran|Quran|387|wiki]] as the speech of God is sent down by the \"trustworthy Spirit\" (*ar-rūḥ al-amīn*; surah 26:193) and taught by [[Muhammad|Muhammad|388|wiki]]. God sent him down as inspiration (*wahy*) on his Messenger. The path of God's speech to the community of Muslims is a multi-stage process: God pronounced it, the [[Angel_Gabriel|angel Gabriel|389|wiki]] heard it and [[Mohammed|Mohammed|390|wiki]] repeated it, [[Mohammed|Mohammed|391|wiki]] repeated it to his [[Muhammad's_companions|companions|392|wiki]], and the [[Ummah|Ummah|393|wiki]] repeated them."
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "As the speech of God, the [[Quran|Quran|394|wiki]] is according to Sunnism uncreated. The teachings of the creation of the Quran is rejected by Sunnis. Anyone who takes this teaching is regarded as an unbeliever. The Quran is recited with the tongue, written into books and memorized by the heart, but remains the uncreated speech of God, because it is individable and can not be split by the transmition from heart to paper. [[At-Tahāwī|At-Tahāwī|395|wiki]] specifies that the [[Quran|Quran|396|wiki]] is not created like human speech. Rather, it came from God in an unexplained way as a word (*qaul*). [[Ibn_Taimīya|Ibn Taimīya|397|wiki]] explains that the [[Quran|Quran|398|wiki]] originated from God and will return (sc. At the end of times) too."
+                    }
+                ]
+            },
+            {
+                "block_type": "heading",
+                "content": "Prophets",
                 "heading_level": 2,
                 "children": [
                     {
                         "block_type": "heading",
-                        "content": "Java",
+                        "content": "Messages",
                         "heading_level": 3,
                         "children": [
                             {
                                 "block_type": "paragraph",
-                                "content": "While most application software will use the underlying operating system for time zone information, [[Java_(programming_language)|the Java Platform|158|wiki]], from version 1.3.1, has maintained its own time zone database. This database is updated whenever time zone rules change. [[Oracle_Corporation|Oracle|159|wiki]] provides an updater tool for this purpose."
+                                "content": "Confessing to the [[Prophets_of_Islam|Prophets|399|wiki]] of God is also part of the Sunni faith. The first of the prophets is [[Adam_in_Islam|Adam|400|wiki]]. The original contract (*mīṯāq*) that God concluded with him and his descendants according to sura 7:172–173 is a reality according to Sunni belief. God has taken [[Abraham_in_Islam|Abraham|401|wiki]] as a friend (*ḫalīl*) and talked to [[Moses_in_Islam|Moses|402|wiki]] directly. The last of the prophets is [[Mohammed|Mohammed|403|wiki]] from the tribe of the [[Quraish|Quraish|404|wiki]]. The Sunnis do not differentiate between the messengers of God, (By rejecting some of them), but consider everything they have brought to be true."
                             },
                             {
                                 "block_type": "paragraph",
-                                "content": "As an alternative to the time zone information bundled with the Java Platform, programmers may choose to use the Joda-Time library. This library includes its own time zone data based on the IANA time zone database."
+                                "content": "God called the [[Prophets|prophets|405|wiki]] and presented their truthfulness through obvious miracles. The prophets conveyed God's command and prohibition, his promise and threat, and it is incumbent on people to believe what they have brought to be true. God has given people the act of obedience (*ṭāʿa*) and opposition (*maʿṣiya*) forbidden. God's right to the acts of obedience is not only an obligation for people through the intellect (*bi-muǧarrad al-ʿaql*), but also through it for making it a duty through the oral transmission of his prophets."
+                            }
+                        ]
+                    },
+                    {
+                        "block_type": "heading",
+                        "content": "Muhammad",
+                        "heading_level": 3,
+                        "children": [
+                            {
+                                "block_type": "paragraph",
+                                "content": "Muhammad from the tribe of the [[Quraish|Quraish|406|wiki]] is not only the seal of the [[Prophets|prophets|407|wiki]] (ḫātam al-anbiyāʾ), rather, God placed him above all other prophets and made him Lord of men (*saiyid al-bašar*). He is God's chosen servant (*ʿabd*), [[Rasūl|Messenger|408|wiki]], the [[Imam|Imam|409|wiki]] of the godly (*imām al-atqiyāʾ*) and the beloved of the Lord of the Worlds (*ḥabīb rabb al-ʿālamīn*). He is sent with truth (*ḥaqq*), guidance (*hudā*) and light (*nūr*). God has him with his message to [[Arabs|Arabs|410|wiki]] and Non-Arabs as well as sent to the general public of the [[Jinn|jinn|411|wiki]] and humans and with his [[Sharia|Sharia|412|wiki]], the earlier religious laws [[Naskh_(tafsir)|abrogated|413|wiki]], except that which he has confirmed. Part of the Sunnis path is to follow the traditions (*āṯār*) of Muhammad internally and externally. They prefer his guidance to the guidance of anyone else."
                             },
                             {
                                 "block_type": "paragraph",
-                                "content": "As of Java 8 there is a new date and time API that can help with converting time zones. [Java 8 Date Time](https://docs.oracle.com/javase/tutorial/datetime/)"
+                                "content": "Muhammad's prophethood is proven by miracles (*muʿǧizāt*) such as the splitting of the moon. The most obvious miracle is the Quran's [[I'jaz|inimitability|414|wiki]]. Every claim to prophethood after him is an error or imagination, since Muhammad is the last prophet. Another important point of teaching is the belief in [[Ascension_of_Muhammad|Muhammad's Ascension|415|wiki]] (*miʿrāǧ*). Accordingly the Prophet went on a nocturnal journey during which his person was transported to heaven while awake and from there to heights, \"which God has chosen\". God gave him what he had chosen for him and gave him his revelation. God has also blessed him in his life beyond and in this world."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "block_type": "heading",
+                "content": "Eschatology",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "heading",
+                        "content": "In the grave",
+                        "heading_level": 3,
+                        "children": [
+                            {
+                                "block_type": "paragraph",
+                                "content": "According to Sunni doctrine, people are questioned in their graves by [[Munkar_and_Nakir|Munkar and Nakir|416|wiki]] after death. Munkar and Nakīr are two terrifying, huge figures who let the person sit upright in his grave with mind and body and then tell him about the oneness of God and the prophethood of Muhammad. They ask him: \"Who is your master? What is your religion? Who is your prophet?\". They are the two inspectors of the grave and their questioning is the first test (*fitna*) of humans after death. The believer will answer to this test: \"God is my Lord, Islam is my religion and Mohammed is my prophet.\" The doubter, on the other hand, will answer: \"Oh dear, I don't know. I heard people say something, and that's how I said it.\" He is then hit with an iron club so that he utters a loud scream that can be heard by everyone except people and jinn. If people heard him, they would lose consciousness. Children are also interviewed by Munkar and Nakīr as well as people who have disappeared, drowned or were eaten by predatory animals. Deceased Muslims receive the [[Dua|supplication|417|wiki]] said for them, and the [[Sadaqa|Sadaqa|418|wiki]] spoken in their name are a favor for them."
                             }
                         ]
                     },
                     {
                         "block_type": "heading",
-                        "content": "JavaScript",
+                        "content": "Sign of the hour",
                         "heading_level": 3,
                         "children": [
                             {
                                 "block_type": "paragraph",
-                                "content": "Traditionally, there was very little in the way of time zone support for [[JavaScript|JavaScript|160|wiki]]. Essentially the programmer had to extract the UTC offset by instantiating a time object, getting a GMT time from it, and differencing the two. This does not provide a solution for more complex daylight saving variations, such as divergent DST directions between northern and southern hemispheres."
+                                "content": "Another point of belief are the \"signs of the hour\" (*ašrāṭ as-sāʿa*) that precede the day of resurrection. This includes the emergence of the [[Dajjal|Dajjal|419|wiki]], the rising of the sun in the west, the emergence of the [[Beast_of_the_Earth|Dabba|420|wiki]] from the earth and the excerpt from [[Gog_and_Magog|Gog and Magog|421|wiki]]. Jesus, the son of Mary, will descend from heaven and kill the Dajjal."
+                            }
+                        ]
+                    },
+                    {
+                        "block_type": "heading",
+                        "content": "Day of resurrection",
+                        "heading_level": 3,
+                        "children": [
+                            {
+                                "block_type": "paragraph",
+                                "content": "On Day of the Resurrection the resurrection (*baʿṯ*) and the retribution of the deeds take place. First the bodies of all people, animals and jinn are put back together and revived. The souls are brought back into the body, the people rise from their graves, barefoot, naked and uncircumcised. The sun is approaching them and they are sweating."
                             },
                             {
                                 "block_type": "paragraph",
-                                "content": "ECMA-402, the standard on Internationalization API for JavaScript, provides ways of formatting Time Zones. However, due to size constraint, some implementations or distributions do not include it."
+                                "content": "A scales are set up to weigh people's deeds. The [[Weighing_scale|scales|422|wiki]] have two scales and one tongue and are as big as several layers of heaven and earth. The weights will have the weight of atoms and [[Chardal|mustard seeds|423|wiki]] in order to realize the accuracy of God's righteousness. The leaves with good deeds (*ḥasanāt*) are thrown in a beautiful shape into the scales of light and weigh down the scales by the grace (*faḍl*) of God, the leaves with bad deeds (*saiyiʾāt*) are thrown into the scales of darkness in an ugly form and reduce the weight of the scales through the justice (*ʿadl*) of God."
                             }
                         ]
                     },
                     {
                         "block_type": "heading",
-                        "content": "Perl",
+                        "content": "The vision of God in the hereafter",
                         "heading_level": 3,
                         "children": [
                             {
                                 "block_type": "paragraph",
-                                "content": "The DateTime object in [[Perl|Perl|161|wiki]] supports all time zones in the [[Tz_database|Olson DB|162|wiki]] and includes the ability to get, set and convert between time zones."
-                            }
-                        ]
-                    },
-                    {
-                        "block_type": "heading",
-                        "content": "PHP",
-                        "heading_level": 3,
-                        "children": [
-                            {
-                                "block_type": "paragraph",
-                                "content": "The DateTime objects and related functions have been compiled into the [[PHP|PHP|163|wiki]] core since 5.2. This includes the ability to get and set the default script time zone, and DateTime is aware of its own time zone internally. PHP.net provides extensive documentation on this. As noted there, the most current time zone database can be implemented via the [[PEAR|PECL|164|wiki]] timezonedb."
-                            }
-                        ]
-                    },
-                    {
-                        "block_type": "heading",
-                        "content": "Python",
-                        "heading_level": 3,
-                        "children": [
-                            {
-                                "block_type": "paragraph",
-                                "content": "The standard module datetime included with [[Python_(programming_language)|Python|165|wiki]] stores and operates on the time zone information class tzinfo. The third party pytz module provides access to the full IANA time zone database. Negated time zone offset in seconds is stored time.timezone and time.altzone attributes. From Python 3.9, the zoneinfo module introduces timezone management without need for third party module."
-                            }
-                        ]
-                    },
-                    {
-                        "block_type": "heading",
-                        "content": "Smalltalk",
-                        "heading_level": 3,
-                        "children": [
-                            {
-                                "block_type": "paragraph",
-                                "content": "Each [[Smalltalk|Smalltalk|166|wiki]] dialect comes with its own built-in classes for dates, times and timestamps, only a few of which implement the DateAndTime and Duration classes as specified by the ANSI Smalltalk Standard. [[VisualWorks|VisualWorks|167|wiki]] provides a TimeZone class that supports up to two annually recurring offset transitions, which are assumed to apply to all years (same behavior as Windows time zones). [[Squeak|Squeak|168|wiki]] provides a Timezone class that does not support any offset transitions. [[Dolphin_Smalltalk|Dolphin Smalltalk|169|wiki]] does not support time zones at all."
+                                "content": "The teachings of the Sunnis also include the vision of God (*ruʾyat Allāh*) in the hereafter, which has similarities with the *visio beatifica* in the [[Christianity|Christian tradition|424|wiki]]. With this teaching the Sunnis set themselves apart from the Muʿtazilites, the [[Zaidiyyah|Zaidiyyah|425|wiki]] and the [[Islamic_philosophy|philosophers|426|wiki]] who consider the vision of God intellectually impossible."
                             },
                             {
                                 "block_type": "paragraph",
-                                "content": "For full support of the tz database (zoneinfo) in a Smalltalk application (including support for any number of annually recurring offset transitions, and support for different intra-year offset transition rules in different years) the third-party, open-source, ANSI-Smalltalk-compliant Chronos Date/Time Library is available for use with any of the following Smalltalk dialects: VisualWorks, Squeak, Gemstone, or Dolphin."
+                                "content": "There are differing views among Sunni scholars about the timing and type of the divine vision. Al-Ashari states that God is seen on the day of resurrection, whereby only the believers see him, the unbelievers not because they are kept away from God. At-Tahāwī, on the other hand, was of the opinion that the vision of God was a reality for the inmates of Paradise. Ibn Taimīya doubles the vision of God: people see God while they are still in the places of the resurrection, and then after entering paradise."
+                            },
+                            {
+                                "block_type": "paragraph",
+                                "content": "As for the way of seeing God, al-Ash Aari and Ibn Taimiyah emphasized its visual characteristics. Al-Ashari meant that God can be seen with the eyes, just as one sees the moon on the night of the full moon. Ibn Taimīya adds that the vision of God is as one sees the sun on a cloudless day. In the ʿAqīda at-Tahāwīs, the transcendence of God is emphasized: the vision can neither be understood nor described, because none of the creatures are like God. According to al-Ghazālī's creed the pious in the hereafter see the essence of God without [[Matter|substance|427|wiki]] and [[Accident_(philosophy)|accidents|428|wiki]]. According to the creed of an-Nasafī, God is seen neither in one place nor in any direction or distance. There is also no connection to rays."
+                            }
+                        ]
+                    },
+                    {
+                        "block_type": "heading",
+                        "content": "Release of the monotheists from hell and intercession",
+                        "heading_level": 3,
+                        "children": [
+                            {
+                                "block_type": "paragraph",
+                                "content": "According to the Ibn Taimīya's creed, the [[Umma|Umma|429|wiki]] of Muhammad is the first religious community to enter Paradise, Other religious communities also have the opportunity to get to paradise, because God leads whole peoples through the grace of his mercy (*aqwām*) out of hellfire. [[Ahmad_ibn_Hanbal|Ahmad ibn Hanbal|430|wiki]] and [[Al-Ghazālī|al-Ghazālī|431|wiki]] declare in their creeds that the [[Monotheist|monotheist|432|wiki]] en (*al-muwaḥḥidūn*) after being punished. Al-Ghazālī adds that through the grace (*faḍl*) of God no monotheist remains in hell for all eternity."
+                            },
+                            {
+                                "block_type": "paragraph",
+                                "content": "According to at-Tahāwī's creed, this only applies to the serious sinners from Muhammad's ummah: They are in hell, but not forever if they were monotheists at the time of death. What happens to them lies within God: if he wants, he forgives them through his grace (*faḍl*), and if he wants, he punishes them in his justice (*ʿadl*) and then brings them through His mercy (*raḥma*) and through the intercession of those who obey him out of hell and make them enter the Paradise Garden."
+                            },
+                            {
+                                "block_type": "paragraph",
+                                "content": "The intercession (*šafāʿa*) of the Messenger of God and its effect on those of his ummah who have committed serious sins is a fixed teaching point of the Sunni faith. The Prophet reserved the intercession especially for them. According to al-Ghazālī, the Sunni believer has a total of the intercession of the prophets, then the scholars, then the martyrs, then to believe the other believers in accordance with their dignity and their rank in God. Those of the believers who have no advocate will be brought out of hell by the grace of God."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "block_type": "heading",
+                "content": "The predestination",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "heading",
+                        "content": "Extent of the predestination",
+                        "heading_level": 3,
+                        "children": [
+                            {
+                                "block_type": "paragraph",
+                                "content": "According to Sunni doctrine, everything that happens happens through God's decision (*qadāʾ*) and predestination ([[Qadar|Qadar|433|wiki]]) or his determination (*taqdīr*). Predestination includes the predestination of good and bad, sweet and bitter. God has that The measured (*qadar*) of creatures and determined their time of time. He makes his creatures sick and heals them, lets them die and makes them alive, while the creatures themselves have no power over it. God lets die without fear and brings to life without exertion. The one who dies dies on the appointed date, even if he is killed."
+                            },
+                            {
+                                "block_type": "paragraph",
+                                "content": "God has written the things predestined for the creatures on the well-kept tablet (*al-lauḥ al-maḥfūẓ*). The pen she wrote is the first thing God created. God commanded him to write down what will be until the day of resurrection. The pen has already dried out and the scrolls are rolled up. Everything that was written on it in ancient times is immutable."
+                            },
+                            {
+                                "block_type": "paragraph",
+                                "content": "God is righteous in his judgments (*aqḍiya*), but his righteousness cannot be decided by analogy with the righteousness of people, because unjust actions for people are only conceivable with regard to someone else's property, but God does not encounter someone else's property anywhere so that he could behave unfairly to him. The principle of predestination is God's mystery with regard to his creatures. No [[Archangel|Archangel|434|wiki]] and no prophet is informed of this. Reflecting on predestination leads to destruction and is a step toward rebellion against God because He has hidden the knowledge about it from people."
+                            }
+                        ]
+                    },
+                    {
+                        "block_type": "heading",
+                        "content": "The Blessed and the Damned",
+                        "heading_level": 3,
+                        "children": [
+                            {
+                                "block_type": "paragraph",
+                                "content": "It is made easy for everyone for what they were created for. Blessed are whose who are saved by God's judgment (*qaḍāʾ Allāh*), condemned are whose who are condemned by the judgment of God. God created paradise and hell above all else; then he created the people who are worthy of them. He has designated some out of generosity (*faḍlan*) for paradise, the others out of justice (*ʿadlan*) for hell. God has always known the number of those who go to paradise and the number of those who go to hell. This number is neither increased nor decreased. When God creates the body of the embryo, he sends an angel to him who writes down his livelihood (*rizq*), the hour he dies, his deeds and whether he is a damned (šaqī) or a blessed (*saʿīd*)."
+                            },
+                            {
+                                "block_type": "paragraph",
+                                "content": "The Sunni believer does not doubt his belief. Humans neither know how they are registered by God (whether as believers or unbelievers), nor how it ends with them. God is also the converter of hearts (*muqallib al-qulūb*). Therefore it is recommended to say: \"A believer, if God is willing\" or \"I hope that I am a Believer\". Such a way of expression does not make people into doubters, because by that, they only mean that their otherworldly fate and their end are hidden from them. The Sunnis do not speak to any of the people who pray to the Kaaba, to paradise or hell, because of a good deed or a sin he has committed."
                             }
                         ]
                     }
@@ -2274,16 +800,255 @@ const sourceString = [
     },
     {
         "block_type": "heading",
-        "content": "Time in outer space",
+        "content": "Sunni view of hadith",
         "heading_level": 1,
         "children": [
             {
-                "block_type": "paragraph",
-                "content": "Orbiting spacecraft may experience many sunrises and sunsets, or none, in a 24-hour period. Therefore, it is not possible to calibrate the time with respect to the Sun and still respect a 24-hour sleep/wake cycle. A common practice for [[Space_exploration|space exploration|170|wiki]] is to use the Earth-based time of the launch site or mission control, synchronizing the sleeping cycles of the crew and controllers. The [[International_Space_Station|International Space Station|171|wiki]] normally uses Greenwich Mean Time (GMT)."
+                "block_type": "image",
+                "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/Cour_mosquee_Suleymaniye_Istanbul.jpg",
+                "img_caption": "Süleymaniye Mosque in Istanbul."
             },
             {
                 "block_type": "paragraph",
-                "content": "[[Timekeeping_on_Mars|Timekeeping on Mars|172|wiki]] can be more complex, since the planet has a [[Sol_(day_on_Mars)|sol|173|wiki]]ar day of approximately 24 hours and 40 minutes, known as a sol. Earth controllers for some Mars missions have synchronized their sleep/wake cycles with the Martian day, because solar-powered rover activity on the surface was tied to periods of light and dark."
+                "content": "The Quran as it exists today in book form was compiled by Muhammad's companions (*[[Sahabah|Sahabah|435|wiki]]*) within a handful of months of his death, and is accepted by all sects of Islam. Many matters of belief and daily life were not directly prescribed in the Quran, but were actions observed by Muhammad and the early Muslim community. Later generations sought out [[Oral_tradition|oral traditions|436|wiki]] regarding the early history of Islam, and the practices of Muhammad and his first followers, and wrote them down so that they might be preserved. These recorded oral traditions are called hadith. Muslim scholars have through the ages sifted through the hadith and evaluated the chain of narrations of each tradition, scrutinizing the trustworthiness of the narrators and judging the strength of each hadith accordingly."
+            },
+            {
+                "block_type": "heading",
+                "content": "Kutub al-Sittah",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": "*Kutub al-Sittah* are six books containing collections of hadiths. Sunni [[Muslim_ibn_al-Hajjaj|Muslim|437|wiki]]s accept the hadith collections of [[Sahih_al-Bukhari|Bukhari|438|wiki]] and Muslim as the most authentic (*[[Sahih|sahih|439|wiki]]*), and while accepting all hadiths verified as authentic, grant a slightly lesser status to the collections of other recorders. Four other hadith collections are also held in particular reverence by Sunni Muslims, making a total of six:"
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "There are also other collections of hadith which also contain many authentic hadith and are frequently used by scholars and specialists. Examples of these collections include:"
+                    },
+                    {
+                        "block_type": "list",
+                        "content": [
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "1.",
+                                "content": "[[Sahih_al-Bukhari|Sahih al-Bukhari|440|wiki]] of [[Muhammad_al-Bukhari|Muhammad al-Bukhari|441|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "2.",
+                                "content": "[[Sahih_Muslim|Sahih Muslim|442|wiki]] of [[Muslim_ibn_al-Hajjaj|Muslim ibn al-Hajjaj|443|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "3.",
+                                "content": "[[Sunan_al-Sughra|Sunan al-Sughra|444|wiki]] of [[Al-Nasa'i|Al-Nasa'i|445|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "4.",
+                                "content": "[[Sunan_Abu_Dawud|Sunan Abu Dawud|446|wiki]] of [[Abu_Dawood|Abu Dawood|447|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "5.",
+                                "content": "[[Jami'_at-Tirmidhi|Jami' at-Tirmidhi|448|wiki]] of [[Al-Tirmidhi|Al-Tirmidhi|449|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "6.",
+                                "content": "[[Sunan_Ibn_Majah|Sunan Ibn Majah|450|wiki]] of [[Ibn_Majah|Ibn Majah|451|wiki]]"
+                            }
+                        ]
+                    },
+                    {
+                        "block_type": "list",
+                        "content": [
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "1.",
+                                "content": "[[Musannaf_of_Abd_al-Razzaq|Musannaf of Abd al-Razzaq|452|wiki]] of [['Abd_ar-Razzaq_as-San'ani|'Abd ar-Razzaq as-San'ani|453|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "2.",
+                                "content": "[[Musnad_Ahmad_ibn_Hanbal|Musnad|454|wiki]] of [[Ahmad_ibn_Hanbal|Ahmad ibn Hanbal|455|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "3.",
+                                "content": "[[Mustadrak_al-Hakim|Mustadrak|456|wiki]] of [[Hakim_al-Nishaburi|Al Haakim|457|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "4.",
+                                "content": "[[Muwatta_Imam_Malik|Muwatta|458|wiki]] of [[Imam_Malik|Imam Malik|459|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "5.",
+                                "content": "[[Sahih_Ibn_Hibbaan|Sahih Ibn Hibbaan|460|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "6.",
+                                "content": "[[Sahih_Ibn_Khuzaymah|Sahih Ibn Khuzaymah|461|wiki]] of [[Ibn_Khuzaymah|Ibn Khuzaymah|462|wiki]]"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "7.",
+                                "content": "[[Sunan_al-Darimi|Sunan al-Darimi|463|wiki]] of [[Al-Darimi|Al-Darimi|464|wiki]]"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "block_type": "heading",
+        "content": "Sunni State institutions",
+        "heading_level": 1,
+        "children": [
+            {
+                "block_type": "image",
+                "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/TRT_Diyanet_kurumsal_logo.png",
+                "img_caption": "TRT Diyanet kurumsal logo"
+            },
+            {
+                "block_type": "paragraph",
+                "content": "One of the most important teaching institutions of Sunni Islam worldwide is the [[Al-Azhar_University|Azhar|465|wiki]] in Egypt. Article 32b, paragraph 7 of the Egyptian Azhar Law of 1961 stipulates that the Azhar \"follows the path of the Sunnis\" (*manhaǧ ahl as-sunna wa-l-jamāʿa*), Umma has agreed to the foundations of the religion and applications of fiqh, with its four [[Madhhab|disciplines|466|wiki]]. Only those who stick to the paths of their science and behavior can become a \"Member of the Council of Great Scholars\" (*haiʾat kibār al-ʿulamāʾ*), among whom the [[Grand_Imam_of_al-Azhar|Grand Imam of al-Azhar|467|wiki]] is elected. Zitouna University in Tunisia and University of al-Qarawiyyin in Morocco are recognized. They are also mentioned, along with the Azhar, in the final document of the Sunni Conference in Grozny."
+            },
+            {
+                "block_type": "paragraph",
+                "content": "Another body that claims to speak on behalf of Sunnism is the [[Council_of_Senior_Scholars_(Saudi_Arabia)|Council of Senior Religious Scholars|468|wiki]] founded in Saudi Arabia in 1971. In the past, the committee has expressed several times on fatwas about the Sunni-membership of certain Islamic groups within. In 1986 it published a fatwa excluding the [[Al-Ahbash|Ahbāsh|469|wiki]] community from Sunnism. The Islamic World League in Mecca, also funded by Saudi Arabia, made a resolution from 1987 that it regards Sunnism as the pure teachings at the time of the Messenger and the rightful existence of the Caliphate."
+            },
+            {
+                "block_type": "paragraph",
+                "content": "The Turkish [[Directorate_of_Religious_Affairs|Directorate of Religious Affairs|470|wiki]] (*Diyanet İşleri Başkanlığı*), follows the religious policy of the Ottoman Empire, providing a Sunni interpretation of Islam. Plans by the [[Committee_of_National_Unity|Committee of National Unity|471|wiki]] in the 1960s to convert the Diyanet authority into a non-denominational institution that also integrated the [[Alevism|Alevis|472|wiki]], failed because of resistance from conservative Sunni clergy inside and outside the Diyanet authority. Since the 1990s, the Diyanet authority has presented itself as an institution that stands above the denominations (*mezhepler üstü*) The religious education organized by the authority at the Turkish schools is based exclusively on the Sunni understanding of Islam."
+            }
+        ]
+    },
+    {
+        "block_type": "heading",
+        "content": "Self-image of the Sunnis",
+        "heading_level": 1,
+        "children": [
+            {
+                "block_type": "heading",
+                "content": "As the \"saved sect\"",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": "A well-known [[Hadith|Hadith|473|wiki]], which is to be interpreted as [[Vaticinium_ex_eventu|Vaticinium ex eventu|474|wiki]], says that the Muslim [[Umma|Umma|475|wiki]] will split into 73 sects, only one of which will be saved. The Sunnis have the idea that they are this \"saved sect\" (\"firqa nā niya\"). For example, [[Abu_Mansur_al-Baghdadi|Abu Mansur al-Baghdadi|476|wiki]] (d. 1037) explains at the beginning of his [[Heresiology|heresiographical|477|wiki]] work  al-Farq baina l-firaq  (\"The difference between the sects\") that there are 20 [[Rafida|Rafiditic|478|wiki]], 20 [[Kharijites|Kharijite|479|wiki]], 20 [[Qadariyah|Qadaritic|480|wiki]], 3 [[Murji'ah|Murjiite|481|wiki]], 3 Nadjāritic, 3 [[Karramiyya|karramitic|482|wiki]] and furthermore Bakriyya, Dirariyyya and [[Jahm_bin_Safwan|Jahmīya|483|wiki]]. These are the 72 erring sects. The 73rd sect that is the \"saved sect\" are the Sunnis (*ahl as-sunna wa-l-jamaʿa*). According to al-Baghdadi, they are composed of two groups, namely the followers of the [[Ra'y|Ra'y|484|wiki]] and the followers of the hadith. They agreed on the fundamentals of religion (*uṣūl ad-dīn*). There were only differences in the derivations (*furūʿ*) from the norms regarding the question of what [[Halal|permitted|485|wiki]] and what [[Haram|forbidden|486|wiki]] is. These differences are not so great that they considered each other to have strayed from the right path."
+                    }
+                ]
+            },
+            {
+                "block_type": "heading",
+                "content": "As center of Muslims",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": "Later Sunni scholars also present the Sunnis as the center of Muslim community. The idea already appears to some extent in the Ashʿarite ʿAbd al-Qāhir al-Baghdādī, who emphasizes on several dogmatic questions that the Sunnis hold a position that lies in the middle between the positions of the other Islamic groups. An example is the question of predestination ([[Qadar|Qadar|487|wiki]]), in which, according to the [[Kasb|Kasb|488|wiki]] theory, you hold exactly the middle between the two extreme positions of the [[Jabriyya|Jabriyya|489|wiki]] and the [[Qadariyya|Qadariyya|490|wiki]]."
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "The Hanbali scholar [[Ibn_Taymiyyah|Ibn Taymiyyah|491|wiki]] (d. 1328), who was otherwise known for his uncompromising attitude, also adhered to this view. He said that the Sunnis represented \"the middle among the sects of the [[Umma|Umma|492|wiki]]\" (*al-wasaṭ fī firaq al-umma*), just as the Islamic Umma is the middle between the other religious communities. He illustrates this with the following examples:"
+                    },
+                    {
+                        "block_type": "paragraph",
+                        "content": "The Hanafi scholar [[Ali_al-Qari|ʿAlī al-Qārī|493|wiki]] (d. 1606) continued this idea later. In his anti-Shiite pamphlet Šamm al-alawāriḍ fī ḏamm ar-rawāfiḍ he quotes a tradition according to which [[Ali|ʿAlī ibn Abī Tālib|494|wiki]] said: \"Two kinds of people perish on me: the exaggerated lover and the exaggerated hater.\" He notes that the exaggerated lover is the Rafidites and the exaggerated hater is the Kharijit. The Sunni, on the other hand, loves ʿAlī in high esteem and is thus in the balanced middle (*al-wasaṭ allaḏī huwa al-qisṭ*). This relates al-Qari to the Qur'anic sura 2: 143, in which it is said that God made the Muslims a community standing in the middle (*umma wasaṭ*). Since the Sunnis stay away from the exaggeration described in the traditional ʿAlī saying, al-Qārī believes that they are also the actual \"[[Shia|Party of ʿAlīs|495|wiki]]\" (šīʿat ʿAlī)."
+                    },
+                    {
+                        "block_type": "list",
+                        "content": [
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "1.",
+                                "content": "When it comes to the attributes of God, the Sunnis stand in the middle between the Jahmiyya, who completely drains God of attributes, and the Muschabbiha, who make God similar to creation,"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "2.",
+                                "content": "in the works of God they stand in the middle between the Qadariyya and the Jabriyya,"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "3.",
+                                "content": "on the question of the threat from God (*waʿid Allah*) they stand in the middle between the Murdschi'a and the Waʿīdiyya, a subgroup of the Qadariyya,"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "4.",
+                                "content": "When it comes to the question of faith and religion, they stand in the middle between Haruiyya (= Kharijites) and [[Muʿtazila|Muʿtazila|496|wiki]] on the one hand and Murji'a and Jahmiyya on the other,"
+                            },
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "5.",
+                                "content": "and with regard to the [[Sahaba|Companions of the Prophets|497|wiki]] they are in the middle between [[Rafida|Rafidites|498|wiki]] and [[Kharijites|Kharijites|499|wiki]]."
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "block_type": "heading",
+                "content": "As the essential bearers of Islamic science and culture",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": "ʿAbd al-Qāhir al-Baghdādī portrays the Sunnis in his work *al-Farq baina l-firaq* as the actual bearers of Islamic science and culture. Of all the sciences, knowledge and efforts of which Muslims are proud, al-Baghdādī explains that the Sunnis have a major share. In the last chapter of his book, al-Baghdadi also relates this to building activity in Islamic countries. He believes that the Sunnis with their [[Mosques|mosques|500|wiki]], [[Madrasa|madrasas|501|wiki]], palaces, factories and hospitals have achieved an unattainable position because none of the non-Sunnis have performed such services."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "block_type": "heading",
+        "content": "Rivalry between Ashʿarīya and Salafīya and the 2016 Sunni conferences",
+        "heading_level": 1,
+        "children": [
+            {
+                "block_type": "image",
+                "img_src": "https://wikipedia.org/wiki/Special:Redirect/file/Ahmed_el-Tayeb.jpg",
+                "img_caption": "Ahmed el-Tayeb, Great-Imam of Azhar, was one of the most important participants of the Sunni-conference in Grozny, distanced himself from the declaration"
+            },
+            {
+                "block_type": "paragraph",
+                "content": "Since the second half of the 20th century, there have been fierce clashes within the Sunni camps between *[[Ash'ari|Ashʿarites|502|wiki]]* on the one hand and *[[Salafi_movement|Salafiyya|503|wiki]]* on the other, who exclude each other from Sunnism. In [[Indonesia|Indonesia|504|wiki]], the Ashʿarite scholar Sirajuddin Abbas (d. 1980) wrote several books in the 1960s in which he explicitly excluded the *Ahl as-salaf* from Sunnism. Among other things, he argued that there was no Salafi madhhab in the first 300 years of Islam. From this he deduced that those who called other Muslims to obey the Salafi *madhhab*, were promoting a *madhhab* which did not even exist. In his view, only the Ashʿarites were real Sunnis. Abbas' books served as the theological basis for anti-Salafist campaigns in [[Aceh|Aceh|505|wiki]] in 2014. During these campaigns, various Salafist schools in Aceh were closed by the provincial government."
+            },
+            {
+                "block_type": "paragraph",
+                "content": "Apparently because of doubts about the *Salafīya* affiliation with Sunniism, the \"Standing Committee on Scientific Investigation and Fatwa Issuing\" in [[Saudi_Arabia|Saudi Arabia|506|wiki]] issued a fatwa stating that they consider the Salafis as Sunnis. Like many Ashʿarites, the Salafis believe their teachings are the only true form of Sunnism, and hence reject the Asharites and [[Maturidi|Maturidites|507|wiki]] as part of Sunnism. An example is the Saudi scholar [[Muhammad_ibn_al-Uthaymeen|Muhammad Ibn al-ʿUthaimīn|508|wiki]], who in his 2001 published commentary on *Aqīda Wāsiṭīya* by [[Ibn_Taymiyyah|Ibn Taimiyya|509|wiki]] expressed the opinion that Ash'arites and Māturīdites would not count among the Sunnis, because their doctrine of attributes would be in contrast to the doctrine of the Prophet and his companions. For this reason, the view that three groups belong to Sunnism should also be rejected. Sunnis are only those who are *salaf* in terms of belief."
+            },
+            {
+                "block_type": "paragraph",
+                "content": "The accusation by some [[Wahhabism|Wahhabis|510|wiki]] that the Ashʿarites were not Sunnis was subject of a [[Fatwa|fatwa|511|wiki]] by the \"Egyptian Fatwa Office\" in July 2013. In its fatwa, the office rejected this accusation, affirming that the Ashʿarites still represented the \"multitude of [[Ulama|scholars|512|wiki]]\" (*jumhūr al-ʿulamāʾ*), and stressed out that they were the ones who in the past rejected the arguments of the [[Mulhid|atheists|513|wiki]] (*šubuhāt al-malāḥida*). Anyone who declares them to be unbelieving or who doubts their orthodoxy should fear for their religion. On the same day, the fatwa office made clear in a fatwa that, according to their understanding, the *Ahl as-Sunna wa-l-jama* only refer to those Muslims who are Ashʿarites or Maturidites."
+            },
+            {
+                "block_type": "paragraph",
+                "content": "The rivalry between *Ashʿarīyya* and *Salafiyya* became visible again at the two Sunni conferences in 2016, which were directed against the terror of the IS organization. The [[2016_international_conference_on_Sunni_Islam_in_Grozny|first conference|514|wiki]] with the title \"Who are the Ahl al-Sunna wa al-jama?\" took place in the Chechen capital [[Grozny|Grozny|515|wiki]] in August 2016 under the patronage of [[Ramzan_Kadyrov|Ramzan Kadyrov|516|wiki]]. Numerous religious figures from [[Egypt|Egypt|517|wiki]], [[India|India|518|wiki]], [[Syria|Syria|519|wiki]], [[Yemen|Yemen|520|wiki]] and the [[Russian_Federation|Russian Federation|521|wiki]] took part, including [[Ahmed_el-Tayeb|Ahmed el-Tayeb|522|wiki]], the [[Grand_Imam_of_al-Azhar|Grand Imam|523|wiki]] the Azhar, and [[Sheikh_Aboobacker_Ahmed|Sheikh Aboobacker Ahmed|524|wiki]], the [[Grand_Mufti_of_India|Grand Mufti of India|525|wiki]]. According to its organizers, the conference should \"mark a blessed turning point in efforts to correct the serious and dangerous distortion of religion by those extremists trying to usurp the venerable name of *Ahl al-Sunna wa-al-Jama'a*, him to coin exclusively on itself and to exclude its true representatives from it.\" In the final declaration the Salafis and [[Islamism|Islamist|526|wiki]] groups like [[Muslim_Brotherhood|Muslim Brotherhood|527|wiki]], [[Hizb_ut-Tahrir|Hizb ut-Tahrir|528|wiki]], etc. and the *[[Takfiri|Takfiri|529|wiki]]* organisations like [[Islamic_State_of_Iraq_and_the_Levant|ISIL|530|wiki]] were excluded from Sunni Islam. In response to this, various prominent *Salafiyya* figures held a counter-conference in [[Kuwait|Kuwait|531|wiki]] in November 2016 under the title \"The Correct Meaning of Sunnism\" (*al-Mafhūm aṣ-ṣaḥīḥ li-ahl as-sunna wa-l-jama*), in which they also distanced themselves from extremist groups, but at the same time insisted that *Salafiyya* was not only part of Sunnism, but represented Sunnism itself. The conference was chaired by Ahmad ibn Murabit, Grand Mufti of [[Mauritania|Mauritania|532|wiki]]. A few days later, [[Grand_Imam_of_al-Azhar|Grand Imam of Al-Azhar|533|wiki]] [[Ahmed_el-Tayeb|Ahmed el-Tayeb|534|wiki]] publicly distanced himself from the final declaration of the Grozny conference, reiterating that he had not participated in it and stressed that he naturally viewed the Salafists as Sunnis."
             }
         ]
     },
@@ -2294,80 +1059,37 @@ const sourceString = [
         "children": [
             {
                 "block_type": "paragraph",
-                "content": ""
+                "content": "• Outline of Islam"
             },
             {
-                "block_type": "list",
-                "content": [
-                    {
-                        "block_type": "list_item",
-                        "list_type": "ordered",
-                        "marker": "1.",
-                        "content": "[[Daylight_saving_time|Daylight saving time|174|wiki]]"
-                    },
-                    {
-                        "block_type": "list_item",
-                        "list_type": "ordered",
-                        "marker": "2.",
-                        "content": "[[ISO_8601|ISO 8601|175|wiki]]"
-                    },
-                    {
-                        "block_type": "list_item",
-                        "list_type": "ordered",
-                        "marker": "3.",
-                        "content": "[[Jet_lag|Jet lag|176|wiki]]"
-                    },
-                    {
-                        "block_type": "list_item",
-                        "list_type": "ordered",
-                        "marker": "4.",
-                        "content": "[[Lists_of_time_zones|Lists of time zones|177|wiki]]"
-                    },
-                    {
-                        "block_type": "list_item",
-                        "list_type": "ordered",
-                        "marker": "5.",
-                        "content": "[[Metric_time|Metric time|178|wiki]]"
-                    },
-                    {
-                        "block_type": "list_item",
-                        "list_type": "ordered",
-                        "marker": "6.",
-                        "content": "[[:Category:Time_by_country|Time by country|179|wiki]]"
-                    },
-                    {
-                        "block_type": "list_item",
-                        "list_type": "ordered",
-                        "marker": "7.",
-                        "content": "[[Time_in_Europe|Time in Europe|180|wiki]]"
-                    },
-                    {
-                        "block_type": "list_item",
-                        "list_type": "ordered",
-                        "marker": "8.",
-                        "content": "[[Time_zone_abolition|Time zone abolition|181|wiki]]"
-                    },
-                    {
-                        "block_type": "list_item",
-                        "list_type": "ordered",
-                        "marker": "9.",
-                        "content": "[[World_clock|World clock|182|wiki]]"
-                    },
-                    {
-                        "block_type": "list_item",
-                        "list_type": "ordered",
-                        "marker": "10.",
-                        "content": "[[International_Date_Line|International Date Line|183|wiki]]"
-                    }
-                ]
+                "block_type": "paragraph",
+                "content": "• Glossary of Islam"
+            },
+            {
+                "block_type": "paragraph",
+                "content": "• Index of Islam-related articles"
+            },
+            {
+                "block_type": "paragraph",
+                "content": "• Islamic schools and branches"
+            },
+            {
+                "block_type": "paragraph",
+                "content": "• International Islamic Unity Conference (Iran)"
+            },
+            {
+                "block_type": "paragraph",
+                "content": "• Organisation of Islamic Cooperation"
+            },
+            {
+                "block_type": "paragraph",
+                "content": "• Persecution of Muslims"
+            },
+            {
+                "block_type": "paragraph",
+                "content": "• Shia view of the Quran"
             }
         ]
-    },
-    {
-        "block_type": "heading",
-        "content": "Notes",
-        "heading_level": 1,
-        "children": []
     },
     {
         "block_type": "heading",
@@ -2383,36 +1105,151 @@ const sourceString = [
             {
                 "block_type": "paragraph",
                 "content": ""
-            }
-        ]
-    },
-    {
-        "block_type": "heading",
-        "content": "External links",
-        "heading_level": 1,
-        "children": [
+            },
             {
-                "block_type": "paragraph",
-                "content": ""
+                "block_type": "list",
+                "content": [
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "1.",
+                        "content": "Ahmed, Khaled. *Sectarian war: Pakistan's Sunni-Shia violence and its links to the Middle East* (Oxford University Press, 2011)."
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "2.",
+                        "content": "Charles River Editors. *The History of the Sunni and Shia Split: Understanding the Divisions within Islam* (2010) 44pp [excerpt](https://www.amazon.com/History-Sunni-Shia-Split-Understanding/dp/1502389983/); brief introduction."
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "3.",
+                        "content": "Farooqi, Mudassir, Sarwar Mehmood Azhar, and Rubeena Tashfeen. \"Jihadist Organizations History and Analysis.\" *Journal of Social, Political, and Economic Studies* 43.1/2 (2018): 142–151. [online](http://jspes.org/samples/JSPES43_1_2farooqi.pdf)"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "4.",
+                        "content": "Gesink, Indira Falk. *Islamic reform and conservatism: Al-Azhar and the evolution of modern Sunni Islam* (Tauris Academic Studies, 2010)"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "5.",
+                        "content": "Haddad, Fanar. *Understanding 'Sectarianism': Sunni-Shi'a Relations in the Modern Arab World* (Oxford UP, 2020)."
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "6.",
+                        "content": "Haddad, Fanar. \"Anti-Sunnism and anti-Shiism: Minorities, majorities and the question of equivalence.\" *Mediterranean Politics* (2020): 1–7 [online](https://www.academia.edu/download/61657158/Online_pub20200101-92953-1264chc.pdf)."
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "7.",
+                        "content": "Halverson, Jeffry. *Theology and creed in Sunni Islam: the Muslim Brotherhood, Ash'arism, and political Sunnism* (Springer, 2010)."
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "8.",
+                        "content": "Hazleton, Lesley. *After the prophet: the epic story of the Shia-Sunni split in Islam* (Anchor, 2010)."
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "9.",
+                        "content": "Kamolnick, Paul. *The Al-Qaeda Organization and the Islamic State Organization: History, Doctrine, Modus, Operandi, and US Policy to Degrade and Defeat Terrorism Conducted in the Name of Sunni Islam* (Strategic Studies Institute, United States Army War College, 2017) [online](https://dc.etsu.edu/cgi/viewcontent.cgi?article=1127&context=etsu_books)."
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "10.",
+                        "content": "Khaddour, Kheder. *Localism, War, and the Fragmentation of Sunni Islam in Syria* (Carnegie Endowment for International Peace., 2019) [online](https://carnegieendowment.org/files/03_19_Khaddour_Syria_Islam_final.pdf)."
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "11.",
+                        "content": "McHugo, John. *A Concise History of Sunnis and Shi'is* (2018) [excerpt](https://www.amazon.com/Concise-History-Sunnis-Shiis/dp/1626165866/)"
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "12.",
+                        "content": "Nuruzzaman, Mohammed. \"Conflicts in Sunni Political Islam and Their Implications.\" *Strategic Analysis* 41.3 (2017): 285–296 [online](https://www.academia.edu/download/52188176/Conflicts_Sunni_Political_Islam.pdf)."
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "13.",
+                        "content": "Nydell, Margaret K. *Understanding Arabs: A guide for modern times* (3rd ed. Hachette UK, 2018)."
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "14.",
+                        "content": "Tezcan, Baki. \"The Disenchantment of Sufism, the Rationalization of Sunni Islam, and Early Modernity.\" *Journal of the Ottoman and Turkish Studies Association* 7.1 (2020): 67–69 [online](https://www.jstor.org/stable/10.2979/jottturstuass.7.1.21)."
+                    },
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "15.",
+                        "content": "Wheeler, Branon. [Applying the Canon in Islam: The Authorization and Maintenance of Interpretive Reasoning in Ḥanafī Scholarship](https://books.google.com/books?id=slLpouSlzPcC), [[SUNY_Press|SUNY Press|535|wiki]], 1996."
+                    }
+                ]
+            },
+            {
+                "block_type": "list",
+                "content": [
+                    {
+                        "block_type": "list_item",
+                        "list_type": "ordered",
+                        "marker": "1.",
+                        "content": "Wheeler, Branon. [Applying the Canon in Islam: The Authorization and Maintenance of Interpretive Reasoning in Ḥanafī Scholarship](https://books.google.com/books?id=slLpouSlzPcC), [[SUNY_Press|SUNY Press|536|wiki]], 1996."
+                    }
+                ]
+            },
+            {
+                "block_type": "heading",
+                "content": "Online",
+                "heading_level": 2,
+                "children": [
+                    {
+                        "block_type": "paragraph",
+                        "content": ""
+                    },
+                    {
+                        "block_type": "list",
+                        "content": [
+                            {
+                                "block_type": "list_item",
+                                "list_type": "ordered",
+                                "marker": "1.",
+                                "content": "[Sunni: Islam](https://www.britannica.com/topic/Sunni), in *Encyclopædia Britannica Online*, by The Editors of Encyclopaedia Britannica, Asma Afsaruddin, Yamini Chauhan, Aakanksha Gaur, Gloria Lotha, Matt Stefon, Noah Tesch and Adam Zeidan"
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     }
 ];
 const headings = [
-    "List of UTC offsets",
+    "Terminology",
     "History",
-    "Notation",
-    "Conversions",
-    "Nautical time zones",
-    "Skewing of time zones",
-    "Daylight saving time",
-    "Computer systems",
-    "Time in outer space",
+    "Adherents",
+    "Jurisprudence",
+    "Pillars of iman",
+    "Sunni view of hadith",
+    "Sunni State institutions",
+    "Self-image of the Sunnis",
+    "Rivalry between Ashʿarīya and Salafīya and the 2016 Sunni conferences",
     "See also",
-    "Notes",
     "References",
-    "Further reading",
-    "External links"
+    "Further reading"
 ];
 function returnFields() {
     return ["Sciences", "Technology & Engineering", "Humanities & Cultural Studies", "Social Sciences & Global Studies", "Business & Management", "Health & Medicine", "Environmental Studies & Earth Sciences", "Education, Learning & Personal Development", "Creative & Performing Arts", "Law, Governance & Ethics", "Recreation, Lifestyle & Practical Skills", "Technology & Media Literacy", "Philosophy & Critical Thinking", "Space & Astronomical Sciences", "Agriculture & Food Sciences", "Trades & Craftsmanship", "Reference & Indexing", "Other"];
