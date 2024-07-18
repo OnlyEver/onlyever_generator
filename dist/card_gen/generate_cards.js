@@ -17,16 +17,16 @@ class GenerateCards {
     }
     generateCards(prompt, parsedContent, isGapFill, headings) {
         return __awaiter(this, void 0, void 0, function* () {
-            var _a, _b, _c;
+            var _a, _b, _c, _d;
             let response = yield ((_a = this.openAiService) === null || _a === void 0 ? void 0 : _a.sendRequest(prompt, parsedContent));
             // console.log("response to card generation ", response);
             response["type"] = isGapFill ? "gap_fill" : "card_gen";
             response.metadata = {
-                "req_time": response.generated_at,
+                "req_time": (_b = response.generated_at) !== null && _b !== void 0 ? _b : new Date(),
                 "req_type": response.type,
-                "req_tokens": (_b = response.usage_data) === null || _b === void 0 ? void 0 : _b.prompt_tokens,
-                "res_tokens": (_c = response.usage_data) === null || _c === void 0 ? void 0 : _c.completion_tokens,
-                // "created_at":response.created_at,
+                "req_tokens": (_c = response.usage_data) === null || _c === void 0 ? void 0 : _c.prompt_tokens,
+                "res_tokens": (_d = response.usage_data) === null || _d === void 0 ? void 0 : _d.completion_tokens,
+                "model": this.openAiService.model
             };
             if (response.status_code == 200) {
                 response.metadata.status = "completed";
@@ -163,7 +163,7 @@ class GenerateCards {
         }
     }
     parseClozeCard(data) {
-        let displayTitle = this.generateClozeCardDisplayTitle(data.card_content.text, data.card_content.options);
+        let displayTitle = this.generateClozeCardDisplayTitle(data.card_content.prompt, data.card_content.options);
         let clozeCardData = {
             type: {
                 category: 'learning',
@@ -172,7 +172,7 @@ class GenerateCards {
             heading: data.card_reference,
             displayTitle: displayTitle,
             content: {
-                question: data.card_content.text,
+                question: data.card_content.prompt,
                 options: data.card_content.options,
             },
             concepts: data.concepts,

@@ -11,7 +11,6 @@ export function parseOpenAiSuccessResponse(responseData: any){
 }
 
 export function parseOpenAiFailureResponse(errorResponse: any){
-    let usuage = errorResponse.usuage;
     // let statusCode = 
     return {
         'status_code': errorResponse.status,

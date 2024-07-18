@@ -18,10 +18,11 @@ export class GenerateTypology{
       const response =  await this.openAiService?.sendRequest(this.prompt,this.content);
       response['type'] = 'typology';
       response.metadata = {
-        "req_time": response.generated_at,
+        "req_time": response.generated_at ?? new Date(),
         "req_type": response.type,
         "req_tokens": response.usage_data?.prompt_tokens,
         "res_tokens": response.usage_data?.completion_tokens,
+        "model": this.openAiService.model
     };
       if(response.status_code == 200){
         return this.parseTypologyOnSuccess(response);

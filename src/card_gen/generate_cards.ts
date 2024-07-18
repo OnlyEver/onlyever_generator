@@ -12,11 +12,11 @@ export class GenerateCards {
    // console.log("response to card generation ", response);
     response["type"] = isGapFill ? "gap_fill":"card_gen";
        response.metadata = {
-        "req_time": response.generated_at,
+        "req_time": response.generated_at ?? new Date(),
         "req_type": response.type,
         "req_tokens": response.usage_data?.prompt_tokens,
         "res_tokens": response.usage_data?.completion_tokens,
-       // "created_at":response.created_at,
+        "model": this.openAiService.model
     };
       if(response.status_code == 200){
         response.metadata.status = "completed";
@@ -165,7 +165,7 @@ return question;
 
   parseClozeCard(data: any) {
     let displayTitle = this.generateClozeCardDisplayTitle(
-      data.card_content.text,
+      data.card_content.prompt,
       data.card_content.options
     );
     let clozeCardData = {
@@ -176,7 +176,7 @@ return question;
       heading: data.card_reference,
       displayTitle: displayTitle,
       content: {
-        question: data.card_content.text,
+        question: data.card_content.prompt,
         options: data.card_content.options,
       },
       concepts: data.concepts,
