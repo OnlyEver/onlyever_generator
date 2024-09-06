@@ -79,7 +79,7 @@ export class OnlyEverGenerator {
 
           /// check if gap fill is required ie coverage determination 
           if(this.cardgenResponse.status_code == 200) {
-            this.gapFillResponse = await this.generationForGapFill(this.typologyResponse, this.cardgenResponse);
+            this.gapFillResponse = await this._generationForGapFill(this.typologyResponse, this.cardgenResponse);
             responseToReturn.push(this.gapFillResponse);
           }
 
@@ -99,7 +99,7 @@ export class OnlyEverGenerator {
 
   }
 
-  async generationForGapFill(typologyData: any, cardGenData: any) {
+  async _generationForGapFill(typologyData: any, cardGenData: any) {
       let gapFill = gapFilling(typologyData, cardGenData);
       let response :any ;
       if (
@@ -144,6 +144,29 @@ export class OnlyEverGenerator {
     ).generate();
     return response;
   }
+
+  async gapFill(factsMaps: any, aiCards: Array<any>) {
+    /// factsmap 
+    /// {
+    /// remaining_facts: [],
+     /// remaining_concepts: [],
+    //}
+
+    /// aicards is data
+    let response :any ;
+
+      response = await this.generateCard(
+       this.promptForCardGen +
+          "Generate cards only suitable for the given remaining concepts and facts" +
+          JSON.stringify(factsMaps) +
+          "Exclude generating  cards with content in the following",
+          JSON.stringify(aiCards),
+        true
+      );
+    
+    return response;
+  
+}
 
   
 

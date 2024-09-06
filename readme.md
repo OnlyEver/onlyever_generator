@@ -20,4 +20,16 @@ let oeGenerator = new OnlyEverGenerator(
 let responsesArray = await oeGenerator.generate(true,true);
 
 
+Exposed a new method ```gapFill``` from OnlyEverGenerator
+
+
+  async gapFill(factsMaps: any, aiCards: Array<any>) {}
+    /// factsmap 
+    /// {
+    /// remaining_facts: [],
+     /// remaining_concepts: [],
+    //}
+
+    /// aicards is array of ai cards
+
 ```

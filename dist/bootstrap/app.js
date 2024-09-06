@@ -61,7 +61,7 @@ class OnlyEverGenerator {
                         responseToReturn.push(this.cardgenResponse);
                         /// check if gap fill is required ie coverage determination 
                         if (this.cardgenResponse.status_code == 200) {
-                            this.gapFillResponse = yield this.generationForGapFill(this.typologyResponse, this.cardgenResponse);
+                            this.gapFillResponse = yield this._generationForGapFill(this.typologyResponse, this.cardgenResponse);
                             responseToReturn.push(this.gapFillResponse);
                         }
                     }
@@ -79,7 +79,7 @@ class OnlyEverGenerator {
             return false;
         }
     }
-    generationForGapFill(typologyData, cardGenData) {
+    _generationForGapFill(typologyData, cardGenData) {
         return __awaiter(this, void 0, void 0, function* () {
             let gapFill = (0, calculate_gap_fill_1.gapFilling)(typologyData, cardGenData);
             let response;
@@ -105,6 +105,22 @@ class OnlyEverGenerator {
     generateTypology(prompt) {
         return __awaiter(this, void 0, void 0, function* () {
             let response = yield new generate_typology_1.GenerateTypology(this.openAiService, prompt, JSON.stringify(this.parsedContent), this.expectedFields).generate();
+            return response;
+        });
+    }
+    gapFill(factsMaps, aiCards) {
+        return __awaiter(this, void 0, void 0, function* () {
+            /// factsmap 
+            /// {
+            /// remaining_facts: [],
+            /// remaining_concepts: [],
+            //}
+            /// aicards is data
+            let response;
+            response = yield this.generateCard(this.promptForCardGen +
+                "Generate cards only suitable for the given remaining concepts and facts" +
+                JSON.stringify(factsMaps) +
+                "Exclude generating  cards with content in the following", JSON.stringify(aiCards), true);
             return response;
         });
     }

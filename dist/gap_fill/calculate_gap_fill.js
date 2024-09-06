@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.gapFilling = void 0;
+exports.gapFilling = gapFilling;
 function isEmpty(obj) {
     return Object.keys(obj).length === 0;
 }
@@ -43,4 +43,3 @@ function gapFilling(typologyResponse, cardgenResponse) {
         remainingFacts: remainingFacts,
     };
 }
-exports.gapFilling = gapFilling;

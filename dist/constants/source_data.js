@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.returnHeadings = exports.returnSourceData = exports.returnFields = void 0;
+exports.returnFields = returnFields;
+exports.returnSourceData = returnSourceData;
+exports.returnHeadings = returnHeadings;
 const sourceString = [
     {
         "block_type": "paragraph",
@@ -1254,7 +1256,6 @@ const headings = [
 function returnFields() {
     return ["Sciences", "Technology & Engineering", "Humanities & Cultural Studies", "Social Sciences & Global Studies", "Business & Management", "Health & Medicine", "Environmental Studies & Earth Sciences", "Education, Learning & Personal Development", "Creative & Performing Arts", "Law, Governance & Ethics", "Recreation, Lifestyle & Practical Skills", "Technology & Media Literacy", "Philosophy & Critical Thinking", "Space & Astronomical Sciences", "Agriculture & Food Sciences", "Trades & Craftsmanship", "Reference & Indexing", "Other"];
 }
-exports.returnFields = returnFields;
 const sourceContent = {
     type: 'source',
     title: 'Time zone',
@@ -1309,8 +1310,6 @@ const sourceContent = {
 function returnSourceData() {
     return sourceContent;
 }
-exports.returnSourceData = returnSourceData;
 function returnHeadings() {
     return headings;
 }
-exports.returnHeadings = returnHeadings;

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.returnTypologyData = void 0;
+exports.returnTypologyData = returnTypologyData;
 const typologyResponse = {
     "usage_data": {
         "prompt_tokens": 11611,
@@ -44,4 +44,3 @@ const typologyResponse = {
 function returnTypologyData() {
     return typologyResponse;
 }
-exports.returnTypologyData = returnTypologyData;

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.returnPromptData = void 0;
+exports.returnPromptData = returnPromptData;
 const card_gen_prompt_1 = require("./prompts/card_gen_prompt");
 const typology_prompt_1 = require("./prompts/typology_prompt");
 const promptData = {
@@ -300,4 +300,3 @@ function returnPromptData() {
         "card_generation": (0, card_gen_prompt_1.returnCardGenPrompt)(''),
     };
 }
-exports.returnPromptData = returnPromptData;

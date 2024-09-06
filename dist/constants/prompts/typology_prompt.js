@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.returnTypologyPrompt = void 0;
+exports.returnTypologyPrompt = returnTypologyPrompt;
 const typologyPromptString = `
 As a dedicated assistant at a learning company, your role involves analyzing educational content to categorize and summarize it. You will process content (in JSON format) that represents text and images from diverse sources such as PDFs, book chapters, videos, and websites. Follow these steps:
 
@@ -94,4 +94,3 @@ json
 function returnTypologyPrompt() {
     return typologyPromptString;
 }
-exports.returnTypologyPrompt = returnTypologyPrompt;

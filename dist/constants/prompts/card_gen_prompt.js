@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.returnCardGenPrompt = void 0;
+exports.returnCardGenPrompt = returnCardGenPrompt;
 const promptString = `
 As a dedicated assistant at a learning company, your role is to analyze educational content and create test cards that help learners understand and remember key concepts and facts. You will be provided with:
 
@@ -175,7 +175,6 @@ Generate atleast 10 cards.
 function returnCardGenPrompt(cardGenPrompt) {
     return promptString;
 }
-exports.returnCardGenPrompt = returnCardGenPrompt;
 //     let concatenatedString: string = '';
 //     for (let key in cardGenPrompt) {
 //       if (cardGenPrompt.hasOwnProperty(key)) {

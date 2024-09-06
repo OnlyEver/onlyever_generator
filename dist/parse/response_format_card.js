@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.parseResponse = exports.returnResponse = void 0;
+exports.returnResponse = returnResponse;
+exports.parseResponse = parseResponse;
 const responseData = {
     "flash_cards": [
         {
@@ -142,7 +143,6 @@ const responseData = {
 function returnResponse() {
     return responseData;
 }
-exports.returnResponse = returnResponse;
 function parseResponse() {
     let cardData = [];
     let data = returnResponse();
@@ -162,7 +162,6 @@ function parseResponse() {
     }
     return cardData;
 }
-exports.parseResponse = parseResponse;
 /// takes array of 
 function parseFlashCard(cards) {
     let flashCardData = [];
