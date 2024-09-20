@@ -41,21 +41,18 @@ class GenerateCards {
         });
     }
     parse(generatedData, isGapFill, headings) {
+        let usage_data = generatedData.metadata;
+        const status_code = generatedData.status_code;
         try {
             const cardData = [];
-            let usage_data = generatedData.metadata;
-            const status_code = generatedData.status_code;
-            const missing_concepts = generatedData.generated_content.missing_concepts;
-            const missing_facts = generatedData.generated_content.missing_facts;
             const unparsedTestCards = generatedData.generated_content.test_cards;
             const type = generatedData.type;
             if (unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
                 for (let elem of unparsedTestCards) {
-                    if (headings.includes(elem.card_reference)) {
-                    }
-                    else {
-                        elem.card_reference = '';
-                    }
+                    // if(headings.includes(elem.card_reference)){
+                    // }else{
+                    //   elem.card_reference = '';
+                    // }
                     if (elem.type == "flash") {
                         cardData.push(this.parseFlashCard(elem));
                     }
@@ -76,11 +73,11 @@ class GenerateCards {
                 }
             }
             return {
-                status_code: isGapFill ? status_code : cardData.length > 0 ? status_code : 500,
+                status_code: 200,
                 metadata: usage_data,
                 type: type,
-                missing_concepts: missing_concepts,
-                missing_facts: missing_facts,
+                missing_concepts: [],
+                missing_facts: [],
                 cards_data: cardData,
             };
         }
@@ -88,11 +85,17 @@ class GenerateCards {
             new logger_1.ErrorLogger({
                 "type": 'card_parsing',
                 "data": e.message,
+                "response": generatedData,
             }).log();
             return {
                 status_code: 500,
-                type: 'card_gen',
+                metadata: usage_data,
+                type: generatedData.type,
             };
+            //  return {
+            //   status_code: 500,
+            //   type: 'card_gen',
+            //  }
         }
     }
     parseFlashCard(data) {
@@ -199,20 +202,14 @@ class GenerateCards {
     }
     parseMatchCard(cardData) {
         let content = cardData.card_content;
-        const transformedData = {};
-        for (let key in content) {
-            if (content.hasOwnProperty(key)) {
-                transformedData[key] = [content[key]];
-            }
-        }
-        let displayTitle = this.generateMatchCardDisplayTitle(transformedData);
+        let displayTitle = this.generateMatchCardDisplayTitle(content);
         let matchCard = {
             type: {
                 category: 'learning',
                 sub_type: cardData.type,
             },
             heading: cardData.card_reference,
-            content: transformedData,
+            content: content,
             //  content: cardData.card_content,
             displayTitle: displayTitle,
             concepts: cardData.concepts,
@@ -224,16 +221,12 @@ class GenerateCards {
     generateMatchCardDisplayTitle(answers) {
         let titles = [];
         let counter = 65;
-        for (let key in answers) {
-            if (answers.hasOwnProperty(key)) {
-                let value = answers[key];
-                //     let items = value.split(',').map((item: string) => item.trim());
-                //     items.forEach((item: any) => {
-                let letter = String.fromCharCode(counter);
-                titles.push(`${letter}. ${key} -- ${value}`);
-                counter++;
-                //     });
-            }
+        for (let data of answers) {
+            let value = data.right_item.join(',');
+            let leftData = data.left_item;
+            let letter = String.fromCharCode(counter);
+            titles.push(`${letter}. ${leftData} -- ${value}`);
+            counter++;
         }
         let displayTitle = titles.join(",");
         return displayTitle;

@@ -30,56 +30,61 @@ export class GenerateCards {
   }
 
   parse(generatedData: any, isGapFill: boolean, headings:Array<any>) {
-    try{
-    const cardData = [];
     let usage_data = generatedData.metadata;
     const status_code = generatedData.status_code;
-    const missing_concepts = generatedData.generated_content.missing_concepts;
-    const missing_facts = generatedData.generated_content.missing_facts;
+    try{
+      const cardData = [];
     const unparsedTestCards = generatedData.generated_content.test_cards;
     const type = generatedData.type;
-if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
-  for (let elem of unparsedTestCards) {
-    if(headings.includes(elem.card_reference)){
+    if(unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
+      for (let elem of unparsedTestCards) {
+        // if(headings.includes(elem.card_reference)){
 
-    }else{
-      elem.card_reference = '';
+        // }else{
+        //   elem.card_reference = '';
+        // }
+        if (elem.type == "flash") {
+          cardData.push(this.parseFlashCard(elem));
+        } else if (elem.type == "mcq") {
+          cardData.push(this.parseMcqCard(elem));
+        } else if (elem.type == "cloze") {
+          cardData.push(this.parseClozeCard(elem));
+        } else if (elem.type == "match") {
+          cardData.push(this.parseMatchCard(elem));
+        }
+      }
+    } else {
+      if(!isGapFill) {
+        usage_data.status = "failed";
+      }
     }
-    if (elem.type == "flash") {
-      cardData.push(this.parseFlashCard(elem));
-    } else if (elem.type == "mcq") {
-      cardData.push(this.parseMcqCard(elem));
-    } else if (elem.type == "cloze") {
-      cardData.push(this.parseClozeCard(elem));
-    } else if (elem.type == "match") {
-      cardData.push(this.parseMatchCard(elem));
-    }
-  }
-} else {
-  if(!isGapFill) {
-    usage_data.status = "failed";
-  }
-}
     
    
 
     return {
-      status_code: isGapFill? status_code : cardData.length> 0 ? status_code: 500,
+      status_code: 200,
       metadata: usage_data,
       type: type,
-      missing_concepts: missing_concepts,
-      missing_facts: missing_facts,
+      missing_concepts: [],
+      missing_facts: [],
       cards_data: cardData,
     };
   }catch (e:any){
     new ErrorLogger({
       "type": 'card_parsing',
       "data": e.message,
+      "response": generatedData,
      }).log();
      return {
       status_code: 500,
-      type: 'card_gen',
+      metadata : usage_data,
+      type:  generatedData.type,
      }
+     
+    //  return {
+    //   status_code: 500,
+    //   type: 'card_gen',
+    //  }
   }
   }
 
@@ -207,21 +212,15 @@ return question;
 
   parseMatchCard(cardData: any) {
     let content = cardData.card_content;
-    const transformedData: { [key: string]: string[] } = {};
 
-    for (let key in content) {
-      if (content.hasOwnProperty(key)) {
-        transformedData[key] = [content[key]];
-      }
-    }
-    let displayTitle = this.generateMatchCardDisplayTitle(transformedData);
+    let displayTitle = this.generateMatchCardDisplayTitle(content);
     let matchCard = {
       type: {
         category: 'learning',
         sub_type: cardData.type,
       },
       heading: cardData.card_reference,
-      content: transformedData,
+      content: content,
       //  content: cardData.card_content,
       displayTitle: displayTitle,
       concepts: cardData.concepts,
@@ -237,16 +236,13 @@ return question;
   generateMatchCardDisplayTitle(answers: any) {
     let titles: string[] = [];
     let counter = 65;
-    for (let key in answers) {
-      if (answers.hasOwnProperty(key)) {
-        let value = answers[key];
-        //     let items = value.split(',').map((item: string) => item.trim());
-        //     items.forEach((item: any) => {
+    for (let data of answers) {
+      
+        let value = data.right_item.join(',');
+        let leftData = data.left_item;
         let letter = String.fromCharCode(counter);
-        titles.push(`${letter}. ${key} -- ${value}`);
+        titles.push(`${letter}. ${leftData} -- ${value}`);
         counter++;
-        //     });
-      }
     }
     let displayTitle = titles.join(",");
     return displayTitle;

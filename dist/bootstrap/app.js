@@ -60,10 +60,10 @@ class OnlyEverGenerator {
                         this.cardgenResponse = yield this.generateCard(this.promptForCardGen, JSON.stringify(this.typologyResponse), false);
                         responseToReturn.push(this.cardgenResponse);
                         /// check if gap fill is required ie coverage determination 
-                        if (this.cardgenResponse.status_code == 200) {
-                            this.gapFillResponse = yield this._generationForGapFill(this.typologyResponse, this.cardgenResponse);
-                            responseToReturn.push(this.gapFillResponse);
-                        }
+                        // if(this.cardgenResponse.status_code == 200) {
+                        //   this.gapFillResponse = await this._generationForGapFill(this.typologyResponse, this.cardgenResponse);
+                        //   responseToReturn.push(this.gapFillResponse);
+                        // }
                     }
                 }
             return responseToReturn;
