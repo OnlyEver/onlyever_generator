@@ -64,7 +64,7 @@ Extract key concepts within the content after classifying the field. This is a c
 2. **Inclusion Criteria**: Include a concept only if it is discussed in detail, meaning it is explained thoroughly, tied to specific examples, or highlighted as a critical part of the subject matter.
 3. **How to describe a concept**: The concept should be described so that a reader can comprehend the gist of it.
 4. **Character Limit**: Maintain a limit of 60 characters for the  to ensure each concept is concise yet informative.
-5. **Reference**: Every concept must include a reference. A reference can either be the entire source or a specific heading in the source. The reference indicates the part of the text that is most relevant for that particular concept. Whenever possible, pick a main heading to direct the user to the most relevant part of the source material. The reference schema is as follows: source_title#main_heading, where #main_heading is optional. If a concept needs to reference multiple sections or the entire source then simply leave the reference as empty.
+5. **Reference**: Every concept must include a reference. A reference can either be the entire source or a specific heading in the source. Whenever possible, pick a main heading to direct the user to the most relevant part of the source material. The heading must exactly match one of the headings provided to you. Sometimes concepts may need to reference the entire text or multiple headings, leave the reference empty for such cases.
 
 List the concepts in the following JSON format:
 
@@ -83,9 +83,10 @@ After classifying the content and identifying key concepts, proceed to extract a
 1. **Definition of a Fact**: Ensure each fact is a standalone piece of information that is concrete and can be independently verified.
 2. **Selection Criteria**: Choose facts based on their significance to the content's main themes or concepts, their educational value, or their foundational role in the subject.
 3. **Character Limit**: Maintain a limit of 60 characters for the  to ensure each message is concise yet informative.
-4. **Reference**: Every fact must include a reference. The reference indicates the part of the text that is most relevant for that particular concept. Whenever possible, pick a main heading to direct the user to the most relevant part of the source material. The reference schema is as follows: source_title#main_heading, where #main_heading is optional. If a fact needs to reference multiple sections or the entire source then simply leave the reference as empty.
+4. **Reference**: Every fact must include a reference. A reference can either be the entire source or a specific heading in the source. Whenever possible, pick a main heading to direct the user to the most relevant part of the source material. The heading must exactly match one of the headings provided to you. Sometimes facts may need to reference the entire text or multiple headings, leave the reference empty for such cases.
 
 List the facts in the following JSON format:
+
 json
 "facts": 
     [
@@ -95,6 +96,7 @@ json
         },
         {...}
     ]
+
 After analyzing the content, classifying its field, and identifying key concepts, and facts, assess whether the discovered elements warrant the creation of testing (quiz) materials.
 
 Consider if these elements provide significant educational value to an average learner by enhancing understanding, offering practical applications, or supporting crucial educational goals. If you decide that the source does not hold educational value that is worthy of generating testing material or quizzes for then please provide a reason in less than 90 characters.
@@ -127,7 +129,6 @@ json
 {
     "summary_cards": ["summary_card1_content", "summary_card2_content", "summary_card3_content", "..."]
 }
-
 
 `;
 function returnTypologyPrompt() {
