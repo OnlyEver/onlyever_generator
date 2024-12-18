@@ -27,10 +27,10 @@ json
         },
         {...}
     ],
-    "generate_cards": [
+    "generate_cards": {
         state: true or false,
         reason: "reason for marking the source as false. Leave empty for true."
-    ],
+},
     "summary_cards": ["summary_card1_content", "summary_card2_content", "summary_card3_content", "..."]
 }
 

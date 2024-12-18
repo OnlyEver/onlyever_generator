@@ -66,7 +66,6 @@ Test cards must be one of the following types:
 
 1. Multiple Choice Questions (MCQ): Provide multiple choices to pick from. One or more should be correct.
 
-json
 {
     "type": "mcq",
     "card_content": {
@@ -107,13 +106,13 @@ json
 •	Minimum choices required: 2
 •	Maximum choices allowed: 8
 •	Minimum correct choices required: 1
-•	Maximum character length for the prompt: 320
-•	Maximum character length for each choice: 42
+•	Maximum character length for the prompt: 90
+•	Maximum character length for each choice: 40
 •   Do not add numbering to the choice content since these will be randomly sorted when displaying to the user
 
 2.	Cloze: A test card where a portion of text is masked for the learner to identify from the provided options. Use double curly braces {{c<n>: cloze_text}} to indicate a cloze, where n is the index number of the cloze (starting from 0) and cloze_text is the word or phrase being clozed.
+Strictly follow the above double curly braces {{c<n>: cloze_text}} for the clozes.
 
-json
 {
     "type": "cloze",
     "card_content": {
@@ -161,14 +160,13 @@ json
 
 4.	Match: Pairing items.
 
-json
+
 {
     "type": "match",
-
     "card_content" : [
         {
             "left_item" : "left_item text",
-            "right_item" : ["right_item text" ]
+            "right_item" : ["right_item text"] 
         },
         {
             "left_item" : "left_item text",
@@ -203,7 +201,7 @@ json
     "bloom_level": <1-5>
 }
 
-* Maximum character length for each item in a pair: 42
+* Maximum character length for each item in a pair: 24
 * Duplicate items are allowed on the left side but not on the right side. Or in other words the same item on the left can be paired with multiple items on the right.
 
 
@@ -215,7 +213,6 @@ json
 3. For each concept and fact start by trying to create a card at the highest bloom level possible.
 4. Do not skip any concepts or facts, and be thorough in your coverage. 
 5. Cards should span across different levels of Bloom’s Taxonomy, from level 1 (Remembering) to level 5 (Evaluating), but exclude level 6 (Creating).
-Once you are done generating the test cards. Go back and evaulate the full list of concepts and facts provided as the input. 
 
 Are there any concept or fact that don't have a test card yet? If yes, go back and create one.
 
@@ -229,6 +226,6 @@ Once you are done generating the test cards, review the full list of concepts an
 
 Only stop generating test questions once you believe there is sufficient testing material for learners to fully understand the concepts and remember the facts. The same concept or fact can have multiple test cards, so continue creating test cards until you are confident that there are enough for learners to fully grasp the source material.
 `;
-function returnCardGenPrompt(cardGenPrompt) {
+function returnCardGenPrompt() {
     return promptString;
 }

@@ -12,13 +12,17 @@ import { OnlyEverGenerator } from "./bootstrap/app";
 // import { returnPromptData } from "./constants/prompt_data";
 // import { GenerateCards } from "./card_gen/generate_cards";
 // import { OpenAiService } from "./services/open_ai_service";
+// import { ParseCardResponse } from "./parse/parse_card_response";
+// import { returnTypologyPrompt } from "./constants/prompts/typology_prompt";
+// import { returnCardGenPrompt } from "./constants/prompts/card_gen_prompt";
+// import { GenerateArgs } from "./utils/generate_args";
 
 /// While Publishing the package , and using this code as a separate npm module
 /// uncomment the below line and comment all the others, expect the import of OnlyEverGenerator
   export {OnlyEverGenerator};
 
-// //. All the Codes Below uses express and are strictly for development purpose, while publishing the package, comment everything
-// //below this line
+//. All the Codes Below uses express and are strictly for development purpose, while publishing the package, comment everything
+//below this line
 // let oeGen = new OnlyEverGenerator(config.openAIKey, "gpt-4o", {
 //   prompt: returnPromptData(),
 //   content: returnSourceData(),
@@ -44,14 +48,15 @@ import { OnlyEverGenerator } from "./bootstrap/app";
 // app.get("/parseCardData", async(req,res)=>{
 //   let cardResp = returnCardResponse();
 //   let headings = returnHeadings();
+
 //   cardResp.metadata = {
 //     "req_time": cardResp.generated_at ?? new Date(),
-//     "req_type": cardResp.type,
+//     "req_type": "card",
 //     "req_tokens": cardResp.usage_data?.prompt_tokens,
 //     "res_tokens": cardResp.usage_data?.completion_tokens,
 //     "model": '40-mini'
 // };
-//   let parsedData = new GenerateCards(new OpenAiService("","")).parse(cardResp,false,headings);
+//   let parsedData = new ParseCardResponse().parse(cardResp,false);
 //   res.send(parsedData)
 // });
 

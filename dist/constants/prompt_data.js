@@ -297,6 +297,6 @@ const promptData = {
 function returnPromptData() {
     return {
         "typology": (0, typology_prompt_1.returnTypologyPrompt)(),
-        "card_generation": (0, card_gen_prompt_1.returnCardGenPrompt)(''),
+        "card_generation": (0, card_gen_prompt_1.returnCardGenPrompt)(),
     };
 }

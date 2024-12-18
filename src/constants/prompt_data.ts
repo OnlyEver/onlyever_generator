@@ -298,6 +298,6 @@ const promptData: any = {
 export function returnPromptData(){
     return {
         "typology": returnTypologyPrompt(),
-        "card_generation": returnCardGenPrompt(''),
+        "card_generation": returnCardGenPrompt(),
     };
 }
