@@ -1,10 +1,21 @@
 export class ParseClozeCard {
   parse(data: any) {
     try {
-      let displayTitle = this._generateClozeCardDisplayTitle(
-        data.card_content.prompt,
-        data.card_content.options
-      );
+      const content = data.card_content;
+      let correctOptions = content.correct_options;
+      let incorrectOptions = content.incorrect_options;
+      let allOptions = [...correctOptions, ...incorrectOptions];
+      let displayTitle = this._generateClozeCardDisplayTitle(data.card_content.prompt, allOptions);
+     let preparedData = this._prepareQuestionAndCorrectAnswers(content.prompt, correctOptions);
+     let finalQuestion = preparedData.prompt;
+     let parsedCorrectOptions = preparedData.options;
+     let parsedIncorrectoptions = incorrectOptions.map((e:any)=>{
+      return {
+        "option":e,
+        "cloze": "null"
+      };
+     });
+     const finalParsedOptions = [...parsedCorrectOptions,...parsedIncorrectoptions];
       let clozeCardData = {
         type: {
           category: "learning",
@@ -13,8 +24,8 @@ export class ParseClozeCard {
         heading: data.card_reference,
         displayTitle: displayTitle,
         content: {
-          question: data.card_content.prompt,
-          options: data.card_content.options,
+          question: finalQuestion,
+          options: finalParsedOptions,
         },
         concepts: data.concepts,
         facts: data.facts,
@@ -31,13 +42,6 @@ export class ParseClozeCard {
     let optionsString = "";
     if (answers.length !== 0) {
       optionsString = answers
-        .map((item: { option: any }) => {
-          if (item.option !== undefined) {
-            return item.option;
-          } else {
-            return "";
-          }
-        })
         .join(", ");
     }
 
@@ -52,6 +56,30 @@ export class ParseClozeCard {
   // 5. More than 6 options
   // 6. Less than 2 options
   // 7. Max character for individual cloze: 90
+
+  _prepareQuestionAndCorrectAnswers(rawPrompt:String, correctOptions: Array<any>){
+    var finalCorrectOptions = <any>[];
+    const regex = /{{(.*?)}}/g;
+
+    const transformed = rawPrompt.replace(regex, (match, p1) => {
+      // p1 is the captured group inside {{ }} (e.g., "fruit", "green")
+      const idx = correctOptions.indexOf(p1);
+      if (idx !== -1) {
+        let cloze = `c${idx}`;
+        finalCorrectOptions.push( {
+          "option": p1,
+          "cloze": cloze,
+        });
+        return `{{c${idx}:${p1}}}`;
+      }
+      return match; // If not found in correct_options, leave as is or handle accordingly
+    });
+    return {
+      "prompt": transformed,
+      "options": finalCorrectOptions
+    }
+
+  }
 
   _validateCloze(clozeCard: any) {
     let clozeRegex = /\{\{c(\d+):([^}]+)\}\}/g;
