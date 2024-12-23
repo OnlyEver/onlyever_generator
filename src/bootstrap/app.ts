@@ -42,6 +42,7 @@ export class OnlyEverGenerator {
       title: parsedData.title,
       headings: parsedData.headings,
       content: parsedData.content,
+      taxonomy: parsedData.taxonomy,
 
     },
     // parsedData.type == 'cards' ? this.typologyResponse = parsedData.taxonomy :  this.typologyResponse = null;
@@ -70,6 +71,11 @@ export class OnlyEverGenerator {
       } else if (elem == "generate_card") {
         /// for cards gen to occur, there must be presence of source taxonomy
         if(this.shouldTheCardBeGeneratedAfterTypologyResponse()){
+          this.parsedContent.taxonomy = {
+            concepts: this.typologyResponse.concepts,
+            facts: this.typologyResponse.facts,
+            generate_cards: this.typologyResponse.generate_cards,
+          };
           this.cardgenResponse =  await this.generateCard(
             this.promptForCardGen,
             JSON.stringify(this.typologyResponse),
@@ -128,7 +134,7 @@ export class OnlyEverGenerator {
       prompt ?? "",
       JSON.stringify(this.parsedContent) + additionalContent,
       isGapFill,
-      this.parsedContent.headings ?? [],
+      this.parsedContent.taxonomy,
     );
   
     // let response =  await this.openAiService?.sendRequest(prompt,this.parsedContent);

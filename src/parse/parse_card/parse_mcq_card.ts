@@ -24,7 +24,7 @@ export class ParseMcqCard {
           category: "learning",
           sub_type: data.type,
         },
-        heading: data.card_reference,
+        heading: "",
         displayTitle: displayTitle,
         content: {
           question: data.card_content.prompt,

@@ -22,7 +22,7 @@ export class ParseMatchCard {
           category: "learning",
           sub_type: cardData.type,
         },
-        heading: cardData.card_content.card_reference,
+        heading:"",
         content: finalContent,
         //  content: cardData.card_content,
         displayTitle: displayTitle,
@@ -67,14 +67,24 @@ export class ParseMatchCard {
 
   _validateMatch(matchCard: any){
     let matches = matchCard.content;
+    let content = [];
     try{
-        for(let elem of matches){
-            if(elem.left_item.length > 30 || elem.left_item.length == 0){
-                throw Error("Invalid Length of left item ");
-            }else if(elem.right_item[0].length>30 || elem.right_item[0].length == 0){
-                throw Error(" Invalid Length of right item")
-            }
+        if(matches.length < 1 || matches.length > 8){
+            throw Error("Invalid number of matches");
+        }
 
+        for(let elem of matches){
+            if(elem.left_item.length <= 30 && elem.left_item.length != 0){
+              if(elem.right_item.length <= 40 && elem.right_item.length != 0){
+                content.push(elem);
+            }
+          }
+        }
+        if(content.length >= 2){
+          matchCard.content = content;
+
+        }else{
+            throw Error("Invalid content");
         }
         return matchCard;
     }catch(e){

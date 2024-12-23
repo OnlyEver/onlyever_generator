@@ -24,7 +24,7 @@ class ParseClozeCard {
                     category: "learning",
                     sub_type: data.type,
                 },
-                heading: data.card_reference,
+                heading: "",
                 displayTitle: displayTitle,
                 content: {
                     question: finalQuestion,
@@ -41,12 +41,17 @@ class ParseClozeCard {
         }
     }
     _generateClozeCardDisplayTitle(question, answers) {
-        let optionsString = "";
-        if (answers.length !== 0) {
-            optionsString = answers
-                .join(", ");
+        try {
+            let optionsString = "";
+            if (answers.length !== 0) {
+                optionsString = answers
+                    .join(", ");
+            }
+            return `${question} ---- ${optionsString}`;
         }
-        return `${question} ---- ${optionsString}`;
+        catch (e) {
+            throw Error("Error in generating display title");
+        }
     }
     /// validate the cloze card
     // 1. Has Empty cloze
@@ -57,25 +62,30 @@ class ParseClozeCard {
     // 6. Less than 2 options
     // 7. Max character for individual cloze: 90
     _prepareQuestionAndCorrectAnswers(rawPrompt, correctOptions) {
-        var finalCorrectOptions = [];
-        const regex = /{{(.*?)}}/g;
-        const transformed = rawPrompt.replace(regex, (match, p1) => {
-            // p1 is the captured group inside {{ }} (e.g., "fruit", "green")
-            const idx = correctOptions.indexOf(p1);
-            if (idx !== -1) {
-                let cloze = `c${idx}`;
-                finalCorrectOptions.push({
-                    "option": p1,
-                    "cloze": cloze,
-                });
-                return `{{c${idx}:${p1}}}`;
-            }
-            return match; // If not found in correct_options, leave as is or handle accordingly
-        });
-        return {
-            "prompt": transformed,
-            "options": finalCorrectOptions
-        };
+        try {
+            var finalCorrectOptions = [];
+            const regex = /{{(.*?)}}/g;
+            const transformed = rawPrompt.replace(regex, (match, p1) => {
+                // p1 is the captured group inside {{ }} (e.g., "fruit", "green")
+                const idx = correctOptions.indexOf(p1);
+                if (idx !== -1) {
+                    let cloze = `c${idx}`;
+                    finalCorrectOptions.push({
+                        "option": p1,
+                        "cloze": cloze,
+                    });
+                    return `{{c${idx}:${p1}}}`;
+                }
+                return match; // If not found in correct_options, leave as is or handle accordingly
+            });
+            return {
+                "prompt": transformed,
+                "options": finalCorrectOptions
+            };
+        }
+        catch (e) {
+            throw Error("Error in preparing question and correct answers");
+        }
     }
     _validateCloze(clozeCard) {
         var _a;
@@ -106,7 +116,7 @@ class ParseClozeCard {
             return clozeCard;
         }
         catch (e) {
-            return false;
+            throw Error(`Error in validating cloze card ${e.message}`);
         }
     }
 }

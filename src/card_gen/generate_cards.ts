@@ -12,7 +12,7 @@ export class GenerateCards {
     prompt: string,
     parsedContent: string,
     isGapFill: boolean,
-    headings: Array<any>
+    taxonomy: any
   ) {
     let response = await this.openAiService?.sendRequest(prompt, parsedContent);
     // console.log("response to card generation ", response);
@@ -26,7 +26,7 @@ export class GenerateCards {
     };
     if (response.status_code == 200) {
       response.metadata.status = "completed";
-      let parseCard = new ParseCardResponse().parse(response,isGapFill);
+      let parseCard = new ParseCardResponse().parse(response,isGapFill, taxonomy);
       return parseCard;
     } else {
       response.metadata.status = "failed";

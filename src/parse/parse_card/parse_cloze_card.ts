@@ -21,7 +21,7 @@ export class ParseClozeCard {
           category: "learning",
           sub_type: data.type,
         },
-        heading: data.card_reference,
+        heading:"",
         displayTitle: displayTitle,
         content: {
           question: finalQuestion,
@@ -39,13 +39,16 @@ export class ParseClozeCard {
   }
 
   _generateClozeCardDisplayTitle(question: string, answers: Array<any>) {
+    try{
     let optionsString = "";
     if (answers.length !== 0) {
       optionsString = answers
         .join(", ");
     }
 
-    return `${question} ---- ${optionsString}`;
+    return `${question} ---- ${optionsString}`;}catch(e){
+      throw Error("Error in generating display title");
+    }
   }
 
   /// validate the cloze card
@@ -58,6 +61,7 @@ export class ParseClozeCard {
   // 7. Max character for individual cloze: 90
 
   _prepareQuestionAndCorrectAnswers(rawPrompt:String, correctOptions: Array<any>){
+    try{
     var finalCorrectOptions = <any>[];
     const regex = /{{(.*?)}}/g;
 
@@ -77,6 +81,8 @@ export class ParseClozeCard {
     return {
       "prompt": transformed,
       "options": finalCorrectOptions
+    }} catch(e){
+      throw Error("Error in preparing question and correct answers");
     }
 
   }
@@ -111,8 +117,8 @@ export class ParseClozeCard {
         throw Error(" Clozes in question doesnt match to clozes in options");
       }
       return clozeCard;
-    } catch (e) {
-      return false;
+    } catch (e: any) {
+     throw Error(`Error in validating cloze card ${e.message}`);
     }
   }
 }
