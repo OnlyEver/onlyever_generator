@@ -15,7 +15,7 @@ class GenerateCards {
     constructor(openAiService) {
         this.openAiService = openAiService;
     }
-    generateCards(prompt, parsedContent, isGapFill, headings) {
+    generateCards(prompt, parsedContent, isGapFill, taxonomy) {
         return __awaiter(this, void 0, void 0, function* () {
             var _a, _b, _c, _d;
             let response = yield ((_a = this.openAiService) === null || _a === void 0 ? void 0 : _a.sendRequest(prompt, parsedContent));
@@ -30,7 +30,7 @@ class GenerateCards {
             };
             if (response.status_code == 200) {
                 response.metadata.status = "completed";
-                let parseCard = new parse_card_response_1.ParseCardResponse().parse(response, isGapFill);
+                let parseCard = new parse_card_response_1.ParseCardResponse().parse(response, isGapFill, taxonomy);
                 return parseCard;
             }
             else {

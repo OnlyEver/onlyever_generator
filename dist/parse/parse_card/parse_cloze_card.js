@@ -4,17 +4,31 @@ exports.ParseClozeCard = void 0;
 class ParseClozeCard {
     parse(data) {
         try {
-            let displayTitle = this._generateClozeCardDisplayTitle(data.card_content.prompt, data.card_content.options);
+            const content = data.card_content;
+            let correctOptions = content.correct_options;
+            let incorrectOptions = content.incorrect_options;
+            let allOptions = [...correctOptions, ...incorrectOptions];
+            let displayTitle = this._generateClozeCardDisplayTitle(data.card_content.prompt, allOptions);
+            let preparedData = this._prepareQuestionAndCorrectAnswers(content.prompt, correctOptions);
+            let finalQuestion = preparedData.prompt;
+            let parsedCorrectOptions = preparedData.options;
+            let parsedIncorrectoptions = incorrectOptions.map((e) => {
+                return {
+                    "option": e,
+                    "cloze": "null"
+                };
+            });
+            const finalParsedOptions = [...parsedCorrectOptions, ...parsedIncorrectoptions];
             let clozeCardData = {
                 type: {
                     category: "learning",
                     sub_type: data.type,
                 },
-                heading: data.card_reference,
+                heading: "",
                 displayTitle: displayTitle,
                 content: {
-                    question: data.card_content.prompt,
-                    options: data.card_content.options,
+                    question: finalQuestion,
+                    options: finalParsedOptions,
                 },
                 concepts: data.concepts,
                 facts: data.facts,
@@ -27,20 +41,17 @@ class ParseClozeCard {
         }
     }
     _generateClozeCardDisplayTitle(question, answers) {
-        let optionsString = "";
-        if (answers.length !== 0) {
-            optionsString = answers
-                .map((item) => {
-                if (item.option !== undefined) {
-                    return item.option;
-                }
-                else {
-                    return "";
-                }
-            })
-                .join(", ");
+        try {
+            let optionsString = "";
+            if (answers.length !== 0) {
+                optionsString = answers
+                    .join(", ");
+            }
+            return `${question} ---- ${optionsString}`;
         }
-        return `${question} ---- ${optionsString}`;
+        catch (e) {
+            throw Error("Error in generating display title");
+        }
     }
     /// validate the cloze card
     // 1. Has Empty cloze
@@ -50,6 +61,32 @@ class ParseClozeCard {
     // 5. More than 6 options
     // 6. Less than 2 options
     // 7. Max character for individual cloze: 90
+    _prepareQuestionAndCorrectAnswers(rawPrompt, correctOptions) {
+        try {
+            var finalCorrectOptions = [];
+            const regex = /{{(.*?)}}/g;
+            const transformed = rawPrompt.replace(regex, (match, p1) => {
+                // p1 is the captured group inside {{ }} (e.g., "fruit", "green")
+                const idx = correctOptions.indexOf(p1);
+                if (idx !== -1) {
+                    let cloze = `c${idx}`;
+                    finalCorrectOptions.push({
+                        "option": p1,
+                        "cloze": cloze,
+                    });
+                    return `{{c${idx}:${p1}}}`;
+                }
+                return match; // If not found in correct_options, leave as is or handle accordingly
+            });
+            return {
+                "prompt": transformed,
+                "options": finalCorrectOptions
+            };
+        }
+        catch (e) {
+            throw Error("Error in preparing question and correct answers");
+        }
+    }
     _validateCloze(clozeCard) {
         var _a;
         let clozeRegex = /\{\{c(\d+):([^}]+)\}\}/g;
@@ -79,7 +116,7 @@ class ParseClozeCard {
             return clozeCard;
         }
         catch (e) {
-            return false;
+            throw Error(`Error in validating cloze card ${e.message}`);
         }
     }
 }

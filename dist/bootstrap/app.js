@@ -37,6 +37,7 @@ class OnlyEverGenerator {
             title: parsedData.title,
             headings: parsedData.headings,
             content: parsedData.content,
+            taxonomy: parsedData.taxonomy,
         },
             // parsedData.type == 'cards' ? this.typologyResponse = parsedData.taxonomy :  this.typologyResponse = null;
             this.typologyResponse = generationContent.content.taxonomy;
@@ -57,6 +58,11 @@ class OnlyEverGenerator {
                 else if (elem == "generate_card") {
                     /// for cards gen to occur, there must be presence of source taxonomy
                     if (this.shouldTheCardBeGeneratedAfterTypologyResponse()) {
+                        this.parsedContent.taxonomy = {
+                            concepts: this.typologyResponse.concepts,
+                            facts: this.typologyResponse.facts,
+                            generate_cards: this.typologyResponse.generate_cards,
+                        };
                         this.cardgenResponse = yield this.generateCard(this.promptForCardGen, JSON.stringify(this.typologyResponse), false);
                         responseToReturn.push(this.cardgenResponse);
                         /// check if gap fill is required ie coverage determination 
@@ -96,8 +102,7 @@ class OnlyEverGenerator {
     }
     generateCard(prompt, additionalContent, isGapFill) {
         return __awaiter(this, void 0, void 0, function* () {
-            var _a;
-            let generateCardsResp = yield new generate_cards_1.GenerateCards(this.openAiService).generateCards(prompt !== null && prompt !== void 0 ? prompt : "", JSON.stringify(this.parsedContent) + additionalContent, isGapFill, (_a = this.parsedContent.headings) !== null && _a !== void 0 ? _a : []);
+            let generateCardsResp = yield new generate_cards_1.GenerateCards(this.openAiService).generateCards(prompt !== null && prompt !== void 0 ? prompt : "", JSON.stringify(this.parsedContent) + additionalContent, isGapFill, this.parsedContent.taxonomy);
             // let response =  await this.openAiService?.sendRequest(prompt,this.parsedContent);
             // response['type'] = 'card_gen';
             return generateCardsResp;
