@@ -88,8 +88,8 @@ export class ParseCardResponse {
           back_content: data.card_content.back,
         },
         concepts: data.concepts,
+        explanation: data.card_content.explanation,
         facts: data.facts,
-        bloomLevel: data.bloom_level,
       };
 
       return flashCardData;

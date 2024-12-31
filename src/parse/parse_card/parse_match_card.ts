@@ -28,7 +28,7 @@ export class ParseMatchCard {
         displayTitle: displayTitle,
         concepts: cardData.concepts,
         facts: cardData.facts,
-        bloomLevel: cardData.bloom_level,
+        explanation: cardData.card_content.explanation,
       };
 
       return this._validateMatch(matchCard);

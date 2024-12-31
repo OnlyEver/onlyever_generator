@@ -29,7 +29,7 @@ export class ParseClozeCard {
         },
         concepts: data.concepts,
         facts: data.facts,
-        bloomLevel: data.bloom_level,
+        explanation: data.card_content.explanation,
       };
 
       return this._validateCloze(clozeCardData);

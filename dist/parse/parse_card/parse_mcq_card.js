@@ -29,7 +29,7 @@ class ParseMcqCard {
                 },
                 concepts: data.concepts,
                 facts: data.facts,
-                bloomLevel: data.bloom_level,
+                explanation: data.card_content.explanation,
             };
             //   return mcqCard;
             const isValid = this._validate(mcqCard);
