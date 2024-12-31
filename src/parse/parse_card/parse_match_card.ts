@@ -14,7 +14,7 @@ export class ParseMatchCard {
   parse(cardData: any) {
     try {
       let content = cardData.card_content;
-      const finalContent =this._parseMatchContent(content);
+      const finalContent = this._parseMatchContent(content);
 
       let displayTitle = this._generateMatchCardDisplayTitle(content);
       let matchCard = {
@@ -22,13 +22,13 @@ export class ParseMatchCard {
           category: "learning",
           sub_type: cardData.type,
         },
-        heading:"",
+        heading: "",
         content: finalContent,
         //  content: cardData.card_content,
         displayTitle: displayTitle,
         concepts: cardData.concepts,
         facts: cardData.facts,
-        bloomLevel: cardData.bloom_level,
+        explanation: cardData.card_content.explanation,
       };
 
       return this._validateMatch(matchCard);
@@ -36,8 +36,6 @@ export class ParseMatchCard {
       return null;
     }
   }
-
-  
 
   _generateMatchCardDisplayTitle(answers: any) {
     let titles: string[] = [];
@@ -53,42 +51,44 @@ export class ParseMatchCard {
     return displayTitle;
   }
 
-   _parseMatchContent = (input: InputItem[]): OutputItem[] => {
-    const grouped = input.reduce<Record<string, OutputItem>>((acc, { left_item, right_item }) => {
-      if (!acc[left_item]) {
-        acc[left_item] = { left_item, right_item: [] };
-      }
-      acc[left_item].right_item.push(right_item);
-      return acc;
-    }, {});
-  
+  _parseMatchContent = (input: InputItem[]): OutputItem[] => {
+    const grouped = input.reduce<Record<string, OutputItem>>(
+      (acc, { left_item, right_item }) => {
+        if (!acc[left_item]) {
+          acc[left_item] = { left_item, right_item: [] };
+        }
+        acc[left_item].right_item.push(right_item);
+        return acc;
+      },
+      {}
+    );
+
     return Object.values(grouped);
   };
 
-  _validateMatch(matchCard: any){
+  _validateMatch(matchCard: any) {
     let matches = matchCard.content;
     let content = [];
-    try{
-        if(matches.length < 1 || matches.length > 8){
-            throw Error("Invalid number of matches");
-        }
+    try {
+      if (matches.length < 1 || matches.length > 8) {
+        throw Error("Invalid number of matches");
+      }
 
-        for(let elem of matches){
-            if(elem.left_item.length <= 30 && elem.left_item.length != 0){
-              if(elem.right_item.length <= 40 && elem.right_item.length != 0){
-                content.push(elem);
-            }
+      for (let elem of matches) {
+        if (elem.left_item.length <= 30 && elem.left_item.length != 0) {
+          if (elem.right_item.length <= 40 && elem.right_item.length != 0) {
+            content.push(elem);
           }
         }
-        if(content.length >= 2){
-          matchCard.content = content;
-
-        }else{
-            throw Error("Invalid content");
-        }
-        return matchCard;
-    }catch(e){
-        return null;
+      }
+      if (content.length >= 2) {
+        matchCard.content = content;
+      } else {
+        throw Error("Invalid content");
+      }
+      return matchCard;
+    } catch (e) {
+      return null;
     }
   }
 }

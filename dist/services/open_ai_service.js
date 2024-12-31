@@ -26,28 +26,31 @@ class OpenAiService {
             try {
                 let message = [
                     {
-                        "role": "system", "content": prompt
-                    }, {
-                        "role": "user", "content": content
-                    }
+                        role: "system",
+                        content: prompt,
+                    },
+                    {
+                        role: "user",
+                        content: content,
+                    },
                 ];
                 const url = (0, api_constants_1.openAiEndPoint)();
                 let response = yield axios_1.default.post(url, {
-                    "model": this.model,
-                    "messages": message,
-                    "response_format": { "type": "json_object" },
+                    model: this.model,
+                    messages: message,
+                    response_format: { type: "json_object" },
                 }, {
                     headers: {
                         Authorization: "Bearer " + this.api_key,
-                        "Content-Type": ['application/json']
+                        "Content-Type": ["application/json"],
                     },
                 });
                 if (response.status == 200) {
-                    console.log('success');
+                    console.log("success");
                     return (0, parse_openai_response_1.parseOpenAiSuccessResponse)(response.data);
                 }
                 else {
-                    console.log('failed');
+                    console.log("failed");
                     return response.statusText;
                 }
             }

@@ -1,5 +1,6 @@
 import { ErrorLogger } from "../logger";
 import { ParseClozeCard } from "./parse_card/parse_cloze_card";
+import { ParseFlashCard } from "./parse_card/parse_flash_cards";
 import { ParseMatchCard } from "./parse_card/parse_match_card";
 import { ParseMcqCard } from "./parse_card/parse_mcq_card";
 
@@ -13,9 +14,12 @@ export class ParseCardResponse {
       if (unparsedTestCards !== undefined && unparsedTestCards.length != 0) {
         for (let elem of unparsedTestCards) {
           if (elem.type == "flash") {
-            const flashCard = this.parseFlashCard(elem);
+            const flashCard = new ParseFlashCard().parse(elem);
             if (flashCard != null && flashCard) {
-              flashCard.heading = this._getCardReference(flashCard, sourceTaxonomy);
+              flashCard.heading = this._getCardReference(
+                flashCard,
+                sourceTaxonomy
+              );
               cardData.push(flashCard);
             }
           } else if (elem.type == "mcq") {
@@ -27,13 +31,19 @@ export class ParseCardResponse {
           } else if (elem.type == "cloze") {
             const clozeCard = new ParseClozeCard().parse(elem);
             if (clozeCard && clozeCard != null) {
-              clozeCard.heading = this._getCardReference(clozeCard, sourceTaxonomy);
+              clozeCard.heading = this._getCardReference(
+                clozeCard,
+                sourceTaxonomy
+              );
               cardData.push(clozeCard);
             }
           } else if (elem.type == "match") {
             const matchCard = new ParseMatchCard().parse(elem);
             if (matchCard && matchCard != null) {
-              matchCard.heading = this._getCardReference(matchCard, sourceTaxonomy);
+              matchCard.heading = this._getCardReference(
+                matchCard,
+                sourceTaxonomy
+              );
               cardData.push(matchCard);
             }
           }
@@ -43,13 +53,12 @@ export class ParseCardResponse {
           usage_data.status = "failed";
         }
       }
-      if(cardData.length == 0){
-        usage_data.status="failed";
-
+      if (cardData.length == 0) {
+        usage_data.status = "failed";
       }
 
       return {
-        status_code: cardData.length == 0 ? 400:200,
+        status_code: cardData.length == 0 ? 400 : 200,
         metadata: usage_data,
         type: type,
         missing_concepts: [],
@@ -70,38 +79,6 @@ export class ParseCardResponse {
     }
   }
 
-  parseFlashCard(data: any) {
-    try {
-      let displayTitle = this.generateFlashCardDisplayTitle(
-        data.card_content.front,
-        data.card_content.back
-      );
-      let flashCardData = {
-        type: {
-          category: "learning",
-          sub_type: data.type,
-        },
-        heading : "",
-        displayTitle: displayTitle,
-        content: {
-          front_content: data.card_content.front,
-          back_content: data.card_content.back,
-        },
-        concepts: data.concepts,
-        facts: data.facts,
-        bloomLevel: data.bloom_level,
-      };
-
-      return flashCardData;
-    } catch (e) {
-      return null;
-    }
-  }
-
-  generateFlashCardDisplayTitle(front: string, back: string) {
-    return `${front} ---- ${back}`;
-  }
-
   _getCardReference(generatedCardData: any, sourceTaxonomy: any) {
     const cardConcepts = generatedCardData.concepts ?? [];
     const cardFacts = generatedCardData.facts ?? [];
@@ -112,24 +89,28 @@ export class ParseCardResponse {
 
     const mappedSourceConcepts = sourceConcepts.map((elem: any) => {
       return {
-        "text": elem.concept_text,
+        text: elem.concept_text,
         reference: elem.reference,
       };
     });
     const mappedSourceFacts = sourceFacts.map((elem: any) => {
       return {
-        "text": elem.fact_text,
+        text: elem.fact_text,
         reference: elem.reference,
       };
     });
 
-    const compinedConceptsAndFacts = [...mappedSourceConcepts, ...mappedSourceFacts];
-    const firstMatchedConcept =  compinedConceptsAndFacts.find((elem: any) => combinedCardFactsAndConcepts.includes(elem.text));
+    const compinedConceptsAndFacts = [
+      ...mappedSourceConcepts,
+      ...mappedSourceFacts,
+    ];
+    const firstMatchedConcept = compinedConceptsAndFacts.find((elem: any) =>
+      combinedCardFactsAndConcepts.includes(elem.text)
+    );
 
-
-    if(firstMatchedConcept){
+    if (firstMatchedConcept) {
       return firstMatchedConcept.reference;
-    }else{
+    } else {
       return "";
     }
   }

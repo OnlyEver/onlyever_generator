@@ -13,13 +13,13 @@ class GenerateArgs {
     getWhatNeedsToBeGenerated() {
         let returnData = [];
         if (this.generate_typology == true) {
-            returnData.push('generate_tyopology');
+            returnData.push("generate_tyopology");
         }
         if (this.generate_summary == true) {
-            returnData.push('generate_summary');
+            returnData.push("generate_summary");
         }
         if (this.generate_card == true) {
-            returnData.push('generate_card');
+            returnData.push("generate_card");
         }
         return returnData;
     }

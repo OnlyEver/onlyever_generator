@@ -17,10 +17,9 @@
 
 import { OnlyEverGenerator } from "./bootstrap/app";
 
-
 /// While Publishing the package , and using this code as a separate npm module
 /// uncomment the below line and comment all the others, expect the import of OnlyEverGenerator
-  export {OnlyEverGenerator};
+export { OnlyEverGenerator };
 
 // . All the Codes Below uses express and are strictly for development purpose, while publishing the package, comment everything
 // below this line

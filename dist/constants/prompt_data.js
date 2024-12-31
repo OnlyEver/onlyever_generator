@@ -291,12 +291,12 @@ const promptData = {
      2.	If any concept or fact is missing a test card, create one for it.
      3.	Repeat this step until all concepts and facts are covered.
     
-    Only stop generating test questions once you believe there is sufficient testing material for learners to fully understand the concepts and remember the facts. The same concept or fact can have multiple test cards, so continue creating test cards until you are confident that there are enough for learners to fully grasp the source material.`
-    }
+    Only stop generating test questions once you believe there is sufficient testing material for learners to fully understand the concepts and remember the facts. The same concept or fact can have multiple test cards, so continue creating test cards until you are confident that there are enough for learners to fully grasp the source material.`,
+    },
 };
 function returnPromptData() {
     return {
-        "typology": (0, typology_prompt_1.returnTypologyPrompt)(),
-        "card_generation": (0, card_gen_prompt_1.returnCardGenPrompt)(),
+        typology: (0, typology_prompt_1.returnTypologyPrompt)(),
+        card_generation: (0, card_gen_prompt_1.returnCardGenPrompt)(),
     };
 }

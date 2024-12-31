@@ -13,8 +13,8 @@ exports.GenerateTypology = void 0;
 const logger_1 = require("../logger");
 class GenerateTypology {
     constructor(openAiService, prompt, content, expected_fields) {
-        this.prompt = '';
-        this.content = '';
+        this.prompt = "";
+        this.content = "";
         this.openAiService = openAiService;
         this.prompt = prompt;
         this.content = content;
@@ -25,13 +25,13 @@ class GenerateTypology {
             var _a, _b, _c, _d;
             try {
                 const response = yield ((_a = this.openAiService) === null || _a === void 0 ? void 0 : _a.sendRequest(this.prompt, this.content));
-                response['type'] = 'typology';
+                response["type"] = "typology";
                 response.metadata = {
-                    "req_time": (_b = response.generated_at) !== null && _b !== void 0 ? _b : new Date(),
-                    "req_type": response.type,
-                    "req_tokens": (_c = response.usage_data) === null || _c === void 0 ? void 0 : _c.prompt_tokens,
-                    "res_tokens": (_d = response.usage_data) === null || _d === void 0 ? void 0 : _d.completion_tokens,
-                    "model": this.openAiService.model
+                    req_time: (_b = response.generated_at) !== null && _b !== void 0 ? _b : new Date(),
+                    req_type: response.type,
+                    req_tokens: (_c = response.usage_data) === null || _c === void 0 ? void 0 : _c.prompt_tokens,
+                    res_tokens: (_d = response.usage_data) === null || _d === void 0 ? void 0 : _d.completion_tokens,
+                    model: this.openAiService.model,
                 };
                 if (response.status_code == 200) {
                     return this.parseTypologyOnSuccess(response);
@@ -43,8 +43,8 @@ class GenerateTypology {
             }
             catch (e) {
                 yield new logger_1.ErrorLogger({
-                    "type": 'typology_parsing',
-                    "data": e.message
+                    type: "typology_parsing",
+                    data: e.message,
                 }).log();
             }
         });
@@ -60,19 +60,19 @@ class GenerateTypology {
             facts: generatedContent.facts,
             generate_cards: generatedContent.generate_cards,
             summary_cards: generatedContent.summary_cards,
-            type: responseData.type
+            type: responseData.type,
         };
     }
     parseFields(fields) {
-        const fieldKeys = ['primary_field', 'secondary_field', 'tertiary_field'];
+        const fieldKeys = ["primary_field", "secondary_field", "tertiary_field"];
         return fields.slice(0, 3).map((item, index) => ({
             [fieldKeys[index]]: item,
-            "reconcile": !(this.expectedFields.includes(item.toLowerCase()))
+            reconcile: !this.expectedFields.includes(item.toLowerCase()),
         }));
     }
     parseTypologyOnFailure(responseData) {
         return __awaiter(this, void 0, void 0, function* () {
-            responseData.metadata.status = 'failed';
+            responseData.metadata.status = "failed";
             return {
                 status_code: responseData.status_code,
                 metadata: responseData.metadata,

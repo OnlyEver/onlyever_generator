@@ -384,5 +384,3 @@ const sourceResp = {
   generated_at: 1718625081,
   type: "card_gen",
 };
-
-
