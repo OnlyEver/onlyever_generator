@@ -33,14 +33,14 @@ class OnlyEverGenerator {
         this.api_key = apiKey;
         this.openAiService = new open_ai_service_1.OpenAiService(apiKey, model !== null && model !== void 0 ? model : "gpt-3.5-turbo-1106");
         const parsedData = new parse_source_content_1.ParseSourceContent(generationContent.content).parseData();
-        this.parsedContent = {
+        (this.parsedContent = {
             title: parsedData.title,
             headings: parsedData.headings,
             content: parsedData.content,
             taxonomy: parsedData.taxonomy,
-        },
+        }),
             // parsedData.type == 'cards' ? this.typologyResponse = parsedData.taxonomy :  this.typologyResponse = null;
-            this.typologyResponse = generationContent.content.taxonomy;
+            (this.typologyResponse = generationContent.content.taxonomy);
         this.expectedFields = generationContent.content.fields; //returnFields();
         this.promptForTypology = generationContent.prompt.typology;
         this.promptForCardGen = generationContent.prompt.card_generation;
@@ -65,7 +65,7 @@ class OnlyEverGenerator {
                         };
                         this.cardgenResponse = yield this.generateCard(this.promptForCardGen, JSON.stringify(this.typologyResponse), false);
                         responseToReturn.push(this.cardgenResponse);
-                        /// check if gap fill is required ie coverage determination 
+                        /// check if gap fill is required ie coverage determination
                         if (this.cardgenResponse.status_code == 200) {
                             this.gapFillResponse = yield this._generationForGapFill(this.typologyResponse, this.cardgenResponse);
                             responseToReturn.push(this.gapFillResponse);
@@ -116,7 +116,7 @@ class OnlyEverGenerator {
     }
     gapFill(factsMaps, aiCards) {
         return __awaiter(this, void 0, void 0, function* () {
-            /// factsmap 
+            /// factsmap
             /// {
             /// remaining_facts: [],
             /// remaining_concepts: [],

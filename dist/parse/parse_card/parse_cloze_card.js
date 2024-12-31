@@ -14,11 +14,14 @@ class ParseClozeCard {
             let parsedCorrectOptions = preparedData.options;
             let parsedIncorrectoptions = incorrectOptions.map((e) => {
                 return {
-                    "option": e,
-                    "cloze": "null"
+                    option: e,
+                    cloze: "null",
                 };
             });
-            const finalParsedOptions = [...parsedCorrectOptions, ...parsedIncorrectoptions];
+            const finalParsedOptions = [
+                ...parsedCorrectOptions,
+                ...parsedIncorrectoptions,
+            ];
             let clozeCardData = {
                 type: {
                     category: "learning",
@@ -44,8 +47,7 @@ class ParseClozeCard {
         try {
             let optionsString = "";
             if (answers.length !== 0) {
-                optionsString = answers
-                    .join(", ");
+                optionsString = answers.join(", ");
             }
             return `${question} ---- ${optionsString}`;
         }
@@ -71,16 +73,16 @@ class ParseClozeCard {
                 if (idx !== -1) {
                     let cloze = `c${idx}`;
                     finalCorrectOptions.push({
-                        "option": p1,
-                        "cloze": cloze,
+                        option: p1,
+                        cloze: cloze,
                     });
                     return `{{c${idx}:${p1}}}`;
                 }
                 return match; // If not found in correct_options, leave as is or handle accordingly
             });
             return {
-                "prompt": transformed,
-                "options": finalCorrectOptions
+                prompt: transformed,
+                options: finalCorrectOptions,
             };
         }
         catch (e) {

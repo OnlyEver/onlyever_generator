@@ -12,8 +12,17 @@ class ParseSourceContent {
         //     taxonomy: source.source_taxonomy,
         //     type: source.source_type
         //   },
-        this.titles_to_remove = ['See also', 'References', 'Further reading', 'External links', 'Notes and references', 'Bibliography', 'Notes', 'Cited sources'];
-        this.block_types_toremove = ['table', 'empty_line'];
+        this.titles_to_remove = [
+            "See also",
+            "References",
+            "Further reading",
+            "External links",
+            "Notes and references",
+            "Bibliography",
+            "Notes",
+            "Cited sources",
+        ];
+        this.block_types_toremove = ["table", "empty_line"];
         this.content = sourceContent;
     }
     parseData() {
@@ -37,7 +46,8 @@ class ParseSourceContent {
     removeSectionsByTitle(data) {
         let dataAfterRemoving = [];
         for (let elem of data) {
-            if (elem.block_type == 'heading' && this.titles_to_remove.includes(elem.content)) {
+            if (elem.block_type == "heading" &&
+                this.titles_to_remove.includes(elem.content)) {
                 continue;
             }
             /// remove unwanted blcok types , for now `table` and `empty_line`
@@ -53,26 +63,26 @@ class ParseSourceContent {
     }
     sanitizeTextContent(content) {
         // Remove newline characters
-        content = content.replace(/\\n/g, ' ');
+        content = content.replace(/\\n/g, " ");
         // Remove internal link references, keeping only the link text
         // Pattern explanation: [[link|text|index|wiki]] --> text
-        content = content.replace(/\[\[.*?\|(.*?)\|.*?\|wiki\]\]/g, '$1');
+        content = content.replace(/\[\[.*?\|(.*?)\|.*?\|wiki\]\]/g, "$1");
         // Remove external links, keeping only the link text
         // Pattern explanation: [url text] --> text
-        content = content.replace(/\[http[s]?:\/\/[^\s]+ ([^\]]+)\]/g, '$1');
+        content = content.replace(/\[http[s]?:\/\/[^\s]+ ([^\]]+)\]/g, "$1");
         // Remove Markdown link references, keeping only the link text
         // Pattern explanation: ![link text](url) --> link text
-        content = content.replace(/\!\[([^\]]+)\]\([^\)]+\)/g, '$1');
+        content = content.replace(/\!\[([^\]]+)\]\([^\)]+\)/g, "$1");
         return content;
     }
     sanitizeBlocks(blocks) {
         let sanitizedBlocks = [];
-        blocks = blocks.filter((item) => item.block_type != 'table');
-        blocks.forEach(block => {
+        blocks = blocks.filter((item) => item.block_type != "table");
+        blocks.forEach((block) => {
             let sanitizedBlock = {};
             for (let key in block) {
                 let value = block[key];
-                if (typeof value === 'string') {
+                if (typeof value === "string") {
                     sanitizedBlock[key] = this.sanitizeTextContent(value);
                 }
                 else if (Array.isArray(value)) {
@@ -92,10 +102,10 @@ class ParseSourceContent {
         data.forEach((e) => {
             let combinedContent = this.cleanTranscript(e);
             finalChapters.push({
-                "startTime": e.startTime,
-                "endTime": e.endTime,
-                "content": combinedContent,
-                "title": e.content
+                startTime: e.startTime,
+                endTime: e.endTime,
+                content: combinedContent,
+                title: e.content,
             });
         });
         return finalChapters;
@@ -108,13 +118,13 @@ class ParseSourceContent {
     // remove non-essential content
     cleanTranscript(data) {
         var _a;
-        let finalContent = '';
+        let finalContent = "";
         let children = (_a = data.children) !== null && _a !== void 0 ? _a : [];
         children.forEach((e) => {
             let content = (e.content || "").trim();
             if (this.isNonSpeech(content))
                 return;
-            content = content.replace(/\s+/g, ' ');
+            content = content.replace(/\s+/g, " ");
             finalContent += content;
         });
         return finalContent;
@@ -127,7 +137,7 @@ class ParseSourceContent {
         let bucketEndTime = null;
         let bucketContent = [];
         let bucketDuration = 0.0;
-        data.forEach(entry => {
+        data.forEach((entry) => {
             const startTime = entry.start_time;
             const endTime = entry.end_time;
             const content = entry.content;
@@ -139,7 +149,7 @@ class ParseSourceContent {
                 bucketContent.push(content);
                 bucketDuration = entryDuration;
             }
-            else if ((bucketDuration + entryDuration) <= maxDuration) {
+            else if (bucketDuration + entryDuration <= maxDuration) {
                 // Add to current bucket
                 bucketEndTime = endTime;
                 bucketContent.push(content);
@@ -150,7 +160,7 @@ class ParseSourceContent {
                 const collapsedEntry = {
                     start_time: bucketStartTime,
                     end_time: bucketEndTime,
-                    content: bucketContent.join(' ')
+                    content: bucketContent.join(" "),
                 };
                 collapsedData.push(collapsedEntry);
                 // Start new bucket with current entry
@@ -165,7 +175,7 @@ class ParseSourceContent {
             const collapsedEntry = {
                 start_time: bucketStartTime,
                 end_time: bucketEndTime,
-                content: bucketContent.join(' ')
+                content: bucketContent.join(" "),
             };
             collapsedData.push(collapsedEntry);
         }
