@@ -26,7 +26,11 @@ export class GenerateCards {
     };
     if (response.status_code == 200) {
       response.metadata.status = "completed";
-      let parseCard = new ParseCardResponse().parse(response,isGapFill, taxonomy);
+      let parseCard = new ParseCardResponse().parse(
+        response,
+        isGapFill,
+        taxonomy
+      );
       return parseCard;
     } else {
       response.metadata.status = "failed";

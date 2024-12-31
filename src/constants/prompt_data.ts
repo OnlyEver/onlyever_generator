@@ -2,8 +2,8 @@ import { returnCardGenPrompt } from "./prompts/card_gen_prompt";
 import { returnTypologyPrompt } from "./prompts/typology_prompt";
 
 const promptData: any = {
-    typology: {
-        role: `
+  typology: {
+    role: `
     As a dedicated assistant at a learning company, your role involves analyzing educational content to categorize and summarize it. You will process content (in JSON format) that represents text and images from diverse sources such as PDFs, book chapters, videos, and websites. Follow these steps:
     
     1. Classify the content into one to three predefined fields of knowledge.
@@ -27,7 +27,7 @@ const promptData: any = {
     
     Further instruction on how to perform these tasks are below.
         `,
-        fields: `
+    fields: `
         Every source must be placed under a field. This is the broadest category of knowledge. A source should belong to at least one and at most 3 fields. Only include fields that a source is strongly associated with. The field names in your response must exactly match the names of 18 fields listed below.
     
     1.	Sciences: Focus on Biology, Chemistry, Physics, Astronomy, Mathematics, and Computer Science.
@@ -49,7 +49,7 @@ const promptData: any = {
     17.	Reference & Indexing: Include Summaries, Timelines, Directories, Glossaries, Bibliographies, and other Reference Material.
     18.	Other: Use for content that doesn’t fit into the above categories.
         `,
-        concepts: `
+    concepts: `
         Extract key concepts within the content after classifying the field. Please be as exhaustive as possible.
     
     Definition of a Concept: Concepts are fundamental ideas that form the basis of knowledge in any discipline. They help organize and explain information, making it accessible and relatable.
@@ -66,7 +66,7 @@ const promptData: any = {
      ]
     }
         `,
-        facts: `
+    facts: `
         After classifying the content and identifying key concepts, proceed to extract and list verifiable facts.
     
     Definition of a Fact: Ensure each fact is a standalone piece of information that is concrete and can be independently verified.
@@ -77,7 +77,7 @@ const promptData: any = {
      "facts": ["fact1", "fact2", "fact3", "..."]
     }
         `,
-        generate: `
+    generate: `
         After analyzing the content, classifying its field, and identifying key concepts, and facts, assess whether the discovered elements warrant the creation of testing materials. Consider if these elements provide significant educational value to an average learner by enhancing understanding, offering practical applications, or supporting crucial educational goals. If you decide that testing cards don't need to be generated then please provide a reason in less than 90 characters.
     
     Value Assessment: Determine if the concepts and facts are essential for understanding the broader topic, are likely to be used in practical scenarios, or help in achieving educational benchmarks.
@@ -89,7 +89,7 @@ const promptData: any = {
          false_reason: "reason for marking the source as false. Leave empty for true."
      }
         `,
-        summarize:`
+    summarize: `
         After analyzing the content, identifying key concepts, and facts, summarize the material using a series of engaging and informative cards. These cards should capture the essence of the content while highlighting the critical concepts and facts that you previously identified.
     
     Inclusion Criteria: The generate_cards should be true. Return an empty array if the generate_cards is false.
@@ -102,10 +102,9 @@ const promptData: any = {
      "summary_cards": ["summary_card1", "summary_card2", "summary_card3", "..."]
     }
         `,
-        
-      },
-      card_generation:  {
-        role: `
+  },
+  card_generation: {
+    role: `
         As a dedicated assistant at a learning company, your role is to analyze educational content and create test cards that help learners understand and remember key concepts and facts. You will be provided with:
     
     1. Title of the source
@@ -146,7 +145,7 @@ const promptData: any = {
     
     Further instructions are provided below.
         `,
-        concepts : `
+    concepts: `
         You are provided with a list of identified concepts. Review this list and the content to determine if any concepts are missing.
     
     1. **Definition of a Concept**: Concepts are fundamental ideas that form the basis of knowledge in any discipline. They help organize and explain information, making it accessible and relatable.
@@ -163,7 +162,7 @@ const promptData: any = {
      ]
     }
         `,
-        facts :`
+    facts: `
         You are provided with a list of identified facts. Review this list and the content to determine if any facts are missing.
     
     1. **Definition of a Fact**: Standalone information that is concrete and independently verifiable.
@@ -174,7 +173,7 @@ const promptData: any = {
      "missing_facts": ["fact1", "fact2", "fact3", "..."]
     }
         `,
-        card_gen: `
+    card_gen: `
         After you have the complete list of concepts and facts, including any missing ones you identified, proceed to generate test cards for each.
     
      1.	Clarity: Ensure the test content is clear and unambiguous.
@@ -277,8 +276,8 @@ const promptData: any = {
     
     •	Maximum character length for each item in a pair: 42
         `,
-        reference : `Each test card needs a reference. A reference can either be the entire source or a specific heading in the source. Whenever possible, pick a main heading to direct the user to the most relevant part of the source material. The reference schema is as follows: source_title#main_heading, where #main_heading is optional.`,
-        checkcoverage: `Once you are done generating the test cards. Go back and evaulate the full list of concepts and fact that include any of the missing concepts or facts along with the list that was provided as the input. 
+    reference: `Each test card needs a reference. A reference can either be the entire source or a specific heading in the source. Whenever possible, pick a main heading to direct the user to the most relevant part of the source material. The reference schema is as follows: source_title#main_heading, where #main_heading is optional.`,
+    checkcoverage: `Once you are done generating the test cards. Go back and evaulate the full list of concepts and fact that include any of the missing concepts or facts along with the list that was provided as the input. 
     
     Are there any concept or fact that don't have a test card yet? If yes, go back and create one.
     
@@ -290,14 +289,13 @@ const promptData: any = {
      2.	If any concept or fact is missing a test card, create one for it.
      3.	Repeat this step until all concepts and facts are covered.
     
-    Only stop generating test questions once you believe there is sufficient testing material for learners to fully understand the concepts and remember the facts. The same concept or fact can have multiple test cards, so continue creating test cards until you are confident that there are enough for learners to fully grasp the source material.`
-        
-      }
-}
+    Only stop generating test questions once you believe there is sufficient testing material for learners to fully understand the concepts and remember the facts. The same concept or fact can have multiple test cards, so continue creating test cards until you are confident that there are enough for learners to fully grasp the source material.`,
+  },
+};
 
-export function returnPromptData(){
-    return {
-        "typology": returnTypologyPrompt(),
-        "card_generation": returnCardGenPrompt(),
-    };
+export function returnPromptData() {
+  return {
+    typology: returnTypologyPrompt(),
+    card_generation: returnCardGenPrompt(),
+  };
 }
