@@ -22,7 +22,7 @@ class GenerateTypology {
     }
     generate() {
         return __awaiter(this, void 0, void 0, function* () {
-            var _a, _b, _c, _d;
+            var _a, _b, _c, _d, _e;
             try {
                 const response = yield ((_a = this.openAiService) === null || _a === void 0 ? void 0 : _a.sendRequest(this.prompt, this.content));
                 response["type"] = "typology";
@@ -31,6 +31,7 @@ class GenerateTypology {
                     req_type: response.type,
                     req_tokens: (_c = response.usage_data) === null || _c === void 0 ? void 0 : _c.prompt_tokens,
                     res_tokens: (_d = response.usage_data) === null || _d === void 0 ? void 0 : _d.completion_tokens,
+                    prompt_tokens_details: (_e = response.usage_data) === null || _e === void 0 ? void 0 : _e.prompt_tokens_details,
                     model: this.openAiService.model,
                 };
                 if (response.status_code == 200) {

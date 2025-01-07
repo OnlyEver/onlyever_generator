@@ -22,6 +22,7 @@ export class GenerateCards {
       req_type: response.type,
       req_tokens: response.usage_data?.prompt_tokens,
       res_tokens: response.usage_data?.completion_tokens,
+      prompt_tokens_details: response.usage_data?.prompt_tokens_details,
       model: this.openAiService.model,
     };
     if (response.status_code == 200) {
