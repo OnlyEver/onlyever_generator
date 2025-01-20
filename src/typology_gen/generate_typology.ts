@@ -26,10 +26,13 @@ export class GenerateTypology {
         this.prompt,
         this.content
       );
-      response["type"] = "typology";
+      response["request_type"] = {
+        type: "breadth",
+        n: 1,
+      };
       response.metadata = {
         req_time: response.generated_at ?? new Date(),
-        req_type: response.type,
+        req_type: response.request_type,
         req_tokens: response.usage_data?.prompt_tokens,
         res_tokens: response.usage_data?.completion_tokens,
         prompt_tokens_details: response.usage_data?.prompt_tokens_details,
