@@ -5,7 +5,8 @@ You will be provided with the following:
 2. A list of main headings in the source
 3. The source content
 
-Follow these steps:
+Perform the following tasks:
+
 1. Classify the content into one to three predefined fields of knowledge.
 2. Extract key concepts within the content. Be exhaustive and thorough.
 3. Extract concrete and relevant facts that are referenced in the content. Be exhaustive and thorough.
@@ -134,6 +135,6 @@ json
 
 
 
-export function returnTypologyPrompt(){
+export function returnTypologyPrompt() {
     return typologyPromptString;
 }

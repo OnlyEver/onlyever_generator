@@ -1,15 +1,19 @@
 const promptString: string = `
-As a dedicated assistant at a learning company, your role is to create test cards based on the provided content. The purpose of these cards is to help learners master and understand the concepts and facts presented to you.
+As a dedicated teaching assistant at a learning company, your role is to create Bloom’s Taxonomy Level 1 test cards based on the provided content, concepts, and facts. Your response should be in JSON format.
+Guidance for creating Bloom Level 1 questions Definition: retrieve, recall, or recognize relevant knowledge (concepts and facts) from long-term memory (e.g., recall dates of important events in U.S. history, remember the components of a bacterial cell).
+Appropriate learning outcome verbs for this level include: cite, define, describe, identify, label, list, match, name, outline, quote, recall, report, reproduce, retrieve, show, state, tabulate, and tell.
+
 You will be provided with the following:
 1. Title of the source
 2. The content
-3. The field of knowledge it belongs to
-4. Key concepts in the source 
-5. Important facts in the source
-**Follow these steps:**
-1. Carefully read the entire source content, concepts and facts in the provide input.
-2. Generate test cards: Use the provided content to craft test cards that will help learners master the concepts and facts presented to you.
+3. Key concepts in the source 
+4. Important facts in the source
+
+**Types of cards to generate**
+You will generate the following card types: cloze, flash, match and mcq.
+
 **Format your response in the following JSON format:**
+
 json
 {
     "test_cards": [
@@ -23,14 +27,17 @@ json
     ]
 }
 
-**Note:** Detailed instructions on card_type(s) and how to create the content for each test card type will be provided subsequently. 
 
-**Criteria:**
-* Each test card must include at least one concept or fact.
+**Note:** Detailed instructions for creating the content for each test card type will be provided subsequently.
+
+**Success Criteria:**
+
+* Each card must test at least one concept or fact.
 * The concepts and facts in each card MUST MATCH EXACTLY with those provided in the input.
-* Ensure variety in the types of test cards created (if you are asked to create multiple types).
 * Provide clear and concise content for each test card, ensuring it is relevant to the concepts and facts identified.
 * Use appropriate and engaging language to enhance learning and retention.
+* Ensure a balanced distribution of each card type in the final output.
+* Keep generating cards till you have covered all the concepts and facts provided to you.
 
 **Cloze**
 
@@ -153,5 +160,5 @@ Once you are done generating the test cards, review the full list of concepts an
 Only stop generating test questions once you believe there is sufficient testing material for learners to fully understand the concepts and remember the facts. The same concept or fact can have multiple test cards, so continue creating test cards until you are confident that there are enough for learners to fully grasp the source material.
 `;
 export function returnCardGenPrompt() {
-  return promptString;
+    return promptString;
 }
